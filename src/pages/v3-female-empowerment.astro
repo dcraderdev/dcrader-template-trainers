@@ -3,350 +3,415 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { coach } from '../data/v3-coach';
 ---
 <BaseLayout
-  title={`${coach.name} | ${coach.gym} — Women's Strength Coaching`}
-  description={coach.tagline}
-  fontUrl="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
+  title="Fierce & Free Fitness — Your Strongest Self Starts Here"
+  description="Women-only strength coaching in Austin, TX. Cycle-synced programming. No scales, no shame. Book your free intro."
+  fontUrl="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Lato:wght@300;400;700&display=swap"
   themeColor="#be185d"
   ogImage="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80"
 >
-  <!-- Nav -->
-  <nav aria-label="Main navigation" class="sticky top-0 z-50 bg-[#FDF5F0]/95 backdrop-blur-sm border-b border-rose-100">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-      <a href="#main-content" class="font-playfair text-xl font-bold text-rose-900">{coach.gym}</a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#programs" class="text-rose-600 hover:text-rose-900 text-sm font-medium transition-colors" style="font-family: 'Lato', sans-serif;">Programs</a>
-        <a href="#pricing" class="text-rose-600 hover:text-rose-900 text-sm font-medium transition-colors" style="font-family: 'Lato', sans-serif;">Pricing</a>
-        <a href="#coach" class="text-rose-600 hover:text-rose-900 text-sm font-medium transition-colors" style="font-family: 'Lato', sans-serif;">Amanda</a>
-        <a href="#booking" class="bg-rose-700 hover:bg-rose-800 text-white px-5 py-2 rounded-full text-sm font-semibold transition-colors" style="font-family: 'Lato', sans-serif;">Free Intro</a>
-      </div>
-      <a href="#booking" class="md:hidden bg-rose-700 text-white px-4 py-2 rounded-full text-sm font-semibold">Join</a>
+
+<style is:inline>
+  body { font-family: 'Lato', sans-serif; background: #FDF5F0; color: #3D1F1F; }
+  .playfair { font-family: 'Playfair Display', Georgia, serif; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; float: left; line-height: .8; margin: .1rem .5rem 0 0; color: #be185d; }
+  .pillar-card { transition: transform .2s, box-shadow .2s; }
+  .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(190,24,93,.12); }
+</style>
+
+<!-- NAV -->
+<nav aria-label="Main navigation" style="position:sticky;top:0;z-index:50;background:rgba(253,245,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid #fecdd3;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="#main-content" class="playfair" style="font-size:1.25rem;font-weight:700;color:#881337;text-decoration:none;letter-spacing:-.01em;">Fierce &amp; Free</a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <a href="#pillars" style="color:#9f1239;font-size:.875rem;text-decoration:none;">Our Pillars</a>
+      <a href="#programs" style="color:#9f1239;font-size:.875rem;text-decoration:none;">Programs</a>
+      <a href="#retreat" style="color:#9f1239;font-size:.875rem;text-decoration:none;">Retreat</a>
+      <a href="#booking" style="background:#be185d;color:#fff;font-size:.875rem;font-weight:700;text-decoration:none;padding:.625rem 1.375rem;border-radius:999px;">Free Intro ✦</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <main id="main-content" style="font-family: 'Lato', sans-serif;">
-    <!-- Hero -->
-    <section class="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="hero-heading">
-      <img
-        src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1920&q=80"
-        alt="Strong woman confidently lifting weights in a well-lit studio"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(190,24,93,0.75) 0%, rgba(253,245,240,0.60) 100%);"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 py-32">
-        <div class="max-w-2xl">
-          <p class="text-rose-100 text-xs uppercase tracking-[0.4em] font-semibold mb-6">Women's Strength · Austin, TX</p>
-          <h1 id="hero-heading" class="font-playfair text-6xl md:text-8xl font-bold text-white leading-tight mb-6">
-            Strong.<br/>Fierce.<br/><em>Unapologetically<br/>you.</em>
-          </h1>
-          <p class="text-rose-50 text-lg leading-relaxed mb-10 max-w-lg">{coach.tagline}</p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#booking" class="bg-white hover:bg-rose-50 text-rose-800 px-8 py-4 rounded-full font-bold text-base transition-all hover:shadow-lg text-center">
-              Start Your Journey
-            </a>
-            <a href="#programs" class="border-2 border-white/60 hover:border-white text-white px-8 py-4 rounded-full font-semibold text-base transition-all text-center">
-              Explore Programs
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+<main id="main-content">
 
-    <!-- Marquee stats -->
-    <div class="bg-rose-800 py-5 overflow-hidden">
-      <div class="flex flex-wrap justify-center gap-8 text-rose-100 text-sm font-semibold px-6">
-        {coach.achievements.map(a => (
-          <span>{a.value} <span class="text-rose-300">{a.label}</span></span>
+<!-- ───── HERO ───── -->
+<section style="position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden;" aria-labelledby="hero-h1">
+  <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1920&q=80"
+    alt="Strong woman lifting weights with confidence in a studio" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(136,19,55,.75) 0%,rgba(253,245,240,.55) 100%);"></div>
+
+  <!-- Decorative serif quote mark -->
+  <div style="position:absolute;top:6rem;right:4rem;font-family:'Playfair Display',serif;font-size:20rem;line-height:1;color:rgba(255,255,255,.06);pointer-events:none;user-select:none;" aria-hidden="true">"</div>
+
+  <div style="position:relative;z-index:10;max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;">
+    <div>
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#fda4af;text-transform:uppercase;font-weight:700;margin-bottom:1.25rem;">Women-Only · Austin, TX · Since 2015</p>
+      <h1 id="hero-h1" class="playfair" style="font-size:clamp(3rem,6vw,5rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:1.25rem;">
+        Your Strongest<br/>Self Starts<br/><em style="color:#fda4af;">Right Here.</em>
+      </h1>
+      <p style="color:#ffe4e6;font-size:1.1rem;line-height:1.75;max-width:30rem;margin-bottom:2rem;">{coach.tagline}</p>
+
+      <!-- Women-only trust pills -->
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;">
+        {['🚫 No scales', '💪 No shame', '✦ Women-only space', '🌸 Cycle-synced training', '👶 Pre/postnatal certified'].map(b => (
+          <span style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.75rem;font-weight:600;padding:.375rem .75rem;border-radius:999px;">{b}</span>
         ))}
-        <span>Pre/Postnatal Certified</span>
-        <span>Cycle-Synced Training</span>
+      </div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#booking" style="background:#fff;color:#881337;font-weight:700;font-size:1rem;text-decoration:none;padding:1rem 2.25rem;border-radius:999px;display:inline-block;box-shadow:0 4px 20px rgba(0,0,0,.2);">Book Free Intro Session</a>
+        <a href="#pillars" style="border:2px solid rgba(255,255,255,.5);color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:1rem 2.25rem;border-radius:999px;display:inline-block;">Our Pillars →</a>
       </div>
     </div>
 
-    <!-- Transformations -->
-    <section id="transformations" class="bg-rose-50 py-24" aria-labelledby="trans-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-rose-400 text-xs uppercase tracking-[0.4em] font-semibold mb-3">Their Words</p>
-          <h2 id="trans-heading" class="font-playfair text-5xl font-bold text-rose-900">Transformations that go<br/><em>beyond the scale</em></h2>
-          <p class="text-rose-600 mt-4 max-w-xl mx-auto">Strength isn't just physical. Watch what happens when women finally train for themselves.</p>
+    <!-- Stats card -->
+    <div style="background:rgba(253,245,240,.92);backdrop-filter:blur(12px);border-radius:1.5rem;padding:2.5rem;border:1px solid rgba(190,24,93,.2);">
+      <p class="playfair" style="font-size:1.1rem;font-weight:600;color:#881337;margin-bottom:1.5rem;font-style:italic;">"Strength is not just a body — it's a mindset."</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+        {coach.achievements.map(a => (
+          <div style="text-align:center;padding:1.25rem;background:#fff8f5;border-radius:1rem;border:1px solid #fecdd3;">
+            <p class="playfair" style="font-size:2rem;font-weight:700;color:#be185d;">{a.value}</p>
+            <p style="font-size:.7rem;color:#9f4255;letter-spacing:.05em;text-transform:uppercase;margin-top:.25rem;">{a.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── NO SCALES NO SHAME PILLARS ───── -->
+<section id="pillars" style="background:#fff8f5;padding:6rem 0;" aria-labelledby="pillars-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">The Fierce &amp; Free Way</p>
+      <h2 id="pillars-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;line-height:1.2;">We do things differently here.</h2>
+      <div style="width:3rem;height:2px;background:#fda4af;margin:1.25rem auto 0;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+      {[
+        { icon:'🚫', title:'No Scales, No Shame', body:'We don\'t measure progress in pounds lost. We measure it in weight lifted, mountains climbed, and confidence gained.' },
+        { icon:'🌸', title:'Cycle-Synced Training', body:'Your hormones are not the enemy — they\'re a superpower. We train around your cycle, not against it.' },
+        { icon:'👑', title:'Women-Only Space', body:'A gym designed for women, by women. From the equipment to the energy — every inch of this space belongs to you.' },
+        { icon:'🤝', title:'Community First', body:'Transformation happens in community. 1,200+ women cheering each other on, every single day. Nobody gets left behind.' },
+      ].map(p => (
+        <div class="pillar-card" style="background:#fff;border-radius:1.5rem;padding:2rem;border:1px solid #fecdd3;text-align:center;">
+          <div style="font-size:2.5rem;margin-bottom:1.25rem;">{p.icon}</div>
+          <h3 class="playfair" style="font-size:1.125rem;font-weight:700;color:#881337;margin-bottom:.75rem;">{p.title}</h3>
+          <p style="font-size:.875rem;color:#6b4250;line-height:1.7;">{p.body}</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          {coach.transformations.map(t => (
-            <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-rose-100">
-              <div class="grid grid-cols-2">
-                <div class="relative">
-                  <img src={t.beforeImg} alt={`${t.name} before training with Amanda Torres`} class="w-full h-52 object-cover object-top" />
-                  <span class="absolute top-3 left-3 bg-rose-100 text-rose-700 text-xs font-semibold px-2 py-1 rounded-full">Before</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── TRANSFORMATIONS (asymmetric) ───── -->
+<section id="transformations" style="background:#FDF5F0;padding:6rem 0;" aria-labelledby="trans-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="display:grid;grid-template-columns:5fr 7fr;gap:4rem;align-items:center;margin-bottom:4rem;">
+      <div>
+        <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Transformations</p>
+        <h2 id="trans-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;line-height:1.2;margin-bottom:1.25rem;">
+          Beyond the<br/><em>before and after.</em>
+        </h2>
+        <p style="color:#6b4250;line-height:1.8;">Every client journey is about far more than how a body looks. It's about what that body can do — and how the woman inside it feels about herself.</p>
+      </div>
+      <div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          {[coach.transformations[0], coach.transformations[1]].map(t => (
+            <article style="background:#fff;border-radius:1.25rem;overflow:hidden;border:1px solid #fecdd3;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;">
+                <div style="position:relative;">
+                  <img src={t.beforeImg} alt={`${t.name} before — Fierce & Free`} style="width:100%;height:8rem;object-fit:cover;object-position:top;display:block;" />
+                  <span style="position:absolute;top:.375rem;left:.375rem;background:#ffe4e6;color:#9f1239;font-size:.6rem;font-weight:700;padding:.2rem .4rem;border-radius:.25rem;">Before</span>
                 </div>
-                <div class="relative">
-                  <img src={t.afterImg} alt={`${t.name} after training with Amanda Torres`} class="w-full h-52 object-cover object-top" />
-                  <span class="absolute top-3 right-3 bg-rose-700 text-white text-xs font-semibold px-2 py-1 rounded-full">After</span>
+                <div style="position:relative;">
+                  <img src={t.afterImg} alt={`${t.name} after — ${t.result}`} style="width:100%;height:8rem;object-fit:cover;object-position:top;display:block;" />
+                  <span style="position:absolute;top:.375rem;right:.375rem;background:#be185d;color:#fff;font-size:.6rem;font-weight:700;padding:.2rem .4rem;border-radius:.25rem;">After</span>
                 </div>
               </div>
-              <div class="p-6">
-                <p class="font-playfair text-xl font-bold text-rose-900">{t.name}</p>
-                <p class="text-rose-600 font-semibold text-sm mt-1">{t.result}</p>
-                <p class="text-rose-400 text-sm mt-3 italic">"{t.quote}"</p>
+              <div style="padding:.875rem;">
+                <p class="playfair" style="font-weight:700;color:#881337;font-size:.9375rem;">{t.name}</p>
+                <p style="color:#be185d;font-size:.75rem;font-weight:700;margin:.125rem 0;">{t.result}</p>
+                <p style="color:#9f4255;font-size:.75rem;font-style:italic;">"{t.quote}"</p>
               </div>
             </article>
           ))}
         </div>
       </div>
-    </section>
-
-    <!-- Programs -->
-    <section id="programs" class="bg-[#FDF5F0] py-24" aria-labelledby="programs-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-rose-400 text-xs uppercase tracking-[0.4em] font-semibold mb-3">Training Programs</p>
-          <h2 id="programs-heading" class="font-playfair text-5xl font-bold text-rose-900">Programming built for<br/><em>your body</em></h2>
-          <p class="text-rose-600 mt-4 max-w-xl mx-auto">Not a scaled-down version of a man's program. Designed from the ground up for women's physiology.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          {coach.programs.map((prog, i) => (
-            <div class={`rounded-3xl p-8 border ${i === 1 ? 'bg-rose-700 text-white border-rose-700' : 'bg-white border-rose-100'}`}>
-              <div class="text-4xl mb-5" aria-hidden="true">{prog.icon}</div>
-              <h3 class={`font-playfair text-2xl font-bold mb-3 ${i === 1 ? 'text-white' : 'text-rose-900'}`}>{prog.name}</h3>
-              <p class={`text-sm leading-relaxed mb-6 ${i === 1 ? 'text-rose-200' : 'text-rose-600'}`}>{prog.description}</p>
-              <ul class="space-y-2.5">
-                {prog.features.map(f => (
-                  <li class={`flex items-start gap-2.5 text-sm ${i === 1 ? 'text-rose-100' : 'text-rose-700'}`}>
-                    <span class={`font-bold mt-0.5 ${i === 1 ? 'text-rose-200' : 'text-rose-400'}`} aria-hidden="true">✦</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="bg-rose-50 py-24" aria-labelledby="pricing-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-rose-400 text-xs uppercase tracking-[0.4em] font-semibold mb-3">Investment</p>
-          <h2 id="pricing-heading" class="font-playfair text-5xl font-bold text-rose-900">Choose your path</h2>
-          <p class="text-rose-600 mt-4">Every plan includes your first session free. No contracts, cancel anytime.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {coach.pricing.map(tier => (
-            <div class={`relative rounded-3xl p-8 border ${tier.popular ? 'bg-rose-800 border-rose-800' : 'bg-white border-rose-100'}`}>
-              {tier.popular && (
-                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-rose-300 text-rose-900 text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full">Most Loved</span>
-              )}
-              <p class={`text-sm font-bold uppercase tracking-widest ${tier.popular ? 'text-rose-200' : 'text-rose-400'}`}>{tier.name}</p>
-              <p class={`font-playfair text-5xl font-bold mt-2 ${tier.popular ? 'text-white' : 'text-rose-900'}`}>
-                ${tier.price}<span class={`text-lg font-normal ${tier.popular ? 'text-rose-300' : 'text-rose-400'}`}>/mo</span>
-              </p>
-              <ul class="my-7 space-y-3">
-                {tier.features.map(f => (
-                  <li class={`flex items-start gap-2.5 text-sm ${tier.popular ? 'text-rose-100' : 'text-rose-700'}`}>
-                    <span class={`font-bold mt-0.5 ${tier.popular ? 'text-rose-300' : 'text-rose-400'}`} aria-hidden="true">✦</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a href="#booking" class={`block text-center py-3 rounded-full font-semibold transition-colors ${tier.popular ? 'bg-white hover:bg-rose-50 text-rose-800' : 'bg-rose-100 hover:bg-rose-200 text-rose-800'}`}>
-                Start Free Session
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Coach Bio -->
-    <section id="coach" class="bg-[#FDF5F0] py-24" aria-labelledby="coach-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <div class="relative">
-            <img
-              src={coach.photo}
-              alt={`${coach.name}, ${coach.title} — founder of ${coach.gym}`}
-              class="w-full aspect-[3/4] object-cover rounded-3xl"
-            />
-            <div class="absolute -bottom-6 -right-6 bg-white rounded-3xl p-6 shadow-lg border border-rose-100 max-w-xs">
-              <p class="font-playfair text-rose-900 font-bold">"Every woman deserves programming that honors her body."</p>
-              <p class="text-rose-500 text-sm mt-2">— Amanda Torres</p>
-            </div>
-          </div>
-          <div class="pt-8 md:pt-0">
-            <p class="text-rose-400 text-xs uppercase tracking-[0.4em] font-semibold mb-3">Meet Amanda</p>
-            <h2 id="coach-heading" class="font-playfair text-5xl font-bold text-rose-900 mb-2">{coach.name}</h2>
-            <p class="text-rose-500 font-semibold text-lg mb-8">{coach.title}</p>
-            <p class="text-rose-800 text-lg leading-relaxed mb-4">{coach.bio}</p>
-            <p class="text-rose-600 leading-relaxed mb-8">{coach.bioExtended}</p>
-            <div class="flex flex-wrap gap-2 mb-8">
-              {coach.certifications.map(cert => (
-                <span class="bg-rose-100 text-rose-700 text-xs font-semibold px-3 py-1.5 rounded-full">{cert}</span>
-              ))}
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              {coach.achievements.map(a => (
-                <div class="bg-rose-50 rounded-2xl p-5 border border-rose-100">
-                  <p class="font-playfair text-3xl font-bold text-rose-800">{a.value}</p>
-                  <p class="text-rose-500 text-xs mt-1">{a.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="bg-rose-800 py-24" aria-labelledby="testimonials-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-rose-300 text-xs uppercase tracking-[0.4em] font-semibold mb-3">The Community Speaks</p>
-          <h2 id="testimonials-heading" class="font-playfair text-5xl font-bold text-white">Stories of strength</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          {coach.testimonials.map(t => (
-            <blockquote class="bg-rose-700/50 rounded-3xl p-8 border border-rose-600/40">
-              <p class="text-rose-200 font-semibold text-2xl font-playfair mb-4">{t.result}</p>
-              <p class="text-rose-100 leading-relaxed mb-6 text-sm">{t.text}</p>
-              <footer>
-                <cite class="not-italic font-playfair font-bold text-white text-lg">{t.name}</cite>
-                <p class="text-rose-300 text-xs mt-0.5">{t.details}</p>
-              </footer>
-            </blockquote>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Free Intro CTA -->
-    <section class="relative overflow-hidden py-32" aria-labelledby="cta-heading">
-      <img
-        src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1920&q=80"
-        alt="Group of women celebrating after a workout together"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-rose-900/80"></div>
-      <div class="relative z-10 text-center max-w-2xl mx-auto px-6">
-        <h2 id="cta-heading" class="font-playfair text-6xl md:text-7xl font-bold text-white mb-6">
-          Your first session<br/><em>is on us.</em>
-        </h2>
-        <p class="text-rose-200 text-xl mb-10">Come as you are. Leave stronger than you imagined. No strings attached.</p>
-        <a href="#booking" class="inline-block bg-white hover:bg-rose-50 text-rose-800 px-12 py-5 rounded-full font-bold text-lg transition-all hover:shadow-2xl hover:scale-105">
-          Book My Free Session
-        </a>
-      </div>
-    </section>
-
-    <!-- Location & Hours -->
-    <section id="location" class="bg-[#FDF5F0] py-24" aria-labelledby="location-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16">
-          <div>
-            <p class="text-rose-400 text-xs uppercase tracking-[0.4em] font-semibold mb-3">Visit Us</p>
-            <h2 id="location-heading" class="font-playfair text-4xl font-bold text-rose-900 mb-8">Location &amp; Hours</h2>
-            <address class="not-italic text-rose-700 mb-8 text-sm space-y-2">
-              <p class="font-playfair text-xl font-bold text-rose-900">{coach.gym}</p>
-              <p class="mt-2">{coach.address.street}</p>
-              <p>{coach.address.city}</p>
-              <p class="mt-3"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} class="text-rose-600 hover:text-rose-800 transition-colors">{coach.phone}</a></p>
-              <p><a href={`mailto:${coach.email}`} class="text-rose-600 hover:text-rose-800 transition-colors">{coach.email}</a></p>
-            </address>
-            <h3 class="font-playfair font-bold text-rose-900 text-xl mb-4">Studio Hours</h3>
-            <table class="w-full text-sm" aria-label="Studio hours">
-              <tbody>
-                {coach.hours.map(h => (
-                  <tr class="border-b border-rose-100">
-                    <td class="py-3 text-rose-800 font-medium">{h.day}</td>
-                    <td class="py-3 text-right text-rose-500">{h.hours}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div class="relative">
-            <img
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80"
-              alt="Women working out together in the Fierce and Free studio"
-              class="w-full aspect-video object-cover rounded-3xl"
-            />
-            <div class="mt-4 bg-white rounded-2xl p-6 border border-rose-100">
-              <p class="font-playfair font-bold text-rose-900">Women-only training space</p>
-              <p class="text-rose-500 text-sm mt-1">A safe, supportive environment designed entirely for women — from the equipment to the energy in the room.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Booking Form -->
-    <section id="booking" class="bg-rose-50 py-24" aria-labelledby="booking-heading">
-      <div class="max-w-2xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <p class="text-rose-400 text-xs uppercase tracking-[0.4em] font-semibold mb-3">Ready to Begin?</p>
-          <h2 id="booking-heading" class="font-playfair text-5xl font-bold text-rose-900">Book your free intro</h2>
-          <p class="text-rose-500 mt-4">Amanda personally reviews every submission. You'll hear back within 24 hours.</p>
-        </div>
-        <form class="space-y-5 bg-white rounded-3xl p-8 shadow-sm border border-rose-100" aria-label="Free intro booking form" novalidate>
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="v3-name" class="block text-rose-800 text-sm font-semibold mb-2">Full Name <span class="text-red-400" aria-label="required">*</span></label>
-              <input type="text" id="v3-name" name="name" required autocomplete="name" placeholder="Your name"
-                class="w-full border border-rose-200 text-rose-900 px-4 py-3 rounded-xl focus:border-rose-400 focus:ring-2 focus:ring-rose-100 focus:outline-none transition-all placeholder:text-rose-200 text-sm" />
-            </div>
-            <div>
-              <label for="v3-email" class="block text-rose-800 text-sm font-semibold mb-2">Email <span class="text-red-400" aria-label="required">*</span></label>
-              <input type="email" id="v3-email" name="email" required autocomplete="email" placeholder="you@example.com"
-                class="w-full border border-rose-200 text-rose-900 px-4 py-3 rounded-xl focus:border-rose-400 focus:ring-2 focus:ring-rose-100 focus:outline-none transition-all placeholder:text-rose-200 text-sm" />
-            </div>
-          </div>
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="v3-phone" class="block text-rose-800 text-sm font-semibold mb-2">Phone</label>
-              <input type="tel" id="v3-phone" name="phone" autocomplete="tel" placeholder="(512) 555-0000"
-                class="w-full border border-rose-200 text-rose-900 px-4 py-3 rounded-xl focus:border-rose-400 focus:ring-2 focus:ring-rose-100 focus:outline-none transition-all placeholder:text-rose-200 text-sm" />
-            </div>
-            <div>
-              <label for="v3-goal" class="block text-rose-800 text-sm font-semibold mb-2">Your Goal <span class="text-red-400" aria-label="required">*</span></label>
-              <select id="v3-goal" name="goal" required
-                class="w-full border border-rose-200 text-rose-900 px-4 py-3 rounded-xl focus:border-rose-400 focus:ring-2 focus:ring-rose-100 focus:outline-none transition-all text-sm bg-white">
-                <option value="">Choose a goal</option>
-                <option value="strength">Build strength &amp; confidence</option>
-                <option value="fat-loss">Lose weight sustainably</option>
-                <option value="postnatal">Postnatal recovery</option>
-                <option value="hormones">Hormone health &amp; energy</option>
-                <option value="community">Find a supportive community</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label for="v3-experience" class="block text-rose-800 text-sm font-semibold mb-2">Training background</label>
-            <select id="v3-experience" name="experience"
-              class="w-full border border-rose-200 text-rose-900 px-4 py-3 rounded-xl focus:border-rose-400 focus:ring-2 focus:ring-rose-100 focus:outline-none transition-all text-sm bg-white">
-              <option value="none">Complete beginner</option>
-              <option value="some">Some experience</option>
-              <option value="returning">Returning after a break</option>
-              <option value="experienced">Experienced lifter</option>
-            </select>
-          </div>
-          <div>
-            <label for="v3-message" class="block text-rose-800 text-sm font-semibold mb-2">Share your story</label>
-            <textarea id="v3-message" name="message" rows="4" placeholder="Where are you in your journey? What's holding you back? What do you dream of achieving?"
-              class="w-full border border-rose-200 text-rose-900 px-4 py-3 rounded-xl focus:border-rose-400 focus:ring-2 focus:ring-rose-100 focus:outline-none transition-all placeholder:text-rose-200 resize-none text-sm"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-rose-700 hover:bg-rose-800 text-white py-4 rounded-full font-bold text-lg transition-all hover:shadow-lg hover:shadow-rose-200">
-            Book My Free Session
-          </button>
-          <p class="text-center text-rose-300 text-xs">All women welcome. No judgment, no pressure — just support.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-rose-900 py-12">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <p class="font-playfair text-white text-xl font-bold">{coach.gym}</p>
-      <p class="text-rose-400 text-xs mt-2">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
-      <p class="text-rose-700 text-xs mt-2"><a href="/" class="hover:text-rose-400 transition-colors">← All Templates</a></p>
     </div>
-  </footer>
+    <!-- Third transformation — full width editorial -->
+    {coach.transformations[2] && (
+      <article style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;background:#fff;border-radius:1.5rem;padding:2rem;border:1px solid #fecdd3;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;width:280px;flex-shrink:0;">
+          <div style="position:relative;">
+            <img src={coach.transformations[2].beforeImg} alt={`${coach.transformations[2].name} before`} style="width:100%;height:10rem;object-fit:cover;border-radius:.75rem;" />
+            <span style="position:absolute;top:.5rem;left:.5rem;background:#ffe4e6;color:#9f1239;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:.375rem;">Before</span>
+          </div>
+          <div style="position:relative;">
+            <img src={coach.transformations[2].afterImg} alt={`${coach.transformations[2].name} after`} style="width:100%;height:10rem;object-fit:cover;border-radius:.75rem;" />
+            <span style="position:absolute;top:.5rem;right:.5rem;background:#be185d;color:#fff;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:.375rem;">After</span>
+          </div>
+        </div>
+        <div>
+          <p class="playfair" style="font-size:1.375rem;font-weight:700;color:#881337;">{coach.transformations[2].name}</p>
+          <p style="color:#be185d;font-weight:700;margin:.25rem 0 .75rem;">{coach.transformations[2].result}</p>
+          <p style="color:#6b4250;line-height:1.8;font-size:1rem;font-style:italic;">"{coach.transformations[2].quote}"</p>
+        </div>
+      </article>
+    )}
+  </div>
+</section>
+
+<!-- ───── PROGRAMS ───── -->
+<section id="programs" style="background:#fff8f5;padding:6rem 0;" aria-labelledby="programs-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Training Programs</p>
+      <h2 id="programs-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;">Programming built<br/><em>for your body.</em></h2>
+      <p style="color:#6b4250;max-width:36rem;margin:.75rem auto 0;line-height:1.7;">Not a scaled-down version of a man's program. Built from the ground up for women's physiology, hormones, and goals.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      {coach.programs.map((prog, i) => (
+        <div style={`border-radius:1.5rem;padding:2.5rem;border:1px solid #fecdd3;background:${i===1?'#be185d':'#fff'};position:relative;overflow:hidden;`}>
+          {i===1 && <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;background:rgba(255,255,255,.06);border-radius:50%;transform:translate(3rem,-3rem);pointer-events:none;"></div>}
+          <div style="font-size:2.5rem;margin-bottom:1.25rem;">{prog.icon}</div>
+          <h3 class="playfair" style={`font-size:1.5rem;font-weight:700;margin-bottom:.625rem;color:${i===1?'#fff':'#881337'};`}>{prog.name}</h3>
+          <p style={`font-size:.875rem;line-height:1.7;margin-bottom:1.5rem;color:${i===1?'#fecdd3':'#6b4250'};`}>{prog.description}</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.625rem;">
+            {prog.features.map(f => (
+              <li style={`display:flex;align-items:flex-start;gap:.5rem;font-size:.8125rem;color:${i===1?'#ffe4e6':'#6b4250'};`}>
+                <span style={`font-weight:700;margin-top:1px;flex-shrink:0;color:${i===1?'#fda4af':'#be185d'};`}>✦</span>{f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── PRICING ───── -->
+<section id="pricing" style="background:#FDF5F0;padding:6rem 0;" aria-labelledby="pricing-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Membership</p>
+      <h2 id="pricing-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;">Choose your path.</h2>
+      <p style="color:#6b4250;margin-top:.75rem;">First session always free. No contracts. Cancel anytime.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:56rem;margin:0 auto;">
+      {coach.pricing.map(tier => (
+        <div style={`position:relative;border-radius:1.5rem;padding:2.5rem;border:${tier.popular?'2px solid #be185d':'1px solid #fecdd3'};background:${tier.popular?'#881337':'#fff'};`}>
+          {tier.popular && <span class="playfair" style="position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:#fda4af;color:#881337;font-size:.8rem;font-weight:700;padding:.375rem 1.25rem;border-radius:999px;white-space:nowrap;font-style:italic;">Most Loved ✦</span>}
+          <p style={`font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:${tier.popular?'#fda4af':'#be185d'};margin-bottom:.625rem;`}>{tier.name}</p>
+          <p class="playfair" style={`font-size:3.5rem;font-weight:700;line-height:1;color:${tier.popular?'#fff':'#881337'};`}>${tier.price}<span style={`font-size:1.125rem;font-weight:400;color:${tier.popular?'#fda4af':'#be185d'};`}>/mo</span></p>
+          <div style={`border-top:1px solid ${tier.popular?'rgba(255,255,255,.15)':'#fecdd3'};margin:1.5rem 0;padding-top:1.5rem;`}>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;">
+              {tier.features.map(f => (
+                <li style={`display:flex;align-items:flex-start;gap:.5rem;font-size:.8125rem;color:${tier.popular?'#fecdd3':'#6b4250'};`}>
+                  <span style={`font-weight:700;flex-shrink:0;margin-top:1px;color:${tier.popular?'#fda4af':'#be185d'};`}>✦</span>{f}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <a href="#booking" style={`display:block;text-align:center;padding:.875rem;border-radius:999px;font-weight:700;font-size:.9375rem;text-decoration:none;background:${tier.popular?'#fff':'#ffe4e6'};color:${tier.popular?'#881337':'#be185d'};`}>
+            Start Free Session
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── RETREAT CTA ───── -->
+<section id="retreat" style="position:relative;padding:6rem 0;overflow:hidden;" aria-labelledby="retreat-h2">
+  <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=1920&q=80"
+    alt="Women doing yoga together in a beautiful outdoor setting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(136,19,55,.88) 0%,rgba(190,24,93,.6) 100%);"></div>
+  <div style="position:relative;z-index:10;max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+    <div>
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#fda4af;text-transform:uppercase;font-weight:700;margin-bottom:1rem;">Annual Women's Retreat</p>
+      <h2 id="retreat-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:1.25rem;">
+        Fierce &amp; Free<br/><em>Retreat 2026</em>
+      </h2>
+      <p style="color:#fecdd3;line-height:1.8;margin-bottom:2rem;">Four days in the Texas Hill Country. Strength training, yoga, nutrition workshops, and the kind of deep connection you can only find when 40 women commit to growing together. Flourish members get first access.</p>
+      <div style="display:flex;gap:2rem;margin-bottom:2rem;">
+        <div>
+          <p class="playfair" style="font-size:2rem;font-weight:700;color:#fff;">Oct 2026</p>
+          <p style="color:#fda4af;font-size:.8rem;">Dates TBA</p>
+        </div>
+        <div>
+          <p class="playfair" style="font-size:2rem;font-weight:700;color:#fff;">40</p>
+          <p style="color:#fda4af;font-size:.8rem;">Spots available</p>
+        </div>
+        <div>
+          <p class="playfair" style="font-size:2rem;font-weight:700;color:#fff;">Hill Country</p>
+          <p style="color:#fda4af;font-size:.8rem;">Texas</p>
+        </div>
+      </div>
+      <a href="#booking" style="background:#fff;color:#881337;font-weight:700;font-size:1rem;text-decoration:none;padding:1rem 2.25rem;border-radius:999px;display:inline-block;">Join Waitlist for 2026</a>
+    </div>
+    <div style="background:rgba(253,245,240,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:1.5rem;padding:2.5rem;">
+      <p class="playfair" style="font-size:1.25rem;font-weight:600;color:#fff;margin-bottom:1.5rem;font-style:italic;">What's included:</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
+        {['4 nights accommodation in the Hill Country','Daily strength training sessions','Morning yoga &amp; mobility','Nutrition workshop &amp; cooking class','Group hike &amp; outdoor adventure','Evening community bonfire','Private coaching consultations'].map(item => (
+          <li style="display:flex;align-items:flex-start;gap:.75rem;color:#fecdd3;font-size:.875rem;">
+            <span style="color:#fda4af;font-weight:700;flex-shrink:0;">✦</span>
+            <span set:html={item}></span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COACH ───── -->
+<section id="coach" style="background:#fff8f5;padding:6rem 0;" aria-labelledby="coach-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:7fr 5fr;gap:4rem;align-items:center;">
+    <div>
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Meet Amanda</p>
+      <h2 id="coach-h2" class="playfair" style="font-size:3.5rem;font-weight:700;color:#881337;line-height:1.1;margin-bottom:.5rem;">{coach.name}</h2>
+      <p style="color:#be185d;font-weight:700;font-size:1.125rem;margin-bottom:2rem;">{coach.title}</p>
+      <p class="drop-cap" style="color:#3D1F1F;line-height:1.8;margin-bottom:1rem;">{coach.bio}</p>
+      <p style="color:#6b4250;line-height:1.8;margin-bottom:2rem;">{coach.bioExtended}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;">
+        {coach.certifications.map(c => (
+          <span style="background:#ffe4e6;color:#881337;font-size:.75rem;font-weight:700;padding:.375rem .875rem;border-radius:999px;">{c}</span>
+        ))}
+      </div>
+    </div>
+    <div style="position:relative;">
+      <img src={coach.photo} alt={`${coach.name} — ${coach.title}, founder of Fierce & Free`} style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2rem;display:block;" />
+      <!-- Pull quote overlay -->
+      <div style="position:absolute;bottom:-1.5rem;left:-1.5rem;background:#fff;border:1px solid #fecdd3;border-radius:1.25rem;padding:1.5rem;max-width:16rem;box-shadow:0 8px 32px rgba(190,24,93,.12);">
+        <p class="playfair" style="font-size:.9rem;color:#881337;font-style:italic;line-height:1.6;">"Every woman deserves programming that honors her body."</p>
+        <p style="color:#be185d;font-size:.75rem;font-weight:700;margin-top:.75rem;">— Amanda Torres</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── TESTIMONIALS (editorial pull-quote style) ───── -->
+<section id="testimonials" style="background:#be185d;padding:6rem 0;" aria-labelledby="test-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <h2 id="test-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#fff;">The community<br/><em>speaks.</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      {coach.testimonials.map(t => (
+        <blockquote style="background:rgba(255,255,255,.1);border-radius:1.5rem;padding:2.5rem;border:1px solid rgba(255,255,255,.15);margin:0;">
+          <p class="playfair" style="font-size:2rem;font-weight:700;color:#fda4af;margin-bottom:1rem;">{t.result}</p>
+          <p style="color:#ffe4e6;font-size:.875rem;line-height:1.8;margin-bottom:1.5rem;">{t.text}</p>
+          <footer style="border-top:1px solid rgba(255,255,255,.2);padding-top:1.25rem;">
+            <cite class="playfair" style="font-size:1.125rem;font-weight:600;color:#fff;font-style:italic;">{t.name}</cite>
+            <p style="color:#fda4af;font-size:.75rem;margin-top:.25rem;">{t.details}</p>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── LOCATION ───── -->
+<section id="location" style="background:#FDF5F0;padding:6rem 0;" aria-labelledby="loc-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;">
+    <div>
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Visit Us</p>
+      <h2 id="loc-h2" class="playfair" style="font-size:2.5rem;font-weight:700;color:#881337;margin-bottom:2rem;">Location &amp; Studio Hours</h2>
+      <address style="font-style:normal;color:#6b4250;margin-bottom:2rem;line-height:2.2;">
+        <p class="playfair" style="font-size:1.25rem;font-weight:700;color:#881337;">{coach.gym}</p>
+        <p>{coach.address.street}</p>
+        <p>{coach.address.city}</p>
+        <p style="margin-top:.625rem;"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#be185d;text-decoration:none;font-weight:700;">{coach.phone}</a></p>
+        <p><a href={`mailto:${coach.email}`} style="color:#be185d;text-decoration:none;font-weight:700;">{coach.email}</a></p>
+      </address>
+      <table style="width:100%;border-collapse:collapse;" aria-label="Studio hours">
+        <tbody>
+          {coach.hours.map(h => (
+            <tr style="border-bottom:1px solid #fecdd3;">
+              <td style="padding:.875rem 0;color:#3D1F1F;font-weight:600;">{h.day}</td>
+              <td style="padding:.875rem 0;text-align:right;color:#be185d;font-weight:700;">{h.hours}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80"
+        alt="Women celebrating together in the Fierce and Free studio" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.5rem;display:block;margin-bottom:1rem;" />
+      <div style="background:#fff;border-radius:1.25rem;padding:1.5rem;border:1px solid #fecdd3;">
+        <p class="playfair" style="font-weight:700;color:#881337;margin-bottom:.375rem;">A space made for you.</p>
+        <p style="color:#6b4250;font-size:.875rem;line-height:1.6;">Women-only training floor, private changing area, nursing room, and a community corner where bonds are forged between sessions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── BOOKING ───── -->
+<section id="booking" style="background:#fff8f5;padding:6rem 0;" aria-labelledby="book-h2">
+  <div style="max-width:40rem;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Begin</p>
+      <h2 id="book-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;margin-bottom:.75rem;">Book your free intro.</h2>
+      <p style="color:#6b4250;">Amanda personally reviews every submission and responds within 24 hours.</p>
+    </div>
+    <form style="background:#fff;border-radius:1.5rem;padding:2.5rem;border:1px solid #fecdd3;display:flex;flex-direction:column;gap:1.25rem;box-shadow:0 4px 24px rgba(190,24,93,.08);" aria-label="Free intro session booking" novalidate>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+        <div>
+          <label for="v3-name" style="display:block;font-size:.8125rem;font-weight:700;color:#3D1F1F;margin-bottom:.375rem;">Full Name <span aria-label="required" style="color:#be185d;">*</span></label>
+          <input type="text" id="v3-name" name="name" required autocomplete="name" placeholder="Your name"
+            style="width:100%;border:1.5px solid #fecdd3;color:#3D1F1F;padding:.75rem 1rem;border-radius:.75rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Lato',sans-serif;" />
+        </div>
+        <div>
+          <label for="v3-email" style="display:block;font-size:.8125rem;font-weight:700;color:#3D1F1F;margin-bottom:.375rem;">Email <span aria-label="required" style="color:#be185d;">*</span></label>
+          <input type="email" id="v3-email" name="email" required autocomplete="email" placeholder="you@example.com"
+            style="width:100%;border:1.5px solid #fecdd3;color:#3D1F1F;padding:.75rem 1rem;border-radius:.75rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Lato',sans-serif;" />
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+        <div>
+          <label for="v3-phone" style="display:block;font-size:.8125rem;font-weight:700;color:#3D1F1F;margin-bottom:.375rem;">Phone</label>
+          <input type="tel" id="v3-phone" name="phone" autocomplete="tel" placeholder="(512) 555-0000"
+            style="width:100%;border:1.5px solid #fecdd3;color:#3D1F1F;padding:.75rem 1rem;border-radius:.75rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Lato',sans-serif;" />
+        </div>
+        <div>
+          <label for="v3-goal" style="display:block;font-size:.8125rem;font-weight:700;color:#3D1F1F;margin-bottom:.375rem;">Your Goal <span aria-label="required" style="color:#be185d;">*</span></label>
+          <select id="v3-goal" name="goal" required style="width:100%;border:1.5px solid #fecdd3;color:#3D1F1F;padding:.75rem 1rem;border-radius:.75rem;font-size:.9375rem;outline:none;background:#fff;box-sizing:border-box;font-family:'Lato',sans-serif;">
+            <option value="">Choose a goal</option>
+            <option value="strength">Build strength &amp; confidence</option>
+            <option value="fat-loss">Lose weight sustainably</option>
+            <option value="postnatal">Postnatal recovery</option>
+            <option value="hormones">Hormone health &amp; energy</option>
+            <option value="community">Find my community</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="v3-experience" style="display:block;font-size:.8125rem;font-weight:700;color:#3D1F1F;margin-bottom:.375rem;">Training background</label>
+        <select id="v3-experience" name="experience" style="width:100%;border:1.5px solid #fecdd3;color:#3D1F1F;padding:.75rem 1rem;border-radius:.75rem;font-size:.9375rem;outline:none;background:#fff;box-sizing:border-box;font-family:'Lato',sans-serif;">
+          <option value="none">Complete beginner</option>
+          <option value="some">Some experience</option>
+          <option value="returning">Returning after a break</option>
+          <option value="experienced">Experienced lifter</option>
+        </select>
+      </div>
+      <div>
+        <label for="v3-msg" style="display:block;font-size:.8125rem;font-weight:700;color:#3D1F1F;margin-bottom:.375rem;">Share your story</label>
+        <textarea id="v3-msg" name="message" rows="4" placeholder="Where are you in your journey? What do you dream of achieving? What's held you back?"
+          style="width:100%;border:1.5px solid #fecdd3;color:#3D1F1F;padding:.75rem 1rem;border-radius:.75rem;font-size:.9375rem;outline:none;resize:none;box-sizing:border-box;font-family:'Lato',sans-serif;"></textarea>
+      </div>
+      <button type="submit" style="background:#be185d;color:#fff;font-weight:700;font-size:1.0625rem;border:none;padding:1.1rem;border-radius:999px;cursor:pointer;width:100%;font-family:'Lato',sans-serif;">
+        Book My Free Intro Session ✦
+      </button>
+      <p style="text-align:center;color:#be185d;font-size:.75rem;">All women welcome. No judgment. No pressure.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#881337;padding:3rem 1.5rem;text-align:center;">
+  <p class="playfair" style="color:#fff;font-size:1.25rem;font-weight:700;font-style:italic;">{coach.gym}</p>
+  <p style="color:#fda4af;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym} · Austin, TX · All rights reserved.</p>
+  <p style="margin-top:.5rem;"><a href="/" style="color:#fda4af;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
+</footer>
+
 </BaseLayout>

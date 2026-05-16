@@ -3,347 +3,410 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { coach } from '../data/v4-coach';
 ---
 <BaseLayout
-  title={`${coach.name} | ${coach.gym} — Functional Fitness for 50+`}
-  description={coach.tagline}
-  fontUrl="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=Open+Sans:wght@300;400;600;700&display=swap"
-  themeColor="#6b8f71"
+  title="Longevity Athletics — Move Better. Live Fully. Age Powerfully."
+  description="Doctor-coached functional fitness for adults 50+. Evidence-based programming for pain-free movement and lasting strength. Denver, CO."
+  fontUrl="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Open+Sans:wght@300;400;600;700&display=swap"
+  themeColor="#4A6741"
   ogImage="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80"
 >
-  <!-- Nav -->
-  <nav aria-label="Main navigation" class="sticky top-0 z-50 bg-[#F7F5EF]/96 backdrop-blur-sm border-b border-[#D4C9B0]">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-      <a href="#main-content" class="font-source text-xl font-semibold text-[#2D3A27]">{coach.gym}</a>
-      <div class="hidden md:flex items-center gap-8" style="font-family: 'Open Sans', sans-serif;">
-        <a href="#programs" class="text-[#5A6B52] hover:text-[#2D3A27] text-sm transition-colors">Programs</a>
-        <a href="#pricing" class="text-[#5A6B52] hover:text-[#2D3A27] text-sm transition-colors">Pricing</a>
-        <a href="#coach" class="text-[#5A6B52] hover:text-[#2D3A27] text-sm transition-colors">Dr. Hayes</a>
-        <a href="#booking" class="bg-[#4A6741] hover:bg-[#3D5635] text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors">Free Assessment</a>
-      </div>
-      <a href="#booking" class="md:hidden bg-[#4A6741] text-white px-4 py-2 rounded-lg text-sm font-semibold">Book</a>
+
+<style is:inline>
+  body { font-family: 'Open Sans', sans-serif; background: #F7F5EF; color: #2D3A27; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; }
+  .credential-badge { display: inline-flex; align-items: center; gap: .375rem; background: #EEF2E8; border: 1px solid #C4D4B8; color: #3D5635; font-size: .75rem; font-weight: 600; padding: .375rem .75rem; border-radius: .375rem; }
+  .stat-ring { border: 3px solid #8AB87A; border-radius: 50%; width: 90px; height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+</style>
+
+<!-- NAV -->
+<nav aria-label="Main navigation" style="position:sticky;top:0;z-index:50;background:rgba(247,245,239,.97);backdrop-filter:blur(8px);border-bottom:1px solid #D4C9B0;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="#main-content" class="serif" style="font-size:1.2rem;font-weight:600;color:#2D3A27;text-decoration:none;">Longevity Athletics</a>
+    <div style="display:flex;align-items:center;gap:1.75rem;font-size:.875rem;">
+      <a href="#science" style="color:#5A6B52;text-decoration:none;">The Science</a>
+      <a href="#programs" style="color:#5A6B52;text-decoration:none;">Programs</a>
+      <a href="#coach" style="color:#5A6B52;text-decoration:none;">Dr. Hayes</a>
+      <a href="#booking" style="background:#4A6741;color:#fff;font-weight:600;text-decoration:none;padding:.625rem 1.375rem;border-radius:.5rem;font-size:.875rem;">Free Assessment</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <main id="main-content" style="font-family: 'Open Sans', sans-serif;">
-    <!-- Hero -->
-    <section class="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="hero-heading">
-      <img
-        src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1920&q=80"
-        alt="Active older adult exercising outdoors with energy and confidence"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(74,103,65,0.88) 0%, rgba(74,103,65,0.55) 60%, rgba(74,103,65,0.15) 100%);"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 py-32">
-        <div class="max-w-2xl">
-          <p class="text-[#C8D9B8] text-xs uppercase tracking-[0.4em] font-semibold mb-6" style="font-family: 'Open Sans', sans-serif;">Functional Fitness · Ages 50–82 · Denver, CO</p>
-          <h1 id="hero-heading" class="font-source text-6xl md:text-7xl font-semibold text-white leading-tight mb-6">
-            Move better.<br/>Live fully.<br/><em>Age on your<br/>own terms.</em>
-          </h1>
-          <p class="text-[#D4E8C8] text-lg leading-relaxed mb-10 max-w-lg">{coach.tagline}</p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#booking" class="bg-white hover:bg-[#F0EDE4] text-[#2D3A27] px-8 py-4 rounded-lg font-semibold text-base transition-all hover:shadow-lg text-center">
-              Free Movement Assessment
-            </a>
-            <a href="#programs" class="border-2 border-white/50 hover:border-white text-white px-8 py-4 rounded-lg font-semibold text-base transition-all text-center">
-              Explore Programs
-            </a>
-          </div>
-        </div>
+<main id="main-content">
+
+<!-- ───── HERO (credibility-forward layout) ───── -->
+<section style="position:relative;overflow:hidden;" aria-labelledby="hero-h1">
+  <!-- Two-column: content left, hero photo right -->
+  <div style="max-width:1152px;margin:0 auto;padding:6rem 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1;">
+    <div>
+      <!-- Doctor credibility bar -->
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;">
+        <span class="credential-badge">PhD Kinesiology</span>
+        <span class="credential-badge">NSCA-CSCS</span>
+        <span class="credential-badge">ACE Senior Fitness</span>
+        <span class="credential-badge">20 Years Experience</span>
       </div>
-    </section>
+      <h1 id="hero-h1" class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:600;color:#2D3A27;line-height:1.2;margin-bottom:1.25rem;">
+        Move better.<br/>Live fully.<br/><em>Age on your<br/>own terms.</em>
+      </h1>
+      <p style="color:#5A6B52;font-size:1.0625rem;line-height:1.8;max-width:30rem;margin-bottom:2rem;">{coach.tagline}</p>
 
-    <!-- Trust bar -->
-    <div class="bg-[#2D3A27] py-5">
-      <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 text-[#B8CCA8] text-sm">
-        <span>PhD Kinesiology</span>
-        <span>NSCA-CSCS</span>
-        <span>ACE Senior Fitness Specialist</span>
-        <span>NASM Corrective Exercise</span>
-        <span>20 Years Experience</span>
+      <!-- Key differentiators -->
+      <div style="display:flex;flex-direction:column;gap:.875rem;margin-bottom:2.5rem;">
+        {[
+          { icon:'🔬', text:'Evidence-based programming backed by 20 years of clinical and coaching research' },
+          { icon:'🦵', text:'Specializing in pain-free movement, balance & mobility for adults aged 50–82' },
+          { icon:'🏥', text:'Works directly with your physicians and physical therapists on your care team' },
+        ].map(item => (
+          <div style="display:flex;align-items:flex-start;gap:.875rem;">
+            <span style="font-size:1.25rem;flex-shrink:0;margin-top:.125rem;">{item.icon}</span>
+            <p style="font-size:.9rem;color:#3D4A35;line-height:1.6;">{item.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#booking" style="background:#4A6741;color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:1rem 2rem;border-radius:.625rem;display:inline-block;">Book Free Assessment</a>
+        <a href="#science" style="border:1.5px solid #8A9A7E;color:#2D3A27;font-weight:500;font-size:1rem;text-decoration:none;padding:1rem 2rem;border-radius:.625rem;display:inline-block;">The Science →</a>
       </div>
     </div>
 
-    <!-- Transformations -->
-    <section id="transformations" class="bg-[#EEF2E8] py-24" aria-labelledby="trans-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-[#6B8F5E] text-xs uppercase tracking-[0.4em] font-semibold mb-3">Client Stories</p>
-          <h2 id="trans-heading" class="font-source text-5xl font-semibold text-[#2D3A27]">
-            What becomes possible<br/><em>when you train for longevity</em>
-          </h2>
-          <p class="text-[#5A6B52] mt-4 max-w-xl mx-auto">These aren't dramatic before-and-afters. They're stories of people who reclaimed their lives.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          {coach.transformations.map(t => (
-            <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#D4C9B0]">
-              <div class="grid grid-cols-2">
-                <div class="relative">
-                  <img src={t.beforeImg} alt={`${t.name} before working with Dr. Hayes`} class="w-full h-52 object-cover object-top" />
-                  <span class="absolute top-3 left-3 bg-[#8A9A7E]/90 text-white text-xs font-semibold px-2 py-1 rounded">Before</span>
-                </div>
-                <div class="relative">
-                  <img src={t.afterImg} alt={`${t.name} after training with Dr. Hayes`} class="w-full h-52 object-cover object-top" />
-                  <span class="absolute top-3 right-3 bg-[#4A6741] text-white text-xs font-semibold px-2 py-1 rounded">After</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <p class="font-source text-xl font-semibold text-[#2D3A27]">{t.name}</p>
-                <p class="text-[#4A6741] font-semibold text-sm mt-1">{t.result}</p>
-                <p class="text-[#5A6B52] text-sm mt-3 italic">"{t.quote}"</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Programs -->
-    <section id="programs" class="bg-[#F7F5EF] py-24" aria-labelledby="programs-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-[#6B8F5E] text-xs uppercase tracking-[0.4em] font-semibold mb-3">Programs</p>
-          <h2 id="programs-heading" class="font-source text-5xl font-semibold text-[#2D3A27]">
-            Science-backed programming<br/><em>for every stage of life</em>
-          </h2>
-          <p class="text-[#5A6B52] mt-4 max-w-xl mx-auto">Each program begins with a comprehensive movement assessment. No guesswork — just a plan built around you.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          {coach.programs.map((prog, i) => (
-            <div class={`rounded-2xl p-8 border ${i === 1 ? 'bg-[#4A6741] border-[#4A6741]' : 'bg-white border-[#D4C9B0]'}`}>
-              <div class="text-4xl mb-5" aria-hidden="true">{prog.icon}</div>
-              <h3 class={`font-source text-2xl font-semibold mb-3 ${i === 1 ? 'text-white' : 'text-[#2D3A27]'}`}>{prog.name}</h3>
-              <p class={`text-sm leading-relaxed mb-6 ${i === 1 ? 'text-[#C8D9B8]' : 'text-[#5A6B52]'}`}>{prog.description}</p>
-              <ul class="space-y-2.5">
-                {prog.features.map(f => (
-                  <li class={`flex items-start gap-2.5 text-sm ${i === 1 ? 'text-[#D8EAC8]' : 'text-[#4A6741]'}`}>
-                    <span class={`font-bold mt-0.5 ${i === 1 ? 'text-[#B8D4A4]' : 'text-[#6B8F5E]'}`} aria-hidden="true">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
+    <!-- Photo + stats column -->
+    <div>
+      <div style="position:relative;">
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80"
+          alt="Active older adult exercising confidently with energy and strength" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:1.5rem;display:block;" />
+        <!-- Stats pill overlay -->
+        <div style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:rgba(247,245,239,.95);backdrop-filter:blur(8px);border:1px solid #D4C9B0;border-radius:1rem;padding:1.25rem 2rem;display:flex;gap:2rem;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.1);">
+          {coach.achievements.map(a => (
+            <div style="text-align:center;">
+              <p class="serif" style="font-size:1.5rem;font-weight:700;color:#2D3A27;">{a.value}</p>
+              <p style="font-size:.65rem;color:#6B8F5E;text-transform:uppercase;letter-spacing:.05em;margin-top:.125rem;">{a.label}</p>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Pricing -->
-    <section id="pricing" class="bg-[#EEF2E8] py-24" aria-labelledby="pricing-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-[#6B8F5E] text-xs uppercase tracking-[0.4em] font-semibold mb-3">Investment</p>
-          <h2 id="pricing-heading" class="font-source text-5xl font-semibold text-[#2D3A27]">Choose your program</h2>
-          <p class="text-[#5A6B52] mt-4">Every plan starts with a free movement assessment. No contracts, cancel anytime.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {coach.pricing.map(tier => (
-            <div class={`relative rounded-2xl p-8 border ${tier.popular ? 'bg-[#2D3A27] border-[#2D3A27]' : 'bg-white border-[#D4C9B0]'}`}>
-              {tier.popular && (
-                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#8AB87A] text-[#1A2815] text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full">Most Popular</span>
-              )}
-              <p class={`text-sm font-semibold uppercase tracking-widest ${tier.popular ? 'text-[#8AB87A]' : 'text-[#6B8F5E]'}`}>{tier.name}</p>
-              <p class={`font-source text-5xl font-semibold mt-2 ${tier.popular ? 'text-white' : 'text-[#2D3A27]'}`}>
-                ${tier.price}<span class={`text-lg font-normal ${tier.popular ? 'text-[#8AB87A]' : 'text-[#8A9A7E]'}`}>/mo</span>
-              </p>
-              <ul class="my-7 space-y-3">
-                {tier.features.map(f => (
-                  <li class={`flex items-start gap-2.5 text-sm ${tier.popular ? 'text-[#C8D9B8]' : 'text-[#4A6741]'}`}>
-                    <span class={`font-bold mt-0.5 ${tier.popular ? 'text-[#8AB87A]' : 'text-[#6B8F5E]'}`} aria-hidden="true">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a href="#booking" class={`block text-center py-3 rounded-lg font-semibold transition-colors ${tier.popular ? 'bg-[#8AB87A] hover:bg-[#9ECB8A] text-[#1A2815]' : 'border border-[#8A9A7E] hover:border-[#4A6741] text-[#2D3A27]'}`}>
-                Get Started
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+<!-- ───── TRUST BAR ───── -->
+<div style="background:#2D3A27;padding:.875rem 0;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;color:#B8CCA8;font-size:.8125rem;">
+    <span>PhD Kinesiology · University of Colorado</span>
+    <span>NSCA-CSCS Certified</span>
+    <span>NASM Corrective Exercise Specialist</span>
+    <span>ACE Senior Fitness Specialist</span>
+    <span>Titleist Performance Institute (TPI)</span>
+  </div>
+</div>
 
-    <!-- Coach Bio -->
-    <section id="coach" class="bg-[#F7F5EF] py-24" aria-labelledby="coach-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <div class="order-2 md:order-1">
-            <p class="text-[#6B8F5E] text-xs uppercase tracking-[0.4em] font-semibold mb-3">Your Coach</p>
-            <h2 id="coach-heading" class="font-source text-5xl font-semibold text-[#2D3A27] mb-2">{coach.name}</h2>
-            <p class="text-[#4A6741] font-semibold text-lg mb-8">{coach.title}</p>
-            <p class="text-[#2D3A27] text-lg leading-relaxed mb-4">{coach.bio}</p>
-            <p class="text-[#5A6B52] leading-relaxed mb-8">{coach.bioExtended}</p>
-            <div class="flex flex-wrap gap-2 mb-8">
-              {coach.certifications.map(cert => (
-                <span class="bg-[#EEF2E8] text-[#3D5635] text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#C4D4B8]">{cert}</span>
-              ))}
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              {coach.achievements.map(a => (
-                <div class="bg-[#EEF2E8] rounded-xl p-5 border border-[#C4D4B8]">
-                  <p class="font-source text-3xl font-semibold text-[#2D3A27]">{a.value}</p>
-                  <p class="text-[#5A6B52] text-xs mt-1">{a.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div class="order-1 md:order-2 relative">
-            <img
-              src={coach.photo}
-              alt={`${coach.name}, ${coach.title} — founder of ${coach.gym}`}
-              class="w-full aspect-[3/4] object-cover rounded-2xl"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="bg-[#EEF2E8] py-24" aria-labelledby="testimonials-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-[#6B8F5E] text-xs uppercase tracking-[0.4em] font-semibold mb-3">Hear From Our Clients</p>
-          <h2 id="testimonials-heading" class="font-source text-5xl font-semibold text-[#2D3A27]">Lives transformed, not just bodies</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          {coach.testimonials.map(t => (
-            <blockquote class="bg-white rounded-2xl p-8 border border-[#D4C9B0] shadow-sm">
-              <p class="text-[#4A6741] font-source font-semibold text-2xl mb-4">{t.result}</p>
-              <p class="text-[#3D4A35] leading-relaxed mb-6 text-sm">{t.text}</p>
-              <footer>
-                <cite class="not-italic font-source font-semibold text-[#2D3A27] text-lg">{t.name}</cite>
-                <p class="text-[#6B8F5E] text-xs mt-0.5">{t.details}</p>
-              </footer>
-            </blockquote>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Free Intro CTA -->
-    <section class="bg-[#2D3A27] py-28 text-center" aria-labelledby="cta-heading">
-      <div class="max-w-2xl mx-auto px-6">
-        <p class="text-[#8AB87A] text-xs uppercase tracking-[0.4em] font-semibold mb-6">No Risk</p>
-        <h2 id="cta-heading" class="font-source text-5xl md:text-6xl font-semibold text-white mb-6">
-          A free movement assessment.<br/><em>No commitment required.</em>
+<!-- ───── THE SCIENCE SECTION ───── -->
+<section id="science" style="background:#EEF2E8;padding:6rem 0;" aria-labelledby="science-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+      <div>
+        <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Evidence-Based</p>
+        <h2 id="science-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;line-height:1.25;margin-bottom:1.5rem;">
+          The science of<br/><em>aging powerfully</em>
         </h2>
-        <p class="text-[#B8CCA8] text-xl mb-10">Discover exactly where you are and where you could be. Dr. Hayes will build your roadmap personally.</p>
-        <a href="#booking" class="inline-block bg-[#8AB87A] hover:bg-[#9ECB8A] text-[#1A2815] px-12 py-5 rounded-lg font-bold text-lg transition-all hover:shadow-2xl hover:scale-105">
-          Book My Free Assessment
-        </a>
-      </div>
-    </section>
-
-    <!-- Location & Hours -->
-    <section id="location" class="bg-[#F7F5EF] py-24" aria-labelledby="location-heading">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16">
-          <div>
-            <p class="text-[#6B8F5E] text-xs uppercase tracking-[0.4em] font-semibold mb-3">Find Us</p>
-            <h2 id="location-heading" class="font-source text-4xl font-semibold text-[#2D3A27] mb-8">Location &amp; Hours</h2>
-            <address class="not-italic text-[#5A6B52] mb-8 text-sm space-y-2">
-              <p class="font-source text-xl font-semibold text-[#2D3A27]">{coach.gym}</p>
-              <p class="mt-2">{coach.address.street}</p>
-              <p>{coach.address.city}</p>
-              <p class="mt-3"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} class="text-[#4A6741] hover:text-[#2D3A27] transition-colors">{coach.phone}</a></p>
-              <p><a href={`mailto:${coach.email}`} class="text-[#4A6741] hover:text-[#2D3A27] transition-colors">{coach.email}</a></p>
-            </address>
-            <h3 class="font-source font-semibold text-[#2D3A27] text-xl mb-4">Session Times</h3>
-            <table class="w-full text-sm" aria-label="Training session times">
-              <tbody>
-                {coach.hours.map(h => (
-                  <tr class="border-b border-[#D4C9B0]">
-                    <td class="py-3 text-[#2D3A27] font-medium">{h.day}</td>
-                    <td class="py-3 text-right text-[#5A6B52]">{h.hours}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=600&q=80"
-              alt="Senior clients training in the Longevity Athletics studio"
-              class="w-full aspect-video object-cover rounded-2xl mb-4"
-            />
-            <div class="bg-[#EEF2E8] rounded-xl p-6 border border-[#C4D4B8]">
-              <p class="font-source font-semibold text-[#2D3A27]">Purposefully designed for 50+</p>
-              <p class="text-[#5A6B52] text-sm mt-2">Every piece of equipment, every floor surface, and every protocol at Longevity Athletics is chosen with older adults in mind — safety, effectiveness, and joy of movement.</p>
+        <p style="color:#3D4A35;line-height:1.8;margin-bottom:1rem;">Contrary to popular belief, the body responds to progressive strength training at every age. Adults over 50 who engage in structured resistance training show measurable improvements in bone density, muscle mass, balance, and metabolic health — often within 8–12 weeks.</p>
+        <p style="color:#5A6B52;line-height:1.8;margin-bottom:2rem;">Dr. Hayes's programming is built directly on this research. Every exercise is selected for its therapeutic and functional benefit, not just its aesthetic result.</p>
+        <div style="display:flex;flex-direction:column;gap:.875rem;">
+          {[
+            'Sarcopenia (age-related muscle loss) is preventable and reversible through progressive training',
+            'Resistance training reduces fall risk by up to 34% in adults over 65',
+            'Strength training improves insulin sensitivity, bone density, and cognitive function',
+            'Adults 50+ respond to training at comparable rates to younger adults — the key is appropriate programming',
+          ].map(fact => (
+            <div style="display:flex;align-items:flex-start;gap:.875rem;background:#fff;border-radius:.75rem;padding:1rem 1.25rem;border:1px solid #C4D4B8;">
+              <span style="color:#4A6741;font-weight:700;flex-shrink:0;margin-top:.125rem;">✓</span>
+              <p style="font-size:.875rem;color:#3D4A35;line-height:1.6;">{fact}</p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </section>
-
-    <!-- Booking Form -->
-    <section id="booking" class="bg-[#EEF2E8] py-24" aria-labelledby="booking-heading">
-      <div class="max-w-2xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <p class="text-[#6B8F5E] text-xs uppercase tracking-[0.4em] font-semibold mb-3">Get Started</p>
-          <h2 id="booking-heading" class="font-source text-5xl font-semibold text-[#2D3A27]">Book your free assessment</h2>
-          <p class="text-[#5A6B52] mt-4">Dr. Hayes will personally review your intake and contact you within 48 hours.</p>
+      <div>
+        <!-- Research stats -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem;">
+          {[
+            { stat:'34%', label:'Fall risk reduction with strength training' },
+            { stat:'8–12', label:'Weeks to measurable strength gains at any age' },
+            { stat:'3×', label:'Improvement in balance with targeted mobility work' },
+            { stat:'40%', label:'Reduction in chronic joint pain in Dr. Hayes\'s clients' },
+          ].map(s => (
+            <div style="background:#fff;border-radius:1.25rem;padding:1.75rem;border:1px solid #C4D4B8;text-align:center;">
+              <p class="serif" style="font-size:2.5rem;font-weight:700;color:#4A6741;">{s.stat}</p>
+              <p style="font-size:.8rem;color:#5A6B52;line-height:1.5;margin-top:.5rem;">{s.label}</p>
+            </div>
+          ))}
         </div>
-        <form class="space-y-5 bg-white rounded-2xl p-8 shadow-sm border border-[#D4C9B0]" aria-label="Free assessment booking form" novalidate>
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="v4-name" class="block text-[#2D3A27] text-sm font-semibold mb-2">Full Name <span class="text-red-500" aria-label="required">*</span></label>
-              <input type="text" id="v4-name" name="name" required autocomplete="name" placeholder="Your name"
-                class="w-full border border-[#C4D4B8] text-[#2D3A27] px-4 py-3 rounded-lg focus:border-[#4A6741] focus:ring-2 focus:ring-[#EEF2E8] focus:outline-none transition-all placeholder:text-[#B8CCA8] text-sm" />
-            </div>
-            <div>
-              <label for="v4-email" class="block text-[#2D3A27] text-sm font-semibold mb-2">Email <span class="text-red-500" aria-label="required">*</span></label>
-              <input type="email" id="v4-email" name="email" required autocomplete="email" placeholder="you@example.com"
-                class="w-full border border-[#C4D4B8] text-[#2D3A27] px-4 py-3 rounded-lg focus:border-[#4A6741] focus:ring-2 focus:ring-[#EEF2E8] focus:outline-none transition-all placeholder:text-[#B8CCA8] text-sm" />
-            </div>
-          </div>
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="v4-phone" class="block text-[#2D3A27] text-sm font-semibold mb-2">Phone</label>
-              <input type="tel" id="v4-phone" name="phone" autocomplete="tel" placeholder="(720) 555-0000"
-                class="w-full border border-[#C4D4B8] text-[#2D3A27] px-4 py-3 rounded-lg focus:border-[#4A6741] focus:ring-2 focus:ring-[#EEF2E8] focus:outline-none transition-all placeholder:text-[#B8CCA8] text-sm" />
-            </div>
-            <div>
-              <label for="v4-age" class="block text-[#2D3A27] text-sm font-semibold mb-2">Age Range <span class="text-red-500" aria-label="required">*</span></label>
-              <select id="v4-age" name="age" required
-                class="w-full border border-[#C4D4B8] text-[#2D3A27] px-4 py-3 rounded-lg focus:border-[#4A6741] focus:ring-2 focus:ring-[#EEF2E8] focus:outline-none transition-all text-sm bg-white">
-                <option value="">Select age range</option>
-                <option value="50-59">50–59</option>
-                <option value="60-69">60–69</option>
-                <option value="70-79">70–79</option>
-                <option value="80+">80+</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label for="v4-goal" class="block text-[#2D3A27] text-sm font-semibold mb-2">Primary Goal <span class="text-red-500" aria-label="required">*</span></label>
-            <select id="v4-goal" name="goal" required
-              class="w-full border border-[#C4D4B8] text-[#2D3A27] px-4 py-3 rounded-lg focus:border-[#4A6741] focus:ring-2 focus:ring-[#EEF2E8] focus:outline-none transition-all text-sm bg-white">
-              <option value="">Select a goal</option>
-              <option value="pain-free">Move pain-free</option>
-              <option value="strength">Build strength</option>
-              <option value="balance">Improve balance &amp; stability</option>
-              <option value="cardiovascular">Heart health &amp; endurance</option>
-              <option value="weight">Healthy weight management</option>
-              <option value="longevity">Optimize longevity</option>
-            </select>
-          </div>
-          <div>
-            <label for="v4-conditions" class="block text-[#2D3A27] text-sm font-semibold mb-2">Current health conditions or injuries</label>
-            <textarea id="v4-conditions" name="conditions" rows="3" placeholder="Please share any relevant medical history, pain areas, or recent injuries so Dr. Hayes can personalize your assessment..."
-              class="w-full border border-[#C4D4B8] text-[#2D3A27] px-4 py-3 rounded-lg focus:border-[#4A6741] focus:ring-2 focus:ring-[#EEF2E8] focus:outline-none transition-all placeholder:text-[#B8CCA8] resize-none text-sm"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-[#4A6741] hover:bg-[#3D5635] text-white py-4 rounded-lg font-bold text-lg transition-all hover:shadow-lg" style="font-family: 'Open Sans', sans-serif;">
-            Book My Free Assessment
-          </button>
-          <p class="text-center text-[#8A9A7E] text-xs">Dr. Hayes personally reviews every submission. Response within 48 hours.</p>
-        </form>
+        <img src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=600&q=80"
+          alt="Senior clients doing balance and mobility exercises at Longevity Athletics" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:1.25rem;display:block;" />
       </div>
-    </section>
-  </main>
-
-  <footer class="bg-[#2D3A27] py-12">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <p class="font-source text-white text-xl font-semibold">{coach.gym}</p>
-      <p class="text-[#6B8F5E] text-xs mt-2">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
-      <p class="text-[#3D5635] text-xs mt-2"><a href="/" class="hover:text-[#6B8F5E] transition-colors">← All Templates</a></p>
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- ───── TRANSFORMATIONS ───── -->
+<section id="transformations" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="trans-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Client Journeys</p>
+      <h2 id="trans-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;">Lives transformed,<br/><em>not just bodies</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      {coach.transformations.map(t => (
+        <article style="background:#fff;border-radius:1.25rem;overflow:hidden;border:1px solid #D4C9B0;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+          <div style="display:grid;grid-template-columns:1fr 1fr;">
+            <div style="position:relative;">
+              <img src={t.beforeImg} alt={`${t.name} — before working with Dr. Hayes`} style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
+              <span style="position:absolute;top:.5rem;left:.5rem;background:rgba(74,103,65,.85);color:#fff;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.25rem;">Before</span>
+            </div>
+            <div style="position:relative;">
+              <img src={t.afterImg} alt={`${t.name} — after training with Dr. Hayes`} style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
+              <span style="position:absolute;top:.5rem;right:.5rem;background:#4A6741;color:#fff;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.25rem;">After</span>
+            </div>
+          </div>
+          <div style="padding:1.5rem;">
+            <p class="serif" style="font-size:1.1rem;font-weight:600;color:#2D3A27;">{t.name}</p>
+            <p style="color:#4A6741;font-weight:600;font-size:.875rem;margin:.25rem 0;">{t.result}</p>
+            <p style="color:#6B8F5E;font-size:.8125rem;font-style:italic;line-height:1.6;">"{t.quote}"</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── PROGRAMS ───── -->
+<section id="programs" style="background:#EEF2E8;padding:6rem 0;" aria-labelledby="programs-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Programs</p>
+      <h2 id="programs-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;margin-bottom:.75rem;">Science-backed programming<br/><em>for every stage</em></h2>
+      <p style="color:#5A6B52;max-width:36rem;margin:0 auto;line-height:1.7;">Every program begins with a comprehensive movement assessment. The plan is built around you — not a template.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      {coach.programs.map((prog, i) => (
+        <div style={`border-radius:1.25rem;padding:2.5rem;border:1px solid ${i===1?'#4A6741':'#D4C9B0'};background:${i===1?'#4A6741':'#fff'};box-shadow:${i===1?'0 12px 40px rgba(74,103,65,.2)':'0 2px 8px rgba(0,0,0,.04)'};position:relative;`}>
+          {i===1 && <span style="position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:#8AB87A;color:#1A2815;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;">Most Popular</span>}
+          <div style="font-size:2.25rem;margin-bottom:1.25rem;">{prog.icon}</div>
+          <h3 class="serif" style={`font-size:1.375rem;font-weight:600;color:${i===1?'#fff':'#2D3A27'};margin-bottom:.625rem;`}>{prog.name}</h3>
+          <p style={`font-size:.875rem;line-height:1.7;margin-bottom:1.5rem;color:${i===1?'#C8D9B8':'#5A6B52'};`}>{prog.description}</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;">
+            {prog.features.map(f => (
+              <li style={`display:flex;align-items:flex-start;gap:.625rem;font-size:.8125rem;color:${i===1?'#D8EAC8':'#3D4A35'};`}>
+                <span style={`font-weight:700;margin-top:1px;flex-shrink:0;color:${i===1?'#8AB87A':'#4A6741'};`}>✓</span>{f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── PRICING ───── -->
+<section id="pricing" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="pricing-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Pricing</p>
+      <h2 id="pricing-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;">Investment in your longevity</h2>
+      <p style="color:#5A6B52;margin-top:.75rem;">Every plan begins with a free movement assessment. No contracts.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:56rem;margin:0 auto;">
+      {coach.pricing.map(tier => (
+        <div style={`position:relative;border-radius:1.25rem;padding:2.5rem;border:${tier.popular?'2px solid #4A6741':'1px solid #D4C9B0'};background:${tier.popular?'#2D3A27':'#fff'};box-shadow:${tier.popular?'0 16px 48px rgba(45,58,39,.25)':'0 2px 8px rgba(0,0,0,.04)'};`}>
+          {tier.popular && <span style="position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:#8AB87A;color:#1A2815;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;">Most Popular</span>}
+          <p style={`font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.625rem;color:${tier.popular?'#8AB87A':'#6B8F5E'};`}>{tier.name}</p>
+          <p class="serif" style={`font-size:3.5rem;font-weight:700;line-height:1;color:${tier.popular?'#fff':'#2D3A27'};`}>${tier.price}<span style={`font-size:1.125rem;font-weight:400;color:${tier.popular?'#8AB87A':'#8A9A7E'};`}>/mo</span></p>
+          <div style={`border-top:1px solid ${tier.popular?'rgba(255,255,255,.12)':'#D4C9B0'};margin:1.5rem 0;padding-top:1.5rem;`}>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;">
+              {tier.features.map(f => (
+                <li style={`display:flex;align-items:flex-start;gap:.625rem;font-size:.8125rem;color:${tier.popular?'#C8D9B8':'#3D4A35'};`}>
+                  <span style={`font-weight:700;flex-shrink:0;margin-top:1px;color:${tier.popular?'#8AB87A':'#4A6741'};`}>✓</span>{f}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <a href="#booking" style={`display:block;text-align:center;padding:.875rem;border-radius:.625rem;font-weight:600;font-size:.9375rem;text-decoration:none;background:${tier.popular?'#8AB87A':'#EEF2E8'};color:${tier.popular?'#1A2815':'#2D3A27'};border:${tier.popular?'none':'1px solid #C4D4B8'};`}>
+            Get Started
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── COACH BIO (authority-forward) ───── -->
+<section id="coach" style="background:#EEF2E8;padding:6rem 0;" aria-labelledby="coach-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="background:#fff;border-radius:1.5rem;border:1px solid #D4C9B0;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06);">
+      <div style="display:grid;grid-template-columns:auto 1fr;">
+        <img src={coach.photo} alt={`${coach.name} — ${coach.title}`} style="width:320px;height:100%;object-fit:cover;display:block;" />
+        <div style="padding:3rem;">
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+            {coach.certifications.map(c => (
+              <span class="credential-badge">{c}</span>
+            ))}
+          </div>
+          <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.625rem;">Your Coach</p>
+          <h2 id="coach-h2" class="serif" style="font-size:2.75rem;font-weight:700;color:#2D3A27;margin-bottom:.25rem;">{coach.name}</h2>
+          <p style="color:#4A6741;font-weight:600;font-size:1.0625rem;margin-bottom:1.75rem;">{coach.title}</p>
+          <p style="color:#2D3A27;font-size:1.0625rem;line-height:1.8;margin-bottom:1rem;">{coach.bio}</p>
+          <p style="color:#5A6B52;line-height:1.8;margin-bottom:2rem;">{coach.bioExtended}</p>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
+            {coach.achievements.map(a => (
+              <div style="background:#EEF2E8;border-radius:.875rem;padding:1rem;text-align:center;border:1px solid #C4D4B8;">
+                <p class="serif" style="font-size:1.5rem;font-weight:700;color:#2D3A27;">{a.value}</p>
+                <p style="font-size:.65rem;color:#6B8F5E;text-transform:uppercase;letter-spacing:.05em;margin-top:.25rem;">{a.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── TESTIMONIALS ───── -->
+<section id="testimonials" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="test-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Client Voices</p>
+      <h2 id="test-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;">More than fitness.<br/><em>Freedom of movement.</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      {coach.testimonials.map(t => (
+        <blockquote style="background:#fff;border-radius:1.25rem;padding:2rem;border:1px solid #D4C9B0;box-shadow:0 2px 8px rgba(0,0,0,.04);margin:0;border-top:3px solid #4A6741;">
+          <p class="serif" style="font-size:1.625rem;font-weight:600;color:#4A6741;margin-bottom:1rem;">{t.result}</p>
+          <p style="color:#3D4A35;font-size:.875rem;line-height:1.8;margin-bottom:1.5rem;">{t.text}</p>
+          <footer style="border-top:1px solid #EEF2E8;padding-top:1rem;">
+            <cite class="serif" style="font-size:1.1rem;font-weight:600;color:#2D3A27;font-style:normal;">{t.name}</cite>
+            <p style="color:#8A9A7E;font-size:.75rem;margin-top:.25rem;">{t.details}</p>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── CTA ───── -->
+<section style="background:#2D3A27;padding:5rem 0;text-align:center;" aria-labelledby="cta-h2">
+  <div style="max-width:40rem;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.7rem;letter-spacing:.35em;color:#8AB87A;text-transform:uppercase;font-weight:700;margin-bottom:1.25rem;">No Commitment Required</p>
+    <h2 id="cta-h2" class="serif" style="font-size:3rem;font-weight:600;color:#fff;line-height:1.25;margin-bottom:1rem;">
+      A free movement assessment.<br/><em>Your roadmap to longevity.</em>
+    </h2>
+    <p style="color:#B8CCA8;font-size:1.0625rem;line-height:1.7;margin-bottom:2.5rem;">Dr. Hayes will assess your movement patterns, discuss your history, and build a personalized roadmap — at no cost, with no pressure to join.</p>
+    <a href="#booking" style="background:#8AB87A;color:#1A2815;font-weight:700;font-size:1.0625rem;text-decoration:none;padding:1rem 3rem;border-radius:.625rem;display:inline-block;">Book My Free Assessment</a>
+  </div>
+</section>
+
+<!-- ───── LOCATION ───── -->
+<section id="location" style="background:#EEF2E8;padding:6rem 0;" aria-labelledby="loc-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+    <div>
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Find Us</p>
+      <h2 id="loc-h2" class="serif" style="font-size:2.25rem;font-weight:600;color:#2D3A27;margin-bottom:2rem;">Location &amp; Hours</h2>
+      <address style="font-style:normal;color:#5A6B52;margin-bottom:2rem;line-height:2.2;">
+        <p class="serif" style="font-size:1.25rem;font-weight:600;color:#2D3A27;">{coach.gym}</p>
+        <p>{coach.address.street}</p>
+        <p>{coach.address.city}</p>
+        <p style="margin-top:.625rem;"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#4A6741;text-decoration:none;font-weight:600;">{coach.phone}</a></p>
+        <p><a href={`mailto:${coach.email}`} style="color:#4A6741;text-decoration:none;font-weight:600;">{coach.email}</a></p>
+      </address>
+      <h3 class="serif" style="font-size:1.25rem;font-weight:600;color:#2D3A27;margin-bottom:1rem;">Session Hours</h3>
+      <table style="width:100%;border-collapse:collapse;" aria-label="Session hours">
+        <tbody>
+          {coach.hours.map(h => (
+            <tr style="border-bottom:1px solid #D4C9B0;">
+              <td style="padding:.875rem 0;color:#2D3A27;font-weight:600;">{h.day}</td>
+              <td style="padding:.875rem 0;text-align:right;color:#4A6741;font-weight:600;">{h.hours}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=600&q=80"
+        alt="Mature clients doing balance work in a serene fitness studio" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.25rem;display:block;margin-bottom:1rem;" />
+      <div style="background:#fff;border-radius:1rem;padding:1.5rem;border:1px solid #D4C9B0;">
+        <p class="serif" style="font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Designed for 50+</p>
+        <p style="color:#5A6B52;font-size:.875rem;line-height:1.6;">Every aspect of our facility — from floor surfaces to equipment selection — is thoughtfully designed for the safety, comfort, and performance of older adults.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── BOOKING ───── -->
+<section id="booking" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="book-h2">
+  <div style="max-width:40rem;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Get Started</p>
+      <h2 id="book-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;margin-bottom:.75rem;">Book your free assessment</h2>
+      <p style="color:#5A6B52;">Dr. Hayes personally reviews every submission and responds within 48 hours.</p>
+    </div>
+    <form style="background:#fff;border-radius:1.25rem;padding:2.5rem;border:1px solid #D4C9B0;display:flex;flex-direction:column;gap:1.25rem;box-shadow:0 4px 24px rgba(0,0,0,.06);" aria-label="Free movement assessment booking" novalidate>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+        <div>
+          <label for="v4-name" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Full Name <span aria-label="required" style="color:#ef4444;">*</span></label>
+          <input type="text" id="v4-name" name="name" required autocomplete="name" placeholder="Your name"
+            style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Open Sans',sans-serif;" />
+        </div>
+        <div>
+          <label for="v4-email" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Email <span aria-label="required" style="color:#ef4444;">*</span></label>
+          <input type="email" id="v4-email" name="email" required autocomplete="email" placeholder="you@example.com"
+            style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Open Sans',sans-serif;" />
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+        <div>
+          <label for="v4-phone" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Phone</label>
+          <input type="tel" id="v4-phone" name="phone" autocomplete="tel" placeholder="(720) 555-0000"
+            style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Open Sans',sans-serif;" />
+        </div>
+        <div>
+          <label for="v4-age" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Age Range <span aria-label="required" style="color:#ef4444;">*</span></label>
+          <select id="v4-age" name="age" required style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;background:#fff;box-sizing:border-box;font-family:'Open Sans',sans-serif;">
+            <option value="">Select age range</option>
+            <option value="50-59">50–59</option>
+            <option value="60-69">60–69</option>
+            <option value="70-79">70–79</option>
+            <option value="80+">80+</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="v4-goal" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Primary Goal <span aria-label="required" style="color:#ef4444;">*</span></label>
+        <select id="v4-goal" name="goal" required style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;background:#fff;box-sizing:border-box;font-family:'Open Sans',sans-serif;">
+          <option value="">Select a goal</option>
+          <option value="pain-free">Move pain-free</option>
+          <option value="strength">Build functional strength</option>
+          <option value="balance">Balance &amp; fall prevention</option>
+          <option value="cardio">Heart health &amp; endurance</option>
+          <option value="weight">Healthy weight management</option>
+          <option value="longevity">Optimize longevity</option>
+        </select>
+      </div>
+      <div>
+        <label for="v4-conditions" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Health history &amp; current concerns</label>
+        <textarea id="v4-conditions" name="conditions" rows="4" placeholder="Please share any medical history, current medications, areas of pain or limited mobility, or recent injuries. This helps Dr. Hayes personalize your assessment."
+          style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;resize:none;box-sizing:border-box;font-family:'Open Sans',sans-serif;"></textarea>
+      </div>
+      <button type="submit" style="background:#4A6741;color:#fff;font-weight:700;font-size:1.0625rem;border:none;padding:1rem;border-radius:.625rem;cursor:pointer;width:100%;font-family:'Open Sans',sans-serif;">
+        Book My Free Assessment
+      </button>
+      <p style="text-align:center;color:#8A9A7E;font-size:.75rem;">Dr. Hayes reviews every submission personally. Response within 48 hours.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#2D3A27;padding:3rem 1.5rem;text-align:center;">
+  <p class="serif" style="color:#fff;font-size:1.25rem;font-weight:600;">{coach.gym}</p>
+  <p style="color:#6B8F5E;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym} · Denver, CO · All rights reserved.</p>
+  <p style="margin-top:.5rem;"><a href="/" style="color:#6B8F5E;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
+</footer>
+
 </BaseLayout>
