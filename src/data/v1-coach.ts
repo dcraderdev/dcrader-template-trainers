@@ -1,0 +1,108 @@
+export const coach = {
+  name: "Marcus Steel",
+  gym: "Steel Athletics",
+  title: "Elite Strength & Performance Coach",
+  tagline: "Precision programming. Relentless coaching. Results that speak for themselves. Join 600+ athletes who've shattered their limits.",
+  photo: "https://images.unsplash.com/photo-1597347316205-36f6c451902a?auto=format&fit=crop&w=800&q=80",
+  phone: "(619) 555-0147",
+  email: "marcus@steelathletics.com",
+  certifications: ["NSCA-CSCS", "NASM-CPT", "USAW L2", "FMS Level 2"],
+  bio: "12 years forging elite athletes and first-time lifters alike. Marcus Steel built his reputation on one principle: your body is capable of far more than you believe.",
+  bioExtended: "A former national-level powerlifter, Marcus transitioned to coaching after a 2012 championship win. His data-driven, periodized methodology has produced 40+ competitive champions and thousands of everyday transformations. He treats every client as an individual — no templates, no wasted sets.",
+  stats: { clients: 600, years: 12, lbsLost: 18 },
+  achievements: [
+    { value: "600+", label: "Clients Transformed" },
+    { value: "12", label: "Years Coaching" },
+    { value: "40+", label: "Competition Champions" },
+    { value: "98%", label: "Client Retention" },
+  ],
+  address: { street: "1847 Industrial Way, Suite 200", city: "San Diego, CA 92101" },
+  hours: [
+    { day: "Monday – Friday", hours: "5:00 AM – 9:00 PM" },
+    { day: "Saturday", hours: "7:00 AM – 5:00 PM" },
+    { day: "Sunday", hours: "8:00 AM – 2:00 PM" },
+  ],
+  programs: [
+    {
+      icon: "🏋️",
+      name: "Strength Foundation",
+      description: "Evidence-based progressive overload built from your current baseline. No guesswork — just measurable results.",
+      features: ["Custom periodized program", "Weekly check-ins", "Form video review", "Nutrition framework", "Training app access"],
+    },
+    {
+      icon: "⚡",
+      name: "Elite Performance",
+      description: "Competition-ready programming for athletes who demand peak output. Sport-specific power and strength cycles.",
+      features: ["Competition prep cycles", "Daily coach access", "Bi-weekly video calls", "Advanced nutrition coaching", "Mental performance protocols"],
+    },
+    {
+      icon: "🔥",
+      name: "Body Recomposition",
+      description: "Build muscle and incinerate fat simultaneously with metabolic conditioning and progressive resistance protocols.",
+      features: ["Dual-focus programming", "Macro coaching & tracking", "Conditioning protocols", "Weekly progress reviews", "Supplement guidance"],
+    },
+  ],
+  pricing: [
+    {
+      name: "Warrior",
+      price: 197,
+      popular: false,
+      features: ["Custom monthly program", "Weekly check-ins", "Form video review", "Nutrition guide", "App access"],
+    },
+    {
+      name: "Champion",
+      price: 347,
+      popular: true,
+      features: ["Custom weekly program", "Daily messaging access", "Bi-weekly video calls", "Full nutrition coaching", "Competition prep support", "< 2 hr response time"],
+    },
+    {
+      name: "Legend",
+      price: 597,
+      popular: false,
+      features: ["Fully bespoke programming", "Unlimited coach access", "Weekly video calls", "Advanced nutrition tracking", "Mental performance coaching", "In-person sessions included", "24/7 priority support"],
+    },
+  ],
+  transformations: [
+    {
+      name: "Jake M.",
+      result: "Lost 52 lbs in 4 months",
+      quote: "I went from 240 to 188. First time I've felt genuinely strong in years.",
+      beforeImg: "https://images.unsplash.com/photo-1571019613913-574d37af5c65?auto=format&fit=crop&w=400&q=80",
+      afterImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Derek T.",
+      result: "Gained 18 lbs lean muscle — 6 months",
+      quote: "Bench went from 185 to 295. Marcus flat-out changes lives.",
+      beforeImg: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=400&q=80",
+      afterImg: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Chris W.",
+      result: "Deadlift: 315 → 510 lbs",
+      quote: "Competed in my first powerlifting meet at 45 years old. Absolutely surreal.",
+      beforeImg: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80",
+      afterImg: "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=400&q=80",
+    },
+  ],
+  testimonials: [
+    {
+      name: "Mike R.",
+      details: "National competitor · 8 months",
+      result: "−58 lbs",
+      text: "I tried every trainer in San Diego. Marcus is the only one whose programming is surgical — every set has a purpose. I competed at nationals after 8 months. If you want mediocrity, look elsewhere.",
+    },
+    {
+      name: "Ryan B.",
+      details: "Elite Performance · 14 months",
+      result: "+22 lbs lean",
+      text: "He tracks everything — sleep, stress, training load. I gained 22 lbs of lean muscle while my body fat actually dropped. The data-driven approach is unlike anything I've ever experienced.",
+    },
+    {
+      name: "Kevin D.",
+      details: "Strength Foundation · 6 months",
+      result: "400 lb squat",
+      text: "Walked in barely squatting 135 with terrible form. Six months later I hit 400 lbs at a local meet. Marcus rebuilt my entire movement pattern from scratch. Worth every single cent.",
+    },
+  ],
+};

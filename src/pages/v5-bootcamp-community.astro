@@ -1,0 +1,369 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { coach } from '../data/v5-coach';
+---
+<BaseLayout
+  title={`${coach.gym} | Miami's Premier Fitness Community`}
+  description={coach.tagline}
+  fontUrl="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+  themeColor="#ea580c"
+  ogImage="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80"
+>
+  <!-- Nav -->
+  <nav aria-label="Main navigation" class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-orange-900/30">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="#main-content" class="font-oswald text-2xl font-bold tracking-widest text-white uppercase">{coach.gym}</a>
+      <div class="hidden md:flex items-center gap-8" style="font-family: 'Open Sans', sans-serif;">
+        <a href="#programs" class="text-gray-400 hover:text-white text-sm transition-colors">Programs</a>
+        <a href="#pricing" class="text-gray-400 hover:text-white text-sm transition-colors">Pricing</a>
+        <a href="#coach" class="text-gray-400 hover:text-white text-sm transition-colors">Coach Tony</a>
+        <a href="#booking" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 text-sm font-bold uppercase tracking-wide transition-colors rounded-sm">Join Free</a>
+      </div>
+      <a href="#booking" class="md:hidden bg-orange-500 text-white px-4 py-2 text-sm font-bold uppercase rounded-sm">Join</a>
+    </div>
+  </nav>
+
+  <main id="main-content" style="font-family: 'Open Sans', sans-serif;">
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-end pb-24 overflow-hidden" aria-labelledby="hero-heading">
+      <img
+        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1920&q=80"
+        alt="High-energy outdoor bootcamp group training session at sunrise"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
+      <!-- Orange diagonal accent -->
+      <div class="absolute bottom-0 left-0 right-0 h-2 bg-orange-500"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <p class="text-orange-500 font-oswald text-sm font-bold uppercase tracking-[0.5em] mb-4">Miami's #1 Bootcamp · Join the Tribe</p>
+        <h1 id="hero-heading" class="font-oswald text-7xl sm:text-8xl md:text-[9rem] font-bold text-white uppercase leading-none mb-6">
+          NO<br/>EXCUSES.<br/><span class="text-orange-500">ALL</span><br/>RESULTS.
+        </h1>
+        <p class="text-gray-300 text-lg max-w-xl mb-10 leading-relaxed">
+          {coach.tagline}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-16">
+          <a href="#booking" class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 font-oswald font-bold text-2xl uppercase tracking-wider transition-all hover:scale-105 text-center">
+            Join Free — First Class
+          </a>
+          <a href="#programs" class="border-2 border-white/30 hover:border-orange-500 text-white px-10 py-4 font-oswald font-bold text-2xl uppercase tracking-wider transition-all text-center">
+            See Programs
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-10">
+          {coach.achievements.map(a => (
+            <div>
+              <p class="font-oswald text-5xl font-bold text-white leading-none">{a.value}</p>
+              <p class="text-gray-400 text-xs uppercase tracking-widest mt-1">{a.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Energy bar -->
+    <div class="bg-orange-500 py-4">
+      <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 text-white text-sm font-bold uppercase tracking-wider font-oswald">
+        <span>700+ Members</span>
+        <span>8 Sessions/Week</span>
+        <span>NASM Certified</span>
+        <span>CrossFit L2</span>
+        <span>95% Renewal Rate</span>
+        <span>First Class FREE</span>
+      </div>
+    </div>
+
+    <!-- Transformations -->
+    <section id="transformations" class="bg-gray-950 py-24" aria-labelledby="trans-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-3 font-bold">Tribe Results</p>
+          <h2 id="trans-heading" class="font-oswald text-5xl md:text-6xl font-bold text-white uppercase">
+            The proof is in<br/><span class="text-orange-500">the people</span>
+          </h2>
+          <p class="text-gray-400 mt-4 max-w-xl mx-auto">When the tribe holds you accountable, quitting becomes impossible.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {coach.transformations.map(t => (
+            <article class="bg-gray-900 overflow-hidden border border-gray-800">
+              <div class="grid grid-cols-2 relative">
+                <div class="relative">
+                  <img src={t.beforeImg} alt={`${t.name} before joining Blaze Bootcamp`} class="w-full h-56 object-cover object-top" />
+                  <span class="absolute top-2 left-2 bg-gray-800/90 text-gray-300 text-xs font-bold uppercase px-2 py-1">Before</span>
+                </div>
+                <div class="relative">
+                  <img src={t.afterImg} alt={`${t.name} after joining Blaze Bootcamp`} class="w-full h-56 object-cover object-top" />
+                  <span class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-bold uppercase px-2 py-1">After</span>
+                </div>
+                <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 flex items-center pointer-events-none z-10">
+                  <div class="w-8 h-8 bg-orange-500 flex items-center justify-center text-white font-oswald font-bold text-xs">VS</div>
+                </div>
+              </div>
+              <div class="p-5 border-t border-orange-500/30">
+                <p class="font-oswald text-xl font-bold text-white uppercase">{t.name}</p>
+                <p class="text-orange-500 font-bold text-sm mt-1">{t.result}</p>
+                <p class="text-gray-400 text-sm mt-2 italic">"{t.quote}"</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="bg-black py-24" aria-labelledby="programs-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-3 font-bold">Training Programs</p>
+          <h2 id="programs-heading" class="font-oswald text-5xl md:text-6xl font-bold text-white uppercase">Pick your level.<br/><span class="text-orange-500">Push your limits.</span></h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {coach.programs.map((prog, i) => (
+            <div class={`p-8 border ${i === 1 ? 'border-orange-500 bg-orange-950/20' : 'border-gray-800 bg-gray-950'}`}>
+              <div class="text-4xl mb-5" aria-hidden="true">{prog.icon}</div>
+              <h3 class={`font-oswald text-3xl font-bold uppercase mb-3 ${i === 1 ? 'text-orange-400' : 'text-white'}`}>{prog.name}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">{prog.description}</p>
+              <ul class="space-y-2.5">
+                {prog.features.map(f => (
+                  <li class="flex items-start gap-2 text-sm text-gray-300">
+                    <span class="text-orange-500 font-bold mt-0.5" aria-hidden="true">▶</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="bg-gray-950 py-24" aria-labelledby="pricing-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-3 font-bold">Membership</p>
+          <h2 id="pricing-heading" class="font-oswald text-5xl font-bold text-white uppercase">Join the tribe</h2>
+          <p class="text-gray-400 mt-4">First class always free. Month-to-month. No contracts.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {coach.pricing.map(tier => (
+            <div class={`relative p-8 border ${tier.popular ? 'border-orange-500 bg-orange-950/25' : 'border-gray-800 bg-gray-900'}`}>
+              {tier.popular && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-oswald font-bold uppercase tracking-wider px-4 py-1">Most Popular</span>
+              )}
+              <p class="font-oswald text-xl font-bold text-gray-400 uppercase tracking-widest">{tier.name}</p>
+              <p class="font-oswald text-6xl font-bold text-white mt-2 leading-none">
+                ${tier.price}<span class="text-2xl text-gray-500 font-normal">/mo</span>
+              </p>
+              <ul class="my-8 space-y-3">
+                {tier.features.map(f => (
+                  <li class="flex items-start gap-3 text-gray-300 text-sm">
+                    <span class="text-orange-500 font-bold mt-0.5" aria-hidden="true">✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="#booking" class={`block text-center py-3 font-oswald font-bold text-xl uppercase tracking-wider transition-colors ${tier.popular ? 'bg-orange-500 hover:bg-orange-600 text-white' : 'border border-gray-600 hover:border-orange-500 text-white'}`}>
+                Get Started
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Coach Bio -->
+    <section id="coach" class="bg-black py-24" aria-labelledby="coach-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="relative">
+            <img
+              src={coach.photo}
+              alt={`${coach.name}, ${coach.title} at ${coach.gym}`}
+              class="w-full aspect-[3/4] object-cover"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+              <div class="flex flex-wrap gap-2">
+                {coach.certifications.map(cert => (
+                  <span class="bg-orange-500 text-white text-xs font-bold uppercase tracking-wide px-3 py-1">{cert}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-3 font-bold">Coach Tony</p>
+            <h2 id="coach-heading" class="font-oswald text-6xl font-bold text-white uppercase leading-tight">{coach.name}</h2>
+            <p class="font-oswald text-2xl text-orange-500 uppercase tracking-wider mt-1 mb-8">{coach.title}</p>
+            <p class="text-gray-200 text-lg leading-relaxed mb-4">{coach.bio}</p>
+            <p class="text-gray-400 leading-relaxed mb-10">{coach.bioExtended}</p>
+            <div class="grid grid-cols-2 gap-6">
+              {coach.achievements.map(a => (
+                <div class="border-l-2 border-orange-500 pl-4">
+                  <p class="font-oswald text-3xl font-bold text-white">{a.value}</p>
+                  <p class="text-gray-400 text-xs uppercase tracking-widest mt-1">{a.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="bg-gray-950 py-24" aria-labelledby="testimonials-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-3 font-bold">The Tribe Speaks</p>
+          <h2 id="testimonials-heading" class="font-oswald text-5xl font-bold text-white uppercase">700+ reasons to show up</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {coach.testimonials.map(t => (
+            <blockquote class="bg-gray-900 p-8 border border-gray-800 border-t-2 border-t-orange-500">
+              <p class="font-oswald text-3xl font-bold text-orange-500 mb-4">{t.result}</p>
+              <p class="text-gray-300 leading-relaxed mb-6 text-sm">{t.text}</p>
+              <footer>
+                <cite class="not-italic font-oswald text-xl font-bold text-white">{t.name}</cite>
+                <p class="text-gray-500 text-xs mt-0.5">{t.details}</p>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Class CTA -->
+    <section class="relative py-32 overflow-hidden" aria-labelledby="cta-heading">
+      <img
+        src="https://images.unsplash.com/photo-1571019612933-e45a4eef4f08?auto=format&fit=crop&w=1920&q=80"
+        alt="Blaze Bootcamp members celebrating after a group workout"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/75"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-1 bg-orange-500"></div>
+      <div class="relative z-10 text-center max-w-3xl mx-auto px-6">
+        <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-4 font-bold">Zero Risk</p>
+        <h2 id="cta-heading" class="font-oswald text-6xl md:text-8xl font-bold text-white uppercase leading-none mb-6">
+          FIRST CLASS.<br/><span class="text-orange-500">FREE.</span><br/>FOREVER.
+        </h2>
+        <p class="text-gray-300 text-xl mb-10">Show up once. If you don't love it, you pay nothing and we part as friends.</p>
+        <a href="#booking" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-14 py-5 font-oswald font-bold text-2xl uppercase tracking-widest transition-all hover:scale-105">
+          Claim My Free Class
+        </a>
+      </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section id="location" class="bg-black py-24" aria-labelledby="location-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16">
+          <div>
+            <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-3 font-bold">Find Us</p>
+            <h2 id="location-heading" class="font-oswald text-4xl font-bold text-white uppercase mb-8">Location &amp; Sessions</h2>
+            <address class="not-italic text-gray-300 mb-8 text-sm leading-loose">
+              <p class="font-oswald text-2xl font-bold text-white uppercase">{coach.gym}</p>
+              <p class="mt-2">{coach.address.street}</p>
+              <p>{coach.address.city}</p>
+              <p class="mt-3"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} class="text-orange-500 hover:text-orange-400 transition-colors">{coach.phone}</a></p>
+              <p><a href={`mailto:${coach.email}`} class="text-orange-500 hover:text-orange-400 transition-colors">{coach.email}</a></p>
+            </address>
+            <h3 class="font-oswald text-xl font-bold text-white uppercase mb-4">Session Schedule</h3>
+            <table class="w-full text-sm" aria-label="Session schedule">
+              <tbody>
+                {coach.hours.map(h => (
+                  <tr class="border-b border-gray-800">
+                    <td class="py-3 text-gray-200 font-semibold">{h.day}</td>
+                    <td class="py-3 text-right text-orange-400 font-oswald font-bold">{h.hours}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div class="relative min-h-64 bg-gray-900 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
+              alt="Blaze Bootcamp group running together along Bayfront Park"
+              class="w-full h-full object-cover opacity-50"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center p-8">
+                <p class="font-oswald text-3xl font-bold text-white uppercase mb-2">Bayfront Park</p>
+                <p class="text-orange-400 font-oswald font-bold uppercase tracking-wider">Miami, FL</p>
+                <p class="text-gray-300 text-sm mt-3">Outdoor + indoor sessions.<br/>All weather. No excuses.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="bg-gray-950 py-24" aria-labelledby="booking-heading">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p class="text-orange-500 font-oswald text-sm uppercase tracking-[0.5em] mb-3 font-bold">Let's Go</p>
+          <h2 id="booking-heading" class="font-oswald text-5xl font-bold text-white uppercase">Reserve your free class</h2>
+          <p class="text-gray-400 mt-4">Takes 60 seconds. Tony will confirm within a few hours.</p>
+        </div>
+        <form class="space-y-6" aria-label="Free class booking form" novalidate>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="v5-name" class="block text-gray-300 text-xs uppercase tracking-widest mb-2 font-bold">Full Name <span aria-label="required" class="text-orange-500">*</span></label>
+              <input type="text" id="v5-name" name="name" required autocomplete="name" placeholder="Your name"
+                class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 focus:border-orange-500 focus:outline-none transition-colors placeholder:text-gray-600 text-sm" />
+            </div>
+            <div>
+              <label for="v5-email" class="block text-gray-300 text-xs uppercase tracking-widest mb-2 font-bold">Email <span aria-label="required" class="text-orange-500">*</span></label>
+              <input type="email" id="v5-email" name="email" required autocomplete="email" placeholder="you@example.com"
+                class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 focus:border-orange-500 focus:outline-none transition-colors placeholder:text-gray-600 text-sm" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="v5-phone" class="block text-gray-300 text-xs uppercase tracking-widest mb-2 font-bold">Phone</label>
+              <input type="tel" id="v5-phone" name="phone" autocomplete="tel" placeholder="(305) 555-0000"
+                class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 focus:border-orange-500 focus:outline-none transition-colors placeholder:text-gray-600 text-sm" />
+            </div>
+            <div>
+              <label for="v5-session" class="block text-gray-300 text-xs uppercase tracking-widest mb-2 font-bold">Preferred Session <span aria-label="required" class="text-orange-500">*</span></label>
+              <select id="v5-session" name="session" required
+                class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 focus:border-orange-500 focus:outline-none transition-colors text-sm">
+                <option value="">Choose a time</option>
+                <option value="mon-530am">Monday 5:30 AM</option>
+                <option value="mon-630am">Monday 6:30 AM</option>
+                <option value="wed-530am">Wednesday 5:30 AM</option>
+                <option value="fri-600pm">Friday 6:00 PM</option>
+                <option value="sat-700am">Saturday 7:00 AM (Community WOD)</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="v5-fitness" class="block text-gray-300 text-xs uppercase tracking-widest mb-2 font-bold">Fitness Level</label>
+            <select id="v5-fitness" name="fitness"
+              class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 focus:border-orange-500 focus:outline-none transition-colors text-sm">
+              <option value="beginner">Just getting started</option>
+              <option value="intermediate">Some training experience</option>
+              <option value="advanced">Experienced athlete</option>
+            </select>
+          </div>
+          <div>
+            <label for="v5-message" class="block text-gray-300 text-xs uppercase tracking-widest mb-2 font-bold">What's your goal?</label>
+            <textarea id="v5-message" name="message" rows="3" placeholder="Lose weight, build strength, find community, compete — tell us what drives you..."
+              class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 focus:border-orange-500 focus:outline-none transition-colors placeholder:text-gray-600 resize-none text-sm"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white py-5 font-oswald font-bold text-2xl uppercase tracking-widest transition-all hover:scale-[1.02]">
+            Reserve My Free Class
+          </button>
+          <p class="text-center text-gray-600 text-xs">First class is 100% free. No card required. Show up ready to work.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-black border-t border-orange-900/30 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="font-oswald text-2xl font-bold text-white uppercase tracking-widest">{coach.gym}</p>
+      <p class="text-gray-600 text-xs mt-3 uppercase tracking-widest">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
+      <p class="text-gray-800 text-xs mt-2"><a href="/" class="hover:text-gray-500 transition-colors">← All Templates</a></p>
+    </div>
+  </footer>
+</BaseLayout>

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const variants = [
+  {
+    slug: 'v1-strength-elite',
+    label: 'v1 — Strength Elite',
+    sub: 'Marcus Steel · Steel Athletics · San Diego',
+    palette: ['#000000', '#CC0000', '#1A1A1A'],
+    description: 'Black / Red · Bodybuilding intensity · Barlow Condensed',
+    thumb: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    slug: 'v2-online-coach',
+    label: 'v2 — Online Coach',
+    sub: 'Sarah Chen · Chen Performance Coaching · Remote',
+    palette: ['#FFFFFF', '#84CC16', '#F9FAFB'],
+    description: 'White / Lime · Clean SaaS pro · DM Sans',
+    thumb: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    slug: 'v3-female-empowerment',
+    label: 'v3 — Female Empowerment',
+    sub: 'Amanda Torres · Fierce & Free Fitness · Austin',
+    palette: ['#FDF5F0', '#BE185D', '#FFF1F2'],
+    description: 'Dusty Rose / Cream · Empowerment brand · Playfair Display',
+    thumb: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    slug: 'v4-functional-aging',
+    label: 'v4 — Functional Aging',
+    sub: 'Dr. Robert Hayes · Longevity Athletics · Denver',
+    palette: ['#F7F5EF', '#4A6741', '#EEF2E8'],
+    description: 'Warm Sage / Cream · Longevity science · Source Serif 4',
+    thumb: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    slug: 'v5-bootcamp-community',
+    label: 'v5 — Bootcamp Community',
+    sub: 'Tony Rivera · Blaze Bootcamp · Miami',
+    palette: ['#000000', '#EA580C', '#111111'],
+    description: 'Orange / Black · High-energy tribe · Oswald',
+    thumb: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80',
+  },
+];
+---
+<BaseLayout
+  title="Personal Trainer Templates | 5 Fitness Landing Page Variants"
+  description="5 production-ready fitness landing page templates for personal trainers, gyms, and coaches. Astro + Tailwind."
+  themeColor="#000000"
+>
+  <main id="main-content" class="min-h-screen bg-gray-950 text-white" style="font-family: system-ui, -apple-system, sans-serif;">
+    <!-- Header -->
+    <header class="border-b border-gray-800 py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-gray-500 text-xs uppercase tracking-widest mb-3">dcrader-template-trainers</p>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          Fitness Landing Page Templates
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl">
+          5 production-ready variants for personal trainers, gyms, and fitness coaches.
+          Built with Astro + Tailwind. All sections included — hero, programs, pricing, coach bio, testimonials, booking form.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-full">Astro 4</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-full">Tailwind CSS 3</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-full">Static Output</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-full">Vercel Ready</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-full">Accessible (axe-core 0)</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-full">TypeScript Data Files</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sections legend -->
+    <div class="border-b border-gray-800 py-6 px-6">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-gray-500 text-xs uppercase tracking-widest mb-3">Sections in every variant</p>
+        <div class="flex flex-wrap gap-2 text-xs text-gray-400">
+          {['Hero + stats', 'Transformation gallery', 'Training programs', 'Pricing tiers (3)', 'Coach bio + certs', 'Testimonials', 'Free intro CTA', 'Location + hours', 'Booking form'].map(s => (
+            <span class="bg-gray-900 border border-gray-700 px-3 py-1 rounded">{s}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Variants grid -->
+    <section class="py-16 px-6" aria-label="Template variants">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {variants.map(v => (
+            <article class="group bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition-all hover:shadow-2xl">
+              <a href={`/${v.slug}`} class="block">
+                <div class="relative overflow-hidden aspect-video">
+                  <img
+                    src={v.thumb}
+                    alt={`${v.label} template preview`}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+                    <div class="flex gap-1.5">
+                      {v.palette.map(color => (
+                        <div class="w-5 h-5 rounded-full border-2 border-white/30" style={`background-color: ${color};`} aria-hidden="true"></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <p class="text-white font-bold text-lg group-hover:text-blue-400 transition-colors">{v.label}</p>
+                  <p class="text-gray-400 text-sm mt-1">{v.sub}</p>
+                  <p class="text-gray-600 text-xs mt-3">{v.description}</p>
+                  <div class="mt-5 flex items-center gap-2 text-blue-400 text-sm font-semibold">
+                    <span>View template</span>
+                    <span aria-hidden="true">→</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-gray-800 py-8 px-6 text-center">
+      <p class="text-gray-600 text-sm">Built by <a href="https://github.com/dcraderdev" class="text-gray-400 hover:text-white transition-colors">dcraderdev</a></p>
+    </footer>
+  </main>
+</BaseLayout>

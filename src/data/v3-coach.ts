@@ -1,0 +1,108 @@
+export const coach = {
+  name: "Amanda Torres",
+  gym: "Fierce & Free Fitness",
+  title: "Women's Strength & Wellness Coach",
+  tagline: "You don't need to shrink. You need to grow — stronger, more confident, and unapologetically yourself.",
+  photo: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80",
+  phone: "(512) 555-0381",
+  email: "amanda@fierceandfree.com",
+  certifications: ["NASM-WFS", "NSCA-CSCS", "ACE Women's Health Coach", "Pre/Postnatal Certified"],
+  bio: "Amanda Torres built Fierce & Free on a simple belief: women deserve programming designed for their bodies, their hormones, and their goals — not scaled-down versions of men's programs.",
+  bioExtended: "After years of coaching at big-box gyms and watching women get handed generic plans, Amanda went deep into women's physiology, hormone health, and strength science. Her approach blends evidence-based progressive overload with cycle syncing, stress management, and community support. Over 450 women have found their strength here.",
+  stats: { clients: 450, years: 9, community: 1200 },
+  achievements: [
+    { value: "450+", label: "Women Coached" },
+    { value: "9", label: "Years Experience" },
+    { value: "1,200+", label: "Community Members" },
+    { value: "100%", label: "Women-Specific Methods" },
+  ],
+  address: { street: "3204 South Lamar Blvd", city: "Austin, TX 78704" },
+  hours: [
+    { day: "Monday – Friday", hours: "6:00 AM – 7:30 PM" },
+    { day: "Saturday", hours: "8:00 AM – 1:00 PM" },
+    { day: "Sunday", hours: "Closed" },
+  ],
+  programs: [
+    {
+      icon: "🌸",
+      name: "Foundation Strength",
+      description: "Start from zero and build an unshakeable foundation. Designed for women new to lifting or returning after a long break.",
+      features: ["3-day full-body program", "Movement tutorials", "Nutrition fundamentals", "Hormone-aware scheduling", "Private community access"],
+    },
+    {
+      icon: "💪",
+      name: "Strong & Sculpted",
+      description: "Progressive hypertrophy programming to build the strong, defined physique you want — on your terms.",
+      features: ["5-day program", "Cycle-synced training", "Nutrition periodization", "Weekly 1-on-1 check-ins", "Body composition tracking", "Community challenges"],
+    },
+    {
+      icon: "✨",
+      name: "Elite Transformation",
+      description: "Full-service coaching for women ready to make a complete lifestyle upgrade. Mind, body, and mindset transformation.",
+      features: ["Personalized programming", "Weekly video calls", "Hormone & gut health guidance", "Advanced nutrition coaching", "Mindset & confidence work", "Unlimited community support"],
+    },
+  ],
+  pricing: [
+    {
+      name: "Bloom",
+      price: 127,
+      popular: false,
+      features: ["3-day program", "Nutrition guide", "Community access", "Bi-weekly check-ins", "Video library"],
+    },
+    {
+      name: "Thrive",
+      price: 247,
+      popular: true,
+      features: ["5-day custom program", "Cycle-synced training", "Nutrition coaching", "Weekly check-ins", "1-on-1 messaging", "Community challenges"],
+    },
+    {
+      name: "Flourish",
+      price: 447,
+      popular: false,
+      features: ["Fully personalized plan", "Weekly video calls", "Hormone health guidance", "Advanced nutrition", "Mindset coaching", "Priority access", "Group retreat invitation"],
+    },
+  ],
+  transformations: [
+    {
+      name: "Lauren B.",
+      result: "Lost 38 lbs + gained confidence",
+      quote: "I stopped hiding at the gym. Now I own every single rep.",
+      beforeImg: "https://images.unsplash.com/photo-1571019613913-574d37af5c65?auto=format&fit=crop&w=400&q=80",
+      afterImg: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Maya R.",
+      result: "Postpartum — back stronger than before",
+      quote: "Amanda's pre/postnatal knowledge gave me back my body and my identity.",
+      beforeImg: "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=400&q=80",
+      afterImg: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Sofia C.",
+      result: "First pull-up at age 42",
+      quote: "I was told I was 'too old to start lifting.' Amanda proved every one of them wrong.",
+      beforeImg: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80",
+      afterImg: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80",
+    },
+  ],
+  testimonials: [
+    {
+      name: "Rachel M.",
+      details: "Strong & Sculpted · 7 months",
+      result: "−32 lbs",
+      text: "Every program I'd tried before treated me like a smaller version of a man. Amanda's cycle-synced approach changed everything. I stopped dreading my period and started using it strategically. My results accelerated once I worked with my body instead of against it.",
+    },
+    {
+      name: "Jade T.",
+      details: "Elite Transformation · 5 months",
+      result: "New PR every week",
+      text: "The community Amanda has built is unlike anything I've found in fitness. We celebrate each other's wins loudly. I came for the programming and stayed for the sisterhood. I've made lifelong friendships here.",
+    },
+    {
+      name: "Claire H.",
+      details: "Foundation Strength · 6 months",
+      result: "Squat 45→145 lbs",
+      text: "I was intimidated by the weight room my entire life. Amanda made it feel like home. Her teaching style is patient, encouraging, and technical all at once. I went from barely squatting the bar to 145 lbs. I cry every time I think about it.",
+    },
+  ],
+};

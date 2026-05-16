@@ -1,0 +1,358 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { coach } from '../data/v2-coach';
+---
+<BaseLayout
+  title={`${coach.name} | Online Fitness & Nutrition Coach`}
+  description={coach.tagline}
+  fontUrl="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+  themeColor="#4ade80"
+  ogImage="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80"
+>
+  <!-- Nav -->
+  <nav aria-label="Main navigation" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="#main-content" class="font-dm text-xl font-bold text-gray-900">{coach.gym}</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#programs" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors font-dm">Programs</a>
+        <a href="#pricing" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors font-dm">Pricing</a>
+        <a href="#coach" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors font-dm">About</a>
+        <a href="#booking" class="bg-lime-500 hover:bg-lime-600 text-white px-5 py-2 rounded-full text-sm font-semibold font-dm transition-colors">Start Free Trial</a>
+      </div>
+      <a href="#booking" class="md:hidden bg-lime-500 text-white px-4 py-2 rounded-full text-sm font-semibold font-dm">Start</a>
+    </div>
+  </nav>
+
+  <main id="main-content" class="font-dm">
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-white" aria-labelledby="hero-heading">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1920&q=80"
+          alt="Woman exercising at home with a laptop and fitness equipment"
+          class="w-full h-full object-cover opacity-10"
+        />
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40">
+        <div class="max-w-3xl">
+          <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">🌍 Train from anywhere in the world</span>
+          <h1 id="hero-heading" class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
+            Science-backed coaching.<br/><span class="text-lime-600">Delivered to your phone.</span>
+          </h1>
+          <p class="text-gray-500 text-xl leading-relaxed mb-10 max-w-xl">{coach.tagline}</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-16">
+            <a href="#booking" class="bg-lime-500 hover:bg-lime-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:shadow-lg hover:shadow-lime-200 text-center">
+              Start Your Free Week
+            </a>
+            <a href="#programs" class="border border-gray-200 hover:border-gray-400 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg transition-colors text-center">
+              See How It Works
+            </a>
+          </div>
+          <!-- Stats row -->
+          <div class="flex flex-wrap gap-10 pt-10 border-t border-gray-100">
+            {coach.achievements.map(a => (
+              <div>
+                <p class="text-4xl font-bold text-gray-900">{a.value}</p>
+                <p class="text-gray-400 text-sm mt-1">{a.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof bar -->
+    <div class="bg-lime-500 py-4">
+      <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-6 text-white text-sm font-medium">
+        <span>✓ 800+ clients coached</span>
+        <span>✓ 30+ countries</span>
+        <span>✓ 90% average adherence</span>
+        <span>✓ 4.9★ average rating</span>
+        <span>✓ NASM · Precision Nutrition L2 certified</span>
+      </div>
+    </div>
+
+    <!-- Transformations -->
+    <section id="transformations" class="bg-gray-50 py-24" aria-labelledby="trans-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Real Results</span>
+          <h2 id="trans-heading" class="text-4xl md:text-5xl font-bold text-gray-900">Clients transformed worldwide</h2>
+          <p class="text-gray-500 mt-4 max-w-xl mx-auto">From Tokyo to Toronto — results that travel as far as you do.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {coach.transformations.map(t => (
+            <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+              <div class="grid grid-cols-2">
+                <div class="relative">
+                  <img src={t.beforeImg} alt={`${t.name} before training with ${coach.name}`} class="w-full h-52 object-cover object-top" />
+                  <span class="absolute top-3 left-3 bg-gray-900/80 text-white text-xs font-semibold px-2 py-1 rounded">Before</span>
+                </div>
+                <div class="relative">
+                  <img src={t.afterImg} alt={`${t.name} after training with ${coach.name}`} class="w-full h-52 object-cover object-top" />
+                  <span class="absolute top-3 right-3 bg-lime-500 text-white text-xs font-semibold px-2 py-1 rounded">After</span>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="font-semibold text-gray-900">{t.name}</p>
+                <p class="text-lime-600 font-semibold text-sm mt-0.5">{t.result}</p>
+                <p class="text-gray-500 text-sm mt-2 italic">"{t.quote}"</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="bg-white py-24" aria-labelledby="programs-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Training Programs</span>
+          <h2 id="programs-heading" class="text-4xl md:text-5xl font-bold text-gray-900">Built for your life, not around it</h2>
+          <p class="text-gray-500 mt-4 max-w-xl mx-auto">Every program is individualized. No cookie-cutter templates ever.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {coach.programs.map((prog, i) => (
+            <div class={`rounded-2xl p-8 border ${i === 1 ? 'border-lime-300 bg-lime-50' : 'border-gray-100 bg-gray-50'}`}>
+              <div class="text-4xl mb-5" aria-hidden="true">{prog.icon}</div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">{prog.name}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6">{prog.description}</p>
+              <ul class="space-y-2.5">
+                {prog.features.map(f => (
+                  <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                    <span class="text-lime-500 font-bold mt-0.5" aria-hidden="true">✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="bg-gray-50 py-24" aria-labelledby="pricing-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Pricing</span>
+          <h2 id="pricing-heading" class="text-4xl md:text-5xl font-bold text-gray-900">Invest in yourself</h2>
+          <p class="text-gray-500 mt-4">Cancel anytime. No hidden fees. First week free.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {coach.pricing.map(tier => (
+            <div class={`relative rounded-2xl p-8 ${tier.popular ? 'bg-gray-900 text-white ring-2 ring-lime-400' : 'bg-white border border-gray-100'}`}>
+              {tier.popular && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime-400 text-gray-900 text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full">Most Popular</span>
+              )}
+              <p class={`text-sm font-semibold uppercase tracking-widest ${tier.popular ? 'text-lime-400' : 'text-gray-400'}`}>{tier.name}</p>
+              <p class={`text-5xl font-bold mt-2 ${tier.popular ? 'text-white' : 'text-gray-900'}`}>
+                ${tier.price}<span class={`text-xl font-normal ${tier.popular ? 'text-gray-400' : 'text-gray-400'}`}>/mo</span>
+              </p>
+              <ul class="my-7 space-y-3">
+                {tier.features.map(f => (
+                  <li class={`flex items-start gap-2.5 text-sm ${tier.popular ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <span class="text-lime-500 font-bold mt-0.5" aria-hidden="true">✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="#booking" class={`block text-center py-3 rounded-full font-semibold transition-colors ${tier.popular ? 'bg-lime-400 hover:bg-lime-300 text-gray-900' : 'border border-gray-200 hover:border-gray-400 text-gray-700'}`}>
+                Get Started
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Coach Bio -->
+    <section id="coach" class="bg-white py-24" aria-labelledby="coach-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="order-2 md:order-1">
+            <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">Meet Your Coach</span>
+            <h2 id="coach-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{coach.name}</h2>
+            <p class="text-lime-600 font-semibold text-lg mb-8">{coach.title}</p>
+            <p class="text-gray-600 text-lg leading-relaxed mb-4">{coach.bio}</p>
+            <p class="text-gray-500 leading-relaxed mb-8">{coach.bioExtended}</p>
+            <div class="flex flex-wrap gap-2 mb-8">
+              {coach.certifications.map(cert => (
+                <span class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-full">{cert}</span>
+              ))}
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              {coach.achievements.map(a => (
+                <div class="bg-lime-50 rounded-xl p-4">
+                  <p class="text-3xl font-bold text-gray-900">{a.value}</p>
+                  <p class="text-gray-500 text-xs mt-1">{a.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="order-1 md:order-2 relative">
+            <img
+              src={coach.photo}
+              alt={`${coach.name}, ${coach.title}`}
+              class="w-full aspect-[4/5] object-cover rounded-2xl"
+            />
+            <div class="absolute -bottom-4 -right-4 bg-lime-500 text-white rounded-2xl p-6 shadow-xl">
+              <p class="text-3xl font-bold">4.9★</p>
+              <p class="text-lime-100 text-xs mt-1">Average rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="bg-lime-50 py-24" aria-labelledby="testimonials-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Client Stories</span>
+          <h2 id="testimonials-heading" class="text-4xl md:text-5xl font-bold text-gray-900">What clients are saying</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {coach.testimonials.map(t => (
+            <blockquote class="bg-white rounded-2xl p-8 shadow-sm border border-lime-100">
+              <div class="flex items-center justify-between mb-4">
+                <p class="text-lime-500 text-2xl font-bold">{t.result}</p>
+                <p class="text-yellow-400 text-sm">★★★★★</p>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-6 text-sm">{t.text}</p>
+              <footer>
+                <cite class="not-italic font-semibold text-gray-900">{t.name}</cite>
+                <p class="text-gray-400 text-xs mt-0.5">{t.details}</p>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Intro CTA -->
+    <section class="bg-gray-900 py-28 text-center" aria-labelledby="cta-heading">
+      <div class="max-w-2xl mx-auto px-6">
+        <span class="inline-block bg-lime-400/10 text-lime-400 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">Zero Risk</span>
+        <h2 id="cta-heading" class="text-5xl md:text-6xl font-bold text-white mb-6">
+          Start your <span class="text-lime-400">free week</span> today.
+        </h2>
+        <p class="text-gray-400 text-xl mb-10">No commitment. Cancel anytime. Just show up, and I'll handle the rest.</p>
+        <a href="#booking" class="inline-block bg-lime-500 hover:bg-lime-400 text-white px-12 py-5 rounded-full font-bold text-xl transition-all hover:shadow-2xl hover:shadow-lime-500/25 hover:scale-105">
+          Claim My Free Week
+        </a>
+      </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section id="location" class="bg-white py-24" aria-labelledby="location-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">Contact</span>
+            <h2 id="location-heading" class="text-4xl font-bold text-gray-900 mb-8">Get in touch</h2>
+            <address class="not-italic text-gray-600 mb-8 space-y-3 text-sm">
+              <p class="font-semibold text-gray-900 text-lg">{coach.gym}</p>
+              <p>{coach.address.street}</p>
+              <p>{coach.address.city}</p>
+              <p><a href={`tel:${coach.phone.replace(/\D/g,'')}`} class="text-lime-600 hover:text-lime-700 transition-colors">{coach.phone}</a></p>
+              <p><a href={`mailto:${coach.email}`} class="text-lime-600 hover:text-lime-700 transition-colors">{coach.email}</a></p>
+            </address>
+            <h3 class="font-semibold text-gray-900 mb-4">Availability</h3>
+            <table class="w-full text-sm" aria-label="Coaching availability">
+              <tbody>
+                {coach.hours.map(h => (
+                  <tr class="border-b border-gray-100">
+                    <td class="py-3 text-gray-700 font-medium">{h.day}</td>
+                    <td class="py-3 text-right text-gray-500">{h.hours}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div class="bg-lime-50 rounded-2xl p-10">
+            <img
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80"
+              alt="Client training at home with phone and coaching app"
+              class="w-full aspect-video object-cover rounded-xl mb-6"
+            />
+            <p class="font-semibold text-gray-900">100% Remote Coaching</p>
+            <p class="text-gray-500 text-sm mt-2">Work with Sarah from anywhere — home gym, hotel, or full commercial facility. The program adapts to your equipment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="bg-gray-50 py-24" aria-labelledby="booking-heading">
+      <div class="max-w-2xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Get Started</span>
+          <h2 id="booking-heading" class="text-4xl font-bold text-gray-900">Apply for coaching</h2>
+          <p class="text-gray-500 mt-4">Takes 2 minutes. Sarah reviews every application personally.</p>
+        </div>
+        <form class="space-y-5 bg-white rounded-2xl p-8 shadow-sm border border-gray-100" aria-label="Coaching application form" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="v2-name" class="block text-gray-700 text-sm font-semibold mb-2">Full Name <span class="text-red-400" aria-label="required">*</span></label>
+              <input type="text" id="v2-name" name="name" required autocomplete="name" placeholder="Your name"
+                class="w-full border border-gray-200 text-gray-900 px-4 py-3 rounded-xl focus:border-lime-400 focus:ring-2 focus:ring-lime-100 focus:outline-none transition-all placeholder:text-gray-300 text-sm" />
+            </div>
+            <div>
+              <label for="v2-email" class="block text-gray-700 text-sm font-semibold mb-2">Email <span class="text-red-400" aria-label="required">*</span></label>
+              <input type="email" id="v2-email" name="email" required autocomplete="email" placeholder="you@example.com"
+                class="w-full border border-gray-200 text-gray-900 px-4 py-3 rounded-xl focus:border-lime-400 focus:ring-2 focus:ring-lime-100 focus:outline-none transition-all placeholder:text-gray-300 text-sm" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="v2-phone" class="block text-gray-700 text-sm font-semibold mb-2">Phone</label>
+              <input type="tel" id="v2-phone" name="phone" autocomplete="tel" placeholder="(310) 555-0000"
+                class="w-full border border-gray-200 text-gray-900 px-4 py-3 rounded-xl focus:border-lime-400 focus:ring-2 focus:ring-lime-100 focus:outline-none transition-all placeholder:text-gray-300 text-sm" />
+            </div>
+            <div>
+              <label for="v2-goal" class="block text-gray-700 text-sm font-semibold mb-2">Primary Goal <span class="text-red-400" aria-label="required">*</span></label>
+              <select id="v2-goal" name="goal" required
+                class="w-full border border-gray-200 text-gray-900 px-4 py-3 rounded-xl focus:border-lime-400 focus:ring-2 focus:ring-lime-100 focus:outline-none transition-all text-sm bg-white">
+                <option value="">Select a goal</option>
+                <option value="fat-loss">Lose Body Fat</option>
+                <option value="muscle">Build Muscle</option>
+                <option value="nutrition">Improve Nutrition</option>
+                <option value="performance">Athletic Performance</option>
+                <option value="general">Overall Wellness</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="v2-location" class="block text-gray-700 text-sm font-semibold mb-2">Where do you train?</label>
+            <select id="v2-location" name="location"
+              class="w-full border border-gray-200 text-gray-900 px-4 py-3 rounded-xl focus:border-lime-400 focus:ring-2 focus:ring-lime-100 focus:outline-none transition-all text-sm bg-white">
+              <option value="home">Home gym / bodyweight</option>
+              <option value="commercial">Commercial gym</option>
+              <option value="hotel">Hotel / travel</option>
+              <option value="outdoor">Outdoor / park</option>
+            </select>
+          </div>
+          <div>
+            <label for="v2-message" class="block text-gray-700 text-sm font-semibold mb-2">Tell me about yourself</label>
+            <textarea id="v2-message" name="message" rows="4" placeholder="Your current routine, biggest challenges, what you've tried before..."
+              class="w-full border border-gray-200 text-gray-900 px-4 py-3 rounded-xl focus:border-lime-400 focus:ring-2 focus:ring-lime-100 focus:outline-none transition-all placeholder:text-gray-300 resize-none text-sm"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-lime-500 hover:bg-lime-600 text-white py-4 rounded-xl font-bold text-lg transition-all hover:shadow-lg hover:shadow-lime-200">
+            Apply for My Free Week
+          </button>
+          <p class="text-center text-gray-400 text-xs">Sarah reviews every application. You'll hear back within 24 hours.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-white font-bold text-lg">{coach.gym}</p>
+      <p class="text-gray-500 text-xs mt-2">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
+      <p class="text-gray-700 text-xs mt-2"><a href="/" class="hover:text-gray-400 transition-colors">← All Templates</a></p>
+    </div>
+  </footer>
+</BaseLayout>
