@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "steelathletics.dcrader.dev"
+        }
+      ],
+      "destination": "/v1-strength-elite/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "chenperformance.dcrader.dev"
+        }
+      ],
+      "destination": "/v2-online-coach/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "fierceandfree.dcrader.dev"
+        }
+      ],
+      "destination": "/v3-female-empowerment/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "longevityathletics.dcrader.dev"
+        }
+      ],
+      "destination": "/v4-functional-aging/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "blazebootcamp.dcrader.dev"
+        }
+      ],
+      "destination": "/v5-bootcamp-community/$1"
+    }
+  ]
+}
