@@ -10,7 +10,7 @@ const annualPrices = [122, 247, 414];
   description="Science-backed online coaching delivered to your phone. Train smarter from anywhere. First week free."
   fontUrl="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
   themeColor="#65a30d"
-  ogImage="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80"
+  ogImage="/images/shared/photo-1571019613454-1cb2f99b2d8b-1920.webp"
 >
 
 <style is:inline>
@@ -177,11 +177,11 @@ const annualPrices = [122, 247, 414];
         <article style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:1.25rem;overflow:hidden;">
           <div style="display:grid;grid-template-columns:1fr 1fr;">
             <div style="position:relative;">
-              <img src={t.beforeImg} alt={`${t.name} before — ${coach.name}`} style="width:100%;height:12rem;object-fit:cover;object-position:top;display:block;" />
+              <img loading="lazy" decoding="async" src={t.beforeImg} alt={`${t.name} before — ${coach.name}`} style="width:100%;height:12rem;object-fit:cover;object-position:top;display:block;" />
               <span style="position:absolute;top:.5rem;left:.5rem;background:rgba(17,24,39,.8);color:#d1d5db;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.375rem;">Before</span>
             </div>
             <div style="position:relative;">
-              <img src={t.afterImg} alt={`${t.name} result — ${t.result}`} style="width:100%;height:12rem;object-fit:cover;object-position:top;display:block;" />
+              <img loading="lazy" decoding="async" src={t.afterImg} alt={`${t.name} result — ${t.result}`} style="width:100%;height:12rem;object-fit:cover;object-position:top;display:block;" />
               <span style="position:absolute;top:.5rem;right:.5rem;background:#65a30d;color:#fff;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.375rem;">After</span>
             </div>
           </div>
@@ -268,7 +268,7 @@ const annualPrices = [122, 247, 414];
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="background:#fff;border-radius:2rem;border:1px solid #e5e7eb;padding:3rem;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;">
       <div style="position:relative;width:280px;flex-shrink:0;">
-        <img src={coach.photo} alt={`${coach.name} — ${coach.title}`} style="width:280px;height:340px;object-fit:cover;border-radius:1.25rem;display:block;" />
+        <img loading="lazy" decoding="async" src={coach.photo} alt={`${coach.name} — ${coach.title}`} style="width:280px;height:340px;object-fit:cover;border-radius:1.25rem;display:block;" />
         <div style="position:absolute;-bottom:12px;-right:-12px;bottom:-12px;right:-12px;background:#65a30d;color:#fff;border-radius:1rem;padding:.875rem 1.25rem;box-shadow:0 8px 24px rgba(101,163,13,.4);text-align:center;">
           <p style="font-size:1.5rem;font-weight:700;line-height:1;">4.9★</p>
           <p style="font-size:.65rem;color:#d9f99d;margin-top:.125rem;">Avg. rating</p>
@@ -358,7 +358,7 @@ const annualPrices = [122, 247, 414];
       </table>
     </div>
     <div style="background:#f0fdf4;border-radius:1.5rem;padding:2.5rem;border:1px solid #bbf7d0;">
-      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80"
+      <img loading="lazy" decoding="async" src="/images/shared/photo-1571019613454-1cb2f99b2d8b-1920.webp"
         alt="Client training at home with phone and coaching app" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:1rem;margin-bottom:1.5rem;display:block;" />
       <p style="font-weight:600;color:#111827;margin-bottom:.5rem;">Train from anywhere</p>
       <p style="color:#6b7280;font-size:.875rem;line-height:1.6;">Home gym, hotel, commercial gym — the program adapts to your equipment. Async video reviews mean Sarah coaches your form without scheduling calls.</p>

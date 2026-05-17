@@ -1,0 +1,47 @@
+---
+export interface Props {
+  src: string; // base path, e.g. "/images/shared/photo-1534438327276-14e5300c3a48"
+  alt: string;
+  sizes?: string;
+  widths?: number[];
+  loading?: 'eager' | 'lazy';
+  decoding?: 'async' | 'sync' | 'auto';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  class?: string;
+  style?: string;
+  width?: number | string;
+  height?: number | string;
+}
+const {
+  src,
+  alt,
+  sizes = '100vw',
+  widths = [320, 640, 1024, 1920],
+  loading = 'lazy',
+  decoding = 'async',
+  fetchpriority,
+  class: className,
+  style,
+  width,
+  height,
+} = Astro.props;
+
+const avifSrcset = widths.map((w) => `${src}-${w}.avif ${w}w`).join(', ');
+const webpSrcset = widths.map((w) => `${src}-${w}.webp ${w}w`).join(', ');
+const fallback = `${src}-1024.webp`;
+---
+<picture>
+  <source type="image/avif" srcset={avifSrcset} sizes={sizes} />
+  <source type="image/webp" srcset={webpSrcset} sizes={sizes} />
+  <img
+    src={fallback}
+    alt={alt}
+    loading={loading}
+    decoding={decoding}
+    fetchpriority={fetchpriority}
+    class={className}
+    style={style}
+    width={width}
+    height={height}
+  />
+</picture>

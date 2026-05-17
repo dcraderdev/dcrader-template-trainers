@@ -1,14 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
 import { coach } from '../data/v4-coach';
+const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
 ---
 <BaseLayout
   title="Longevity Athletics — Move Better. Live Fully. Age Powerfully."
   description="Doctor-coached functional fitness for adults 50+. Evidence-based programming for pain-free movement and lasting strength. Denver, CO."
   fontUrl="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Open+Sans:wght@300;400;600;700&display=swap"
   themeColor="#4A6741"
-  ogImage="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80"
+  ogImage="/images/shared/photo-1571019614242-c5c5dee9f50b-1920.webp"
 >
+<Fragment slot="head">
+  <link
+    rel="preload"
+    as="image"
+    fetchpriority="high"
+    type="image/avif"
+    imagesrcset={`${HERO}-320.avif 320w, ${HERO}-640.avif 640w, ${HERO}-1024.avif 1024w`}
+    imagesizes="(min-width: 1024px) 50vw, 100vw"
+  />
+</Fragment>
 
 <style is:inline>
   body { font-family: 'Open Sans', sans-serif; background: #F7F5EF; color: #2D3A27; }
@@ -71,8 +83,16 @@ import { coach } from '../data/v4-coach';
     <!-- Photo + stats column -->
     <div>
       <div style="position:relative;">
-        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80"
-          alt="Active older adult exercising confidently with energy and strength" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:1.5rem;display:block;" />
+        <ResponsiveImage
+          src={HERO}
+          alt="Active older adult exercising confidently with energy and strength"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          widths={[320, 640, 1024]}
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:1.5rem;display:block;"
+        />
         <!-- Stats pill overlay -->
         <div style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:rgba(247,245,239,.95);backdrop-filter:blur(8px);border:1px solid #D4C9B0;border-radius:1rem;padding:1.25rem 2rem;display:flex;gap:2rem;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.1);">
           {coach.achievements.map(a => (
@@ -138,7 +158,7 @@ import { coach } from '../data/v4-coach';
             </div>
           ))}
         </div>
-        <img src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=600&q=80"
+        <img loading="lazy" decoding="async" src="/images/shared/photo-1559582798-678dfc71ccd8-1920.webp"
           alt="Senior clients doing balance and mobility exercises at Longevity Athletics" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:1.25rem;display:block;" />
       </div>
     </div>
@@ -157,11 +177,11 @@ import { coach } from '../data/v4-coach';
         <article style="background:#fff;border-radius:1.25rem;overflow:hidden;border:1px solid #D4C9B0;box-shadow:0 2px 8px rgba(0,0,0,.04);">
           <div style="display:grid;grid-template-columns:1fr 1fr;">
             <div style="position:relative;">
-              <img src={t.beforeImg} alt={`${t.name} — before working with Dr. Hayes`} style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
+              <img loading="lazy" decoding="async" src={t.beforeImg} alt={`${t.name} — before working with Dr. Hayes`} style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
               <span style="position:absolute;top:.5rem;left:.5rem;background:rgba(74,103,65,.85);color:#fff;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.25rem;">Before</span>
             </div>
             <div style="position:relative;">
-              <img src={t.afterImg} alt={`${t.name} — after training with Dr. Hayes`} style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
+              <img loading="lazy" decoding="async" src={t.afterImg} alt={`${t.name} — after training with Dr. Hayes`} style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
               <span style="position:absolute;top:.5rem;right:.5rem;background:#4A6741;color:#fff;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.25rem;">After</span>
             </div>
           </div>
@@ -241,7 +261,7 @@ import { coach } from '../data/v4-coach';
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="background:#fff;border-radius:1.5rem;border:1px solid #D4C9B0;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06);">
       <div style="display:grid;grid-template-columns:auto 1fr;">
-        <img src={coach.photo} alt={`${coach.name} — ${coach.title}`} style="width:320px;height:100%;object-fit:cover;display:block;" />
+        <img loading="lazy" decoding="async" src={coach.photo} alt={`${coach.name} — ${coach.title}`} style="width:320px;height:100%;object-fit:cover;display:block;" />
         <div style="padding:3rem;">
           <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
             {coach.certifications.map(c => (
@@ -327,7 +347,7 @@ import { coach } from '../data/v4-coach';
       </table>
     </div>
     <div>
-      <img src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=600&q=80"
+      <img loading="lazy" decoding="async" src="/images/shared/photo-1559582798-678dfc71ccd8-1920.webp"
         alt="Mature clients doing balance work in a serene fitness studio" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.25rem;display:block;margin-bottom:1rem;" />
       <div style="background:#fff;border-radius:1rem;padding:1.5rem;border:1px solid #D4C9B0;">
         <p class="serif" style="font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Designed for 50+</p>
