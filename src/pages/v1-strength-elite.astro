@@ -79,14 +79,17 @@ const HERO = '/images/shared/photo-1534438327276-14e5300c3a48';
       <a href="#booking" style="background:#dc2626;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.25rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:1rem 2.5rem;display:inline-block;">CLAIM FREE INTAKE SESSION</a>
       <a href="#calc" style="border:2px solid rgba(255,255,255,.3);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:1rem 2.5rem;display:inline-block;">CALCULATE MY 1RM →</a>
     </div>
-    <!-- Stats strip -->
-    <div style="display:flex;gap:3rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;">
-      {coach.achievements.map(a => (
-        <div>
-          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#fff;line-height:1;">{a.value}</p>
-          <p style="font-family:'Barlow',sans-serif;font-size:.7rem;letter-spacing:.2em;color:#6b7280;text-transform:uppercase;margin-top:.25rem;">{a.label}</p>
-        </div>
-      ))}
+    <!-- Lift Log card — credentialed coaching, not a stats grid -->
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;">
+      <div aria-hidden="true" style="border:2px solid #dc2626;padding:.75rem 1rem;text-align:center;">
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.65rem;letter-spacing:.3em;color:#dc2626;text-transform:uppercase;margin:0 0 .25rem;">Coach</p>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;line-height:1;margin:0;">CSCS</p>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.15em;color:#9ca3af;text-transform:uppercase;margin:.25rem 0 0;">NASM · USAW L2</p>
+      </div>
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.3em;color:#dc2626;text-transform:uppercase;margin-bottom:.5rem;">2012 National Champion · Coaching since 2013</p>
+        <p style="font-family:'Barlow',sans-serif;font-size:.95rem;color:#e4e4e7;line-height:1.6;margin:0;">Programming hand-built off your last training block. No copy-paste templates. No filler sets.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -266,13 +269,24 @@ const HERO = '/images/shared/photo-1534438327276-14e5300c3a48';
       <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:#dc2626;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2rem;">{coach.title}</p>
       <p style="font-family:'Barlow',sans-serif;font-size:1.1rem;color:#e4e4e7;line-height:1.7;margin-bottom:1rem;">{coach.bio}</p>
       <p style="font-family:'Barlow',sans-serif;font-size:.95rem;color:#71717a;line-height:1.7;margin-bottom:2.5rem;">{coach.bioExtended}</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-        {coach.achievements.map(a => (
-          <div style="border-left:3px solid #dc2626;padding-left:1rem;">
-            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#fff;line-height:1;">{a.value}</p>
-            <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#6b7280;text-transform:uppercase;letter-spacing:.1em;margin-top:.25rem;">{a.label}</p>
-          </div>
-        ))}
+      <!-- Featured client transformation showcase — story, not numbers -->
+      <div style="border:2px solid #27272a;background:#0a0a0a;padding:0;">
+        <div style="background:#dc2626;padding:.75rem 1.25rem;display:flex;justify-content:space-between;align-items:center;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.3em;color:#fff;text-transform:uppercase;margin:0;">Featured Client · Marcus on Jake M.</p>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:#fecaca;text-transform:uppercase;margin:0;">14 months</p>
+        </div>
+        <div style="padding:1.25rem;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;text-transform:uppercase;line-height:1.1;margin-bottom:.75rem;">
+            "He walked in scared of the bar. He walked out a state-record holder."
+          </p>
+          <p style="font-family:'Barlow',sans-serif;font-size:.95rem;color:#d4d4d8;line-height:1.65;margin-bottom:.75rem;">
+            Jake came in after two failed cuts and a torn rotator from bad cues at a chain gym. We spent the first eight weeks rebuilding his bracing pattern and undoing the damage. Then we ran a 16-week conjugate block. By month ten he was hitting triples at his old PR.
+          </p>
+          <p style="font-family:'Barlow',sans-serif;font-size:.95rem;color:#d4d4d8;line-height:1.65;margin-bottom:1rem;">
+            At his first sanctioned meet he pulled a 600 deadlift on his second attempt — clean lockout, no belt slip. The kid cried in the warmup room.
+          </p>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.25em;color:#dc2626;text-transform:uppercase;margin:0;">— Marcus Steel, head coach</p>
+        </div>
       </div>
     </div>
   </div>

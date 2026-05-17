@@ -82,18 +82,27 @@ const HERO = '/images/shared/photo-1518611012118-696072aa579a';
       </div>
     </div>
 
-    <!-- Stats card -->
-    <div style="background:rgba(253,245,240,.92);backdrop-filter:blur(12px);border-radius:1.5rem;padding:2.5rem;border:1px solid rgba(190,24,93,.2);">
-      <p class="playfair" style="font-size:1.1rem;font-weight:600;color:#881337;margin-bottom:1.5rem;font-style:italic;">"Strength is not just a body — it's a mindset."</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-        {coach.achievements.map(a => (
-          <div style="text-align:center;padding:1.25rem;background:#fff8f5;border-radius:1rem;border:1px solid #fecdd3;">
-            <p class="playfair" style="font-size:2rem;font-weight:700;color:#be185d;">{a.value}</p>
-            <p style="font-size:.7rem;color:#9f4255;letter-spacing:.05em;text-transform:uppercase;margin-top:.25rem;">{a.label}</p>
-          </div>
-        ))}
+    <!-- Client pull-quote card with portrait — not a stats grid -->
+    <figure style="background:rgba(253,245,240,.94);backdrop-filter:blur(12px);border-radius:1.5rem;padding:2rem;border:1px solid rgba(190,24,93,.2);margin:0;">
+      <div style="display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:1.25rem;">
+        <img loading="lazy" decoding="async"
+          src="/images/shared/photo-1518611012118-696072aa579a-640.webp"
+          alt="Rachel — Fierce & Free client, photographed after her 7-month program"
+          style="width:5rem;height:5rem;border-radius:50%;object-fit:cover;object-position:center;border:3px solid #fda4af;flex-shrink:0;" />
+        <div>
+          <p style="font-size:.65rem;letter-spacing:.3em;color:#be185d;text-transform:uppercase;font-weight:700;margin:0 0 .25rem;">Member spotlight</p>
+          <p class="playfair" style="font-size:1.05rem;font-weight:700;color:#881337;margin:0;line-height:1.2;">Rachel M.</p>
+          <p style="font-size:.75rem;color:#9f4255;margin:.125rem 0 0;">Mom of two · Strong &amp; Sculpted, month 7</p>
+        </div>
       </div>
-    </div>
+      <blockquote class="playfair" style="font-size:1.15rem;font-weight:500;color:#881337;line-height:1.5;margin:0 0 1rem;font-style:italic;">
+        "I came here to lose weight. I stayed because for the first time, training felt like it was built around <em>me</em> — my cycle, my schedule, my voice. I lift heavier than my husband now and I have never been more <strong>at home</strong> in my own body."
+      </blockquote>
+      <figcaption style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #fecdd3;padding-top:.875rem;">
+        <span style="font-size:.7rem;letter-spacing:.15em;color:#be185d;text-transform:uppercase;font-weight:700;">7-month transformation</span>
+        <span style="font-size:.7rem;color:#9f4255;">Photographed Spring 2025</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 

@@ -64,13 +64,27 @@ const annualPrices = [122, 247, 414];
         <a href="#booking" style="background:#65a30d;color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:.875rem 2rem;border-radius:999px;display:inline-block;box-shadow:0 4px 14px rgba(101,163,13,.35);">Start My Free Week</a>
         <a href="#how-it-works" style="border:1.5px solid #e5e7eb;color:#374151;font-weight:500;font-size:1rem;text-decoration:none;padding:.875rem 2rem;border-radius:999px;display:inline-block;">See How It Works →</a>
       </div>
-      <div style="display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid #f3f4f6;">
-        {coach.achievements.map(a => (
-          <div>
-            <p style="font-size:1.875rem;font-weight:700;color:#111827;letter-spacing:-.03em;">{a.value}</p>
-            <p style="font-size:.75rem;color:#9ca3af;margin-top:.125rem;">{a.label}</p>
-          </div>
-        ))}
+      <!-- 5-step onboarding flowchart — app-style chips, not a stats grid -->
+      <div style="padding-top:2rem;border-top:1px solid #f3f4f6;">
+        <p style="font-size:.7rem;font-weight:700;letter-spacing:.18em;color:#65a30d;text-transform:uppercase;margin-bottom:.875rem;">From signup to first session in 5 days</p>
+        <ol style="list-style:none;padding:0;margin:0;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;">
+          {[
+            { n: "1", label: "Intro call", sub: "Mon" },
+            { n: "2", label: "Movement screen", sub: "Tue" },
+            { n: "3", label: "Plan delivered", sub: "Wed" },
+            { n: "4", label: "App + macros", sub: "Thu" },
+            { n: "5", label: "First check-in", sub: "Fri" },
+          ].map((s, i) => (
+            <>
+              <li style="display:flex;align-items:center;gap:.5rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:.4rem .85rem .4rem .45rem;">
+                <span aria-hidden="true" style="width:1.4rem;height:1.4rem;border-radius:999px;background:#65a30d;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">{s.n}</span>
+                <span style="font-size:.8125rem;font-weight:600;color:#111827;">{s.label}</span>
+                <span style="font-size:.65rem;color:#9ca3af;text-transform:uppercase;letter-spacing:.05em;">· {s.sub}</span>
+              </li>
+              {i < 4 && <span aria-hidden="true" style="color:#a3a3a3;font-size:.875rem;">→</span>}
+            </>
+          ))}
+        </ol>
       </div>
     </div>
 
@@ -285,13 +299,28 @@ const annualPrices = [122, 247, 414];
             <span style="background:#f3f4f6;color:#374151;font-size:.75rem;font-weight:600;padding:.375rem .75rem;border-radius:999px;">{c}</span>
           ))}
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;">
-          {coach.achievements.map(a => (
-            <div style="background:#f0fdf4;border-radius:.875rem;padding:1rem;text-align:center;">
-              <p style="font-size:1.375rem;font-weight:700;color:#111827;">{a.value}</p>
-              <p style="font-size:.65rem;color:#6b7280;margin-top:.25rem;">{a.label}</p>
-            </div>
-          ))}
+        <!-- A typical client week — app-feed style, no stat grid -->
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:1rem;overflow:hidden;">
+          <div style="background:#f0fdf4;padding:.75rem 1rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #bbf7d0;">
+            <p style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#65a30d;text-transform:uppercase;margin:0;">A typical client week</p>
+            <p style="font-size:.65rem;color:#9ca3af;margin:0;">in the Chen Coaching app</p>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;">
+            {[
+              { day: "Mon", item: "Upper push session pushed to your inbox", flag: "Workout" },
+              { day: "Tue", item: "Macro adjustments based on Sunday's check-in", flag: "Nutrition" },
+              { day: "Wed", item: "Form review video reply on your bench set", flag: "Coaching" },
+              { day: "Thu", item: "Lower body + posterior chain programmed", flag: "Workout" },
+              { day: "Fri", item: "Quick voice note on the week's wins", flag: "Coaching" },
+              { day: "Sun", item: "Weekly check-in form (4 questions, 90 sec)", flag: "Check-in" },
+            ].map(row => (
+              <li style="display:grid;grid-template-columns:auto 1fr auto;gap:.875rem;align-items:center;padding:.625rem 1rem;border-bottom:1px solid #f3f4f6;">
+                <span style="font-size:.7rem;font-weight:700;color:#65a30d;letter-spacing:.05em;text-transform:uppercase;width:1.75rem;">{row.day}</span>
+                <span style="font-size:.8125rem;color:#374151;">{row.item}</span>
+                <span style="font-size:.6rem;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;">{row.flag}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
