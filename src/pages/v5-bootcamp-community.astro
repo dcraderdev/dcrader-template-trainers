@@ -20,7 +20,7 @@ const schedule = [
   description="700+ members strong. Miami's hardest group bootcamp. Show up. Burn it down. Build each other up."
   fontUrl={fontUrl}
   themeColor="#FF5500"
-  ogImage="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80"
+  ogImage="/images/photo-1571019614242-c5c5dee9f50b-1800.webp"
 >
   <style is:inline>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -111,10 +111,10 @@ const schedule = [
     <section style="position:relative;padding-top:64px;min-height:100vh;display:flex;align-items:center;overflow:hidden;">
       <div style="position:absolute;inset:0;">
         <img
-          src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1800&q=80"
+          src="/images/photo-1571019614242-c5c5dee9f50b-1800.webp"
           alt="Blaze Bootcamp group training session in Miami"
           style="width:100%;height:100%;object-fit:cover;object-position:center;"
-        />
+         loading="eager" decoding="async" fetchpriority="high" />
         <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(0,0,0,0.92) 45%, rgba(0,0,0,0.5) 100%);"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);"></div>
       </div>
@@ -299,7 +299,7 @@ const schedule = [
           Pick Your <span style="color:#FF5500;">Level</span>
         </h2>
 
-        <div class="programs-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#FF5500;">
+        <div class="programs-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:2px;background:#FF5500;">
           {coach.programs.map((p) => (
             <div class="program-card" style="background:#0A0A0A;padding:40px 32px;border:none;">
               <div style="font-size:2.5rem;margin-bottom:20px;" aria-hidden="true">{p.icon}</div>
@@ -335,7 +335,7 @@ const schedule = [
         <!-- Photo mosaic -->
         <div style="display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 200px;gap:4px;margin-bottom:72px;">
           <div style="grid-row:span 2;position:relative;overflow:hidden;">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=700&q=80" alt="Blaze Bootcamp group training at Bayfront Park" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="/images/photo-1571019614242-c5c5dee9f50b-800.webp" alt="Blaze Bootcamp group training at Bayfront Park" style="width:100%;height:100%;object-fit:cover;"  loading="lazy" decoding="async" />
             <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 60%);"></div>
             <div style="position:absolute;bottom:20px;left:20px;">
               <div class="oswald" style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#FF5500;margin-bottom:4px;">Saturday Community WOD</div>
@@ -343,13 +343,13 @@ const schedule = [
             </div>
           </div>
           <div style="overflow:hidden;">
-            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=400&q=80" alt="Members celebrating after completing a workout" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="/images/photo-1517963879433-6ad2b056d712-800.webp" alt="Members celebrating after completing a workout" style="width:100%;height:100%;object-fit:cover;"  loading="lazy" decoding="async" />
           </div>
           <div style="overflow:hidden;">
-            <img src="https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=400&q=80" alt="Outdoor bootcamp session at sunrise" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="/images/photo-1549476464-37392f717541-800.webp" alt="Outdoor bootcamp session at sunrise" style="width:100%;height:100%;object-fit:cover;"  loading="lazy" decoding="async" />
           </div>
           <div style="overflow:hidden;">
-            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=400&q=80" alt="Members supporting each other during training" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="/images/photo-1518611012118-696072aa579a-800.webp" alt="Members supporting each other during training" style="width:100%;height:100%;object-fit:cover;"  loading="lazy" decoding="async" />
           </div>
           <div style="overflow:hidden;background:#FF5500;display:flex;align-items:center;justify-content:center;padding:24px;">
             <div style="text-align:center;">
@@ -360,7 +360,7 @@ const schedule = [
         </div>
 
         <!-- Community pillars -->
-        <div class="tribe-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#222;">
+        <div class="tribe-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:#222;">
           {[
             { icon: '📲', title: 'WhatsApp Tribe', body: 'Daily check-ins, motivation drops, and accountability from 700 members who actually care if you show up.' },
             { icon: '🏅', title: 'Monthly Challenges', body: 'Leaderboards, PRs, and prizes. Friendly competition that pushes your limits without breaking bonds.' },
@@ -375,7 +375,7 @@ const schedule = [
         </div>
 
         <!-- Testimonials -->
-        <div style="margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="tribe-grid">
+        <div style="margin-top:64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;" class="tribe-grid">
           {coach.testimonials.map((t) => (
             <div style="background:#111;padding:32px;border-top:3px solid #FF5500;">
               <div class="oswald" style="font-size:1.8rem;font-weight:700;color:#FF5500;margin-bottom:12px;">{t.result}</div>
@@ -400,15 +400,15 @@ const schedule = [
           Real Members. <span style="color:#FF5500;">Real Results.</span>
         </h2>
 
-        <div class="transform-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div class="transform-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;">
           {coach.transformations.map((t) => (
             <div style="overflow:hidden;">
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#FF5500;">
                 <div style="overflow:hidden;aspect-ratio:3/4;">
-                  <img src={t.beforeImg} alt={`${t.name} before transformation`} style="width:100%;height:100%;object-fit:cover;filter:grayscale(80%);" />
+                  <img src={t.beforeImg} alt={`${t.name} before transformation`} style="width:100%;height:100%;object-fit:cover;filter:grayscale(80%);"  loading="lazy" decoding="async" />
                 </div>
                 <div style="overflow:hidden;aspect-ratio:3/4;">
-                  <img src={t.afterImg} alt={`${t.name} after transformation`} style="width:100%;height:100%;object-fit:cover;" />
+                  <img src={t.afterImg} alt={`${t.name} after transformation`} style="width:100%;height:100%;object-fit:cover;"  loading="lazy" decoding="async" />
                 </div>
               </div>
               <div style="background:#0A0A0A;padding:20px;border-bottom:2px solid #FF5500;">
@@ -432,7 +432,7 @@ const schedule = [
           Join the <span style="color:#FF5500;">Tribe</span>
         </h2>
 
-        <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#FF5500;">
+        <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:2px;background:#FF5500;">
           {coach.pricing.map((p) => (
             <div style={`background:${p.popular ? '#151515' : '#0D0D0D'};padding:40px 32px;position:relative;`}>
               {p.popular && (
@@ -474,7 +474,7 @@ const schedule = [
               src={coach.photo}
               alt={`${coach.name}, ${coach.title} at Blaze Bootcamp Miami`}
               style="width:100%;aspect-ratio:3/4;object-fit:cover;position:relative;z-index:1;"
-            />
+             loading="lazy" decoding="async" />
             <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,transparent 100%);padding:32px;">
               <div class="oswald" style="font-size:1.6rem;font-weight:700;color:#fff;text-transform:uppercase;">{coach.name}</div>
               <div class="oswald" style="font-size:0.9rem;color:#FF5500;text-transform:uppercase;letter-spacing:0.1em;">{coach.title}</div>
@@ -511,10 +511,10 @@ const schedule = [
     <!-- CTA BANNER -->
     <section style="position:relative;overflow:hidden;">
       <img
-        src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1800&q=80"
+        src="/images/photo-1526506118085-60ce8714f8c5-1800.webp"
         alt="Blaze Bootcamp members after a hard workout"
         style="width:100%;height:400px;object-fit:cover;object-position:center top;display:block;"
-      />
+       loading="lazy" decoding="async" />
       <div style="position:absolute;inset:0;background:rgba(0,0,0,0.82);display:flex;align-items:center;justify-content:center;">
         <div style="text-align:center;padding:24px;">
           <h2 class="oswald" style="font-size:clamp(2.5rem,6vw,5rem);font-weight:700;text-transform:uppercase;color:#fff;line-height:0.95;margin-bottom:24px;">

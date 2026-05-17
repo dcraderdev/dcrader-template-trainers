@@ -7,7 +7,7 @@ import { coach } from '../data/v3-coach';
   description="Women-only strength coaching in Austin, TX. Cycle-synced programming. No scales, no shame. Book your free intro."
   fontUrl="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Lato:wght@300;400;700&display=swap"
   themeColor="#be185d"
-  ogImage="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80"
+  ogImage="/images/photo-1518611012118-696072aa579a-1800.webp"
 >
 
 <style is:inline>
@@ -35,8 +35,8 @@ import { coach } from '../data/v3-coach';
 
 <!-- ───── HERO ───── -->
 <section style="position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden;" aria-labelledby="hero-h1">
-  <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1920&q=80"
-    alt="Strong woman lifting weights with confidence in a studio" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  <img src="/images/photo-1518611012118-696072aa579a-1800.webp"
+    alt="Strong woman lifting weights with confidence in a studio" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"  loading="eager" decoding="async" fetchpriority="high" />
   <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(136,19,55,.75) 0%,rgba(253,245,240,.55) 100%);"></div>
 
   <!-- Decorative serif quote mark -->
@@ -86,7 +86,7 @@ import { coach } from '../data/v3-coach';
       <h2 id="pillars-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;line-height:1.2;">We do things differently here.</h2>
       <div style="width:3rem;height:2px;background:#fda4af;margin:1.25rem auto 0;"></div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1.5rem;">
       {[
         { icon:'🚫', title:'No Scales, No Shame', body:'We don\'t measure progress in pounds lost. We measure it in weight lifted, mountains climbed, and confidence gained.' },
         { icon:'🌸', title:'Cycle-Synced Training', body:'Your hormones are not the enemy — they\'re a superpower. We train around your cycle, not against it.' },
@@ -120,11 +120,11 @@ import { coach } from '../data/v3-coach';
             <article style="background:#fff;border-radius:1.25rem;overflow:hidden;border:1px solid #fecdd3;">
               <div style="display:grid;grid-template-columns:1fr 1fr;">
                 <div style="position:relative;">
-                  <img src={t.beforeImg} alt={`${t.name} before — Fierce & Free`} style="width:100%;height:8rem;object-fit:cover;object-position:top;display:block;" />
+                  <img src={t.beforeImg} alt={`${t.name} before — Fierce & Free`} style="width:100%;height:8rem;object-fit:cover;object-position:top;display:block;"  loading="lazy" decoding="async" />
                   <span style="position:absolute;top:.375rem;left:.375rem;background:#ffe4e6;color:#9f1239;font-size:.6rem;font-weight:700;padding:.2rem .4rem;border-radius:.25rem;">Before</span>
                 </div>
                 <div style="position:relative;">
-                  <img src={t.afterImg} alt={`${t.name} after — ${t.result}`} style="width:100%;height:8rem;object-fit:cover;object-position:top;display:block;" />
+                  <img src={t.afterImg} alt={`${t.name} after — ${t.result}`} style="width:100%;height:8rem;object-fit:cover;object-position:top;display:block;"  loading="lazy" decoding="async" />
                   <span style="position:absolute;top:.375rem;right:.375rem;background:#be185d;color:#fff;font-size:.6rem;font-weight:700;padding:.2rem .4rem;border-radius:.25rem;">After</span>
                 </div>
               </div>
@@ -143,11 +143,11 @@ import { coach } from '../data/v3-coach';
       <article style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;background:#fff;border-radius:1.5rem;padding:2rem;border:1px solid #fecdd3;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;width:280px;flex-shrink:0;">
           <div style="position:relative;">
-            <img src={coach.transformations[2].beforeImg} alt={`${coach.transformations[2].name} before`} style="width:100%;height:10rem;object-fit:cover;border-radius:.75rem;" />
+            <img src={coach.transformations[2].beforeImg} alt={`${coach.transformations[2].name} before`} style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.75rem;"  loading="lazy" decoding="async" />
             <span style="position:absolute;top:.5rem;left:.5rem;background:#ffe4e6;color:#9f1239;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:.375rem;">Before</span>
           </div>
           <div style="position:relative;">
-            <img src={coach.transformations[2].afterImg} alt={`${coach.transformations[2].name} after`} style="width:100%;height:10rem;object-fit:cover;border-radius:.75rem;" />
+            <img src={coach.transformations[2].afterImg} alt={`${coach.transformations[2].name} after`} style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.75rem;"  loading="lazy" decoding="async" />
             <span style="position:absolute;top:.5rem;right:.5rem;background:#be185d;color:#fff;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:.375rem;">After</span>
           </div>
         </div>
@@ -169,7 +169,7 @@ import { coach } from '../data/v3-coach';
       <h2 id="programs-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;">Programming built<br/><em>for your body.</em></h2>
       <p style="color:#6b4250;max-width:36rem;margin:.75rem auto 0;line-height:1.7;">Not a scaled-down version of a man's program. Built from the ground up for women's physiology, hormones, and goals.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1.5rem;">
       {coach.programs.map((prog, i) => (
         <div style={`border-radius:1.5rem;padding:2.5rem;border:1px solid #fecdd3;background:${i===1?'#be185d':'#fff'};position:relative;overflow:hidden;`}>
           {i===1 && <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;background:rgba(255,255,255,.06);border-radius:50%;transform:translate(3rem,-3rem);pointer-events:none;"></div>}
@@ -197,7 +197,7 @@ import { coach } from '../data/v3-coach';
       <h2 id="pricing-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#881337;">Choose your path.</h2>
       <p style="color:#6b4250;margin-top:.75rem;">First session always free. No contracts. Cancel anytime.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:56rem;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1.5rem;max-width:56rem;margin:0 auto;">
       {coach.pricing.map(tier => (
         <div style={`position:relative;border-radius:1.5rem;padding:2.5rem;border:${tier.popular?'2px solid #be185d':'1px solid #fecdd3'};background:${tier.popular?'#881337':'#fff'};`}>
           {tier.popular && <span class="playfair" style="position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:#fda4af;color:#881337;font-size:.8rem;font-weight:700;padding:.375rem 1.25rem;border-radius:999px;white-space:nowrap;font-style:italic;">Most Loved ✦</span>}
@@ -223,8 +223,8 @@ import { coach } from '../data/v3-coach';
 
 <!-- ───── RETREAT CTA ───── -->
 <section id="retreat" style="position:relative;padding:6rem 0;overflow:hidden;" aria-labelledby="retreat-h2">
-  <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=1920&q=80"
-    alt="Women doing yoga together in a beautiful outdoor setting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  <img src="/images/photo-1506629082955-511b1aa562c8-1800.webp"
+    alt="Women doing yoga together in a beautiful outdoor setting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"  loading="lazy" decoding="async" />
   <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(136,19,55,.88) 0%,rgba(190,24,93,.6) 100%);"></div>
   <div style="position:relative;z-index:10;max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
     <div>
@@ -279,7 +279,7 @@ import { coach } from '../data/v3-coach';
       </div>
     </div>
     <div style="position:relative;">
-      <img src={coach.photo} alt={`${coach.name} — ${coach.title}, founder of Fierce & Free`} style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2rem;display:block;" />
+      <img src={coach.photo} alt={`${coach.name} — ${coach.title}, founder of Fierce & Free`} style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2rem;display:block;"  loading="lazy" decoding="async" />
       <!-- Pull quote overlay -->
       <div style="position:absolute;bottom:-1.5rem;left:-1.5rem;background:#fff;border:1px solid #fecdd3;border-radius:1.25rem;padding:1.5rem;max-width:16rem;box-shadow:0 8px 32px rgba(190,24,93,.12);">
         <p class="playfair" style="font-size:.9rem;color:#881337;font-style:italic;line-height:1.6;">"Every woman deserves programming that honors her body."</p>
@@ -295,7 +295,7 @@ import { coach } from '../data/v3-coach';
     <div style="text-align:center;margin-bottom:4rem;">
       <h2 id="test-h2" class="playfair" style="font-size:3rem;font-weight:700;color:#fff;">The community<br/><em>speaks.</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1.5rem;">
       {coach.testimonials.map(t => (
         <blockquote style="background:rgba(255,255,255,.1);border-radius:1.5rem;padding:2.5rem;border:1px solid rgba(255,255,255,.15);margin:0;">
           <p class="playfair" style="font-size:2rem;font-weight:700;color:#fda4af;margin-bottom:1rem;">{t.result}</p>
@@ -335,8 +335,8 @@ import { coach } from '../data/v3-coach';
       </table>
     </div>
     <div>
-      <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80"
-        alt="Women celebrating together in the Fierce and Free studio" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.5rem;display:block;margin-bottom:1rem;" />
+      <img src="/images/photo-1552674605-db6ffd4facb5-800.webp"
+        alt="Women celebrating together in the Fierce and Free studio" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.5rem;display:block;margin-bottom:1rem;"  loading="lazy" decoding="async" />
       <div style="background:#fff;border-radius:1.25rem;padding:1.5rem;border:1px solid #fecdd3;">
         <p class="playfair" style="font-weight:700;color:#881337;margin-bottom:.375rem;">A space made for you.</p>
         <p style="color:#6b4250;font-size:.875rem;line-height:1.6;">Women-only training floor, private changing area, nursing room, and a community corner where bonds are forged between sessions.</p>
