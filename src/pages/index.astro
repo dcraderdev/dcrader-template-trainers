@@ -8,7 +8,7 @@ const variants = [
     sub: 'Marcus Steel · Steel Athletics · San Diego',
     palette: ['#000000', '#CC0000', '#1A1A1A'],
     description: 'Black / Red · Bodybuilding intensity · Barlow Condensed',
-    thumb: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80',
+    thumb: '/images/photo-1534438327276-14e5300c3a48-800.webp',
   },
   {
     slug: 'v2-online-coach',
@@ -16,7 +16,7 @@ const variants = [
     sub: 'Sarah Chen · Chen Performance Coaching · Remote',
     palette: ['#FFFFFF', '#84CC16', '#F9FAFB'],
     description: 'White / Lime · Clean SaaS pro · DM Sans',
-    thumb: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80',
+    thumb: '/images/photo-1571019613454-1cb2f99b2d8b-800.webp',
   },
   {
     slug: 'v3-female-empowerment',
@@ -24,7 +24,7 @@ const variants = [
     sub: 'Amanda Torres · Fierce & Free Fitness · Austin',
     palette: ['#FDF5F0', '#BE185D', '#FFF1F2'],
     description: 'Dusty Rose / Cream · Empowerment brand · Playfair Display',
-    thumb: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80',
+    thumb: '/images/photo-1518611012118-696072aa579a-800.webp',
   },
   {
     slug: 'v4-functional-aging',
@@ -32,7 +32,7 @@ const variants = [
     sub: 'Dr. Robert Hayes · Longevity Athletics · Denver',
     palette: ['#F7F5EF', '#4A6741', '#EEF2E8'],
     description: 'Warm Sage / Cream · Longevity science · Source Serif 4',
-    thumb: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=80',
+    thumb: '/images/photo-1571019614242-c5c5dee9f50b-800.webp',
   },
   {
     slug: 'v5-bootcamp-community',
@@ -40,7 +40,7 @@ const variants = [
     sub: 'Tony Rivera · Blaze Bootcamp · Miami',
     palette: ['#000000', '#EA580C', '#111111'],
     description: 'Orange / Black · High-energy tribe · Oswald',
-    thumb: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80',
+    thumb: '/images/photo-1547592180-85f173990554-800.webp',
   },
 ];
 ---
@@ -96,7 +96,7 @@ const variants = [
                     src={v.thumb}
                     alt={`${v.label} template preview`}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                   loading="eager" decoding="async" fetchpriority="high" />
                   <div class="absolute inset-0 bg-black/40 flex items-end p-4">
                     <div class="flex gap-1.5">
                       {v.palette.map(color => (
