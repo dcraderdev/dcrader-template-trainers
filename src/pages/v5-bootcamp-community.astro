@@ -511,13 +511,24 @@ const schedule = [
               ))}
             </div>
 
-            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
-              {coach.achievements.map((a) => (
-                <div style="border-left:3px solid #FF5500;padding-left:16px;">
-                  <div class="oswald" style="font-size:1.8rem;font-weight:700;color:#FF5500;">{a.value}</div>
-                  <div class="inter" style="font-size:0.75rem;color:#666;text-transform:uppercase;letter-spacing:0.08em;">{a.label}</div>
+            <!-- "On the floor today" — high-energy current-moment vignette, not a stats grid -->
+            <div style="background:#0a0a0a;border:1px solid #2a2a2a;padding:18px 20px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a2a2a;padding-bottom:10px;margin-bottom:14px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#FF5500;display:inline-block;box-shadow:0 0 8px #FF5500;"></span>
+                  <span class="oswald" style="font-size:.75rem;font-weight:700;letter-spacing:.18em;color:#FF5500;text-transform:uppercase;">On the floor today</span>
                 </div>
-              ))}
+                <span class="inter" style="font-size:.7rem;color:#666;letter-spacing:.05em;">Tuesday · 6:00 PM session</span>
+              </div>
+              <p class="oswald" style="font-size:1.1rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.04em;margin:0 0 6px;line-height:1.2;">Today's WOD — "BAYFRONT BURNER"</p>
+              <p class="inter" style="font-size:.85rem;color:#bbb;margin:0 0 14px;line-height:1.5;">21-15-9 — KB swings · burpee box jumps · wall balls. Cap is 14 minutes. Tony's leading from the front.</p>
+              <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;">
+                <li class="inter" style="font-size:.78rem;color:#888;"><span style="color:#FF5500;font-weight:700;">42</span> &nbsp;athletes signed in</li>
+                <li class="inter" style="font-size:.78rem;color:#888;"><span style="color:#FF5500;font-weight:700;">3</span> &nbsp;first-timers tonight</li>
+                <li class="inter" style="font-size:.78rem;color:#888;"><span style="color:#FF5500;font-weight:700;">11</span> &nbsp;PR attempts on the board</li>
+                <li class="inter" style="font-size:.78rem;color:#888;"><span style="color:#FF5500;font-weight:700;">82°F</span> &nbsp;feels like 88. Bring water.</li>
+              </ul>
+              <p class="inter" style="font-size:.7rem;color:#666;font-style:italic;margin:14px 0 0;border-top:1px solid #1a1a1a;padding-top:10px;">Walk-ins welcome — grab any open spot on the rig.</p>
             </div>
           </div>
         </div>
