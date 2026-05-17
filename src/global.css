@@ -1,0 +1,10 @@
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
