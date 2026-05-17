@@ -1,0 +1,43 @@
+---
+/**
+ * SkipToContent — WCAG 2.4.1 Bypass Blocks
+ *
+ * Renders a visually-hidden anchor that becomes visible on focus and jumps
+ * to the page's primary <main> landmark. Place as the FIRST element inside
+ * <body>; the target element must have id="main-content".
+ */
+interface Props {
+  /** Anchor target id. Defaults to "main-content". */
+  targetId?: string;
+  /** Visible label. Defaults to "Skip to main content". */
+  label?: string;
+}
+
+const { targetId = 'main-content', label = 'Skip to main content' } = Astro.props;
+---
+
+<a class="a11y-skip-link" href={`#${targetId}`}>{label}</a>
+
+<style>
+  .a11y-skip-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    padding: 0.75rem 1.25rem;
+    background: #000;
+    color: #fff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform 0.15s ease-out;
+  }
+  .a11y-skip-link:focus,
+  .a11y-skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 3px solid #ffd700;
+    outline-offset: 2px;
+  }
+</style>

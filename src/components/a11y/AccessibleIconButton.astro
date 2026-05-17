@@ -1,0 +1,92 @@
+---
+/**
+ * AccessibleIconButton — icon-only button with mandatory aria-label.
+ *
+ * Use this for ANY button whose visible content is an icon, glyph,
+ * or symbol rather than text. The `label` prop becomes `aria-label`
+ * so AT users hear a meaningful name.
+ *
+ * Slot in the icon (SVG, img, glyph). Pass `href` to render an anchor
+ * instead of a button.
+ */
+interface Props {
+  /** Required accessible name. Describe the action, not the icon. */
+  label: string;
+  /** Render as <a> with this href instead of <button>. */
+  href?: string;
+  /** Forwarded to button element. */
+  type?: 'button' | 'submit' | 'reset';
+  /** Extra class names. */
+  class?: string;
+  /** Toggle pressed state (aria-pressed). */
+  pressed?: boolean;
+  /** Toggle expanded state (aria-expanded). */
+  expanded?: boolean;
+  /** id of element this button controls (aria-controls). */
+  controls?: string;
+  /** Disable the button. */
+  disabled?: boolean;
+  /** Forwarded title (tooltip). Use sparingly — label is what matters. */
+  title?: string;
+  /** Forwarded rel for anchor variant. */
+  rel?: string;
+  /** Forwarded target for anchor variant. */
+  target?: string;
+}
+
+const {
+  label,
+  href,
+  type = 'button',
+  class: className = '',
+  pressed,
+  expanded,
+  controls,
+  disabled,
+  title,
+  rel,
+  target,
+} = Astro.props;
+
+const commonAttrs: Record<string, unknown> = {
+  'aria-label': label,
+  class: `a11y-icon-btn ${className}`.trim(),
+};
+if (controls) commonAttrs['aria-controls'] = controls;
+if (typeof pressed === 'boolean') commonAttrs['aria-pressed'] = String(pressed);
+if (typeof expanded === 'boolean') commonAttrs['aria-expanded'] = String(expanded);
+if (title) commonAttrs.title = title;
+---
+
+{href ? (
+  <a href={href} rel={rel} target={target} {...commonAttrs}>
+    <span aria-hidden="true" class="a11y-icon-btn__icon"><slot /></span>
+  </a>
+) : (
+  <button type={type} disabled={disabled} {...commonAttrs}>
+    <span aria-hidden="true" class="a11y-icon-btn__icon"><slot /></span>
+  </button>
+)}
+
+<style>
+  .a11y-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+    line-height: 0;
+  }
+  .a11y-icon-btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .a11y-icon-btn__icon {
+    display: inline-flex;
+    line-height: 0;
+  }
+</style>

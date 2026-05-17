@@ -26,17 +26,17 @@ const annualPrices = [122, 247, 414];
 <!-- NAV -->
 <nav aria-label="Main navigation" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,.06);">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
-    <a href="#main-content" style="font-weight:700;font-size:1.125rem;color:#111827;text-decoration:none;letter-spacing:-.025em;">Chen Performance <span style="color:#65a30d;">Coaching</span></a>
+    <a href="#main-content" style="font-weight:700;font-size:1.125rem;color:#111827;text-decoration:none;letter-spacing:-.025em;">Chen Performance <span style="color:#4d7c0f;">Coaching</span></a>
     <div style="display:flex;align-items:center;gap:2rem;">
-      <a href="#how-it-works" style="color:#6b7280;font-size:.875rem;text-decoration:none;font-weight:500;">How It Works</a>
-      <a href="#pricing" style="color:#6b7280;font-size:.875rem;text-decoration:none;font-weight:500;">Pricing</a>
-      <a href="#coach" style="color:#6b7280;font-size:.875rem;text-decoration:none;font-weight:500;">About Sarah</a>
-      <a href="#booking" style="background:#65a30d;color:#fff;font-size:.875rem;font-weight:600;text-decoration:none;padding:.625rem 1.25rem;border-radius:999px;transition:background .15s;">Start Free Week</a>
+      <a href="#how-it-works" style="color:#4b5563;font-size:.875rem;text-decoration:none;font-weight:500;">How It Works</a>
+      <a href="#pricing" style="color:#4b5563;font-size:.875rem;text-decoration:none;font-weight:500;">Pricing</a>
+      <a href="#coach" style="color:#4b5563;font-size:.875rem;text-decoration:none;font-weight:500;">About Sarah</a>
+      <a href="#booking" style="background:#3f6212;color:#fff;font-size:.875rem;font-weight:600;text-decoration:none;padding:.625rem 1.25rem;border-radius:999px;transition:background .15s;">Start Free Week</a>
     </div>
   </div>
 </nav>
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 
 <!-- ───── HERO (split layout) ───── -->
 <section style="background:#fff;padding:6rem 0 4rem;" aria-labelledby="hero-h1">
@@ -47,9 +47,9 @@ const annualPrices = [122, 247, 414];
         🌍 Coaching clients in 30+ countries
       </div>
       <h1 id="hero-h1" style="font-size:clamp(2.5rem,5vw,3.75rem);font-weight:700;color:#111827;line-height:1.1;letter-spacing:-.03em;margin-bottom:1.25rem;">
-        Your best physique.<br/><span style="color:#65a30d;">Coached by science.</span><br/>Delivered to your phone.
+        Your best physique.<br/><span style="color:#4d7c0f;">Coached by science.</span><br/>Delivered to your phone.
       </h1>
-      <p style="font-size:1.125rem;color:#6b7280;line-height:1.7;margin-bottom:2rem;max-width:28rem;">{coach.tagline}</p>
+      <p style="font-size:1.125rem;color:#4b5563;line-height:1.7;margin-bottom:2rem;max-width:28rem;">{coach.tagline}</p>
 
       <!-- Feature badges -->
       <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;">
@@ -61,14 +61,14 @@ const annualPrices = [122, 247, 414];
       </div>
 
       <div style="display:flex;gap:1rem;margin-bottom:3rem;flex-wrap:wrap;">
-        <a href="#booking" style="background:#65a30d;color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:.875rem 2rem;border-radius:999px;display:inline-block;box-shadow:0 4px 14px rgba(101,163,13,.35);">Start My Free Week</a>
+        <a href="#booking" style="background:#3f6212;color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:.875rem 2rem;border-radius:999px;display:inline-block;box-shadow:0 4px 14px rgba(101,163,13,.35);">Start My Free Week</a>
         <a href="#how-it-works" style="border:1.5px solid #e5e7eb;color:#374151;font-weight:500;font-size:1rem;text-decoration:none;padding:.875rem 2rem;border-radius:999px;display:inline-block;">See How It Works →</a>
       </div>
       <div style="display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid #f3f4f6;">
         {coach.achievements.map(a => (
           <div>
             <p style="font-size:1.875rem;font-weight:700;color:#111827;letter-spacing:-.03em;">{a.value}</p>
-            <p style="font-size:.75rem;color:#9ca3af;margin-top:.125rem;">{a.label}</p>
+            <p style="font-size:.75rem;color:#4b5563;margin-top:.125rem;">{a.label}</p>
           </div>
         ))}
       </div>
@@ -80,36 +80,36 @@ const annualPrices = [122, 247, 414];
         <div class="phone-screen">
           <div class="phone-notch"><div class="phone-notch-pill"></div></div>
           <div style="padding:1rem;background:#f9fafb;">
-            <p style="font-size:.6rem;color:#9ca3af;margin-bottom:.5rem;">WEDNESDAY · WEEK 8</p>
+            <p style="font-size:.6rem;color:#4b5563;margin-bottom:.5rem;">WEDNESDAY · WEEK 8</p>
             <div style="background:#fff;border-radius:.75rem;padding:.875rem;margin-bottom:.625rem;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,.06);">
-              <p style="font-size:.6rem;color:#65a30d;font-weight:700;text-transform:uppercase;letter-spacing:.05em;">Today's Workout</p>
+              <p style="font-size:.6rem;color:#4d7c0f;font-weight:700;text-transform:uppercase;letter-spacing:.05em;">Today's Workout</p>
               <p style="font-size:.875rem;font-weight:600;color:#111827;margin-top:.125rem;">Upper Push — Day 3</p>
-              <p style="font-size:.65rem;color:#9ca3af;">Bench · OHP · Triceps · Core</p>
+              <p style="font-size:.65rem;color:#4b5563;">Bench · OHP · Triceps · Core</p>
               <div style="display:flex;gap:.375rem;margin-top:.75rem;">
                 <div style="flex:1;background:#f0fdf4;border-radius:.375rem;padding:.375rem;text-align:center;">
-                  <p style="font-size:.65rem;color:#65a30d;font-weight:700;">4 sets</p>
-                  <p style="font-size:.55rem;color:#6b7280;">Bench Press</p>
+                  <p style="font-size:.65rem;color:#4d7c0f;font-weight:700;">4 sets</p>
+                  <p style="font-size:.55rem;color:#4b5563;">Bench Press</p>
                 </div>
                 <div style="flex:1;background:#f0fdf4;border-radius:.375rem;padding:.375rem;text-align:center;">
-                  <p style="font-size:.65rem;color:#65a30d;font-weight:700;">3 sets</p>
-                  <p style="font-size:.55rem;color:#6b7280;">OHP</p>
+                  <p style="font-size:.65rem;color:#4d7c0f;font-weight:700;">3 sets</p>
+                  <p style="font-size:.55rem;color:#4b5563;">OHP</p>
                 </div>
               </div>
             </div>
             <div style="background:#fff;border-radius:.75rem;padding:.875rem;margin-bottom:.625rem;border:1px solid #e5e7eb;">
-              <p style="font-size:.6rem;color:#f59e0b;font-weight:700;text-transform:uppercase;">Nutrition Today</p>
+              <p style="font-size:.6rem;color:#b45309;font-weight:700;text-transform:uppercase;">Nutrition Today</p>
               <div style="display:flex;justify-content:space-between;margin-top:.5rem;">
                 <div style="text-align:center;">
                   <p style="font-size:.875rem;font-weight:700;color:#111827;">2,340</p>
-                  <p style="font-size:.55rem;color:#9ca3af;">calories</p>
+                  <p style="font-size:.55rem;color:#4b5563;">calories</p>
                 </div>
                 <div style="text-align:center;">
                   <p style="font-size:.875rem;font-weight:700;color:#111827;">185g</p>
-                  <p style="font-size:.55rem;color:#9ca3af;">protein</p>
+                  <p style="font-size:.55rem;color:#4b5563;">protein</p>
                 </div>
                 <div style="text-align:center;">
                   <p style="font-size:.875rem;font-weight:700;color:#111827;">248g</p>
-                  <p style="font-size:.55rem;color:#9ca3af;">carbs</p>
+                  <p style="font-size:.55rem;color:#4b5563;">carbs</p>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@ const annualPrices = [122, 247, 414];
               <span style="font-size:1rem;">📹</span>
               <div>
                 <p style="font-size:.6rem;font-weight:700;color:#166534;">New Video Review</p>
-                <p style="font-size:.55rem;color:#16a34a;">Sarah reviewed your squat form</p>
+                <p style="font-size:.55rem;color:#15803d;">Sarah reviewed your squat form</p>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@ const annualPrices = [122, 247, 414];
 </section>
 
 <!-- ───── SOCIAL PROOF BAR ───── -->
-<div style="background:#65a30d;padding:.875rem 0;">
+<div style="background:#3f6212;padding:.875rem 0;">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;color:#fff;font-size:.8125rem;font-weight:500;">
     <span>⭐ 4.9 average rating</span>
     <span>✓ 800+ clients coached</span>
@@ -142,9 +142,9 @@ const annualPrices = [122, 247, 414];
 <section id="how-it-works" style="background:#f9fafb;padding:5rem 0;" aria-labelledby="hiw-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <span style="display:inline-block;background:#f0fdf4;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">The Process</span>
+      <span style="display:inline-block;background:#f0fdf4;color:#4d7c0f;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">The Process</span>
       <h2 id="hiw-h2" style="font-size:2.5rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:.75rem;">From application to results in 48 hours</h2>
-      <p style="color:#6b7280;max-width:36rem;margin:0 auto;">No long intake calls. No waiting weeks to start. Just a clear path from Day 1.</p>
+      <p style="color:#4b5563;max-width:36rem;margin:0 auto;">No long intake calls. No waiting weeks to start. Just a clear path from Day 1.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative;">
       <!-- Connector line -->
@@ -156,9 +156,9 @@ const annualPrices = [122, 247, 414];
       ].map(step => (
         <div style="position:relative;z-index:1;background:#fff;border:1px solid #e5e7eb;border-radius:1.25rem;padding:2rem;box-shadow:0 1px 3px rgba(0,0,0,.06);">
           <div style="width:3.5rem;height:3.5rem;background:#f0fdf4;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem;">{step.icon}</div>
-          <p style="font-size:.75rem;font-weight:700;color:#65a30d;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.375rem;">Step {step.n}</p>
+          <p style="font-size:.75rem;font-weight:700;color:#4d7c0f;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.375rem;">Step {step.n}</p>
           <h3 style="font-size:1.125rem;font-weight:600;color:#111827;margin-bottom:.625rem;">{step.title}</h3>
-          <p style="font-size:.875rem;color:#6b7280;line-height:1.7;">{step.body}</p>
+          <p style="font-size:.875rem;color:#4b5563;line-height:1.7;">{step.body}</p>
         </div>
       ))}
     </div>
@@ -169,7 +169,7 @@ const annualPrices = [122, 247, 414];
 <section id="transformations" style="background:#fff;padding:5rem 0;" aria-labelledby="trans-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <span style="display:inline-block;background:#f0fdf4;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Client Results</span>
+      <span style="display:inline-block;background:#f0fdf4;color:#4d7c0f;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Client Results</span>
       <h2 id="trans-h2" style="font-size:2.5rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:.75rem;">Trained remotely. Results are real.</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
@@ -182,13 +182,13 @@ const annualPrices = [122, 247, 414];
             </div>
             <div style="position:relative;">
               <img src={t.afterImg} alt={`${t.name} result — ${t.result}`} style="width:100%;height:12rem;object-fit:cover;object-position:top;display:block;" />
-              <span style="position:absolute;top:.5rem;right:.5rem;background:#65a30d;color:#fff;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.375rem;">After</span>
+              <span style="position:absolute;top:.5rem;right:.5rem;background:#3f6212;color:#fff;font-size:.65rem;font-weight:600;padding:.2rem .5rem;border-radius:.375rem;">After</span>
             </div>
           </div>
           <div style="padding:1.25rem;">
             <p style="font-weight:600;color:#111827;">{t.name}</p>
-            <p style="color:#65a30d;font-weight:600;font-size:.875rem;margin:.25rem 0;">{t.result}</p>
-            <p style="color:#9ca3af;font-size:.8125rem;font-style:italic;">"{t.quote}"</p>
+            <p style="color:#4d7c0f;font-weight:600;font-size:.875rem;margin:.25rem 0;">{t.result}</p>
+            <p style="color:#4b5563;font-size:.8125rem;font-style:italic;">"{t.quote}"</p>
           </div>
         </article>
       ))}
@@ -200,21 +200,21 @@ const annualPrices = [122, 247, 414];
 <section id="programs" style="background:#f9fafb;padding:5rem 0;" aria-labelledby="programs-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <span style="display:inline-block;background:#f0fdf4;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Programs</span>
+      <span style="display:inline-block;background:#f0fdf4;color:#4d7c0f;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Programs</span>
       <h2 id="programs-h2" style="font-size:2.5rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:.75rem;">Built for your life, not around it</h2>
-      <p style="color:#6b7280;">Every program ships to your app and adapts to your equipment, schedule, and feedback.</p>
+      <p style="color:#4b5563;">Every program ships to your app and adapts to your equipment, schedule, and feedback.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
       {coach.programs.map((prog, i) => (
         <div style={`background:#fff;border-radius:1.25rem;padding:2rem;border:${i===1?'2px solid #65a30d':'1px solid #e5e7eb'};position:relative;box-shadow:${i===1?'0 8px 32px rgba(101,163,13,.15)':'0 1px 3px rgba(0,0,0,.06)'};`}>
-          {i===1 && <span style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#65a30d;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem .875rem;border-radius:0 0 .625rem .625rem;">Most Popular</span>}
+          {i===1 && <span style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#3f6212;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem .875rem;border-radius:0 0 .625rem .625rem;">Most Popular</span>}
           <div style="font-size:2rem;margin-bottom:1rem;">{prog.icon}</div>
           <h3 style="font-size:1.125rem;font-weight:600;color:#111827;margin-bottom:.625rem;">{prog.name}</h3>
-          <p style="font-size:.875rem;color:#6b7280;line-height:1.6;margin-bottom:1.25rem;">{prog.description}</p>
+          <p style="font-size:.875rem;color:#4b5563;line-height:1.6;margin-bottom:1.25rem;">{prog.description}</p>
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.625rem;">
             {prog.features.map(f => (
               <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.8125rem;color:#374151;">
-                <span style="color:#65a30d;font-weight:700;margin-top:1px;flex-shrink:0;">✓</span>{f}
+                <span style="color:#4d7c0f;font-weight:700;margin-top:1px;flex-shrink:0;">✓</span>{f}
               </li>
             ))}
           </ul>
@@ -228,7 +228,7 @@ const annualPrices = [122, 247, 414];
 <section id="pricing" style="background:#fff;padding:5rem 0;" aria-labelledby="pricing-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3rem;">
-      <span style="display:inline-block;background:#f0fdf4;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Pricing</span>
+      <span style="display:inline-block;background:#f0fdf4;color:#4d7c0f;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Pricing</span>
       <h2 id="pricing-h2" style="font-size:2.5rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:1.5rem;">Simple, transparent pricing</h2>
       <!-- Billing toggle -->
       <div style="display:inline-flex;align-items:center;gap:.875rem;background:#f3f4f6;border-radius:999px;padding:.375rem .875rem;">
@@ -237,29 +237,29 @@ const annualPrices = [122, 247, 414];
           style="position:relative;width:3rem;height:1.5rem;background:#d1d5db;border-radius:999px;border:none;cursor:pointer;padding:0;transition:background .2s;">
           <span id="knob" class="billing-knob" style="position:absolute;left:3px;top:3px;width:1.125rem;height:1.125rem;background:#fff;border-radius:999px;display:block;box-shadow:0 1px 3px rgba(0,0,0,.2);"></span>
         </button>
-        <span id="annual-lbl" style="font-size:.875rem;color:#9ca3af;">Annual <span style="color:#65a30d;font-weight:600;">(save 17%)</span></span>
+        <span id="annual-lbl" style="font-size:.875rem;color:#4b5563;">Annual <span style="color:#4d7c0f;font-weight:600;">(save 17%)</span></span>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:56rem;margin:0 auto;">
       {coach.pricing.map((tier, i) => (
         <div style={`position:relative;background:${tier.popular?'#111827':'#fff'};border-radius:1.25rem;padding:2rem;border:${tier.popular?'none':'1px solid #e5e7eb'};${tier.popular?'box-shadow:0 20px 60px rgba(0,0,0,.25);':''}`}>
-          {tier.popular && <span style="position:absolute;-top:-3px;left:50%;transform:translateX(-50%);background:#65a30d;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem .875rem;border-radius:999px;white-space:nowrap;">⭐ Most Popular</span>}
-          <p style={`font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;color:${tier.popular?'#65a30d':'#9ca3af'};`}>{tier.name}</p>
-          <p class={`price-amount-${i}`} style={`font-size:3rem;font-weight:700;letter-spacing:-.04em;line-height:1;color:${tier.popular?'#fff':'#111827'};`}>${monthlyPrices[i]}<span style={`font-size:1rem;font-weight:400;color:${tier.popular?'#6b7280':'#9ca3af'};`}>/mo</span></p>
+          {tier.popular && <span style="position:absolute;-top:-3px;left:50%;transform:translateX(-50%);background:#3f6212;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem .875rem;border-radius:999px;white-space:nowrap;">⭐ Most Popular</span>}
+          <p style={`font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;color:${tier.popular?'#a3e635':'#6b7280'};`}>{tier.name}</p>
+          <p class={`price-amount-${i}`} style={`font-size:3rem;font-weight:700;letter-spacing:-.04em;line-height:1;color:${tier.popular?'#fff':'#111827'};`}>${monthlyPrices[i]}<span style={`font-size:1rem;font-weight:400;color:${tier.popular?'#d1d5db':'#6b7280'};`}>/mo</span></p>
           <ul style="list-style:none;padding:0;margin:1.5rem 0;display:flex;flex-direction:column;gap:.75rem;">
             {tier.features.map(f => (
               <li style={`display:flex;align-items:flex-start;gap:.625rem;font-size:.8125rem;color:${tier.popular?'#d1d5db':'#374151'};`}>
-                <span style="color:#65a30d;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span>{f}
+                <span style="color:#4d7c0f;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span>{f}
               </li>
             ))}
           </ul>
-          <a href="#booking" style={`display:block;text-align:center;padding:.875rem;border-radius:999px;font-weight:600;font-size:.9375rem;text-decoration:none;transition:all .15s;background:${tier.popular?'#65a30d':'transparent'};color:${tier.popular?'#fff':'#374151'};border:${tier.popular?'none':'1.5px solid #e5e7eb'};`}>
+          <a href="#booking" style={`display:block;text-align:center;padding:.875rem;border-radius:999px;font-weight:600;font-size:.9375rem;text-decoration:none;transition:all .15s;background:${tier.popular?'#3f6212':'transparent'};color:${tier.popular?'#fff':'#374151'};border:${tier.popular?'none':'1.5px solid #e5e7eb'};`}>
             {i===0?'Get Started':'Start Free Week'}
           </a>
         </div>
       ))}
     </div>
-    <p style="text-align:center;color:#9ca3af;font-size:.8125rem;margin-top:1.5rem;">Cancel anytime. First week free on all plans. No hidden fees.</p>
+    <p style="text-align:center;color:#4b5563;font-size:.8125rem;margin-top:1.5rem;">Cancel anytime. First week free on all plans. No hidden fees.</p>
   </div>
 </section>
 
@@ -269,17 +269,17 @@ const annualPrices = [122, 247, 414];
     <div style="background:#fff;border-radius:2rem;border:1px solid #e5e7eb;padding:3rem;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;">
       <div style="position:relative;width:280px;flex-shrink:0;">
         <img src={coach.photo} alt={`${coach.name} — ${coach.title}`} style="width:280px;height:340px;object-fit:cover;border-radius:1.25rem;display:block;" />
-        <div style="position:absolute;-bottom:12px;-right:-12px;bottom:-12px;right:-12px;background:#65a30d;color:#fff;border-radius:1rem;padding:.875rem 1.25rem;box-shadow:0 8px 24px rgba(101,163,13,.4);text-align:center;">
+        <div style="position:absolute;-bottom:12px;-right:-12px;bottom:-12px;right:-12px;background:#3f6212;color:#fff;border-radius:1rem;padding:.875rem 1.25rem;box-shadow:0 8px 24px rgba(101,163,13,.4);text-align:center;">
           <p style="font-size:1.5rem;font-weight:700;line-height:1;">4.9★</p>
           <p style="font-size:.65rem;color:#d9f99d;margin-top:.125rem;">Avg. rating</p>
         </div>
       </div>
       <div>
-        <span style="display:inline-block;background:#f0fdf4;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Meet Your Coach</span>
+        <span style="display:inline-block;background:#f0fdf4;color:#4d7c0f;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Meet Your Coach</span>
         <h2 id="coach-h2" style="font-size:2.25rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:.25rem;">{coach.name}</h2>
-        <p style="color:#65a30d;font-weight:600;font-size:1rem;margin-bottom:1.5rem;">{coach.title}</p>
+        <p style="color:#4d7c0f;font-weight:600;font-size:1rem;margin-bottom:1.5rem;">{coach.title}</p>
         <p style="color:#374151;line-height:1.7;margin-bottom:.875rem;">{coach.bio}</p>
-        <p style="color:#6b7280;font-size:.9375rem;line-height:1.7;margin-bottom:1.75rem;">{coach.bioExtended}</p>
+        <p style="color:#4b5563;font-size:.9375rem;line-height:1.7;margin-bottom:1.75rem;">{coach.bioExtended}</p>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;">
           {coach.certifications.map(c => (
             <span style="background:#f3f4f6;color:#374151;font-size:.75rem;font-weight:600;padding:.375rem .75rem;border-radius:999px;">{c}</span>
@@ -289,7 +289,7 @@ const annualPrices = [122, 247, 414];
           {coach.achievements.map(a => (
             <div style="background:#f0fdf4;border-radius:.875rem;padding:1rem;text-align:center;">
               <p style="font-size:1.375rem;font-weight:700;color:#111827;">{a.value}</p>
-              <p style="font-size:.65rem;color:#6b7280;margin-top:.25rem;">{a.label}</p>
+              <p style="font-size:.65rem;color:#4b5563;margin-top:.25rem;">{a.label}</p>
             </div>
           ))}
         </div>
@@ -308,13 +308,13 @@ const annualPrices = [122, 247, 414];
       {coach.testimonials.map(t => (
         <blockquote style="background:#fff;border-radius:1.25rem;padding:1.75rem;border:1px solid #bbf7d0;box-shadow:0 1px 3px rgba(0,0,0,.05);margin:0;">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
-            <p style="font-size:1.375rem;font-weight:700;color:#65a30d;">{t.result}</p>
-            <p style="color:#fbbf24;font-size:.875rem;">★★★★★</p>
+            <p style="font-size:1.375rem;font-weight:700;color:#4d7c0f;">{t.result}</p>
+            <p style="color:#b45309;font-size:.875rem;">★★★★★</p>
           </div>
           <p style="color:#374151;font-size:.875rem;line-height:1.7;margin-bottom:1.25rem;">{t.text}</p>
           <footer style="border-top:1px solid #f0fdf4;padding-top:1rem;">
             <cite style="font-weight:600;color:#111827;font-style:normal;">{t.name}</cite>
-            <p style="color:#9ca3af;font-size:.75rem;margin-top:.125rem;">{t.details}</p>
+            <p style="color:#4b5563;font-size:.75rem;margin-top:.125rem;">{t.details}</p>
           </footer>
         </blockquote>
       ))}
@@ -327,8 +327,8 @@ const annualPrices = [122, 247, 414];
   <div style="max-width:42rem;margin:0 auto;padding:0 1.5rem;">
     <span style="display:inline-block;background:rgba(101,163,13,.15);color:#84cc16;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1.5rem;">Zero Risk</span>
     <h2 id="cta-h2" style="font-size:2.75rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:1rem;">Start your free week today.</h2>
-    <p style="color:#9ca3af;font-size:1.125rem;line-height:1.7;margin-bottom:2.5rem;">No credit card. No commitment. Just show up and let the results do the convincing.</p>
-    <a href="#booking" style="background:#65a30d;color:#fff;font-weight:600;font-size:1.125rem;text-decoration:none;padding:1rem 3rem;border-radius:999px;display:inline-block;box-shadow:0 8px 32px rgba(101,163,13,.4);">Apply for My Free Week</a>
+    <p style="color:#d1d5db;font-size:1.125rem;line-height:1.7;margin-bottom:2.5rem;">No credit card. No commitment. Just show up and let the results do the convincing.</p>
+    <a href="#booking" style="background:#3f6212;color:#fff;font-weight:600;font-size:1.125rem;text-decoration:none;padding:1rem 3rem;border-radius:999px;display:inline-block;box-shadow:0 8px 32px rgba(101,163,13,.4);">Apply for My Free Week</a>
   </div>
 </section>
 
@@ -336,14 +336,14 @@ const annualPrices = [122, 247, 414];
 <section id="location" style="background:#fff;padding:5rem 0;" aria-labelledby="loc-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
     <div>
-      <span style="display:inline-block;background:#f0fdf4;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1.5rem;">Contact</span>
+      <span style="display:inline-block;background:#f0fdf4;color:#4d7c0f;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1.5rem;">Contact</span>
       <h2 id="loc-h2" style="font-size:2rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:2rem;">100% remote coaching</h2>
       <address style="font-style:normal;color:#374151;margin-bottom:2rem;line-height:2;">
         <p style="font-weight:600;font-size:1.125rem;color:#111827;">{coach.gym}</p>
-        <p style="color:#6b7280;">{coach.address.street}</p>
-        <p style="color:#6b7280;">{coach.address.city}</p>
-        <p style="margin-top:.75rem;"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#65a30d;text-decoration:none;font-weight:500;">{coach.phone}</a></p>
-        <p><a href={`mailto:${coach.email}`} style="color:#65a30d;text-decoration:none;font-weight:500;">{coach.email}</a></p>
+        <p style="color:#4b5563;">{coach.address.street}</p>
+        <p style="color:#4b5563;">{coach.address.city}</p>
+        <p style="margin-top:.75rem;"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#4d7c0f;text-decoration:none;font-weight:500;">{coach.phone}</a></p>
+        <p><a href={`mailto:${coach.email}`} style="color:#4d7c0f;text-decoration:none;font-weight:500;">{coach.email}</a></p>
       </address>
       <h3 style="font-weight:600;color:#111827;margin-bottom:1rem;">Availability</h3>
       <table style="width:100%;border-collapse:collapse;" aria-label="Coaching availability">
@@ -351,7 +351,7 @@ const annualPrices = [122, 247, 414];
           {coach.hours.map(h => (
             <tr style="border-bottom:1px solid #f3f4f6;">
               <td style="padding:.75rem 0;color:#374151;font-weight:500;">{h.day}</td>
-              <td style="padding:.75rem 0;text-align:right;color:#65a30d;font-weight:600;">{h.hours}</td>
+              <td style="padding:.75rem 0;text-align:right;color:#4d7c0f;font-weight:600;">{h.hours}</td>
             </tr>
           ))}
         </tbody>
@@ -361,7 +361,7 @@ const annualPrices = [122, 247, 414];
       <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80"
         alt="Client training at home with phone and coaching app" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:1rem;margin-bottom:1.5rem;display:block;" />
       <p style="font-weight:600;color:#111827;margin-bottom:.5rem;">Train from anywhere</p>
-      <p style="color:#6b7280;font-size:.875rem;line-height:1.6;">Home gym, hotel, commercial gym — the program adapts to your equipment. Async video reviews mean Sarah coaches your form without scheduling calls.</p>
+      <p style="color:#4b5563;font-size:.875rem;line-height:1.6;">Home gym, hotel, commercial gym — the program adapts to your equipment. Async video reviews mean Sarah coaches your form without scheduling calls.</p>
     </div>
   </div>
 </section>
@@ -370,9 +370,9 @@ const annualPrices = [122, 247, 414];
 <section id="booking" style="background:#f9fafb;padding:5rem 0;" aria-labelledby="book-h2">
   <div style="max-width:40rem;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:2.5rem;">
-      <span style="display:inline-block;background:#f0fdf4;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Apply</span>
+      <span style="display:inline-block;background:#f0fdf4;color:#4d7c0f;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;">Apply</span>
       <h2 id="book-h2" style="font-size:2rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:.75rem;">Start your free week</h2>
-      <p style="color:#6b7280;font-size:.9375rem;">Sarah personally reviews every application. You'll hear back within 24 hours.</p>
+      <p style="color:#4b5563;font-size:.9375rem;">Sarah personally reviews every application. You'll hear back within 24 hours.</p>
     </div>
     <form style="background:#fff;border-radius:1.5rem;padding:2.5rem;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:1.25rem;" aria-label="Coaching application" novalidate>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
@@ -419,10 +419,10 @@ const annualPrices = [122, 247, 414];
         <textarea id="v2-msg" name="message" rows="4" placeholder="Current routine, biggest challenges, what you've tried before..."
           style="width:100%;border:1.5px solid #e5e7eb;color:#111827;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;resize:none;box-sizing:border-box;"></textarea>
       </div>
-      <button type="submit" style="background:#65a30d;color:#fff;font-weight:600;font-size:1.0625rem;border:none;padding:1rem;border-radius:999px;cursor:pointer;width:100%;box-shadow:0 4px 14px rgba(101,163,13,.35);">
+      <button type="submit" style="background:#3f6212;color:#fff;font-weight:600;font-size:1.0625rem;border:none;padding:1rem;border-radius:999px;cursor:pointer;width:100%;box-shadow:0 4px 14px rgba(101,163,13,.35);">
         Apply for My Free Week →
       </button>
-      <p style="text-align:center;color:#9ca3af;font-size:.75rem;">Sarah reviews every application personally. Response within 24 hours.</p>
+      <p style="text-align:center;color:#4b5563;font-size:.75rem;">Sarah reviews every application personally. Response within 24 hours.</p>
     </form>
   </div>
 </section>
@@ -431,8 +431,8 @@ const annualPrices = [122, 247, 414];
 
 <footer style="background:#111827;padding:3rem 1.5rem;text-align:center;">
   <p style="color:#fff;font-weight:600;">{coach.gym}</p>
-  <p style="color:#6b7280;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
-  <p style="margin-top:.5rem;"><a href="/" style="color:#6b7280;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
+  <p style="color:#d1d5db;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
+  <p style="margin-top:.5rem;"><a href="/v2-online-coach/accessibility" style="color:#d1d5db;font-size:.75rem;text-decoration:none;">Accessibility Statement</a> · <a href="/" style="color:#d1d5db;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
 </footer>
 
 <script is:inline>

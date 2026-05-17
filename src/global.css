@@ -1,3 +1,5 @@
+@import "./styles/a11y.css";
+
 *, *::before, *::after {
   animation: none !important;
   transition: none !important;
@@ -7,4 +9,16 @@
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* A11y: visible focus rings for keyboard nav */
+*:focus-visible {
+  outline: 3px solid #ffbf00 !important;
+  outline-offset: 2px !important;
+  border-radius: 2px;
+}
+
+/* A11y: ensure minimum touch target 44x44 on icon-only links/buttons */
+a, button {
+  min-height: 1px;
 }

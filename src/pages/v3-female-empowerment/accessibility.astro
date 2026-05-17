@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { coach } from '../../data/v3-coach';
+---
+<BaseLayout
+  title="Accessibility Statement | Fierce & Free Fitness"
+  description="Accessibility statement and commitment for Fierce & Free Fitness."
+  fontUrl="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+  themeColor="#be185d"
+>
+<nav aria-label="Main navigation" style="position:sticky;top:0;z-index:50;background:rgba(253,245,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid #fecdd3;font-family:'Lato',sans-serif;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="/v3-female-empowerment" style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#881337;text-decoration:none;">Fierce &amp; Free</a>
+    <a href="/v3-female-empowerment" style="color:#881337;font-size:.875rem;text-decoration:none;font-weight:600;">← Back to home</a>
+  </div>
+</nav>
+<main id="main-content" style="background:#FDF5F0;color:#3D1F1F;min-height:100vh;padding:5rem 1.5rem;font-family:'Lato',sans-serif;">
+  <div style="max-width:42rem;margin:0 auto;line-height:1.8;">
+    <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Compliance</p>
+    <h1 style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:#881337;line-height:1.1;margin-bottom:1.5rem;">Accessibility Statement</h1>
+    <p style="color:#3D1F1F;margin-bottom:1.25rem;font-size:1.05rem;">Fierce &amp; Free Fitness is committed to ensuring digital accessibility for people of all abilities. We strive to conform to WCAG 2.1 Level AA standards and continuously improve the user experience for everyone.</p>
+    <p style="color:#3D1F1F;margin-bottom:1.25rem;font-size:1.05rem;">If you experience any difficulty accessing this website, or need accommodations, please contact us at <a href={`mailto:${coach.email}`} style="color:#be185d;text-decoration:underline;font-weight:700;">{coach.email}</a> or <a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#be185d;text-decoration:underline;font-weight:700;">{coach.phone}</a> and we will work to provide the information or service through alternative communication.</p>
+    <p style="color:#6b4250;font-size:.9375rem;border-top:1px solid #fecdd3;padding-top:1.25rem;margin-top:2rem;">This site is reviewed regularly. Last updated: 2026-05-17.</p>
+  </div>
+</main>
+<footer style="background:#881337;padding:3rem 1.5rem;text-align:center;font-family:'Lato',sans-serif;">
+  <p class="playfair" style="font-family:'Playfair Display',serif;color:#fff;font-size:1.25rem;font-weight:700;">Fierce &amp; Free Fitness</p>
+  <p style="margin-top:.5rem;"><a href="/v3-female-empowerment" style="color:#fda4af;font-size:.75rem;text-decoration:none;">← Back to home</a></p>
+</footer>
+</BaseLayout>

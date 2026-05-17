@@ -39,7 +39,7 @@ import { coach } from '../data/v1-coach';
   </div>
 </nav>
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 
 <!-- ───── HERO ───── -->
 <section style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:5rem;overflow:hidden;" aria-labelledby="hero-h1">
@@ -50,9 +50,9 @@ import { coach } from '../data/v1-coach';
   <div style="position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(135deg,transparent 50%,rgba(220,38,38,.08) 50%);pointer-events:none;"></div>
 
   <div style="position:relative;z-index:10;max-width:1280px;margin:0 auto;padding:0 1.5rem;width:100%;">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.5em;color:#dc2626;text-transform:uppercase;margin-bottom:1rem;">San Diego · Est. 2012 · NSCA-CSCS Certified</p>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.5em;color:#ef4444;text-transform:uppercase;margin-bottom:1rem;">San Diego · Est. 2012 · NSCA-CSCS Certified</p>
     <h1 id="hero-h1" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(4rem,12vw,10rem);line-height:.92;color:#fff;text-transform:uppercase;margin-bottom:1.5rem;">
-      PR<br/><span style="color:#dc2626;">OR</span><br/>NOT.
+      PR<br/><span style="color:#ef4444;">OR</span><br/>NOT.
     </h1>
     <div style="width:4rem;height:3px;background:#dc2626;margin-bottom:1.5rem;"></div>
     <p style="font-family:'Barlow',sans-serif;font-size:1.1rem;color:#d1d5db;max-width:36rem;line-height:1.7;margin-bottom:2.5rem;">{coach.tagline}</p>
@@ -65,7 +65,7 @@ import { coach } from '../data/v1-coach';
       {coach.achievements.map(a => (
         <div>
           <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#fff;line-height:1;">{a.value}</p>
-          <p style="font-family:'Barlow',sans-serif;font-size:.7rem;letter-spacing:.2em;color:#6b7280;text-transform:uppercase;margin-top:.25rem;">{a.label}</p>
+          <p style="font-family:'Barlow',sans-serif;font-size:.7rem;letter-spacing:.2em;color:#a1a1aa;text-transform:uppercase;margin-top:.25rem;">{a.label}</p>
         </div>
       ))}
     </div>
@@ -101,9 +101,9 @@ import { coach } from '../data/v1-coach';
 <!-- ───── 1RM CALCULATOR ───── -->
 <section id="calc" style="background:#09090b;padding:5rem 0;" aria-labelledby="calc-heading">
   <div style="max-width:760px;margin:0 auto;padding:0 1.5rem;">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Training Tool</p>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Training Tool</p>
     <h2 id="calc-heading" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;text-transform:uppercase;margin-bottom:.5rem;">1 REP MAX CALCULATOR</h2>
-    <p style="font-family:'Barlow',sans-serif;color:#6b7280;margin-bottom:2.5rem;">Enter the weight and reps from your best set. We'll calculate your estimated 1RM and training percentages using the Epley formula.</p>
+    <p style="font-family:'Barlow',sans-serif;color:#a1a1aa;margin-bottom:2.5rem;">Enter the weight and reps from your best set. We'll calculate your estimated 1RM and training percentages using the Epley formula.</p>
 
     <div style="border:2px solid #27272a;background:#18181b;padding:2.5rem;">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
@@ -124,17 +124,17 @@ import { coach } from '../data/v1-coach';
       </button>
 
       <div id="rm-result" style="display:none;margin-top:2rem;border-top:1px solid #27272a;padding-top:2rem;">
-        <p style="font-family:'Barlow',sans-serif;font-size:.8rem;letter-spacing:.2em;color:#6b7280;text-transform:uppercase;text-align:center;">Estimated 1 Rep Max</p>
-        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:6rem;color:#dc2626;text-align:center;line-height:1;margin:.5rem 0;"><span id="rm-value">—</span> <span style="font-size:2rem;color:#71717a;">lbs</span></p>
+        <p style="font-family:'Barlow',sans-serif;font-size:.8rem;letter-spacing:.2em;color:#a1a1aa;text-transform:uppercase;text-align:center;">Estimated 1 Rep Max</p>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:6rem;color:#ef4444;text-align:center;line-height:1;margin:.5rem 0;"><span id="rm-value">—</span> <span style="font-size:2rem;color:#a1a1aa;">lbs</span></p>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.5rem;">
           {[['50%','p50'],['65%','p65'],['75%','p75'],['85%','p85'],['90%','p90'],['95%','p95'],['97%','p97'],['100%','p100']].map(([pct,id]) => (
             <div style="background:#09090b;border:1px solid #27272a;padding:.875rem .5rem;text-align:center;">
-              <p style="font-family:'Barlow',sans-serif;font-size:.7rem;color:#6b7280;text-transform:uppercase;">{pct}</p>
+              <p style="font-family:'Barlow',sans-serif;font-size:.7rem;color:#a1a1aa;text-transform:uppercase;">{pct}</p>
               <p id={id} style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.25rem;color:#fff;margin-top:.25rem;">—</p>
             </div>
           ))}
         </div>
-        <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#52525b;margin-top:1rem;text-align:center;">Epley formula. Use as a training guide, not a competition predictor.</p>
+        <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#a1a1aa;margin-top:1rem;text-align:center;">Epley formula. Use as a training guide, not a competition predictor.</p>
       </div>
     </div>
   </div>
@@ -145,10 +145,10 @@ import { coach } from '../data/v1-coach';
   <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;border-bottom:2px solid #dc2626;padding-bottom:1rem;">
       <div>
-        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.5rem;">Client Results</p>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.5rem;">Client Results</p>
         <h2 id="trans-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:#fff;text-transform:uppercase;line-height:1;">TRANSFORMATIONS</h2>
       </div>
-      <p style="font-family:'Barlow',sans-serif;color:#6b7280;font-size:.875rem;max-width:16rem;text-align:right;">Real athletes. Real programming. Verified results.</p>
+      <p style="font-family:'Barlow',sans-serif;color:#a1a1aa;font-size:.875rem;max-width:16rem;text-align:right;">Real athletes. Real programming. Verified results.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#dc2626;">
       {coach.transformations.map(t => (
@@ -165,8 +165,8 @@ import { coach } from '../data/v1-coach';
           </div>
           <div style="padding:1.25rem;border-top:2px solid #dc2626;">
             <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.25rem;color:#fff;text-transform:uppercase;">{t.name}</p>
-            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:#dc2626;margin:.25rem 0;">{t.result}</p>
-            <p style="font-family:'Barlow',sans-serif;font-size:.8rem;color:#6b7280;font-style:italic;">"{t.quote}"</p>
+            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:#ef4444;margin:.25rem 0;">{t.result}</p>
+            <p style="font-family:'Barlow',sans-serif;font-size:.8rem;color:#a1a1aa;font-style:italic;">"{t.quote}"</p>
           </div>
         </article>
       ))}
@@ -177,18 +177,18 @@ import { coach } from '../data/v1-coach';
 <!-- ───── PROGRAMS ───── -->
 <section id="programs" style="background:#09090b;padding:5rem 0;" aria-labelledby="programs-h2">
   <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Systems</p>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Systems</p>
     <h2 id="programs-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;text-transform:uppercase;margin-bottom:3rem;">PROGRAMMING THAT PERFORMS</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#27272a;">
       {coach.programs.map((prog, i) => (
         <div style={`background:#000;padding:2.5rem;border-top:4px solid ${i===1?'#dc2626':'#27272a'};`}>
           <p style="font-size:2.5rem;margin-bottom:1.25rem;">{prog.icon}</p>
           <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:#fff;text-transform:uppercase;margin-bottom:.75rem;">{prog.name}</h3>
-          <p style="font-family:'Barlow',sans-serif;font-size:.875rem;color:#6b7280;line-height:1.7;margin-bottom:1.5rem;">{prog.description}</p>
+          <p style="font-family:'Barlow',sans-serif;font-size:.875rem;color:#a1a1aa;line-height:1.7;margin-bottom:1.5rem;">{prog.description}</p>
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.625rem;">
             {prog.features.map(f => (
               <li style="display:flex;align-items:flex-start;gap:.625rem;font-family:'Barlow',sans-serif;font-size:.875rem;color:#d4d4d8;">
-                <span style="color:#dc2626;font-weight:900;margin-top:2px;flex-shrink:0;">▶</span>{f}
+                <span style="color:#ef4444;font-weight:900;margin-top:2px;flex-shrink:0;">▶</span>{f}
               </li>
             ))}
           </ul>
@@ -201,20 +201,20 @@ import { coach } from '../data/v1-coach';
 <!-- ───── PRICING ───── -->
 <section id="pricing" style="background:#000;padding:5rem 0;" aria-labelledby="pricing-h2">
   <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Investment</p>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Investment</p>
     <h2 id="pricing-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;text-transform:uppercase;margin-bottom:.5rem;">CHOOSE YOUR LEVEL</h2>
-    <p style="font-family:'Barlow',sans-serif;color:#6b7280;margin-bottom:3rem;">No contracts. First session free. Cancel anytime.</p>
+    <p style="font-family:'Barlow',sans-serif;color:#a1a1aa;margin-bottom:3rem;">No contracts. First session free. Cancel anytime.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
       {coach.pricing.map(tier => (
         <div style={`position:relative;padding:2.5rem;border:2px solid ${tier.popular?'#dc2626':'#27272a'};background:${tier.popular?'rgba(220,38,38,.05)':'#09090b'};`}>
           {tier.popular && <span style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#dc2626;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.25rem 1rem;">MOST POPULAR</span>}
-          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;letter-spacing:.2em;color:#6b7280;text-transform:uppercase;">{tier.name}</p>
-          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:4.5rem;color:#fff;line-height:1;margin:.5rem 0;">${tier.price}<span style="font-size:1.25rem;color:#71717a;font-weight:400;">/mo</span></p>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;letter-spacing:.2em;color:#a1a1aa;text-transform:uppercase;">{tier.name}</p>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:4.5rem;color:#fff;line-height:1;margin:.5rem 0;">${tier.price}<span style="font-size:1.25rem;color:#a1a1aa;font-weight:400;">/mo</span></p>
           <div style="border-top:1px solid #27272a;margin:1.5rem 0;padding-top:1.5rem;">
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.875rem;">
               {tier.features.map(f => (
                 <li style="display:flex;align-items:flex-start;gap:.75rem;font-family:'Barlow',sans-serif;font-size:.875rem;color:#d4d4d8;">
-                  <span style="color:#dc2626;font-weight:900;flex-shrink:0;margin-top:2px;">✓</span>{f}
+                  <span style="color:#ef4444;font-weight:900;flex-shrink:0;margin-top:2px;">✓</span>{f}
                 </li>
               ))}
             </ul>
@@ -242,16 +242,16 @@ import { coach } from '../data/v1-coach';
       </div>
     </div>
     <div>
-      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Your Coach</p>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Your Coach</p>
       <h2 id="coach-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:4rem;color:#fff;text-transform:uppercase;line-height:.95;margin-bottom:.5rem;">{coach.name}</h2>
-      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:#dc2626;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2rem;">{coach.title}</p>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:#ef4444;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2rem;">{coach.title}</p>
       <p style="font-family:'Barlow',sans-serif;font-size:1.1rem;color:#e4e4e7;line-height:1.7;margin-bottom:1rem;">{coach.bio}</p>
-      <p style="font-family:'Barlow',sans-serif;font-size:.95rem;color:#71717a;line-height:1.7;margin-bottom:2.5rem;">{coach.bioExtended}</p>
+      <p style="font-family:'Barlow',sans-serif;font-size:.95rem;color:#a1a1aa;line-height:1.7;margin-bottom:2.5rem;">{coach.bioExtended}</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
         {coach.achievements.map(a => (
           <div style="border-left:3px solid #dc2626;padding-left:1rem;">
             <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#fff;line-height:1;">{a.value}</p>
-            <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#6b7280;text-transform:uppercase;letter-spacing:.1em;margin-top:.25rem;">{a.label}</p>
+            <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:.1em;margin-top:.25rem;">{a.label}</p>
           </div>
         ))}
       </div>
@@ -262,19 +262,19 @@ import { coach } from '../data/v1-coach';
 <!-- ───── TESTIMONIALS ───── -->
 <section id="testimonials" style="background:#000;padding:5rem 0;" aria-labelledby="test-h2">
   <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Social Proof</p>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Social Proof</p>
     <h2 id="test-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;text-transform:uppercase;margin-bottom:3rem;">THE PROOF IS IN THE PR</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#27272a;">
       {coach.testimonials.map(t => (
         <blockquote style="background:#09090b;padding:2.5rem;margin:0;">
-          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:4rem;color:#dc2626;line-height:.8;margin-bottom:1rem;" aria-hidden="true">"</p>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:4rem;color:#ef4444;line-height:.8;margin-bottom:1rem;" aria-hidden="true">"</p>
           <p style="font-family:'Barlow',sans-serif;font-size:.9rem;color:#d4d4d8;line-height:1.8;margin-bottom:1.5rem;">{t.text}</p>
           <footer style="display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid #27272a;padding-top:1rem;">
             <div>
               <cite style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.25rem;color:#fff;font-style:normal;text-transform:uppercase;">{t.name}</cite>
-              <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#6b7280;margin-top:.125rem;">{t.details}</p>
+              <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#a1a1aa;margin-top:.125rem;">{t.details}</p>
             </div>
-            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#dc2626;">{t.result}</p>
+            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#ef4444;">{t.result}</p>
           </footer>
         </blockquote>
       ))}
@@ -289,8 +289,8 @@ import { coach } from '../data/v1-coach';
   <div style="position:absolute;inset:0;background:rgba(0,0,0,.8);"></div>
   <div style="position:absolute;inset:0;border-top:4px solid #dc2626;border-bottom:4px solid #dc2626;pointer-events:none;"></div>
   <div style="position:relative;z-index:10;text-align:center;max-width:56rem;margin:0 auto;padding:0 1.5rem;">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.5em;color:#dc2626;text-transform:uppercase;margin-bottom:1.5rem;">Zero Cost · Zero Commitment</p>
-    <h2 id="cta-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,7rem);color:#fff;text-transform:uppercase;line-height:.92;margin-bottom:1.5rem;">FREE INTAKE<br/><span style="color:#dc2626;">SESSION.</span><br/>TODAY.</h2>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.5em;color:#ef4444;text-transform:uppercase;margin-bottom:1.5rem;">Zero Cost · Zero Commitment</p>
+    <h2 id="cta-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,7rem);color:#fff;text-transform:uppercase;line-height:.92;margin-bottom:1.5rem;">FREE INTAKE<br/><span style="color:#ef4444;">SESSION.</span><br/>TODAY.</h2>
     <p style="font-family:'Barlow',sans-serif;color:#d1d5db;font-size:1.1rem;margin-bottom:2.5rem;">No pitch. No obligation. Just a frank conversation about your goals and whether we're the right fit.</p>
     <a href="#booking" style="display:inline-block;background:#dc2626;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.75rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:1.25rem 3.5rem;">BOOK NOW — IT'S FREE</a>
   </div>
@@ -300,21 +300,21 @@ import { coach } from '../data/v1-coach';
 <section id="location" style="background:#000;padding:5rem 0;" aria-labelledby="loc-h2">
   <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;">
     <div>
-      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Find Us</p>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Find Us</p>
       <h2 id="loc-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:#fff;text-transform:uppercase;margin-bottom:2rem;">LOCATION &amp; HOURS</h2>
       <address style="font-style:normal;color:#d4d4d8;margin-bottom:2rem;line-height:2;">
         <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;text-transform:uppercase;">{coach.gym}</p>
         <p style="font-family:'Barlow',sans-serif;">{coach.address.street}</p>
         <p style="font-family:'Barlow',sans-serif;">{coach.address.city}</p>
-        <p style="margin-top:.75rem;"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#dc2626;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;">{coach.phone}</a></p>
-        <p><a href={`mailto:${coach.email}`} style="color:#dc2626;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;">{coach.email}</a></p>
+        <p style="margin-top:.75rem;"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#ef4444;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;">{coach.phone}</a></p>
+        <p><a href={`mailto:${coach.email}`} style="color:#ef4444;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;">{coach.email}</a></p>
       </address>
       <table style="width:100%;border-collapse:collapse;" aria-label="Training hours">
         <tbody>
           {coach.hours.map(h => (
             <tr style="border-bottom:1px solid #27272a;">
               <td style="font-family:'Barlow',sans-serif;color:#e4e4e7;padding:.875rem 0;font-weight:600;">{h.day}</td>
-              <td style="font-family:'Barlow Condensed',sans-serif;color:#dc2626;font-weight:700;font-size:1.1rem;text-align:right;padding:.875rem 0;">{h.hours}</td>
+              <td style="font-family:'Barlow Condensed',sans-serif;color:#ef4444;font-weight:700;font-size:1.1rem;text-align:right;padding:.875rem 0;">{h.hours}</td>
             </tr>
           ))}
         </tbody>
@@ -333,18 +333,18 @@ import { coach } from '../data/v1-coach';
 <!-- ───── BOOKING ───── -->
 <section id="booking" style="background:#09090b;padding:5rem 0;" aria-labelledby="book-h2">
   <div style="max-width:48rem;margin:0 auto;padding:0 1.5rem;">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Let's Go</p>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Let's Go</p>
     <h2 id="book-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;text-transform:uppercase;margin-bottom:.5rem;">BOOK YOUR FREE INTAKE</h2>
-    <p style="font-family:'Barlow',sans-serif;color:#6b7280;margin-bottom:2.5rem;">We respond within 24 hours. No cookie-cutter consultations — just real talk about your goals.</p>
+    <p style="font-family:'Barlow',sans-serif;color:#a1a1aa;margin-bottom:2.5rem;">We respond within 24 hours. No cookie-cutter consultations — just real talk about your goals.</p>
     <form style="display:flex;flex-direction:column;gap:1.25rem;" aria-label="Free intake booking form" novalidate>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
         <div>
-          <label for="v1-name" style="display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:.5rem;">Full Name <span aria-label="required" style="color:#dc2626;">*</span></label>
+          <label for="v1-name" style="display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:.5rem;">Full Name <span aria-label="required" style="color:#ef4444;">*</span></label>
           <input type="text" id="v1-name" name="name" required autocomplete="name" placeholder="John Steel"
             style="width:100%;background:#000;border:2px solid #27272a;color:#fff;padding:.875rem 1rem;font-family:'Barlow',sans-serif;outline:none;box-sizing:border-box;" />
         </div>
         <div>
-          <label for="v1-email" style="display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:.5rem;">Email <span aria-label="required" style="color:#dc2626;">*</span></label>
+          <label for="v1-email" style="display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:.5rem;">Email <span aria-label="required" style="color:#ef4444;">*</span></label>
           <input type="email" id="v1-email" name="email" required autocomplete="email" placeholder="you@example.com"
             style="width:100%;background:#000;border:2px solid #27272a;color:#fff;padding:.875rem 1rem;font-family:'Barlow',sans-serif;outline:none;box-sizing:border-box;" />
         </div>
@@ -356,7 +356,7 @@ import { coach } from '../data/v1-coach';
             style="width:100%;background:#000;border:2px solid #27272a;color:#fff;padding:.875rem 1rem;font-family:'Barlow',sans-serif;outline:none;box-sizing:border-box;" />
         </div>
         <div>
-          <label for="v1-goal" style="display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:.5rem;">Goal <span aria-label="required" style="color:#dc2626;">*</span></label>
+          <label for="v1-goal" style="display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:#9ca3af;text-transform:uppercase;margin-bottom:.5rem;">Goal <span aria-label="required" style="color:#ef4444;">*</span></label>
           <select id="v1-goal" name="goal" required style="width:100%;background:#000;border:2px solid #27272a;color:#fff;padding:.875rem 1rem;font-family:'Barlow',sans-serif;outline:none;box-sizing:border-box;">
             <option value="">Select goal</option>
             <option value="powerlifting">Compete in Powerlifting</option>
@@ -379,7 +379,7 @@ import { coach } from '../data/v1-coach';
       <button type="submit" style="background:#dc2626;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.75rem;letter-spacing:.2em;text-transform:uppercase;border:none;padding:1.25rem;cursor:pointer;width:100%;">
         SUBMIT — LET'S GET TO WORK
       </button>
-      <p style="text-align:center;font-family:'Barlow',sans-serif;font-size:.75rem;color:#52525b;">No commitment. No payment. Just a real conversation about your goals.</p>
+      <p style="text-align:center;font-family:'Barlow',sans-serif;font-size:.75rem;color:#a1a1aa;">No commitment. No payment. Just a real conversation about your goals.</p>
     </form>
   </div>
 </section>
@@ -388,8 +388,8 @@ import { coach } from '../data/v1-coach';
 
 <footer style="background:#000;border-top:2px solid #dc2626;padding:2.5rem 1.5rem;text-align:center;">
   <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:.2em;text-transform:uppercase;">STEEL ATHLETICS</p>
-  <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#3f3f46;margin-top:.5rem;text-transform:uppercase;letter-spacing:.1em;">© {new Date().getFullYear()} Steel Athletics · San Diego, CA</p>
-  <p style="margin-top:.5rem;"><a href="/" style="color:#3f3f46;font-family:'Barlow',sans-serif;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
+  <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#a1a1aa;margin-top:.5rem;text-transform:uppercase;letter-spacing:.1em;">© {new Date().getFullYear()} Steel Athletics · San Diego, CA</p>
+  <p style="margin-top:.5rem;"><a href="/v1-strength-elite/accessibility" style="color:#a1a1aa;font-family:'Barlow',sans-serif;font-size:.75rem;text-decoration:none;">Accessibility Statement</a> · <a href="/" style="color:#a1a1aa;font-family:'Barlow',sans-serif;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
 </footer>
 
 <script is:inline>

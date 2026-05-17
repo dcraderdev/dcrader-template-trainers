@@ -1,0 +1,129 @@
+---
+/**
+ * AccessibleField — single form-field row with label, control, hint, error.
+ *
+ * Enforces:
+ *  - Every input has an associated <label> via for/id.
+ *  - Hint text is linked via aria-describedby.
+ *  - Error messages set aria-invalid="true" and aria-describedby.
+ *  - Required state is announced via aria-required + visual asterisk.
+ *
+ * Provide your <input> / <select> / <textarea> via the default slot.
+ * The control MUST receive id={id} — pass via Astro.props.id below.
+ *
+ * Usage:
+ *   <AccessibleField id="email" label="Email" required hint="We never share it." error={errors.email}>
+ *     <input id="email" name="email" type="email" />
+ *   </AccessibleField>
+ */
+interface Props {
+  /** Unique id used to link label, hint, error to the control. */
+  id: string;
+  /** Visible label text. */
+  label: string;
+  /** If true, hides label visually (sr-only) but keeps it for AT. */
+  labelHidden?: boolean;
+  /** Helpful hint shown below the input. */
+  hint?: string;
+  /** Error message. When set, control is marked aria-invalid. */
+  error?: string;
+  /** Mark required. */
+  required?: boolean;
+  /** Extra class for the wrapper. */
+  class?: string;
+}
+
+const {
+  id,
+  label,
+  labelHidden = false,
+  hint,
+  error,
+  required = false,
+  class: className = '',
+} = Astro.props;
+
+const hintId = hint ? `${id}-hint` : undefined;
+const errorId = error ? `${id}-error` : undefined;
+const describedBy = [hintId, errorId].filter(Boolean).join(' ') || undefined;
+---
+
+<div class={`a11y-field ${className}`.trim()} data-a11y-field>
+  <label
+    for={id}
+    class={labelHidden ? 'a11y-sr-only' : 'a11y-field__label'}
+  >
+    {label}
+    {required && <span aria-hidden="true" class="a11y-field__required">*</span>}
+    {required && <span class="a11y-sr-only">(required)</span>}
+  </label>
+
+  <div
+    class="a11y-field__control"
+    data-described-by={describedBy}
+    data-aria-invalid={error ? 'true' : 'false'}
+    data-aria-required={required ? 'true' : undefined}
+  >
+    <slot />
+  </div>
+
+  {hint && (
+    <p id={hintId} class="a11y-field__hint">{hint}</p>
+  )}
+
+  {error && (
+    <p id={errorId} class="a11y-field__error" role="alert">{error}</p>
+  )}
+</div>
+
+<script>
+  // Forward aria attributes from the wrapper onto the actual control element,
+  // so consumers don't have to wire them by hand on every input.
+  document.querySelectorAll<HTMLElement>('[data-a11y-field]').forEach((wrap) => {
+    const ctrl = wrap.querySelector<HTMLElement>(
+      'input, select, textarea',
+    );
+    if (!ctrl) return;
+    const host = wrap.querySelector<HTMLElement>('.a11y-field__control');
+    if (!host) return;
+    const describedBy = host.dataset.describedBy;
+    const invalid = host.dataset.ariaInvalid;
+    const required = host.dataset.ariaRequired;
+    if (describedBy) ctrl.setAttribute('aria-describedby', describedBy);
+    if (invalid === 'true') ctrl.setAttribute('aria-invalid', 'true');
+    if (required === 'true') ctrl.setAttribute('aria-required', 'true');
+  });
+</script>
+
+<style>
+  .a11y-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+  }
+  .a11y-field__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--t-text, currentColor);
+  }
+  .a11y-field__required {
+    color: #b91c1c;
+    margin-left: 0.15rem;
+  }
+  .a11y-field__hint {
+    font-size: 0.8125rem;
+    color: var(--t-text-muted, #555);
+    margin: 0;
+  }
+  .a11y-field__error {
+    font-size: 0.8125rem;
+    color: #b91c1c;
+    margin: 0;
+    font-weight: 500;
+  }
+  /* The control wrapper is purely structural; styling belongs to the consumer. */
+  .a11y-field__control {
+    display: contents;
+  }
+</style>

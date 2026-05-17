@@ -1,0 +1,71 @@
+/* ──────────────────────────────────────────────────────────────────────────
+ * a11y.css — shared accessibility globals
+ *
+ * Import from your top-level stylesheet:
+ *   @import "./styles/a11y.css";
+ *
+ * Provides:
+ *  - .a11y-sr-only utility (screen-reader-only text)
+ *  - :focus-visible reset — every interactive element gets a visible ring
+ *  - prefers-reduced-motion baseline (kills transitions/animations/smooth-scroll)
+ *  - target-size safety floor for tap targets (WCAG 2.5.5 / 2.5.8)
+ * ─────────────────────────────────────────────────────────────────────── */
+
+/* Screen-reader-only utility (mirrors the VisuallyHidden component) */
+.a11y-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+/* Variant that becomes visible on focus (useful for skip-style links). */
+.a11y-sr-only-focusable:focus,
+.a11y-sr-only-focusable:focus-visible {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  clip-path: none !important;
+  white-space: normal !important;
+}
+
+/* Focus-visible reset — never let consumers `outline: none` silently.
+ * If a template wants a custom ring, override `.a11y-focus-ring` or
+ * the `:focus-visible` selector; never zero it out. */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* Anything that disables outline must provide a box-shadow ring instead. */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Reduced-motion safety net — applies even if templates re-introduce animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Tap-target floor for primary controls (24×24 is WCAG 2.5.8 minimum;
+ * 44×44 is iOS HIG and WCAG 2.5.5 AAA — we aim for the latter on
+ * dedicated controls, NOT inline text links). */
+.a11y-tap-target {
+  min-width: 44px;
+  min-height: 44px;
+}

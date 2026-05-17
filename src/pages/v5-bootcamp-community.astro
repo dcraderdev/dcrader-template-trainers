@@ -89,7 +89,7 @@ const schedule = [
     }
   </style>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
 
     <!-- NAV -->
     <nav aria-label="Main navigation" style="position:fixed;top:0;left:0;right:0;z-index:100;background:#000;border-bottom:3px solid #FF5500;">
@@ -99,9 +99,9 @@ const schedule = [
           <span class="oswald" style="font-size:1.25rem;font-weight:700;letter-spacing:0.08em;color:#fff;text-transform:uppercase;">Blaze Bootcamp</span>
         </a>
         <div style="display:flex;align-items:center;gap:32px;">
-          <a href="#schedule" class="oswald" style="color:#999;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='#999'">Schedule</a>
-          <a href="#programs" class="oswald" style="color:#999;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='#999'">Programs</a>
-          <a href="#tribe" class="oswald" style="color:#999;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='#999'">The Tribe</a>
+          <a href="#schedule" class="oswald" style="color:#a1a1aa;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='#999'">Schedule</a>
+          <a href="#programs" class="oswald" style="color:#a1a1aa;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='#999'">Programs</a>
+          <a href="#tribe" class="oswald" style="color:#a1a1aa;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='#999'">The Tribe</a>
           <a href="#join" class="cta-btn" style="font-size:0.85rem;padding:10px 28px;">Join Free</a>
         </div>
       </div>
@@ -143,19 +143,19 @@ const schedule = [
           <div style="background:rgba(0,0,0,0.85);border:1px solid #FF5500;padding:36px;animation:borderPulse 3s infinite;">
             <div class="oswald" style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:#FF5500;margin-bottom:20px;">Next Session</div>
             <div class="oswald" style="font-size:3rem;font-weight:700;color:#fff;line-height:1;margin-bottom:4px;">6:30 AM</div>
-            <div class="oswald" style="font-size:1.2rem;color:#999;margin-bottom:28px;">Monday Morning Blaze</div>
+            <div class="oswald" style="font-size:1.2rem;color:#a1a1aa;margin-bottom:28px;">Monday Morning Blaze</div>
 
             <div style="background:#111;padding:16px;border-radius:4px;margin-bottom:24px;">
               <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
-                <span class="inter" style="font-size:0.85rem;color:#999;">Location</span>
+                <span class="inter" style="font-size:0.85rem;color:#a1a1aa;">Location</span>
                 <span class="inter" style="font-size:0.85rem;color:#fff;">{coach.address.street}</span>
               </div>
               <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
-                <span class="inter" style="font-size:0.85rem;color:#999;">Format</span>
+                <span class="inter" style="font-size:0.85rem;color:#a1a1aa;">Format</span>
                 <span class="inter" style="font-size:0.85rem;color:#fff;">Full Blaze WOD</span>
               </div>
               <div style="display:flex;justify-content:space-between;">
-                <span class="inter" style="font-size:0.85rem;color:#999;">Open Spots</span>
+                <span class="inter" style="font-size:0.85rem;color:#a1a1aa;">Open Spots</span>
                 <span class="inter" style="font-size:0.85rem;color:#FF5500;font-weight:600;">8 remaining</span>
               </div>
             </div>
@@ -170,7 +170,7 @@ const schedule = [
                   </div>
                 ))}
               </div>
-              <span class="inter" style="font-size:0.8rem;color:#999;">12 members already signed up</span>
+              <span class="inter" style="font-size:0.8rem;color:#a1a1aa;">12 members already signed up</span>
             </div>
           </div>
         </div>
@@ -197,22 +197,22 @@ const schedule = [
         <h2 class="oswald" style="text-align:center;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:8px;">
           When We <span style="color:#FF5500;">Train</span>
         </h2>
-        <p class="inter" style="text-align:center;color:#666;max-width:500px;margin:0 auto 56px;">
+        <p class="inter" style="text-align:center;color:#a1a1aa;max-width:500px;margin:0 auto 56px;">
           {coach.stats.classes} sessions per week. Bayfront Park, Miami. Rain or shine.
         </p>
 
         <div style="display:flex;gap:24px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:24px;height:24px;border-radius:3px;background:#FF5500;"></div>
-            <span class="inter" style="font-size:0.85rem;color:#999;">Blaze WOD</span>
+            <span class="inter" style="font-size:0.85rem;color:#a1a1aa;">Blaze WOD</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:24px;height:24px;border-radius:3px;background:#FFB300;"></div>
-            <span class="inter" style="font-size:0.85rem;color:#999;">Community WOD</span>
+            <span class="inter" style="font-size:0.85rem;color:#a1a1aa;">Community WOD</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:24px;height:24px;border-radius:3px;background:#1A1A1A;"></div>
-            <span class="inter" style="font-size:0.85rem;color:#666;">No Session</span>
+            <span class="inter" style="font-size:0.85rem;color:#a1a1aa;">No Session</span>
           </div>
         </div>
 
@@ -220,9 +220,9 @@ const schedule = [
           <table class="sched-table" style="width:100%;border-collapse:separate;border-spacing:6px;" aria-label="Weekly class schedule">
             <thead>
               <tr>
-                <th class="oswald" style="font-size:0.75rem;letter-spacing:0.12em;color:#666;text-transform:uppercase;text-align:left;padding:8px 12px;min-width:80px;" scope="col">Time</th>
+                <th class="oswald" style="font-size:0.75rem;letter-spacing:0.12em;color:#a1a1aa;text-transform:uppercase;text-align:left;padding:8px 12px;min-width:80px;" scope="col">Time</th>
                 {['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((d) => (
-                  <th class="oswald" style="font-size:0.8rem;letter-spacing:0.12em;color:#999;text-transform:uppercase;text-align:center;padding:8px 0;width:48px;" scope="col">{d}</th>
+                  <th class="oswald" style="font-size:0.8rem;letter-spacing:0.12em;color:#a1a1aa;text-transform:uppercase;text-align:center;padding:8px 0;width:48px;" scope="col">{d}</th>
                 ))}
               </tr>
             </thead>
@@ -231,37 +231,37 @@ const schedule = [
                 <tr>
                   <th class="oswald" style="font-size:0.95rem;font-weight:600;color:#CCC;padding:4px 12px;white-space:nowrap;text-align:left;" scope="row">{row.time}</th>
                   <td style="padding:4px;">
-                    <div class={`sched-cell ${row.mon ? 'sched-on' : 'sched-off'}`}
+                    <div role="img" class={`sched-cell ${row.mon ? 'sched-on' : 'sched-off'}`}
                       aria-label={`Monday ${row.time}: ${row.mon ? 'Blaze WOD' : 'No session'}`}>
                       {row.mon && <span style="font-size:1rem;" aria-hidden="true">🔥</span>}
                     </div>
                   </td>
                   <td style="padding:4px;">
-                    <div class={`sched-cell ${row.tue ? 'sched-on' : 'sched-off'}`}
+                    <div role="img" class={`sched-cell ${row.tue ? 'sched-on' : 'sched-off'}`}
                       aria-label={`Tuesday ${row.time}: ${row.tue ? 'Blaze WOD' : 'No session'}`}>
                       {row.tue && <span style="font-size:1rem;" aria-hidden="true">🔥</span>}
                     </div>
                   </td>
                   <td style="padding:4px;">
-                    <div class={`sched-cell ${row.wed ? 'sched-on' : 'sched-off'}`}
+                    <div role="img" class={`sched-cell ${row.wed ? 'sched-on' : 'sched-off'}`}
                       aria-label={`Wednesday ${row.time}: ${row.wed ? 'Blaze WOD' : 'No session'}`}>
                       {row.wed && <span style="font-size:1rem;" aria-hidden="true">🔥</span>}
                     </div>
                   </td>
                   <td style="padding:4px;">
-                    <div class={`sched-cell ${row.thu ? 'sched-on' : 'sched-off'}`}
+                    <div role="img" class={`sched-cell ${row.thu ? 'sched-on' : 'sched-off'}`}
                       aria-label={`Thursday ${row.time}: ${row.thu ? 'Blaze WOD' : 'No session'}`}>
                       {row.thu && <span style="font-size:1rem;" aria-hidden="true">🔥</span>}
                     </div>
                   </td>
                   <td style="padding:4px;">
-                    <div class={`sched-cell ${row.fri ? 'sched-on' : 'sched-off'}`}
+                    <div role="img" class={`sched-cell ${row.fri ? 'sched-on' : 'sched-off'}`}
                       aria-label={`Friday ${row.time}: ${row.fri ? 'Blaze WOD' : 'No session'}`}>
                       {row.fri && <span style="font-size:1rem;" aria-hidden="true">🔥</span>}
                     </div>
                   </td>
                   <td style="padding:4px;">
-                    <div class={`sched-cell ${row.sat ? 'sched-community' : 'sched-off'}`}
+                    <div role="img" class={`sched-cell ${row.sat ? 'sched-community' : 'sched-off'}`}
                       aria-label={`Saturday ${row.time}: ${row.sat ? 'Community WOD' : 'No session'}`}>
                       {row.sat && <span style="font-size:1rem;" aria-hidden="true">&#x2605;</span>}
                     </div>
@@ -269,11 +269,11 @@ const schedule = [
                 </tr>
               ))}
               <tr>
-                <th class="oswald" style="font-size:0.95rem;font-weight:600;color:#444;padding:4px 12px;text-align:left;" scope="row">SUN</th>
+                <th class="oswald" style="font-size:0.95rem;font-weight:600;color:#a1a1aa;padding:4px 12px;text-align:left;" scope="row">SUN</th>
                 {[1,2,3,4,5,6].map(() => (
                   <td style="padding:4px;">
                     <div class="sched-cell sched-off" aria-label="Rest day">
-                      <span style="font-size:0.65rem;color:#444;">REST</span>
+                      <span style="font-size:0.65rem;color:#a1a1aa;">REST</span>
                     </div>
                   </td>
                 ))}
@@ -284,7 +284,7 @@ const schedule = [
 
         <div style="text-align:center;margin-top:48px;">
           <a href="#join" class="cta-btn">Book Your First Free Class</a>
-          <p class="inter" style="font-size:0.8rem;color:#555;margin-top:16px;">No equipment needed · All fitness levels welcome · Show up and we handle the rest</p>
+          <p class="inter" style="font-size:0.8rem;color:#a1a1aa;margin-top:16px;">No equipment needed · All fitness levels welcome · Show up and we handle the rest</p>
         </div>
       </div>
     </section>
@@ -328,7 +328,7 @@ const schedule = [
         <h2 class="oswald" style="text-align:center;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:16px;">
           The <span style="color:#FF5500;">Blaze Family</span>
         </h2>
-        <p class="inter" style="text-align:center;color:#777;max-width:560px;margin:0 auto 64px;line-height:1.7;">
+        <p class="inter" style="text-align:center;color:#a1a1aa;max-width:560px;margin:0 auto 64px;line-height:1.7;">
           700+ athletes. One mission. The Blaze Family isn't a tagline — it's the reason 95% of members never leave.
         </p>
 
@@ -369,7 +369,7 @@ const schedule = [
             <div style="background:#0F0F0F;padding:40px 32px;border-left:3px solid #FF5500;">
               <div style="font-size:2.2rem;margin-bottom:16px;" aria-hidden="true">{p.icon}</div>
               <h3 class="oswald" style="font-size:1.25rem;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:12px;">{p.title}</h3>
-              <p class="inter" style="font-size:0.875rem;color:#777;line-height:1.65;">{p.body}</p>
+              <p class="inter" style="font-size:0.875rem;color:#a1a1aa;line-height:1.65;">{p.body}</p>
             </div>
           ))}
         </div>
@@ -382,7 +382,7 @@ const schedule = [
               <p class="inter" style="font-size:0.875rem;color:#AAA;line-height:1.65;margin-bottom:20px;">"{t.text}"</p>
               <div>
                 <div class="oswald" style="font-size:0.95rem;font-weight:600;color:#fff;text-transform:uppercase;">{t.name}</div>
-                <div class="inter" style="font-size:0.75rem;color:#555;margin-top:2px;">{t.details}</div>
+                <div class="inter" style="font-size:0.75rem;color:#a1a1aa;margin-top:2px;">{t.details}</div>
               </div>
             </div>
           ))}
@@ -413,7 +413,7 @@ const schedule = [
               </div>
               <div style="background:#0A0A0A;padding:20px;border-bottom:2px solid #FF5500;">
                 <div class="oswald" style="font-size:1.1rem;font-weight:700;color:#FF5500;text-transform:uppercase;">{t.result}</div>
-                <div class="oswald" style="font-size:0.9rem;color:#666;margin-bottom:8px;text-transform:uppercase;">{t.name}</div>
+                <div class="oswald" style="font-size:0.9rem;color:#a1a1aa;margin-bottom:8px;text-transform:uppercase;">{t.name}</div>
                 <p class="inter" style="font-size:0.8rem;color:#888;font-style:italic;">"{t.quote}"</p>
               </div>
             </div>
@@ -441,7 +441,7 @@ const schedule = [
               <h3 class="oswald" style="font-size:1.4rem;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:8px;">{p.name}</h3>
               <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:28px;">
                 <span class="oswald" style="font-size:3rem;font-weight:700;color:#FF5500;line-height:1;">${p.price}</span>
-                <span class="inter" style="font-size:0.85rem;color:#555;">/month</span>
+                <span class="inter" style="font-size:0.85rem;color:#a1a1aa;">/month</span>
               </div>
               <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px;" aria-label={`${p.name} plan features`}>
                 {p.features.map((f) => (
@@ -451,14 +451,14 @@ const schedule = [
                   </li>
                 ))}
               </ul>
-              <a href="#join" style={`display:block;text-align:center;padding:14px;font-family:'Oswald',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.15s;${p.popular ? 'background:#FF5500;color:#000;' : 'background:transparent;border:1px solid #333;color:#777;'}`}>
+              <a href="#join" style={`display:block;text-align:center;padding:14px;font-family:'Oswald',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.15s;${p.popular ? 'background:#FF5500;color:#000;' : 'background:transparent;border:1px solid #333;color:#a1a1aa;'}`}>
                 {p.popular ? 'Get Started' : 'Choose Plan'}
               </a>
             </div>
           ))}
         </div>
 
-        <p class="inter" style="text-align:center;font-size:0.8rem;color:#444;margin-top:24px;">
+        <p class="inter" style="text-align:center;font-size:0.8rem;color:#a1a1aa;margin-top:24px;">
           All memberships include first class free. No contracts. Cancel anytime.
         </p>
       </div>
@@ -487,11 +487,11 @@ const schedule = [
               Built From <span style="color:#FF5500;">Concrete Up.</span>
             </h2>
             <p class="inter" style="color:#AAA;line-height:1.75;margin-bottom:16px;">{coach.bio}</p>
-            <p class="inter" style="color:#777;line-height:1.75;margin-bottom:36px;">{coach.bioExtended}</p>
+            <p class="inter" style="color:#a1a1aa;line-height:1.75;margin-bottom:36px;">{coach.bioExtended}</p>
 
             <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;">
               {coach.certifications.map((c) => (
-                <span class="oswald" style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border:1px solid #333;color:#999;">{c}</span>
+                <span class="oswald" style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border:1px solid #333;color:#a1a1aa;">{c}</span>
               ))}
             </div>
 
@@ -499,7 +499,7 @@ const schedule = [
               {coach.achievements.map((a) => (
                 <div style="border-left:3px solid #FF5500;padding-left:16px;">
                   <div class="oswald" style="font-size:1.8rem;font-weight:700;color:#FF5500;">{a.value}</div>
-                  <div class="inter" style="font-size:0.75rem;color:#666;text-transform:uppercase;letter-spacing:0.08em;">{a.label}</div>
+                  <div class="inter" style="font-size:0.75rem;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.08em;">{a.label}</div>
                 </div>
               ))}
             </div>
@@ -537,7 +537,7 @@ const schedule = [
             </div>
             <div>
               <div class="oswald" style="color:#fff;font-size:1rem;text-transform:uppercase;">{coach.address.street}</div>
-              <div class="inter" style="color:#666;font-size:0.875rem;">{coach.address.city}</div>
+              <div class="inter" style="color:#a1a1aa;font-size:0.875rem;">{coach.address.city}</div>
             </div>
           </div>
           <div style="display:flex;gap:16px;margin-bottom:24px;">
@@ -546,7 +546,7 @@ const schedule = [
             </div>
             <div>
               <div class="oswald" style="color:#fff;font-size:1rem;text-transform:uppercase;">{coach.phone}</div>
-              <div class="inter" style="color:#666;font-size:0.875rem;">Call or text anytime</div>
+              <div class="inter" style="color:#a1a1aa;font-size:0.875rem;">Call or text anytime</div>
             </div>
           </div>
           <div style="display:flex;gap:16px;">
@@ -555,7 +555,7 @@ const schedule = [
             </div>
             <div>
               <div class="oswald" style="color:#fff;font-size:1rem;text-transform:uppercase;">{coach.email}</div>
-              <div class="inter" style="color:#666;font-size:0.875rem;">Response within 2 hours</div>
+              <div class="inter" style="color:#a1a1aa;font-size:0.875rem;">Response within 2 hours</div>
             </div>
           </div>
         </div>
@@ -565,7 +565,7 @@ const schedule = [
           <div style="display:flex;flex-direction:column;gap:1px;background:#222;">
             {coach.hours.map((h) => (
               <div style="display:flex;justify-content:space-between;padding:14px 20px;background:#0D0D0D;">
-                <span class="oswald" style="font-size:0.9rem;color:#999;text-transform:uppercase;">{h.day}</span>
+                <span class="oswald" style="font-size:0.9rem;color:#a1a1aa;text-transform:uppercase;">{h.day}</span>
                 <span class="inter" style="font-size:0.85rem;color:#FF5500;">{h.hours}</span>
               </div>
             ))}
@@ -583,26 +583,26 @@ const schedule = [
         <h2 class="oswald" style="text-align:center;font-size:clamp(2rem,4vw,3rem);font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:8px;">
           Join the <span style="color:#FF5500;">Blaze Family</span>
         </h2>
-        <p class="inter" style="text-align:center;color:#666;margin-bottom:48px;">One form. Zero obligation. We'll reach out with your spot details within the hour.</p>
+        <p class="inter" style="text-align:center;color:#a1a1aa;margin-bottom:48px;">One form. Zero obligation. We'll reach out with your spot details within the hour.</p>
 
         <form aria-label="Reserve first free class" style="display:flex;flex-direction:column;gap:16px;" onsubmit="handleJoin(event)">
           <div class="form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div>
-              <label class="oswald" for="join-name" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Full Name</label>
+              <label class="oswald" for="join-name" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#a1a1aa;margin-bottom:8px;">Full Name</label>
               <input id="join-name" name="name" type="text" placeholder="Marcus Rivera" required autocomplete="name" />
             </div>
             <div>
-              <label class="oswald" for="join-email" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Email</label>
+              <label class="oswald" for="join-email" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#a1a1aa;margin-bottom:8px;">Email</label>
               <input id="join-email" name="email" type="email" placeholder="you@email.com" required autocomplete="email" />
             </div>
           </div>
           <div class="form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div>
-              <label class="oswald" for="join-phone" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Phone</label>
+              <label class="oswald" for="join-phone" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#a1a1aa;margin-bottom:8px;">Phone</label>
               <input id="join-phone" name="phone" type="tel" placeholder="(305) 555-0100" autocomplete="tel" />
             </div>
             <div>
-              <label class="oswald" for="join-level" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Experience Level</label>
+              <label class="oswald" for="join-level" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#a1a1aa;margin-bottom:8px;">Experience Level</label>
               <select id="join-level" name="level">
                 <option value="">Select level</option>
                 <option value="beginner">Beginner — First time ever</option>
@@ -613,7 +613,7 @@ const schedule = [
             </div>
           </div>
           <div>
-            <label class="oswald" for="join-session" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Preferred Session</label>
+            <label class="oswald" for="join-session" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#a1a1aa;margin-bottom:8px;">Preferred Session</label>
             <select id="join-session" name="session">
               <option value="">Any session works</option>
               <option value="mon-530">Monday 5:30 AM</option>
@@ -625,13 +625,13 @@ const schedule = [
             </select>
           </div>
           <div>
-            <label class="oswald" for="join-goal" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">What's Your Goal? (Optional)</label>
+            <label class="oswald" for="join-goal" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#a1a1aa;margin-bottom:8px;">What's Your Goal? (Optional)</label>
             <textarea id="join-goal" name="goal" rows="3" placeholder="Lose weight, get stronger, find a community, compete in an obstacle race..."></textarea>
           </div>
           <button type="submit" class="cta-btn" style="width:100%;font-size:1.1rem;padding:20px;border:none;cursor:pointer;text-align:center;">
             Reserve My Free Class
           </button>
-          <p class="inter" style="text-align:center;font-size:0.75rem;color:#444;">
+          <p class="inter" style="text-align:center;font-size:0.75rem;color:#a1a1aa;">
             No spam. No pressure. Tony or a coach will text you personally to lock in your time.
           </p>
         </form>
@@ -651,10 +651,10 @@ const schedule = [
           <div style="width:32px;height:32px;background:#FF5500;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;color:#000;clip-path:polygon(0 0,calc(100% - 5px) 0,100% 100%,5px 100%);" aria-hidden="true">B</div>
           <span class="oswald" style="font-size:1rem;font-weight:700;letter-spacing:0.08em;color:#fff;text-transform:uppercase;">Blaze Bootcamp</span>
         </div>
-        <div class="inter" style="font-size:0.8rem;color:#444;">
+        <div class="inter" style="font-size:0.8rem;color:#a1a1aa;">
           {coach.address.street}, {coach.address.city} &middot; {coach.phone} &middot; {coach.email}
         </div>
-        <div class="inter" style="font-size:0.75rem;color:#333;">
+        <div class="inter" style="font-size:0.75rem;color:#a1a1aa;">
           &copy; {new Date().getFullYear()} Blaze Bootcamp. All rights reserved.
         </div>
       </div>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { coach } from '../../data/v1-coach';
+---
+<BaseLayout
+  title="Accessibility Statement | Steel Athletics"
+  description="Accessibility statement and commitment for Steel Athletics."
+  fontUrl="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap"
+  themeColor="#000000"
+>
+<nav aria-label="Main navigation" style="position:fixed;top:0;width:100%;z-index:50;background:#000;border-bottom:2px solid #dc2626;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;">
+    <a href="/v1-strength-elite" style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:.2em;color:#fff;text-transform:uppercase;text-decoration:none;">STEEL ATHLETICS</a>
+    <a href="/v1-strength-elite" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.25em;color:#fff;text-transform:uppercase;text-decoration:none;">← Back to home</a>
+  </div>
+</nav>
+<main id="main-content" style="background:#000;color:#fff;min-height:100vh;padding:8rem 1.5rem 5rem;">
+  <div style="max-width:48rem;margin:0 auto;font-family:'Barlow',sans-serif;line-height:1.7;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#ef4444;text-transform:uppercase;margin-bottom:.75rem;">Compliance</p>
+    <h1 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;text-transform:uppercase;margin-bottom:2rem;line-height:1;">Accessibility Statement</h1>
+    <p style="color:#e4e4e7;margin-bottom:1.5rem;font-size:1.05rem;">Steel Athletics is committed to ensuring digital accessibility for people of all abilities. We strive to conform to WCAG 2.1 Level AA standards and continuously improve the user experience for everyone.</p>
+    <p style="color:#e4e4e7;margin-bottom:1.5rem;font-size:1.05rem;">If you experience any difficulty accessing this website, or need accommodations, please contact us at <a href={`mailto:${coach.email}`} style="color:#ef4444;text-decoration:underline;font-weight:700;">{coach.email}</a> or <a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#ef4444;text-decoration:underline;font-weight:700;">{coach.phone}</a> and we will work to provide the information or service through alternative communication.</p>
+    <p style="color:#a1a1aa;font-size:.95rem;border-top:1px solid #27272a;padding-top:1.5rem;margin-top:2.5rem;">This site is reviewed regularly. Last updated: 2026-05-17.</p>
+  </div>
+</main>
+<footer style="background:#000;border-top:2px solid #dc2626;padding:2.5rem 1.5rem;text-align:center;">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:.2em;text-transform:uppercase;">STEEL ATHLETICS</p>
+  <p style="margin-top:.5rem;"><a href="/v1-strength-elite" style="color:#a1a1aa;font-family:'Barlow',sans-serif;font-size:.75rem;text-decoration:none;">← Back to home</a></p>
+</footer>
+</BaseLayout>

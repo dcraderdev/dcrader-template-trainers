@@ -1,0 +1,32 @@
+---
+/**
+ * VisuallyHidden — content for screen readers only.
+ *
+ * Wraps text that should be announced by AT but not rendered visually.
+ * Uses the standard clip-path technique so the element still receives
+ * focus / remains in the accessibility tree (unlike `display: none`).
+ *
+ * Pass `as="span"` (default) or any tag via the `as` prop.
+ */
+interface Props {
+  as?: string;
+}
+const { as: Tag = 'span' } = Astro.props;
+---
+
+<Tag class="a11y-sr-only"><slot /></Tag>
+
+<style>
+  .a11y-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+</style>

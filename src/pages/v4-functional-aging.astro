@@ -13,7 +13,7 @@ import { coach } from '../data/v4-coach';
 <style is:inline>
   body { font-family: 'Open Sans', sans-serif; background: #F7F5EF; color: #2D3A27; }
   .serif { font-family: 'Source Serif 4', Georgia, serif; }
-  .credential-badge { display: inline-flex; align-items: center; gap: .375rem; background: #EEF2E8; border: 1px solid #C4D4B8; color: #3D5635; font-size: .75rem; font-weight: 600; padding: .375rem .75rem; border-radius: .375rem; }
+  .credential-badge { display: inline-flex; align-items: center; gap: .375rem; background: #EEF2E8; border: 1px solid #C4D4B8; color: #3d5635; font-size: .75rem; font-weight: 600; padding: .375rem .75rem; border-radius: .375rem; }
 </style>
 
 <!-- NAV -->
@@ -29,7 +29,7 @@ import { coach } from '../data/v4-coach';
   </div>
 </nav>
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 
 <!-- ───── HERO (credibility-forward layout) ───── -->
 <section style="position:relative;overflow:hidden;" aria-labelledby="hero-h1">
@@ -57,14 +57,14 @@ import { coach } from '../data/v4-coach';
         ].map(item => (
           <div style="display:flex;align-items:flex-start;gap:.875rem;">
             <span style="font-size:1.25rem;flex-shrink:0;margin-top:.125rem;">{item.icon}</span>
-            <p style="font-size:.9rem;color:#3D4A35;line-height:1.6;">{item.text}</p>
+            <p style="font-size:.9rem;color:#3d5635;line-height:1.6;">{item.text}</p>
           </div>
         ))}
       </div>
 
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
         <a href="#booking" style="background:#4A6741;color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:1rem 2rem;border-radius:.625rem;display:inline-block;">Book Free Assessment</a>
-        <a href="#science" style="border:1.5px solid #8A9A7E;color:#2D3A27;font-weight:500;font-size:1rem;text-decoration:none;padding:1rem 2rem;border-radius:.625rem;display:inline-block;">The Science →</a>
+        <a href="#science" style="border:1.5px solid #3d5635;color:#2D3A27;font-weight:500;font-size:1rem;text-decoration:none;padding:1rem 2rem;border-radius:.625rem;display:inline-block;">The Science →</a>
       </div>
     </div>
 
@@ -78,7 +78,7 @@ import { coach } from '../data/v4-coach';
           {coach.achievements.map(a => (
             <div style="text-align:center;">
               <p class="serif" style="font-size:1.5rem;font-weight:700;color:#2D3A27;">{a.value}</p>
-              <p style="font-size:.65rem;color:#6B8F5E;text-transform:uppercase;letter-spacing:.05em;margin-top:.125rem;">{a.label}</p>
+              <p style="font-size:.65rem;color:#3d5635;text-transform:uppercase;letter-spacing:.05em;margin-top:.125rem;">{a.label}</p>
             </div>
           ))}
         </div>
@@ -89,7 +89,7 @@ import { coach } from '../data/v4-coach';
 
 <!-- ───── TRUST BAR ───── -->
 <div style="background:#2D3A27;padding:.875rem 0;">
-  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;color:#B8CCA8;font-size:.8125rem;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;color:#EEF2E8;font-size:.8125rem;">
     <span>PhD Kinesiology · University of Colorado</span>
     <span>NSCA-CSCS Certified</span>
     <span>NASM Corrective Exercise Specialist</span>
@@ -103,11 +103,11 @@ import { coach } from '../data/v4-coach';
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
       <div>
-        <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Evidence-Based</p>
+        <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Evidence-Based</p>
         <h2 id="science-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;line-height:1.25;margin-bottom:1.5rem;">
           The science of<br/><em>aging powerfully</em>
         </h2>
-        <p style="color:#3D4A35;line-height:1.8;margin-bottom:1rem;">Contrary to popular belief, the body responds to progressive strength training at every age. Adults over 50 who engage in structured resistance training show measurable improvements in bone density, muscle mass, balance, and metabolic health — often within 8–12 weeks.</p>
+        <p style="color:#3d5635;line-height:1.8;margin-bottom:1rem;">Contrary to popular belief, the body responds to progressive strength training at every age. Adults over 50 who engage in structured resistance training show measurable improvements in bone density, muscle mass, balance, and metabolic health — often within 8–12 weeks.</p>
         <p style="color:#5A6B52;line-height:1.8;margin-bottom:2rem;">Dr. Hayes's programming is built directly on this research. Every exercise is selected for its therapeutic and functional benefit, not just its aesthetic result.</p>
         <div style="display:flex;flex-direction:column;gap:.875rem;">
           {[
@@ -118,7 +118,7 @@ import { coach } from '../data/v4-coach';
           ].map(fact => (
             <div style="display:flex;align-items:flex-start;gap:.875rem;background:#fff;border-radius:.75rem;padding:1rem 1.25rem;border:1px solid #C4D4B8;">
               <span style="color:#4A6741;font-weight:700;flex-shrink:0;margin-top:.125rem;">✓</span>
-              <p style="font-size:.875rem;color:#3D4A35;line-height:1.6;">{fact}</p>
+              <p style="font-size:.875rem;color:#3d5635;line-height:1.6;">{fact}</p>
             </div>
           ))}
         </div>
@@ -149,7 +149,7 @@ import { coach } from '../data/v4-coach';
 <section id="transformations" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="trans-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Client Journeys</p>
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Client Journeys</p>
       <h2 id="trans-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;">Lives transformed,<br/><em>not just bodies</em></h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
@@ -168,7 +168,7 @@ import { coach } from '../data/v4-coach';
           <div style="padding:1.5rem;">
             <p class="serif" style="font-size:1.1rem;font-weight:600;color:#2D3A27;">{t.name}</p>
             <p style="color:#4A6741;font-weight:600;font-size:.875rem;margin:.25rem 0;">{t.result}</p>
-            <p style="color:#6B8F5E;font-size:.8125rem;font-style:italic;line-height:1.6;">"{t.quote}"</p>
+            <p style="color:#3d5635;font-size:.8125rem;font-style:italic;line-height:1.6;">"{t.quote}"</p>
           </div>
         </article>
       ))}
@@ -180,7 +180,7 @@ import { coach } from '../data/v4-coach';
 <section id="programs" style="background:#EEF2E8;padding:6rem 0;" aria-labelledby="programs-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Programs</p>
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Programs</p>
       <h2 id="programs-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;margin-bottom:.75rem;">Science-backed programming<br/><em>for every stage</em></h2>
       <p style="color:#5A6B52;max-width:36rem;margin:0 auto;line-height:1.7;">Every program begins with a comprehensive movement assessment. The plan is built around you — not a template.</p>
     </div>
@@ -190,10 +190,10 @@ import { coach } from '../data/v4-coach';
           {i===1 && <span style="position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:#8AB87A;color:#1A2815;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;">Most Popular</span>}
           <div style="font-size:2.25rem;margin-bottom:1.25rem;">{prog.icon}</div>
           <h3 class="serif" style={`font-size:1.375rem;font-weight:600;color:${i===1?'#fff':'#2D3A27'};margin-bottom:.625rem;`}>{prog.name}</h3>
-          <p style={`font-size:.875rem;line-height:1.7;margin-bottom:1.5rem;color:${i===1?'#C8D9B8':'#5A6B52'};`}>{prog.description}</p>
+          <p style={`font-size:.875rem;line-height:1.7;margin-bottom:1.5rem;color:${i===1?'#e8f0dd':'#5A6B52'};`}>{prog.description}</p>
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;">
             {prog.features.map(f => (
-              <li style={`display:flex;align-items:flex-start;gap:.625rem;font-size:.8125rem;color:${i===1?'#D8EAC8':'#3D4A35'};`}>
+              <li style={`display:flex;align-items:flex-start;gap:.625rem;font-size:.8125rem;color:${i===1?'#D8EAC8':'#3d5635'};`}>
                 <span style={`font-weight:700;margin-top:1px;flex-shrink:0;color:${i===1?'#8AB87A':'#4A6741'};`}>✓</span>{f}
               </li>
             ))}
@@ -208,7 +208,7 @@ import { coach } from '../data/v4-coach';
 <section id="pricing" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="pricing-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Pricing</p>
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Pricing</p>
       <h2 id="pricing-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;">Investment in your longevity</h2>
       <p style="color:#5A6B52;margin-top:.75rem;">Every plan begins with a free movement assessment. No contracts.</p>
     </div>
@@ -216,12 +216,12 @@ import { coach } from '../data/v4-coach';
       {coach.pricing.map(tier => (
         <div style={`position:relative;border-radius:1.25rem;padding:2.5rem;border:${tier.popular?'2px solid #4A6741':'1px solid #D4C9B0'};background:${tier.popular?'#2D3A27':'#fff'};box-shadow:${tier.popular?'0 16px 48px rgba(45,58,39,.25)':'0 2px 8px rgba(0,0,0,.04)'};`}>
           {tier.popular && <span style="position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:#8AB87A;color:#1A2815;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem 1rem;border-radius:999px;white-space:nowrap;">Most Popular</span>}
-          <p style={`font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.625rem;color:${tier.popular?'#8AB87A':'#6B8F5E'};`}>{tier.name}</p>
-          <p class="serif" style={`font-size:3.5rem;font-weight:700;line-height:1;color:${tier.popular?'#fff':'#2D3A27'};`}>${tier.price}<span style={`font-size:1.125rem;font-weight:400;color:${tier.popular?'#8AB87A':'#8A9A7E'};`}>/mo</span></p>
+          <p style={`font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.625rem;color:${tier.popular?'#8AB87A':'#3d5635'};`}>{tier.name}</p>
+          <p class="serif" style={`font-size:3.5rem;font-weight:700;line-height:1;color:${tier.popular?'#fff':'#2D3A27'};`}>${tier.price}<span style={`font-size:1.125rem;font-weight:400;color:${tier.popular?'#8AB87A':'#3d5635'};`}>/mo</span></p>
           <div style={`border-top:1px solid ${tier.popular?'rgba(255,255,255,.12)':'#D4C9B0'};margin:1.5rem 0;padding-top:1.5rem;`}>
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;">
               {tier.features.map(f => (
-                <li style={`display:flex;align-items:flex-start;gap:.625rem;font-size:.8125rem;color:${tier.popular?'#C8D9B8':'#3D4A35'};`}>
+                <li style={`display:flex;align-items:flex-start;gap:.625rem;font-size:.8125rem;color:${tier.popular?'#e8f0dd':'#3d5635'};`}>
                   <span style={`font-weight:700;flex-shrink:0;margin-top:1px;color:${tier.popular?'#8AB87A':'#4A6741'};`}>✓</span>{f}
                 </li>
               ))}
@@ -248,7 +248,7 @@ import { coach } from '../data/v4-coach';
               <span class="credential-badge">{c}</span>
             ))}
           </div>
-          <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.625rem;">Your Coach</p>
+          <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.625rem;">Your Coach</p>
           <h2 id="coach-h2" class="serif" style="font-size:2.75rem;font-weight:700;color:#2D3A27;margin-bottom:.25rem;">{coach.name}</h2>
           <p style="color:#4A6741;font-weight:600;font-size:1.0625rem;margin-bottom:1.75rem;">{coach.title}</p>
           <p style="color:#2D3A27;font-size:1.0625rem;line-height:1.8;margin-bottom:1rem;">{coach.bio}</p>
@@ -257,7 +257,7 @@ import { coach } from '../data/v4-coach';
             {coach.achievements.map(a => (
               <div style="background:#EEF2E8;border-radius:.875rem;padding:1rem;text-align:center;border:1px solid #C4D4B8;">
                 <p class="serif" style="font-size:1.5rem;font-weight:700;color:#2D3A27;">{a.value}</p>
-                <p style="font-size:.65rem;color:#6B8F5E;text-transform:uppercase;letter-spacing:.05em;margin-top:.25rem;">{a.label}</p>
+                <p style="font-size:.65rem;color:#3d5635;text-transform:uppercase;letter-spacing:.05em;margin-top:.25rem;">{a.label}</p>
               </div>
             ))}
           </div>
@@ -271,17 +271,17 @@ import { coach } from '../data/v4-coach';
 <section id="testimonials" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="test-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
-      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Client Voices</p>
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Client Voices</p>
       <h2 id="test-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;">More than fitness.<br/><em>Freedom of movement.</em></h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
       {coach.testimonials.map(t => (
         <blockquote style="background:#fff;border-radius:1.25rem;padding:2rem;border:1px solid #D4C9B0;box-shadow:0 2px 8px rgba(0,0,0,.04);margin:0;border-top:3px solid #4A6741;">
           <p class="serif" style="font-size:1.625rem;font-weight:600;color:#4A6741;margin-bottom:1rem;">{t.result}</p>
-          <p style="color:#3D4A35;font-size:.875rem;line-height:1.8;margin-bottom:1.5rem;">{t.text}</p>
+          <p style="color:#3d5635;font-size:.875rem;line-height:1.8;margin-bottom:1.5rem;">{t.text}</p>
           <footer style="border-top:1px solid #EEF2E8;padding-top:1rem;">
             <cite class="serif" style="font-size:1.1rem;font-weight:600;color:#2D3A27;font-style:normal;">{t.name}</cite>
-            <p style="color:#8A9A7E;font-size:.75rem;margin-top:.25rem;">{t.details}</p>
+            <p style="color:#3d5635;font-size:.75rem;margin-top:.25rem;">{t.details}</p>
           </footer>
         </blockquote>
       ))}
@@ -292,11 +292,11 @@ import { coach } from '../data/v4-coach';
 <!-- ───── CTA ───── -->
 <section style="background:#2D3A27;padding:5rem 0;text-align:center;" aria-labelledby="cta-h2">
   <div style="max-width:40rem;margin:0 auto;padding:0 1.5rem;">
-    <p style="font-size:.7rem;letter-spacing:.35em;color:#8AB87A;text-transform:uppercase;font-weight:700;margin-bottom:1.25rem;">No Commitment Required</p>
+    <p style="font-size:.7rem;letter-spacing:.35em;color:#C4D4B8;text-transform:uppercase;font-weight:700;margin-bottom:1.25rem;">No Commitment Required</p>
     <h2 id="cta-h2" class="serif" style="font-size:3rem;font-weight:600;color:#fff;line-height:1.25;margin-bottom:1rem;">
       A free movement assessment.<br/><em>Your roadmap to longevity.</em>
     </h2>
-    <p style="color:#B8CCA8;font-size:1.0625rem;line-height:1.7;margin-bottom:2.5rem;">Dr. Hayes will assess your movement patterns, discuss your history, and build a personalized roadmap — at no cost, with no pressure to join.</p>
+    <p style="color:#EEF2E8;font-size:1.0625rem;line-height:1.7;margin-bottom:2.5rem;">Dr. Hayes will assess your movement patterns, discuss your history, and build a personalized roadmap — at no cost, with no pressure to join.</p>
     <a href="#booking" style="background:#8AB87A;color:#1A2815;font-weight:700;font-size:1.0625rem;text-decoration:none;padding:1rem 3rem;border-radius:.625rem;display:inline-block;">Book My Free Assessment</a>
   </div>
 </section>
@@ -305,7 +305,7 @@ import { coach } from '../data/v4-coach';
 <section id="location" style="background:#EEF2E8;padding:6rem 0;" aria-labelledby="loc-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
     <div>
-      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Find Us</p>
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Find Us</p>
       <h2 id="loc-h2" class="serif" style="font-size:2.25rem;font-weight:600;color:#2D3A27;margin-bottom:2rem;">Location &amp; Hours</h2>
       <address style="font-style:normal;color:#5A6B52;margin-bottom:2rem;line-height:2.2;">
         <p class="serif" style="font-size:1.25rem;font-weight:600;color:#2D3A27;">{coach.gym}</p>
@@ -341,19 +341,19 @@ import { coach } from '../data/v4-coach';
 <section id="booking" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="book-h2">
   <div style="max-width:40rem;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:2.5rem;">
-      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Get Started</p>
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#3d5635;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Get Started</p>
       <h2 id="book-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;margin-bottom:.75rem;">Book your free assessment</h2>
       <p style="color:#5A6B52;">Dr. Hayes personally reviews every submission and responds within 48 hours.</p>
     </div>
     <form style="background:#fff;border-radius:1.25rem;padding:2.5rem;border:1px solid #D4C9B0;display:flex;flex-direction:column;gap:1.25rem;box-shadow:0 4px 24px rgba(0,0,0,.06);" aria-label="Free movement assessment booking" novalidate>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
         <div>
-          <label for="v4-name" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Full Name <span aria-label="required" style="color:#ef4444;">*</span></label>
+          <label for="v4-name" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Full Name <span aria-label="required" style="color:#b91c1c;">*</span></label>
           <input type="text" id="v4-name" name="name" required autocomplete="name" placeholder="Your name"
             style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Open Sans',sans-serif;" />
         </div>
         <div>
-          <label for="v4-email" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Email <span aria-label="required" style="color:#ef4444;">*</span></label>
+          <label for="v4-email" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Email <span aria-label="required" style="color:#b91c1c;">*</span></label>
           <input type="email" id="v4-email" name="email" required autocomplete="email" placeholder="you@example.com"
             style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Open Sans',sans-serif;" />
         </div>
@@ -365,7 +365,7 @@ import { coach } from '../data/v4-coach';
             style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;box-sizing:border-box;font-family:'Open Sans',sans-serif;" />
         </div>
         <div>
-          <label for="v4-age" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Age Range <span aria-label="required" style="color:#ef4444;">*</span></label>
+          <label for="v4-age" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Age Range <span aria-label="required" style="color:#b91c1c;">*</span></label>
           <select id="v4-age" name="age" required style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;background:#fff;box-sizing:border-box;font-family:'Open Sans',sans-serif;">
             <option value="">Select age range</option>
             <option value="50-59">50–59</option>
@@ -376,7 +376,7 @@ import { coach } from '../data/v4-coach';
         </div>
       </div>
       <div>
-        <label for="v4-goal" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Primary Goal <span aria-label="required" style="color:#ef4444;">*</span></label>
+        <label for="v4-goal" style="display:block;font-size:.8125rem;font-weight:600;color:#2D3A27;margin-bottom:.375rem;">Primary Goal <span aria-label="required" style="color:#b91c1c;">*</span></label>
         <select id="v4-goal" name="goal" required style="width:100%;border:1.5px solid #D4C9B0;color:#2D3A27;padding:.75rem 1rem;border-radius:.625rem;font-size:.9375rem;outline:none;background:#fff;box-sizing:border-box;font-family:'Open Sans',sans-serif;">
           <option value="">Select a goal</option>
           <option value="pain-free">Move pain-free</option>
@@ -395,7 +395,7 @@ import { coach } from '../data/v4-coach';
       <button type="submit" style="background:#4A6741;color:#fff;font-weight:700;font-size:1.0625rem;border:none;padding:1rem;border-radius:.625rem;cursor:pointer;width:100%;font-family:'Open Sans',sans-serif;">
         Book My Free Assessment
       </button>
-      <p style="text-align:center;color:#8A9A7E;font-size:.75rem;">Dr. Hayes reviews every submission personally. Response within 48 hours.</p>
+      <p style="text-align:center;color:#3d5635;font-size:.75rem;">Dr. Hayes reviews every submission personally. Response within 48 hours.</p>
     </form>
   </div>
 </section>
@@ -404,8 +404,8 @@ import { coach } from '../data/v4-coach';
 
 <footer style="background:#2D3A27;padding:3rem 1.5rem;text-align:center;">
   <p class="serif" style="color:#fff;font-size:1.25rem;font-weight:600;">{coach.gym}</p>
-  <p style="color:#6B8F5E;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym} · Denver, CO · All rights reserved.</p>
-  <p style="margin-top:.5rem;"><a href="/" style="color:#6B8F5E;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
+  <p style="color:#C4D4B8;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym} · Denver, CO · All rights reserved.</p>
+  <p style="margin-top:.5rem;"><a href="/" style="color:#C4D4B8;font-size:.75rem;text-decoration:underline;">← All Templates</a></p>
 </footer>
 
 </BaseLayout>
