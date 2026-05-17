@@ -78,7 +78,6 @@ const schedule = [
 
     @media (max-width: 768px) {
       .hero-grid { grid-template-columns: 1fr !important; }
-      .stats-row { grid-template-columns: 1fr 1fr !important; }
       .programs-grid { grid-template-columns: 1fr !important; }
       .pricing-grid { grid-template-columns: 1fr !important; }
       .transform-grid { grid-template-columns: 1fr !important; }
@@ -138,14 +137,6 @@ const schedule = [
               <a href="#schedule" class="cta-btn-outline">View Schedule</a>
             </div>
 
-            <div class="stats-row" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid #333;padding-top:32px;">
-              {coach.achievements.map((a) => (
-                <div>
-                  <div class="oswald" style="font-size:2.2rem;font-weight:700;color:#FF5500;line-height:1;">{a.value}</div>
-                  <div class="inter" style="font-size:0.75rem;color:#777;letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;">{a.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <!-- Next session card -->
