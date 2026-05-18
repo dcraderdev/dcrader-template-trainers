@@ -1,20 +1,41 @@
 (function(){
   var host = window.location.hostname;
-  if (!/\.vercel\.app$|\.dcrader\.dev$|^localhost$|^127\.0\.0\.1$/.test(host)) return;
+  if (!/\.vercel\.app$|\.dcrader\.dev$|\.onrender\.com$|^localhost$|^127\.0\.0\.1$/.test(host)) return;
 
   var industries = [
-    ['Restaurants',   'https://restaurants.templates.dcrader.dev'],
-    ['Pet services',  'https://pets.templates.dcrader.dev'],
-    ['Trades',        'https://trades.templates.dcrader.dev'],
-    ['Dental',        'https://dentists.templates.dcrader.dev'],
-    ['Chiropractors', 'https://chiropractors.templates.dcrader.dev'],
-    ['Photographers', 'https://photographers.templates.dcrader.dev'],
-    ['Auto',          'https://auto.templates.dcrader.dev'],
-    ['Salons',        'https://salons.templates.dcrader.dev'],
-    ['Landscape',     'https://landscape.templates.dcrader.dev'],
-    ['Real estate',   'https://realestate.templates.dcrader.dev'],
-    ['Tattoo',        'https://tattoo.templates.dcrader.dev'],
-    ['Trainers',      'https://trainers.templates.dcrader.dev']
+    ['Restaurants',   'https://bellasole.dcrader.dev'],
+    ['Pet services',  'https://pets.dcrader.dev'],
+    ['Trades',        'https://trades.dcrader.dev'],
+    ['Dental',        'https://dentists.dcrader.dev'],
+    ['Chiropractors', 'https://aurumspine.dcrader.dev'],
+    ['Photographers', 'https://dariavolkov.dcrader.dev'],
+    ['Auto',          'https://speedpittire.dcrader.dev'],
+    ['Salons',        'https://salons.dcrader.dev'],
+    ['Landscape',     'https://landscape.dcrader.dev'],
+    ['Real estate',   'https://realestate.dcrader.dev'],
+    ['Tattoo',        'https://ironandrose.dcrader.dev'],
+    ['Trainers',      'https://trainers.dcrader.dev']
+  ];
+
+  var socialGambling = [
+    ['ChipShot Poker', 'https://chipshot-poker.vercel.app'],
+    ['OddsRoom',       'https://oddsroom.vercel.app'],
+    ['ParlayLab',      'https://parlaylab.vercel.app'],
+    ['Social Stakes',  'http://socialstakes.onrender.com']
+  ];
+
+  var publishing = [
+    ['Boil & Bake',  'https://boilbake.dcrader.dev'],
+    ['Frame Notes',  'https://framenotes.dcrader.dev'],
+    ['Field Letter', 'https://fieldletter.dcrader.dev'],
+    ['Shmedium',     'https://shmedium.onrender.com']
+  ];
+
+  var fitness = [
+    ['Macros + Miles', 'https://macrosmiles.dcrader.dev'],
+    ['Stack',          'https://stack.dcrader.dev'],
+    ['Plate Notes',    'https://platenotes.dcrader.dev'],
+    ['ProFuelPrep',    'https://github.com/dcraderdev/profuelprep']
   ];
 
   function mount(){
@@ -36,13 +57,15 @@
       + '#dcrader-th .dt-dd{position:relative;}'
       + '#dcrader-th .dt-dd button{background:transparent;border:0;color:#e8e8ea;font:inherit;cursor:pointer;padding:6px 8px;opacity:.85;}'
       + '#dcrader-th .dt-dd button:hover,#dcrader-th .dt-dd button[aria-expanded="true"]{opacity:1;}'
-      + '#dcrader-th .dt-menu{position:absolute;top:calc(100% + 4px);right:0;min-width:230px;background:#18181b;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:6px 0;box-shadow:0 12px 32px rgba(0,0,0,0.4);}'
+      + '#dcrader-th .dt-menu{position:absolute;top:calc(100% + 4px);right:0;min-width:240px;max-height:78vh;overflow:auto;background:#18181b;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:6px 0;box-shadow:0 12px 32px rgba(0,0,0,0.4);}'
       + '#dcrader-th .dt-menu[hidden]{display:none;}'
-      + '#dcrader-th .dt-menu .dt-sec{padding:8px 14px 4px;font-size:10px;letter-spacing:0.08em;color:#8a8a90;text-transform:uppercase;}'
+      + '#dcrader-th .dt-menu .dt-sec{padding:10px 14px 4px;font-size:10px;letter-spacing:0.08em;color:#8a8a90;text-transform:uppercase;}'
+      + '#dcrader-th .dt-menu .dt-sec:first-child{padding-top:8px;}'
       + '#dcrader-th .dt-menu a{display:block;padding:7px 14px;font-size:12.5px;color:#e8e8ea;opacity:.85;}'
       + '#dcrader-th .dt-menu a:hover{background:rgba(255,255,255,0.06);opacity:1;}'
+      + '#dcrader-th .dt-menu .dt-back{border-top:1px solid rgba(255,255,255,0.08);margin-top:6px;padding-top:6px;}'
       + 'html.dt-th-spaced{scroll-padding-top:34px;}'
-      + '@media (max-width:520px){#dcrader-th .dt-inner{height:32px;padding:0 10px;gap:8px;}#dcrader-th nav{gap:10px;}#dcrader-th nav a:not(.dt-pri){display:none;}}'
+      + '@media (max-width:520px){#dcrader-th .dt-inner{height:32px;padding:0 10px;gap:8px;}#dcrader-th nav{gap:10px;}#dcrader-th nav a:not(.dt-pri){display:none;}#dcrader-th .dt-menu{max-height:70vh;}}'
       ;
     var style = document.createElement('style');
     style.id = 'dcrader-th-style';
@@ -54,9 +77,10 @@
     bar.setAttribute('role','navigation');
     bar.setAttribute('aria-label','dcrader portfolio');
 
-    var menuItems = industries.map(function(p){
-      return '<a href="'+p[1]+'">'+p[0]+'</a>';
-    }).join('');
+    function section(title, items){
+      return '<div class="dt-sec">'+title+'</div>'
+        + items.map(function(p){ return '<a href="'+p[1]+'">'+p[0]+'</a>'; }).join('');
+    }
 
     bar.innerHTML = ''
       + '<div class="dt-inner">'
@@ -65,12 +89,13 @@
       + '    <a href="https://dcrader.dev/pricing">Pricing</a>'
       + '    <a href="https://dcrader.dev/contact">Contact</a>'
       + '    <div class="dt-dd">'
-      + '      <button type="button" aria-expanded="false" aria-haspopup="true">Browse templates &#9662;</button>'
+      + '      <button type="button" aria-expanded="false" aria-haspopup="true">Browse portfolio &#9662;</button>'
       + '      <div class="dt-menu" hidden>'
-      + '        <div class="dt-sec">Industries</div>'
-      +          menuItems
-      + '        <div class="dt-sec">Portfolio</div>'
-      + '        <a href="https://dcrader.dev">&larr; Back to dcrader.dev</a>'
+      +          section('Industries', industries)
+      +          section('Social &amp; Gambling', socialGambling)
+      +          section('Publishing', publishing)
+      +          section('Fitness', fitness)
+      + '        <div class="dt-back"><a href="https://dcrader.dev">&larr; Back to dcrader.dev</a></div>'
       + '      </div>'
       + '    </div>'
       + '  </nav>'
