@@ -143,19 +143,25 @@ const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
         </div>
       </div>
       <div>
-        <!-- Research stats -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem;">
-          {[
-            { stat:'34%', label:'Fall risk reduction with strength training' },
-            { stat:'8–12', label:'Weeks to measurable strength gains at any age' },
-            { stat:'3×', label:'Improvement in balance with targeted mobility work' },
-            { stat:'40%', label:'Reduction in chronic joint pain in Dr. Hayes\'s clients' },
-          ].map(s => (
-            <div style="background:#fff;border-radius:1.25rem;padding:1.75rem;border:1px solid #C4D4B8;text-align:center;">
-              <p class="serif" style="font-size:2.5rem;font-weight:700;color:#4A6741;">{s.stat}</p>
-              <p style="font-size:.8rem;color:#5A6B52;line-height:1.5;margin-top:.5rem;">{s.label}</p>
-            </div>
-          ))}
+        <!-- Research citation cards — peer-reviewed lit, not a stat grid -->
+        <div style="background:#fff;border-radius:1.25rem;border:1px solid #C4D4B8;padding:1.75rem;margin-bottom:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+          <p style="font-size:.65rem;letter-spacing:.3em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin:0 0 1rem;">Selected research the program is built on</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
+            {[
+              { citation: "Liu &amp; Latham (Cochrane Database, 2009)", finding: "Progressive resistance training is associated with meaningfully reduced fall incidence in adults over 65." },
+              { citation: "Peterson et&nbsp;al. (Med Sci Sports Exerc, 2011)", finding: "Adults 50+ respond to resistance training at rates comparable to younger cohorts when load is appropriately programmed." },
+              { citation: "Westcott (Curr Sports Med Rep, 2012)", finding: "Strength training reverses many markers of sarcopenia within 8–12 weeks of consistent training." },
+              { citation: "Cadore et&nbsp;al. (Rejuvenation Res, 2013)", finding: "Combined balance + strength work produces durable improvements in gait, transfers, and independence." },
+            ].map(r => (
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:.875rem;align-items:start;">
+                <span aria-hidden="true" style="width:1.75rem;height:1.75rem;border-radius:50%;background:#EEF2E8;color:#4A6741;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;border:1px solid #C4D4B8;flex-shrink:0;">§</span>
+                <div>
+                  <p class="serif" style="font-size:.95rem;color:#2D3A27;line-height:1.55;margin:0 0 .25rem;">{r.finding}</p>
+                  <p style="font-size:.7rem;color:#6B8F5E;letter-spacing:.05em;margin:0;font-style:italic;" set:html={r.citation}></p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
         <img loading="lazy" decoding="async" src="/images/shared/photo-1559582798-678dfc71ccd8-1920.webp"
           alt="Senior clients doing balance and mobility exercises at Longevity Athletics" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:1.25rem;display:block;" />
@@ -295,22 +301,28 @@ const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
   </div>
 </section>
 
-<!-- ───── TESTIMONIALS ───── -->
+<!-- ───── TESTIMONIALS — interview-style stacked rows ───── -->
 <section id="testimonials" style="background:#F7F5EF;padding:6rem 0;" aria-labelledby="test-h2">
-  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
+  <div style="max-width:880px;margin:0 auto;padding:0 1.5rem;">
     <div style="text-align:center;margin-bottom:3.5rem;">
       <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin-bottom:.75rem;">Client Voices</p>
       <h2 id="test-h2" class="serif" style="font-size:2.75rem;font-weight:600;color:#2D3A27;">More than fitness.<br/><em>Freedom of movement.</em></h2>
+      <p style="color:#5A6B52;margin-top:.75rem;font-size:.9375rem;">Interview excerpts collected with each client's consent.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
-      {coach.testimonials.map(t => (
-        <blockquote style="background:#fff;border-radius:1.25rem;padding:2rem;border:1px solid #D4C9B0;box-shadow:0 2px 8px rgba(0,0,0,.04);margin:0;border-top:3px solid #4A6741;">
-          <p class="serif" style="font-size:1.625rem;font-weight:600;color:#4A6741;margin-bottom:1rem;">{t.result}</p>
-          <p style="color:#3D4A35;font-size:.875rem;line-height:1.8;margin-bottom:1.5rem;">{t.text}</p>
-          <footer style="border-top:1px solid #EEF2E8;padding-top:1rem;">
-            <cite class="serif" style="font-size:1.1rem;font-weight:600;color:#2D3A27;font-style:normal;">{t.name}</cite>
-            <p style="color:#8A9A7E;font-size:.75rem;margin-top:.25rem;">{t.details}</p>
-          </footer>
+    <div style="display:flex;flex-direction:column;gap:1.25rem;">
+      {coach.testimonials.map((t, i) => (
+        <blockquote style={`background:#fff;border-radius:1.25rem;padding:2rem 2.25rem;border:1px solid #D4C9B0;box-shadow:0 2px 8px rgba(0,0,0,.04);margin:0;display:grid;grid-template-columns:auto 1fr auto;gap:1.75rem;align-items:center;border-left:4px solid #4A6741;`}>
+          <div aria-hidden="true" style={`width:4.5rem;height:4.5rem;border-radius:50%;background:#EEF2E8;border:2px solid #C4D4B8;display:flex;align-items:center;justify-content:center;flex-shrink:0;`}>
+            <span class="serif" style="font-size:1.75rem;font-weight:700;color:#4A6741;">{t.name.charAt(0)}</span>
+          </div>
+          <div>
+            <p class="serif" style="font-size:1.0625rem;color:#2D3A27;line-height:1.65;margin:0 0 .875rem;font-style:italic;">"{t.text}"</p>
+            <footer>
+              <cite class="serif" style="font-size:1.05rem;font-weight:600;color:#2D3A27;font-style:normal;">{t.name}</cite>
+              <p style="color:#8A9A7E;font-size:.75rem;margin-top:.125rem;">{t.details}</p>
+            </footer>
+          </div>
+          <p class="serif" style="font-size:1.5rem;font-weight:600;color:#4A6741;text-align:right;flex-shrink:0;line-height:1.2;max-width:9rem;">{t.result}</p>
         </blockquote>
       ))}
     </div>
@@ -430,11 +442,28 @@ const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
 
 </main>
 
-<footer style="background:#2D3A27;padding:3rem 1.5rem;text-align:center;">
-  <p class="serif" style="color:#fff;font-size:1.25rem;font-weight:600;">{coach.gym}</p>
-  <p style="color:#6B8F5E;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym} · Denver, CO · All rights reserved.</p>
-  <p style="margin-top:.5rem;"><a href="/" style="color:#6B8F5E;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
-  <p style="color:#6B8F5E;font-size:.7rem;margin-top:.75rem;">Built by Donovan Crader · <a href="https://dcrader.dev" style="color:#9CB88A;text-decoration:none;">dcrader.dev</a></p>
+<footer style="background:#2D3A27;padding:3.5rem 1.5rem 2rem;">
+  <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;align-items:start;border-bottom:1px solid #3D4A35;padding-bottom:2rem;">
+    <div>
+      <p class="serif" style="color:#fff;font-size:1.375rem;font-weight:600;margin:0 0 .5rem;">{coach.gym}</p>
+      <p style="color:#9CB88A;font-size:.875rem;line-height:1.7;max-width:24rem;margin:0;">Doctor-coached functional fitness for adults 50+. Evidence-based programming for pain-free movement and lasting strength.</p>
+    </div>
+    <div>
+      <p class="serif" style="color:#fff;font-size:.95rem;font-weight:600;margin:0 0 .75rem;">Visit</p>
+      <p style="color:#9CB88A;font-size:.8125rem;line-height:1.7;margin:0;">{coach.address.street}<br/>{coach.address.city}</p>
+    </div>
+    <div>
+      <p class="serif" style="color:#fff;font-size:.95rem;font-weight:600;margin:0 0 .75rem;">Contact</p>
+      <p style="font-size:.8125rem;line-height:1.7;margin:0;"><a href={`tel:${coach.phone.replace(/\D/g,'')}`} style="color:#9CB88A;text-decoration:none;">{coach.phone}</a><br/><a href={`mailto:${coach.email}`} style="color:#9CB88A;text-decoration:none;">{coach.email}</a></p>
+    </div>
+  </div>
+  <div style="max-width:1152px;margin:1.5rem auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;">
+    <p style="color:#6B8F5E;font-size:.75rem;margin:0;">© {new Date().getFullYear()} {coach.gym} · Denver, CO</p>
+    <div style="display:flex;gap:1.25rem;font-size:.75rem;">
+      <a href="/" style="color:#9CB88A;text-decoration:none;">← All Templates</a>
+      <a href="https://dcrader.dev" style="color:#9CB88A;text-decoration:none;">Built by Donovan Crader</a>
+    </div>
+  </div>
 </footer>
 
 </BaseLayout>

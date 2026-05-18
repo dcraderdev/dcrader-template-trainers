@@ -141,14 +141,21 @@ const annualPrices = [122, 247, 414];
   </div>
 </section>
 
-<!-- ───── SOCIAL PROOF BAR ───── -->
-<div style="background:#65a30d;padding:.875rem 0;">
-  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;color:#fff;font-size:.8125rem;font-weight:500;">
-    <span>⭐ 4.9 average rating</span>
-    <span>✓ 800+ clients coached</span>
-    <span>✓ 30+ countries</span>
-    <span>✓ NASM-CPT · Precision Nutrition L2</span>
-    <span>✓ 90% average adherence</span>
+<!-- ───── COVERAGE STRIP — no-numbers, "as featured / coaching across" ───── -->
+<div style="background:#65a30d;padding:1rem 0;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;color:#fff;">
+    <span style="font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:#d9f99d;font-weight:700;border-right:1px solid rgba(255,255,255,.25);padding-right:1.5rem;white-space:nowrap;">Coaching from Austin to</span>
+    <div style="display:flex;flex-wrap:wrap;gap:1.25rem 2rem;font-size:.8125rem;font-weight:500;">
+      <span>🇬🇧 London</span>
+      <span>🇸🇬 Singapore</span>
+      <span>🇦🇺 Melbourne</span>
+      <span>🇨🇦 Toronto</span>
+      <span>🇩🇪 Berlin</span>
+      <span>🇦🇪 Dubai</span>
+      <span>🇯🇵 Tokyo</span>
+      <span>🇿🇦 Cape Town</span>
+      <span style="opacity:.7;">+ 22 more cities</span>
+    </div>
   </div>
 </div>
 
@@ -327,27 +334,30 @@ const annualPrices = [122, 247, 414];
   </div>
 </section>
 
-<!-- ───── TESTIMONIALS ───── -->
+<!-- ───── TESTIMONIALS — app-store-style review feed (vertical list with avatars) ───── -->
 <section id="testimonials" style="background:#f0fdf4;padding:5rem 0;" aria-labelledby="test-h2">
-  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <h2 id="test-h2" style="font-size:2.5rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:.75rem;">Clients love the results</h2>
+  <div style="max-width:720px;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <span style="display:inline-block;background:#fff;color:#65a30d;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.375rem .875rem;border-radius:999px;margin-bottom:1rem;border:1px solid #bbf7d0;">App Store Reviews</span>
+      <h2 id="test-h2" style="font-size:2.5rem;font-weight:700;color:#111827;letter-spacing:-.03em;margin-bottom:.5rem;">Real reviews. Real progress.</h2>
+      <p style="color:#6b7280;font-size:.9375rem;">Pulled from the Chen Coaching app — published with each client's permission.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
-      {coach.testimonials.map(t => (
-        <blockquote style="background:#fff;border-radius:1.25rem;padding:1.75rem;border:1px solid #bbf7d0;box-shadow:0 1px 3px rgba(0,0,0,.05);margin:0;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
-            <p style="font-size:1.375rem;font-weight:700;color:#65a30d;">{t.result}</p>
-            <p style="color:#fbbf24;font-size:.875rem;">★★★★★</p>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      {coach.testimonials.map((t, i) => (
+        <article style="background:#fff;border-radius:1.25rem;padding:1.5rem 1.75rem;border:1px solid #bbf7d0;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start;">
+          <div aria-hidden="true" style={`width:3rem;height:3rem;border-radius:999px;background:${['#84cc16','#65a30d','#15803d'][i]};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.125rem;flex-shrink:0;`}>{t.name.charAt(0)}</div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.25rem;flex-wrap:wrap;">
+              <cite style="font-weight:600;color:#111827;font-style:normal;font-size:.9375rem;">{t.name}</cite>
+              <span style="color:#fbbf24;font-size:.8125rem;letter-spacing:.05em;">★★★★★</span>
+            </div>
+            <p style="color:#65a30d;font-weight:700;font-size:.8125rem;margin:0 0 .75rem;">{t.result} · {t.details}</p>
+            <p style="color:#374151;font-size:.875rem;line-height:1.7;margin:0;">{t.text}</p>
           </div>
-          <p style="color:#374151;font-size:.875rem;line-height:1.7;margin-bottom:1.25rem;">{t.text}</p>
-          <footer style="border-top:1px solid #f0fdf4;padding-top:1rem;">
-            <cite style="font-weight:600;color:#111827;font-style:normal;">{t.name}</cite>
-            <p style="color:#9ca3af;font-size:.75rem;margin-top:.125rem;">{t.details}</p>
-          </footer>
-        </blockquote>
+        </article>
       ))}
     </div>
+    <p style="text-align:center;color:#6b7280;font-size:.8125rem;margin-top:1.5rem;">Hundreds more in-app. Every review is from a client who completed at least 12 weeks of coaching.</p>
   </div>
 </section>
 
@@ -458,11 +468,28 @@ const annualPrices = [122, 247, 414];
 
 </main>
 
-<footer style="background:#111827;padding:3rem 1.5rem;text-align:center;">
-  <p style="color:#fff;font-weight:600;">{coach.gym}</p>
-  <p style="color:#6b7280;font-size:.75rem;margin-top:.5rem;">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
-  <p style="margin-top:.5rem;"><a href="/" style="color:#6b7280;font-size:.75rem;text-decoration:none;">← All Templates</a></p>
-  <p style="color:#6b7280;font-size:.7rem;margin-top:.75rem;">Built by Donovan Crader · <a href="https://dcrader.dev" style="color:#9ca3af;text-decoration:none;">dcrader.dev</a></p>
+<footer style="background:#111827;padding:3rem 1.5rem;">
+  <div style="max-width:1152px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+    <div style="display:flex;align-items:center;gap:.875rem;">
+      <span aria-hidden="true" style="width:2.25rem;height:2.25rem;border-radius:999px;background:#65a30d;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">C</span>
+      <div>
+        <p style="color:#fff;font-weight:600;font-size:.95rem;margin:0;">{coach.gym}</p>
+        <p style="color:#6b7280;font-size:.75rem;margin:.125rem 0 0;">Online coaching · Worldwide</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:.625rem;flex-wrap:wrap;">
+      {['App Store ↗', 'Google Play ↗', 'Instagram ↗', 'YouTube ↗'].map(label => (
+        <a href="#" style="background:rgba(101,163,13,.12);color:#84cc16;font-size:.75rem;font-weight:600;padding:.5rem .875rem;border-radius:999px;text-decoration:none;border:1px solid rgba(101,163,13,.25);">{label}</a>
+      ))}
+    </div>
+  </div>
+  <div style="max-width:1152px;margin:1.5rem auto 0;padding-top:1.25rem;border-top:1px solid #1f2937;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+    <p style="color:#6b7280;font-size:.75rem;margin:0;">© {new Date().getFullYear()} {coach.gym}. All rights reserved.</p>
+    <div style="display:flex;gap:1.25rem;">
+      <a href="/" style="color:#6b7280;font-size:.75rem;text-decoration:none;">← All Templates</a>
+      <a href="https://dcrader.dev" style="color:#9ca3af;font-size:.75rem;text-decoration:none;">Built by Donovan Crader</a>
+    </div>
+  </div>
 </footer>
 
 <script is:inline>

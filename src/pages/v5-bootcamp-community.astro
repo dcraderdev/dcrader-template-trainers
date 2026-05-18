@@ -193,14 +193,17 @@ const schedule = [
       </div>
     </section>
 
-    <!-- TRUST BAR -->
-    <section style="background:#FF5500;padding:16px 24px;">
-      <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:32px;">
-        {coach.certifications.map((c) => (
-          <span class="oswald" style="font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#000;">{c}</span>
-        ))}
-        <span class="oswald" style="font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#000;">&#x2B50; 4.9 Google Rating</span>
-        <span class="oswald" style="font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#000;">&#x1F3C6; Miami's #1 Bootcamp 2024</span>
+    <!-- TRUST BAR — coach credentials + "what we are/aren't" stance -->
+    <section style="background:#FF5500;padding:14px 24px;">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;">
+        <span class="oswald" style="font-size:.7rem;font-weight:700;letter-spacing:.2em;color:#000;text-transform:uppercase;border-right:2px solid rgba(0,0,0,.25);padding-right:1.5rem;white-space:nowrap;">Coach Tony &middot; certified by</span>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:center;">
+          {coach.certifications.map((c) => (
+            <span class="oswald" style="font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#000;">{c}</span>
+          ))}
+          <span aria-hidden="true" style="color:rgba(0,0,0,.3);">|</span>
+          <span class="oswald" style="font-size:0.78rem;font-weight:600;letter-spacing:.1em;color:#000;text-transform:uppercase;">Outdoor · All weather · No locker rooms · No mirrors</span>
+        </div>
       </div>
     </section>
 
@@ -390,18 +393,28 @@ const schedule = [
           ))}
         </div>
 
-        <!-- Testimonials -->
-        <div style="margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="tribe-grid">
-          {coach.testimonials.map((t) => (
-            <div style="background:#111;padding:32px;border-top:3px solid #FF5500;">
-              <div class="oswald" style="font-size:1.8rem;font-weight:700;color:#FF5500;margin-bottom:12px;">{t.result}</div>
-              <p class="inter" style="font-size:0.875rem;color:#AAA;line-height:1.65;margin-bottom:20px;">"{t.text}"</p>
-              <div>
-                <div class="oswald" style="font-size:0.95rem;font-weight:600;color:#fff;text-transform:uppercase;">{t.name}</div>
-                <div class="inter" style="font-size:0.75rem;color:#555;margin-top:2px;">{t.details}</div>
+        <!-- Testimonials — "Member Roll Call" stacked banner rows -->
+        <div style="margin-top:72px;">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:24px;">
+            <span aria-hidden="true" style="flex:1;height:1px;background:#222;"></span>
+            <span class="oswald" style="font-size:.75rem;font-weight:700;letter-spacing:.2em;color:#FF5500;text-transform:uppercase;">Member Roll Call</span>
+            <span aria-hidden="true" style="flex:1;height:1px;background:#222;"></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px;background:#1a1a1a;">
+            {coach.testimonials.map((t, i) => (
+              <div style={`background:#0F0F0F;padding:28px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;border-left:4px solid ${i===1?'#FFB300':'#FF5500'};`}>
+                <div style="display:flex;align-items:center;gap:16px;min-width:0;">
+                  <div aria-hidden="true" style={`width:56px;height:56px;background:linear-gradient(135deg,${i===0?'#FF5500,#FFB300':i===1?'#FFB300,#FF5500':'#FF5500,#FF7700'});display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.5rem;color:#000;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 100%,8px 100%);flex-shrink:0;`}>{t.name.charAt(0)}</div>
+                  <div>
+                    <div class="oswald" style="font-size:1rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;">{t.name}</div>
+                    <div class="inter" style="font-size:0.75rem;color:#666;margin-top:2px;">{t.details}</div>
+                  </div>
+                </div>
+                <p class="inter" style="font-size:0.875rem;color:#BBB;line-height:1.65;margin:0;font-style:italic;">"{t.text}"</p>
+                <div class="oswald" style="font-size:1.4rem;font-weight:700;color:#FF5500;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;">{t.result}</div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
