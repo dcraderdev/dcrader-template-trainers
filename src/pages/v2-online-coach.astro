@@ -257,7 +257,7 @@ const annualPrices = [122, 247, 414];
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:56rem;margin:0 auto;">
       {coach.pricing.map((tier, i) => (
         <div style={`position:relative;background:${tier.popular?'#111827':'#fff'};border-radius:1.25rem;padding:2rem;border:${tier.popular?'none':'1px solid #e5e7eb'};${tier.popular?'box-shadow:0 20px 60px rgba(0,0,0,.25);':''}`}>
-          {tier.popular && <span style="position:absolute;-top:-3px;left:50%;transform:translateX(-50%);background:#65a30d;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem .875rem;border-radius:999px;white-space:nowrap;">⭐ Most Popular</span>}
+          {tier.popular && <span style="position:absolute;top:-3px;left:50%;transform:translateX(-50%);background:#65a30d;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.25rem .875rem;border-radius:999px;white-space:nowrap;">⭐ Most Popular</span>}
           <p style={`font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;color:${tier.popular?'#65a30d':'#9ca3af'};`}>{tier.name}</p>
           <p class={`price-amount-${i}`} style={`font-size:3rem;font-weight:700;letter-spacing:-.04em;line-height:1;color:${tier.popular?'#fff':'#111827'};`}>${monthlyPrices[i]}<span style={`font-size:1rem;font-weight:400;color:${tier.popular?'#6b7280':'#9ca3af'};`}>/mo</span></p>
           <ul style="list-style:none;padding:0;margin:1.5rem 0;display:flex;flex-direction:column;gap:.75rem;">
@@ -283,7 +283,7 @@ const annualPrices = [122, 247, 414];
     <div style="background:#fff;border-radius:2rem;border:1px solid #e5e7eb;padding:3rem;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;">
       <div style="position:relative;width:280px;flex-shrink:0;">
         <img loading="lazy" decoding="async" src={coach.photo} alt={`${coach.name} — ${coach.title}`} style="width:280px;height:340px;object-fit:cover;border-radius:1.25rem;display:block;" />
-        <div style="position:absolute;-bottom:12px;-right:-12px;bottom:-12px;right:-12px;background:#65a30d;color:#fff;border-radius:1rem;padding:.875rem 1.25rem;box-shadow:0 8px 24px rgba(101,163,13,.4);text-align:center;">
+        <div style="position:absolute;bottom:-12px;right:-12px;background:#65a30d;color:#fff;border-radius:1rem;padding:.875rem 1.25rem;box-shadow:0 8px 24px rgba(101,163,13,.4);text-align:center;">
           <p style="font-size:1.5rem;font-weight:700;line-height:1;">4.9★</p>
           <p style="font-size:.65rem;color:#d9f99d;margin-top:.125rem;">Avg. rating</p>
         </div>
