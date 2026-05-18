@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dcrader-template-trainers.vercel.app/sitemap-index.xml

@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [tailwind()],
+  site: 'https://dcrader-template-trainers.vercel.app',
+  integrations: [sitemap(), tailwind()],
   output: 'static',
 });
