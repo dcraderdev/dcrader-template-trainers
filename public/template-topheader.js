@@ -1,41 +1,41 @@
 (function(){
   var host = window.location.hostname;
-  if (!/\.vercel\.app$|\.dcrader\.dev$|\.onrender\.com$|^localhost$|^127\.0\.0\.1$/.test(host)) return;
+  if (!/\.vercel\.app$|\.dcrader\.dev$|^localhost$|^127\.0\.0\.1$/.test(host)) return;
 
   var industries = [
-    ['Restaurants',   'https://bellasole.dcrader.dev'],
-    ['Pet services',  'https://pets.dcrader.dev'],
-    ['Trades',        'https://trades.dcrader.dev'],
-    ['Dental',        'https://dentists.dcrader.dev'],
-    ['Chiropractors', 'https://aurumspine.dcrader.dev'],
-    ['Photographers', 'https://dariavolkov.dcrader.dev'],
-    ['Auto',          'https://speedpittire.dcrader.dev'],
-    ['Salons',        'https://salons.dcrader.dev'],
-    ['Landscape',     'https://landscape.dcrader.dev'],
-    ['Real estate',   'https://realestate.dcrader.dev'],
-    ['Tattoo',        'https://ironandrose.dcrader.dev'],
-    ['Trainers',      'https://trainers.dcrader.dev']
+    ['Restaurants',   'https://dcrader-template-restaurants.vercel.app'],
+    ['Pet services',  'https://dcrader-template-pets.vercel.app'],
+    ['Trades',        'https://dcrader-template-trades.vercel.app'],
+    ['Dental',        'https://dcrader-template-dentists.vercel.app'],
+    ['Chiropractors', 'https://dcrader-template-chiropractors.vercel.app'],
+    ['Photographers', 'https://dcrader-template-photographers.vercel.app'],
+    ['Auto',          'https://dcrader-template-auto.vercel.app'],
+    ['Salons',        'https://dcrader-template-salons.vercel.app'],
+    ['Landscape',     'https://dcrader-template-landscape.vercel.app'],
+    ['Real estate',   'https://dcrader-template-realestate.vercel.app'],
+    ['Tattoo',        'https://dcrader-template-tattoo.vercel.app'],
+    ['Trainers',      'https://dcrader-template-trainers.vercel.app']
   ];
 
   var socialGambling = [
+    ['Social Stakes',  'https://socialstakes-frontend.vercel.app'],
     ['ChipShot Poker', 'https://chipshot-poker.vercel.app'],
     ['OddsRoom',       'https://oddsroom.vercel.app'],
-    ['ParlayLab',      'https://parlaylab.vercel.app'],
-    ['Social Stakes',  'http://socialstakes.onrender.com']
+    ['ParlayLab',      'https://parlaylab.vercel.app']
   ];
 
   var publishing = [
-    ['Boil & Bake',  'https://boilbake.dcrader.dev'],
-    ['Frame Notes',  'https://framenotes.dcrader.dev'],
-    ['Field Letter', 'https://fieldletter.dcrader.dev'],
-    ['Shmedium',     'https://shmedium.onrender.com']
+    ['Shmedium',     'https://shmedium-frontend.vercel.app'],
+    ['Boil & Bake',  'https://dcrader-publishing-boilbake.vercel.app'],
+    ['Frame Notes',  'https://dcrader-publishing-framenotes.vercel.app'],
+    ['Field Letter', 'https://dcrader-publishing-fieldletter.vercel.app']
   ];
 
   var fitness = [
-    ['Macros + Miles', 'https://macrosmiles.dcrader.dev'],
-    ['Stack',          'https://stack.dcrader.dev'],
-    ['Plate Notes',    'https://platenotes.dcrader.dev'],
-    ['ProFuelPrep',    'https://github.com/dcraderdev/profuelprep']
+    ['ProFuelPrep',     'https://profuelprep.com'],
+    ['Macros + Miles',  'https://dcrader-fitness-macrosmiles.vercel.app'],
+    ['Stack',           'https://dcrader-fitness-stack.vercel.app'],
+    ['Plate Notes',     'https://dcrader-fitness-platenotes.vercel.app']
   ];
 
   function mount(){
@@ -57,7 +57,7 @@
       + '#dcrader-th .dt-dd{position:relative;}'
       + '#dcrader-th .dt-dd button{background:transparent;border:0;color:#e8e8ea;font:inherit;cursor:pointer;padding:6px 8px;opacity:.85;}'
       + '#dcrader-th .dt-dd button:hover,#dcrader-th .dt-dd button[aria-expanded="true"]{opacity:1;}'
-      + '#dcrader-th .dt-menu{position:absolute;top:calc(100% + 4px);right:0;min-width:240px;max-height:78vh;overflow:auto;background:#18181b;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:6px 0;box-shadow:0 12px 32px rgba(0,0,0,0.4);}'
+      + '#dcrader-th .dt-menu{position:absolute;top:calc(100% + 4px);right:0;min-width:250px;max-height:min(78vh,640px);overflow:auto;background:#18181b;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:6px 0;box-shadow:0 12px 32px rgba(0,0,0,0.4);}'
       + '#dcrader-th .dt-menu[hidden]{display:none;}'
       + '#dcrader-th .dt-menu .dt-sec{padding:10px 14px 4px;font-size:10px;letter-spacing:0.08em;color:#8a8a90;text-transform:uppercase;}'
       + '#dcrader-th .dt-menu .dt-sec:first-child{padding-top:8px;}'
@@ -91,10 +91,10 @@
       + '    <div class="dt-dd">'
       + '      <button type="button" aria-expanded="false" aria-haspopup="true">Browse portfolio &#9662;</button>'
       + '      <div class="dt-menu" hidden>'
-      +          section('Industries', industries)
-      +          section('Social &amp; Gambling', socialGambling)
+      +          section('Industry templates', industries)
+      +          section('Social &amp; gambling', socialGambling)
       +          section('Publishing', publishing)
-      +          section('Fitness', fitness)
+      +          section('Fitness &amp; nutrition', fitness)
       + '        <div class="dt-back"><a href="https://dcrader.dev">&larr; Back to dcrader.dev</a></div>'
       + '      </div>'
       + '    </div>'
