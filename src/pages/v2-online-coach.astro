@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ClassScheduleHero from '../components/trainers/ClassScheduleHero.astro';
 import { coach } from '../data/v2-coach';
 
 const monthlyPrices = [147, 297, 497];
@@ -38,18 +39,19 @@ const annualPrices = [122, 247, 414];
 
 <main id="main-content">
 
-<!-- ───── HERO (split layout) ───── -->
-<section style="background:#fff;padding:6rem 0 4rem;" aria-labelledby="hero-h1">
+<!-- ───── HERO (Class Schedule grid component) ───── -->
+<ClassScheduleHero coach={coach} />
+
+<!-- ───── LEGACY HERO (split layout) — kept as supporting "what you get on day one" module ───── -->
+<section style="background:#f9fafb;padding:4rem 0;" aria-labelledby="day-one-h2">
   <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
     <!-- Text side -->
     <div>
+      <h2 id="day-one-h2" style="font-size:1.75rem;font-weight:700;color:#111827;line-height:1.2;letter-spacing:-.02em;margin:0 0 1.5rem;">What you get on day one</h2>
       <div style="display:inline-flex;align-items:center;gap:.5rem;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;font-size:.75rem;font-weight:600;padding:.375rem .875rem;border-radius:999px;margin-bottom:1.5rem;">
         🌍 Coaching clients in 30+ countries
       </div>
-      <h1 id="hero-h1" style="font-size:clamp(2.5rem,5vw,3.75rem);font-weight:700;color:#111827;line-height:1.1;letter-spacing:-.03em;margin-bottom:1.25rem;">
-        Your best physique.<br/><span style="color:#65a30d;">Coached by science.</span><br/>Delivered to your phone.
-      </h1>
-      <p style="font-size:1.125rem;color:#6b7280;line-height:1.7;margin-bottom:2rem;max-width:28rem;">{coach.tagline}</p>
+      <p style="font-size:1.05rem;color:#374151;line-height:1.7;margin-bottom:1.5rem;max-width:28rem;">Inside every live slot is the same delivery our 800+ remote clients get — without the on-camera time.</p>
 
       <!-- Feature badges -->
       <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;">

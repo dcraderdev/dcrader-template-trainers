@@ -1,0 +1,59 @@
+---
+// v4: Transformation gallery hero — before/after image grid AS the hero
+export interface Props {
+  coach: any;
+}
+const { coach } = Astro.props;
+
+// Build a 6-card gallery using transformations data + supplemental functional-aging stories
+const gallery = [
+  ...(coach.transformations || []).slice(0, 3),
+  { name: 'Linda · 68', result: 'Back to playing tennis · pain-free', quote: 'My grandkids cannot keep up anymore.', beforeImg: '/images/shared/photo-1571019614242-c5c5dee9f50b-640.webp', afterImg: '/images/shared/photo-1518611012118-696072aa579a-640.webp' },
+  { name: 'Walter · 74', result: 'Off blood-pressure meds in 9 months', quote: 'My cardiologist asked what I was doing.', beforeImg: '/images/shared/photo-1571019613913-574d37af5c65-640.webp', afterImg: '/images/shared/photo-1597347316205-36f6c451902a-640.webp' },
+  { name: 'Margaret · 61', result: 'First-ever bodyweight deadlift', quote: 'I was told to "take it easy" for thirty years. They were wrong.', beforeImg: '/images/shared/photo-1583454110551-21f2fa2afe61-640.webp', afterImg: '/images/shared/photo-1549060279-7e168fcee0c2-640.webp' },
+].slice(0, 6);
+---
+<section style="background:#f7f5ef;padding:5rem 0 3.5rem;position:relative;overflow:hidden;" aria-labelledby="hero-h1">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+    <!-- Heading -->
+    <div style="text-align:center;max-width:46rem;margin:0 auto 2.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.35em;color:#6B8F5E;text-transform:uppercase;font-weight:700;margin:0 0 1rem;">Real Adults · 50–82 · Real Outcomes</p>
+      <h1 id="hero-h1" class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:600;color:#2D3A27;line-height:1.15;margin:0 0 1rem;">
+        Move better.<br/><em>Look like it.</em>
+      </h1>
+      <p style="color:#5A6B52;font-size:1.05rem;line-height:1.7;margin:0;">{coach.tagline}</p>
+    </div>
+
+    <!-- Before/After gallery (the hero) -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem;">
+      {gallery.map((t: any, idx: number) => (
+        <article style={`background:#fff;border-radius:1.25rem;overflow:hidden;border:1px solid #C4D4B8;box-shadow:0 4px 14px rgba(74,103,65,.08);${idx === 0 ? 'grid-column:span 1;' : ''}`}>
+          <div style="display:grid;grid-template-columns:1fr 1fr;position:relative;background:#EEF2E8;">
+            <div style="position:relative;">
+              <img loading={idx < 2 ? 'eager' : 'lazy'} decoding="async" src={t.beforeImg}
+                alt={`${t.name} before — start of program`}
+                style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
+              <span style="position:absolute;top:.5rem;left:.5rem;background:rgba(45,58,39,.88);color:#fff;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:.7rem;letter-spacing:.05em;padding:.2rem .55rem;border-radius:.3rem;">before</span>
+            </div>
+            <div style="position:relative;border-left:1px solid rgba(255,255,255,.6);">
+              <img loading={idx < 2 ? 'eager' : 'lazy'} decoding="async" src={t.afterImg}
+                alt={`${t.name} after — ${t.result}`}
+                style="width:100%;height:13rem;object-fit:cover;object-position:top;display:block;" />
+              <span style="position:absolute;top:.5rem;right:.5rem;background:#4A6741;color:#fff;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:.7rem;letter-spacing:.05em;padding:.2rem .55rem;border-radius:.3rem;">after</span>
+            </div>
+          </div>
+          <div style="padding:1rem 1.2rem;">
+            <p class="serif" style="font-size:1.05rem;font-weight:600;color:#2D3A27;margin:0 0 .15rem;">{t.name}</p>
+            <p style="font-size:.8rem;font-weight:600;color:#4A6741;margin:0 0 .55rem;">{t.result}</p>
+            <p style="font-size:.78rem;color:#5A6B52;font-style:italic;line-height:1.5;margin:0;">"{t.quote}"</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+      <a href="#booking" style="background:#4A6741;color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:1rem 2rem;border-radius:.625rem;display:inline-block;">Book Free Assessment</a>
+      <a href="#science" style="border:1.5px solid #8A9A7E;color:#2D3A27;font-weight:500;font-size:1rem;text-decoration:none;padding:1rem 2rem;border-radius:.625rem;display:inline-block;background:#fff;">See The Science →</a>
+    </div>
+  </div>
+</section>

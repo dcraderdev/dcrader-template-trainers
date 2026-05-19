@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
+import ProgramTiersHero from '../components/trainers/ProgramTiersHero.astro';
 import { coach } from '../data/v5-coach.ts';
 const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
 
@@ -119,77 +120,28 @@ const schedule = [
       </div>
     </nav>
 
-    <!-- HERO -->
-    <section style="position:relative;padding-top:64px;min-height:100vh;display:flex;align-items:center;overflow:hidden;">
-      <div style="position:absolute;inset:0;">
-        <ResponsiveImage
-          src={HERO}
-          alt="Blaze Bootcamp group training session in Miami"
-          sizes="100vw"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
-        />
-        <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(0,0,0,0.92) 45%, rgba(0,0,0,0.5) 100%);"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);"></div>
-      </div>
+    <!-- HERO (Program Tiers component) -->
+    <ProgramTiersHero coach={coach} />
 
-      <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:80px 24px;width:100%;">
-        <div class="hero-grid" style="display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;">
-          <div>
-            <div class="tribe-badge" style="margin-bottom:24px;">&#x1F525; Miami's #1 Group Bootcamp</div>
-            <h1 class="oswald" style="font-size:clamp(3.5rem,8vw,6.5rem);font-weight:700;line-height:0.9;letter-spacing:0.02em;text-transform:uppercase;color:#fff;margin-bottom:24px;">
-              SHOW<br/>
-              <span style="color:#FF5500;">UP.</span><br/>
-              BURN<br/>
-              IT DOWN.
-            </h1>
-            <p class="inter" style="font-size:1.15rem;color:#CCC;max-width:480px;line-height:1.6;margin-bottom:40px;">
-              {coach.tagline}
-            </p>
-            <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;">
-              <a href="#join" class="cta-btn">Get First Class Free</a>
-              <a href="#schedule" class="cta-btn-outline">View Schedule</a>
-            </div>
-
-          </div>
-
-          <!-- Next session card -->
-          <div style="background:rgba(0,0,0,0.85);border:1px solid #FF5500;padding:36px;animation:borderPulse 3s infinite;">
-            <div class="oswald" style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:#FF5500;margin-bottom:20px;">Next Session</div>
-            <div class="oswald" style="font-size:3rem;font-weight:700;color:#fff;line-height:1;margin-bottom:4px;">6:30 AM</div>
-            <div class="oswald" style="font-size:1.2rem;color:#999;margin-bottom:28px;">Monday Morning Blaze</div>
-
-            <div style="background:#111;padding:16px;border-radius:4px;margin-bottom:24px;">
-              <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
-                <span class="inter" style="font-size:0.85rem;color:#999;">Location</span>
-                <span class="inter" style="font-size:0.85rem;color:#fff;">{coach.address.street}</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
-                <span class="inter" style="font-size:0.85rem;color:#999;">Format</span>
-                <span class="inter" style="font-size:0.85rem;color:#fff;">Full Blaze WOD</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;">
-                <span class="inter" style="font-size:0.85rem;color:#999;">Open Spots</span>
-                <span class="inter" style="font-size:0.85rem;color:#FF5500;font-weight:600;">8 remaining</span>
-              </div>
-            </div>
-
-            <a href="#join" class="cta-btn" style="display:block;text-align:center;width:100%;">Reserve My Spot</a>
-
-            <div style="display:flex;align-items:center;gap:8px;margin-top:20px;justify-content:center;">
-              <div style="display:flex;">
-                {[1,2,3,4].map(() => (
-                  <div style="width:28px;height:28px;border-radius:50%;border:2px solid #000;overflow:hidden;margin-left:-8px;">
-                    <div style="width:100%;height:100%;background:linear-gradient(135deg,#FF5500,#FFB300);"></div>
-                  </div>
-                ))}
-              </div>
-              <span class="inter" style="font-size:0.8rem;color:#999;">12 members already signed up</span>
-            </div>
-          </div>
+    <!-- SUPPORTING: Next Session strip — was hero card, now a thin urgency rail -->
+    <section style="background:#0A0A0A;padding:32px 24px;border-top:1px solid #1f1f1f;border-bottom:1px solid #1f1f1f;" aria-label="Next bootcamp session">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:center;">
+        <div style="display:flex;flex-direction:column;border-right:1px solid #222;padding-right:1.5rem;">
+          <span class="oswald" style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:#FF5500;">Next Session</span>
+          <span class="oswald" style="font-size:1.8rem;font-weight:700;color:#fff;line-height:1.1;">6:30 AM · Monday</span>
+          <span class="inter" style="font-size:0.78rem;color:#999;margin-top:.15rem;">Full Blaze WOD · {coach.address.street}</span>
         </div>
+        <div style="display:flex;align-items:center;gap:.6rem;">
+          <div style="display:flex;">
+            {[1,2,3,4].map(() => (
+              <div style="width:32px;height:32px;border-radius:50%;border:2px solid #0A0A0A;overflow:hidden;margin-left:-10px;">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#FF5500,#FFB300);"></div>
+              </div>
+            ))}
+          </div>
+          <span class="inter" style="font-size:0.82rem;color:#bbb;">12 signed up · <span style="color:#FF5500;font-weight:600;">8 spots left</span></span>
+        </div>
+        <a href="#join" class="cta-btn" style="font-size:.95rem;padding:14px 32px;">Reserve My Spot</a>
       </div>
     </section>
 

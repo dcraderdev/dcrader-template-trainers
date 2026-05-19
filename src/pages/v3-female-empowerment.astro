@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
+import TrainerProfilesHero from '../components/trainers/TrainerProfilesHero.astro';
 import { coach } from '../data/v3-coach';
 const HERO = '/images/shared/photo-1518611012118-696072aa579a';
 ---
@@ -45,8 +46,11 @@ const HERO = '/images/shared/photo-1518611012118-696072aa579a';
 
 <main id="main-content">
 
-<!-- ───── HERO ───── -->
-<section style="position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden;" aria-labelledby="hero-h1">
+<!-- ───── HERO (Trainer Profiles component) ───── -->
+<TrainerProfilesHero coach={coach} />
+
+<!-- ───── EDITORIAL SPOTLIGHT — supporting module (image + member quote) ───── -->
+<section style="position:relative;background:linear-gradient(160deg,rgba(136,19,55,.92) 0%,rgba(190,24,93,.78) 100%);padding:5rem 0;overflow:hidden;" aria-labelledby="spotlight-h2">
   <ResponsiveImage
     src={HERO}
     alt="Strong woman lifting weights with confidence in a studio"
@@ -54,35 +58,21 @@ const HERO = '/images/shared/photo-1518611012118-696072aa579a';
     loading="eager"
     decoding="async"
     fetchpriority="high"
-    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:.35;mix-blend-mode:multiply;"
   />
-  <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(136,19,55,.75) 0%,rgba(253,245,240,.55) 100%);"></div>
-
-  <!-- Decorative serif quote mark -->
-  <div style="position:absolute;top:6rem;right:4rem;font-family:'Playfair Display',serif;font-size:20rem;line-height:1;color:rgba(255,255,255,.06);pointer-events:none;user-select:none;" aria-hidden="true">"</div>
-
-  <div style="position:relative;z-index:10;max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;">
+  <div style="position:relative;z-index:1;max-width:1152px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
     <div>
-      <p style="font-size:.7rem;letter-spacing:.4em;color:#fda4af;text-transform:uppercase;font-weight:700;margin-bottom:1.25rem;">Women-Only · Austin, TX · Since 2015</p>
-      <h1 id="hero-h1" class="playfair" style="font-size:clamp(3rem,6vw,5rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:1.25rem;">
-        Your Strongest<br/>Self Starts<br/><em style="color:#fda4af;">Right Here.</em>
-      </h1>
-      <p style="color:#ffe4e6;font-size:1.1rem;line-height:1.75;max-width:30rem;margin-bottom:2rem;">{coach.tagline}</p>
-
-      <!-- Women-only trust pills -->
-      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;">
-        {['🚫 No scales', '💪 No shame', '✦ Women-only space', '🌸 Cycle-synced training', '👶 Pre/postnatal certified'].map(b => (
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#fda4af;text-transform:uppercase;font-weight:700;margin:0 0 1rem;">Member Spotlight · Spring 2025</p>
+      <h2 id="spotlight-h2" class="playfair" style="font-size:clamp(2rem,4.5vw,3.25rem);font-weight:700;color:#fff;line-height:1.15;margin:0 0 1rem;">
+        <em style="color:#fda4af;">Rachel's</em><br/>7-month strength story.
+      </h2>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+        {['🚫 No scales', '💪 No shame', '✦ Women-only space', '🌸 Cycle-synced training'].map(b => (
           <span style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.75rem;font-weight:600;padding:.375rem .75rem;border-radius:999px;">{b}</span>
         ))}
       </div>
-
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-        <a href="#booking" style="background:#fff;color:#881337;font-weight:700;font-size:1rem;text-decoration:none;padding:1rem 2.25rem;border-radius:999px;display:inline-block;box-shadow:0 4px 20px rgba(0,0,0,.2);">Book Free Intro Session</a>
-        <a href="#pillars" style="border:2px solid rgba(255,255,255,.5);color:#fff;font-weight:600;font-size:1rem;text-decoration:none;padding:1rem 2.25rem;border-radius:999px;display:inline-block;">Our Pillars →</a>
-      </div>
+      <a href="#booking" style="background:#fff;color:#881337;font-weight:700;font-size:1rem;text-decoration:none;padding:.85rem 2rem;border-radius:999px;display:inline-block;box-shadow:0 4px 20px rgba(0,0,0,.2);">Start Your Story →</a>
     </div>
-
-    <!-- Client pull-quote card with portrait — not a stats grid -->
     <figure style="background:rgba(253,245,240,.94);backdrop-filter:blur(12px);border-radius:1.5rem;padding:2rem;border:1px solid rgba(190,24,93,.2);margin:0;">
       <div style="display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:1.25rem;">
         <img loading="lazy" decoding="async"

@@ -1,0 +1,97 @@
+---
+// v2: Class schedule hero — weekly group-class grid AS the hero
+export interface Props {
+  coach: any;
+}
+const { coach } = Astro.props;
+
+const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+const slots = [
+  { time: '6:00 AM', name: 'Foundations Live', kind: 'foundations', open: [true, false, true, false, true, false] },
+  { time: '12:00 PM', name: 'Lunch Lift', kind: 'lift', open: [true, true, true, true, true, false] },
+  { time: '5:30 PM', name: 'Performance Pro', kind: 'perf', open: [true, true, true, true, true, false] },
+  { time: '7:00 PM', name: 'Open Coaching', kind: 'open', open: [false, true, false, true, false, true] },
+];
+const kindColor: Record<string,string> = {
+  foundations: '#84cc16',
+  lift: '#65a30d',
+  perf: '#3f6212',
+  open: '#a3e635',
+};
+const kindLabel: Record<string,string> = {
+  foundations: 'Foundations Live',
+  lift: 'Lunch Lift',
+  perf: 'Performance Pro',
+  open: 'Open Coaching',
+};
+---
+<section style="background:#fff;padding:5.5rem 0 4rem;" aria-labelledby="hero-h1">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+    <!-- Heading row -->
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2rem;flex-wrap:wrap;">
+      <div style="flex:1;min-width:280px;">
+        <div style="display:inline-flex;align-items:center;gap:.5rem;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;font-size:.75rem;font-weight:600;padding:.375rem .875rem;border-radius:999px;margin-bottom:1.25rem;">
+          📅 Live coaching · 4 sessions daily
+        </div>
+        <h1 id="hero-h1" style="font-size:clamp(2.25rem,4.5vw,3.5rem);font-weight:700;color:#111827;line-height:1.1;letter-spacing:-.03em;margin:0 0 .75rem;">
+          Pick a slot.<br/><span style="color:#65a30d;">Show up live.</span> Coached in real time.
+        </h1>
+        <p style="font-size:1rem;color:#6b7280;line-height:1.65;max-width:34rem;margin:0;">{coach.tagline}</p>
+      </div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+        <a href="#booking" style="background:#65a30d;color:#fff;font-weight:600;font-size:.95rem;text-decoration:none;padding:.85rem 1.5rem;border-radius:999px;display:inline-block;box-shadow:0 4px 14px rgba(101,163,13,.35);">Reserve My Slot</a>
+        <a href="#how-it-works" style="border:1.5px solid #e5e7eb;color:#374151;font-weight:500;font-size:.95rem;text-decoration:none;padding:.85rem 1.5rem;border-radius:999px;display:inline-block;">How It Works</a>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;align-items:center;">
+      <span style="font-size:.7rem;letter-spacing:.15em;color:#6b7280;text-transform:uppercase;font-weight:700;">This week:</span>
+      {Object.entries(kindLabel).map(([k,l]) => (
+        <span style="display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:#374151;">
+          <span aria-hidden="true" style={`display:inline-block;width:.85rem;height:.85rem;border-radius:.2rem;background:${kindColor[k]};`}></span>
+          {l}
+        </span>
+      ))}
+    </div>
+
+    <!-- Schedule grid (the hero) -->
+    <div style="overflow-x:auto;border:1px solid #e5e7eb;border-radius:1rem;background:#f9fafb;">
+      <table style="width:100%;border-collapse:separate;border-spacing:6px;padding:.75rem;min-width:680px;" aria-label="Weekly live coaching schedule">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align:left;font-size:.7rem;letter-spacing:.18em;color:#9ca3af;text-transform:uppercase;font-weight:700;padding:.5rem .75rem;width:9rem;">Time</th>
+            {days.map(d => (
+              <th scope="col" style="text-align:center;font-size:.75rem;letter-spacing:.15em;color:#374151;text-transform:uppercase;font-weight:700;padding:.5rem 0;">{d}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {slots.map(slot => (
+            <tr>
+              <th scope="row" style="text-align:left;padding:.5rem .75rem;background:#fff;border-radius:.5rem;">
+                <p style="font-size:.95rem;font-weight:700;color:#111827;margin:0;line-height:1.1;">{slot.time}</p>
+                <p style="font-size:.7rem;color:#6b7280;margin:.125rem 0 0;">{slot.name}</p>
+              </th>
+              {slot.open.map((on, i) => (
+                <td style="padding:0;">
+                  {on ? (
+                    <a href="#booking" aria-label={`${days[i]} ${slot.time} ${slot.name} — open slot`}
+                      style={`display:block;background:${kindColor[slot.kind]};color:#fff;border-radius:.5rem;padding:.85rem .25rem;text-align:center;text-decoration:none;font-weight:700;font-size:.85rem;`}>
+                      OPEN
+                    </a>
+                  ) : (
+                    <div aria-label={`${days[i]} ${slot.time} — no session`}
+                      style="background:#f3f4f6;color:#d1d5db;border-radius:.5rem;padding:.85rem .25rem;text-align:center;font-size:.75rem;">—</div>
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:.8rem;color:#9ca3af;margin:.75rem 0 0;text-align:center;">All times Pacific · 1-on-1 video coaching included with every live slot · First week free</p>
+  </div>
+</section>

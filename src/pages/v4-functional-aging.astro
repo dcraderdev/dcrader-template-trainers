@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
+import TransformationGalleryHero from '../components/trainers/TransformationGalleryHero.astro';
 import { coach } from '../data/v4-coach';
 const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
 ---
@@ -43,10 +44,12 @@ const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
 
 <main id="main-content">
 
-<!-- ───── HERO (credibility-forward layout) ───── -->
-<section style="position:relative;overflow:hidden;" aria-labelledby="hero-h1">
-  <!-- Two-column: content left, hero photo right -->
-  <div style="max-width:1152px;margin:0 auto;padding:6rem 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1;">
+<!-- ───── HERO (Transformation Gallery component) ───── -->
+<TransformationGalleryHero coach={coach} />
+
+<!-- ───── CREDIBILITY MODULE — supporting (was hero) ───── -->
+<section style="position:relative;overflow:hidden;background:#fff;" aria-labelledby="cred-h2">
+  <div style="max-width:1152px;margin:0 auto;padding:5rem 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1;">
     <div>
       <!-- Doctor credibility bar -->
       <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;">
@@ -55,10 +58,10 @@ const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
         <span class="credential-badge">ACE Senior Fitness</span>
         <span class="credential-badge">20 Years Experience</span>
       </div>
-      <h1 id="hero-h1" class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:600;color:#2D3A27;line-height:1.2;margin-bottom:1.25rem;">
-        Move better.<br/>Live fully.<br/><em>Age on your<br/>own terms.</em>
-      </h1>
-      <p style="color:#5A6B52;font-size:1.0625rem;line-height:1.8;max-width:30rem;margin-bottom:2rem;">{coach.tagline}</p>
+      <h2 id="cred-h2" class="serif" style="font-size:clamp(2rem,4.5vw,3.25rem);font-weight:600;color:#2D3A27;line-height:1.2;margin-bottom:1.25rem;">
+        Trained by a clinician.<br/><em>Designed for your decade.</em>
+      </h2>
+      <p style="color:#5A6B52;font-size:1.0625rem;line-height:1.8;max-width:30rem;margin-bottom:2rem;">Every result above starts with the same assessment. Pain history, movement screen, lifestyle audit. Then we build.</p>
 
       <!-- Key differentiators -->
       <div style="display:flex;flex-direction:column;gap:.875rem;margin-bottom:2.5rem;">
@@ -80,7 +83,7 @@ const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
       </div>
     </div>
 
-    <!-- Photo + stats column -->
+    <!-- Photo + philosophy card -->
     <div>
       <div style="position:relative;">
         <ResponsiveImage
@@ -88,9 +91,8 @@ const HERO = '/images/shared/photo-1571019614242-c5c5dee9f50b';
           alt="Active older adult exercising confidently with energy and strength"
           sizes="(min-width: 1024px) 50vw, 100vw"
           widths={[320, 640, 1024]}
-          loading="eager"
+          loading="lazy"
           decoding="async"
-          fetchpriority="high"
           style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:1.5rem;display:block;"
         />
         <!-- Coaching philosophy card overlay — calm manifesto, not a stats grid -->

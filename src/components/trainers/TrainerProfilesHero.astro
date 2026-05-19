@@ -1,0 +1,59 @@
+---
+// v3: Trainer profiles hero — 3-6 trainer cards AS the hero
+export interface Props {
+  coach: any;
+}
+const { coach } = Astro.props;
+
+const trainers = [
+  { name: coach.name, role: coach.title, lead: true, photo: coach.photo, tag: 'Founder', spec: 'Strength · Hormone health', bookings: 'Booked 3 weeks out' },
+  { name: 'Priya R.', role: 'Senior Strength Coach', lead: false, photo: '/images/shared/photo-1571019613913-574d37af5c65-640.webp', tag: 'Pre/postnatal', spec: 'Cycle-synced lifting', bookings: '2 open slots this week' },
+  { name: 'Jordan B.', role: 'Mobility & Recovery Lead', lead: false, photo: '/images/shared/photo-1571019614242-c5c5dee9f50b-640.webp', tag: 'Movement', spec: 'Rehab · pelvic floor', bookings: 'New cohort starts Mon' },
+  { name: 'Mei L.', role: 'Nutrition Coach', lead: false, photo: '/images/shared/photo-1597347316205-36f6c451902a-640.webp', tag: 'Whole-food', spec: 'Hormone-friendly fueling', bookings: '4 open slots' },
+];
+---
+<section style="position:relative;overflow:hidden;background:linear-gradient(160deg,#fdf5f0 0%,#fff1f2 100%);padding:5.5rem 0 3.5rem;" aria-labelledby="hero-h1">
+  <!-- Decorative serif quote mark -->
+  <div style="position:absolute;top:2rem;right:3rem;font-family:'Playfair Display',serif;font-size:18rem;line-height:1;color:rgba(190,24,93,.06);pointer-events:none;user-select:none;" aria-hidden="true">"</div>
+
+  <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+    <!-- Heading row -->
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <p style="font-size:.7rem;letter-spacing:.4em;color:#be185d;text-transform:uppercase;font-weight:700;margin:0 0 1rem;">Meet Your Coaches · Women-Only · Austin, TX</p>
+      <h1 id="hero-h1" class="playfair" style="font-size:clamp(2.5rem,5.5vw,4.25rem);font-weight:700;color:#881337;line-height:1.1;margin:0 0 1rem;">
+        Coached by women.<br/><em style="color:#be185d;">Built for women.</em>
+      </h1>
+      <p style="color:#9f4255;font-size:1.05rem;line-height:1.7;max-width:36rem;margin:0 auto;">{coach.tagline}</p>
+    </div>
+
+    <!-- Trainer cards grid (the hero) -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:2rem;">
+      {trainers.map(t => (
+        <article style={`background:#fff;border-radius:1.25rem;overflow:hidden;border:${t.lead ? '2px solid #be185d' : '1px solid #fecdd3'};box-shadow:0 4px 18px rgba(190,24,93,.08);position:relative;`}>
+          {t.lead && (
+            <span style="position:absolute;top:.75rem;left:.75rem;z-index:2;background:#be185d;color:#fff;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:.3rem .65rem;border-radius:999px;">Founder</span>
+          )}
+          <div style="aspect-ratio:1/1;overflow:hidden;background:#fff1f2;">
+            <img loading="lazy" decoding="async" src={t.photo} alt={`${t.name} — ${t.role}`}
+              style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+          </div>
+          <div style="padding:1.25rem 1.1rem;">
+            <p class="playfair" style="font-size:1.2rem;font-weight:700;color:#881337;margin:0 0 .15rem;line-height:1.1;">{t.name}</p>
+            <p style="font-size:.78rem;color:#9f4255;margin:0 0 .75rem;">{t.role}</p>
+            <p style="font-size:.7rem;color:#be185d;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin:0 0 .35rem;">{t.tag}</p>
+            <p style="font-size:.82rem;color:#5b2738;line-height:1.45;margin:0 0 .85rem;">{t.spec}</p>
+            <div style="border-top:1px dashed #fecdd3;padding-top:.75rem;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:.7rem;color:#9f4255;">{t.bookings}</span>
+              <a href="#booking" style="font-size:.7rem;font-weight:700;color:#be185d;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;">Book →</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+      <a href="#booking" style="background:#be185d;color:#fff;font-weight:700;font-size:1rem;text-decoration:none;padding:1rem 2.25rem;border-radius:999px;display:inline-block;box-shadow:0 4px 20px rgba(190,24,93,.3);">Book Free Intro With a Coach</a>
+      <a href="#pillars" style="border:2px solid #be185d;color:#881337;font-weight:600;font-size:1rem;text-decoration:none;padding:1rem 2.25rem;border-radius:999px;display:inline-block;background:#fff;">Our Pillars →</a>
+    </div>
+  </div>
+</section>
