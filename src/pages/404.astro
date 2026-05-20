@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="404 — Page Not Found | Personal Trainer Templates"
+  description="That page is taking a rest day. Head back to the template gallery."
+  themeColor="#000000"
+>
+  <main
+    id="main-content"
+    class="min-h-screen bg-gray-950 text-white flex items-center justify-center px-6 py-24"
+    style="font-family: system-ui, -apple-system, sans-serif;"
+  >
+    <div class="max-w-xl mx-auto text-center">
+      <p class="text-blue-400 text-xs uppercase tracking-widest mb-6">dcrader-template-trainers</p>
+      <h1 class="text-7xl md:text-9xl font-bold text-blue-400 leading-none mb-6">404</h1>
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Page not found</h2>
+      <p class="text-gray-400 text-lg mb-10">
+        Looks like this rep doesn't exist. Let's get you back to the gallery
+        and find a template that hits the right muscle group.
+      </p>
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+      >
+        <span aria-hidden="true">←</span>
+        <span>Back to home</span>
+      </a>
+    </div>
+  </main>
+</BaseLayout>
