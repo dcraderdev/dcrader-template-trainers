@@ -8,3 +8,91 @@
     transition: none !important;
   }
 }
+
+/* ── Shared mobile responsive utilities ───────────────────────── */
+
+/* Hide secondary nav links on small screens (keeps brand + CTA visible) */
+@media (max-width: 767px) {
+  .nav-link-hide-mobile { display: none !important; }
+  .hide-mobile { display: none !important; }
+  .nav-cta-mobile {
+    padding: 0.45rem 0.9rem !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  /* Force any grid that's >2 cols to single column */
+  .grid-stack-mobile { grid-template-columns: 1fr !important; }
+  .grid-stack-2-mobile { grid-template-columns: 1fr 1fr !important; }
+  /* Reduce big section padding */
+  .section-pad-mobile { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+
+  /* Tame oversized headings on mobile */
+  h1, h2 { word-break: break-word; }
+
+  /* Auto-stack any inline 3-col / 4-col / 2-col grids on mobile */
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns:repeat(4"],
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:1fr 1fr 1fr"],
+  [style*="grid-template-columns:5fr 7fr"],
+  [style*="grid-template-columns:7fr 5fr"],
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Special: 4-col % grid for 1RM calculator should stay 2-col */
+  #rm-result [style*="grid-template-columns:repeat(4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Scoreboard / leaderboard rows — let them stack but readable */
+  [style*="grid-template-columns:60px"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Cap section padding on mobile */
+  section[style*="padding:5rem 0"],
+  section[style*="padding:6rem 0"],
+  section[style*="padding:8rem 0"] {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Cap oversized inline font-sizes for h2s on mobile */
+  h2[style*="font-size:3.5rem"],
+  h2[style*="font-size:3rem"],
+  h2[style*="font-size:4rem"],
+  h2[style*="font-size:4.5rem"],
+  h2[style*="font-size: 3.5rem"],
+  h2[style*="font-size: 3rem"],
+  h2[style*="font-size: 4rem"] {
+    font-size: 2.25rem !important;
+    line-height: 1.05 !important;
+  }
+  p[style*="font-size:6rem"],
+  p[style*="font-size:4.5rem"],
+  p[style*="font-size:4rem"] {
+    font-size: 3rem !important;
+  }
+}
+
+/* Visible focus ring on all interactive elements — keyboard a11y */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #60a5fa !important;
+  outline-offset: 2px !important;
+  border-radius: 2px;
+}
+
+/* Restore underline-on-hover for nav text links (transitions are disabled but underline works) */
+a.nav-link:hover { text-decoration: underline !important; text-underline-offset: 4px; }
+
+/* Slightly darken/lighten CTA buttons on hover via filter (no transition needed) */
+a.cta:hover, button.cta:hover { filter: brightness(1.1); }
+a.cta:active, button.cta:active { filter: brightness(0.92); }
