@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { coach } from '../data/v3-coach';
+
+const stories = [
+  {
+    name: 'Rachel, 34',
+    pillar: 'Postpartum Recovery',
+    headline: 'From diastasis recovery to her first unassisted pull-up.',
+    duration: '14 months at Fierce & Free',
+    photo: '/images/shared/photo-1571019613913-574d37af5c65-640.webp',
+    story:
+      'Rachel came to us nine weeks postpartum, a three-finger diastasis, exhausted, and convinced her body was permanently changed. The previous coach she\'d tried had handed her a generic "bounce back" program with planks and crunches — both of which were actively making the diastasis worse. The first thing we did was close the program book and teach her how to breathe.',
+    arc:
+      'We spent twelve weeks on diaphragmatic breathing, pelvic-floor coordination, and progressive tissue tension before she ever picked up a kettlebell. By month four she was deadlifting her toddler\'s weight (28 lbs) for sets of ten. By month nine the diastasis was closed to a one-finger gap and she was hitting body-weight squats for triples. At her one-year check-in, she pulled her first unassisted pull-up and cried — said it was the first time she\'d felt physically strong since college.',
+    pull: '"It was never about getting my body back. It was about meeting the new one and falling for her."',
+  },
+  {
+    name: 'Priya, 47',
+    pillar: 'Perimenopause Strength',
+    headline: 'Hot flashes down 60%. Deadlift up 80 pounds.',
+    duration: '11 months at Fierce & Free',
+    photo: '/images/shared/photo-1583454110551-21f2fa2afe61-640.webp',
+    story:
+      'Priya is a litigator who came to us at the height of perimenopause — broken sleep, anxiety creeping in, a 30-lb weight gain her endocrinologist couldn\'t explain. Three previous trainers had put her on calorie restriction and cardio. The weight stayed. The anxiety got worse. She booked the intro consult on a Tuesday morning after waking up at 3 AM for the fifth night running.',
+    arc:
+      'We pulled her cardio back to two short Zone 2 sessions a week and rebuilt her week around heavy progressive strength training, cycle-aware programming, and protein math (she\'d been eating 60g a day; we got her to 130g). Eight weeks in, her sleep latency dropped from 90 minutes to 22. Five months in, her hot flashes were down sixty percent — a metric we tracked because she insisted on data. Her deadlift went from 95 lbs to 175 lbs in eleven months. She has not gained a pound back and has cut her therapy sessions from weekly to monthly.',
+    pull: '"Lifting heavy was the antidepressant my body had been asking for. Nobody else told me that."',
+  },
+  {
+    name: 'Devon, 28',
+    pillar: 'Confidence + Movement',
+    headline: 'From the back row of the bootcamp to coaching it.',
+    duration: '24 months at Fierce & Free',
+    photo: '/images/shared/photo-1571019614242-c5c5dee9f50b-640.webp',
+    story:
+      'Devon hid in the back row for her first six months. She had a long history of disordered eating and a relationship with movement that was, in her words, "a punishment for the body I had." She came to us through a friend who promised our space wouldn\'t have scales, mirrors, or before/after photos. That\'s the only reason she walked through the door.',
+    arc:
+      'For the first year we never talked about weight. We talked about pull-strength, hip mobility, the squat depth she earned each month, and how the program made her feel between sessions. She started showing up four days a week. The second year she asked if we did any pre/post natal training certifications — she wanted to coach. She is now an NASM-WFS certified coach on our staff. She runs the Tuesday/Thursday foundation class. The women in the back row, where she used to hide, are her students now.',
+    pull: '"For the first time in my adult life, my body is a partner, not an opponent."',
+  },
+  {
+    name: 'Mariana, 52',
+    pillar: 'Bone Density + Power',
+    headline: 'Reversed her osteopenia diagnosis in eighteen months.',
+    duration: '18 months at Fierce & Free',
+    photo: '/images/shared/photo-1518611012118-696072aa579a-640.webp',
+    story:
+      'Mariana\'s primary care physician handed her an osteopenia diagnosis and a calcium supplement. She asked what else she should do and was told "walking is fine." She came to us a week later asking if heavy resistance training could actually change a DEXA score. The honest answer was: yes, but only if it\'s heavy enough, frequent enough, and patient enough.',
+    arc:
+      'We built an 18-month program around the OsteoStrong-derived protocol: heavy compound lifts at 70-85% of her current 1RM, three times per week, with controlled jumps and short impact work to drive osteogenic load through the hip and spine. We worked with her endocrinologist to time the DEXA repeat at the 18-month mark. The follow-up scan came back with a 4.2% increase in spinal density and a 2.7% increase in femoral neck density — a clinically meaningful reversal. Her doctor sent us a thank-you note. Mariana sent us a deadlift video.',
+    pull: '"Walking was not the answer. The barbell was."',
+  },
+];
+
+const support = [
+  { v: '450+', l: 'Women coached' },
+  { v: '1,200+', l: 'Members in our digital community' },
+  { v: '100%', l: 'Women-specific methodology' },
+  { v: '9 yrs', l: 'In Austin under one roof' },
+];
+---
+
+<BaseLayout
+  title="Real Member Stories — Fierce & Free Fitness"
+  description="Four real members. Four real arcs. From postpartum recovery to perimenopause strength to osteopenia reversal. These are the stories that built Fierce & Free."
+  fontUrl="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Lato:wght@300;400;700&display=swap"
+  themeColor="#be185d"
+>
+
+<style is:inline>
+  body { font-family: 'Lato', sans-serif; background: #FDF5F0; color: #3D1F1F; }
+  .playfair { font-family: 'Playfair Display', Georgia, serif; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; float: left; line-height: .8; margin: .1rem .5rem 0 0; color: #be185d; }
+</style>
+
+<!-- NAV -->
+<nav aria-label="Main navigation" style="position:sticky;top:0;z-index:50;background:rgba(253,245,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid #fecdd3;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="/v3-female-empowerment" class="playfair" style="font-size:1.25rem;font-weight:700;color:#881337;text-decoration:none;letter-spacing:-.01em;">Fierce &amp; Free</a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <a href="/v3-female-empowerment#pillars" style="color:#9f1239;font-size:.875rem;text-decoration:none;">Our Pillars</a>
+      <a href="/v3-female-empowerment#programs" style="color:#9f1239;font-size:.875rem;text-decoration:none;">Programs</a>
+      <a href="/v3-success-stories" style="color:#be185d;font-size:.875rem;text-decoration:none;font-weight:600;">Member Stories</a>
+      <a href="/v3-female-empowerment#booking" style="background:#be185d;color:#fff;font-size:.875rem;font-weight:700;text-decoration:none;padding:.625rem 1.375rem;border-radius:999px;">Free Intro ✦</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ───── HERO ───── -->
+<section style="background:linear-gradient(180deg, #FDF5F0 0%, #FFF1F2 100%);padding:5rem 0;" aria-labelledby="hero-h1">
+  <div style="max-width:1024px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;letter-spacing:.3em;color:#be185d;text-transform:uppercase;font-weight:700;margin-bottom:1rem;">✦ Real Members · Real Arcs ✦</p>
+    <h1 id="hero-h1" class="playfair" style="font-size:clamp(2.75rem,6vw,5rem);color:#881337;line-height:1.05;letter-spacing:-.01em;font-weight:700;margin:0 0 1.5rem;">
+      Four hundred and fifty women.<br/>
+      <em style="font-style:italic;color:#be185d;">Four stories that built us.</em>
+    </h1>
+    <p style="font-size:1.2rem;color:#7c2d12;line-height:1.7;max-width:42rem;margin:0 0 2.5rem;font-weight:300;">
+      Behind every program at Fierce & Free is a woman who walked through the door scared, skeptical, or both — and walked out nine, eleven, fourteen months later as someone she hadn't met before. These are four of the arcs that taught us how to coach women specifically.
+      Each one is told here with the member's name and full permission. They are happy to be contacted by future Fierce & Free members.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid #fecdd3;padding-top:2rem;margin-top:1.5rem;">
+      {support.map((s) => (
+        <div>
+          <p class="playfair" style="font-size:2.25rem;color:#be185d;font-weight:700;line-height:1;">{s.v}</p>
+          <p style="font-size:.8rem;color:#9f1239;margin-top:.5rem;letter-spacing:.05em;">{s.l}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── STORIES ───── -->
+{stories.map((s, idx) => (
+  <section style={`background:${idx % 2 === 0 ? '#FDF5F0' : '#FFF1F2'};padding:5rem 0;border-top:1px solid #fecdd3;`} aria-labelledby={`story-h2-${idx}`}>
+    <div style="max-width:1024px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:start;">
+      <!-- Image + member meta -->
+      <div>
+        <img loading="lazy" decoding="async" src={s.photo} alt={`${s.name} — ${s.pillar} member at Fierce & Free`} style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:.75rem;display:block;" />
+        <p style="font-size:.7rem;letter-spacing:.2em;color:#be185d;text-transform:uppercase;font-weight:700;margin-top:1.5rem;">{s.pillar}</p>
+        <p class="playfair" style="font-size:1.75rem;color:#881337;font-weight:700;margin:.5rem 0 0;">{s.name}</p>
+        <p style="font-size:.85rem;color:#9f1239;margin-top:.25rem;font-style:italic;">{s.duration}</p>
+      </div>
+      <!-- Story -->
+      <article>
+        <h2 id={`story-h2-${idx}`} class="playfair" style="font-size:clamp(1.75rem,3.5vw,2.75rem);color:#881337;line-height:1.2;font-weight:600;margin:0 0 1.5rem;letter-spacing:-.01em;">
+          {s.headline}
+        </h2>
+        <p class="drop-cap" style="font-size:1.05rem;color:#3D1F1F;line-height:1.85;margin:0 0 1.5rem;font-weight:400;">
+          {s.story}
+        </p>
+        <p style="font-size:1.05rem;color:#3D1F1F;line-height:1.85;margin:0 0 2rem;font-weight:400;">
+          {s.arc}
+        </p>
+        <blockquote class="playfair" style="border-left:4px solid #be185d;padding:1.5rem 1.75rem;background:#fff;border-radius:0 .5rem .5rem 0;font-size:1.4rem;font-style:italic;color:#881337;line-height:1.45;margin:0;">
+          {s.pull}
+          <footer style="font-family:'Lato',sans-serif;font-style:normal;font-size:.75rem;letter-spacing:.15em;color:#be185d;text-transform:uppercase;margin-top:1rem;font-weight:700;">
+            — {s.name}
+          </footer>
+        </blockquote>
+      </article>
+    </div>
+  </section>
+))}
+
+<!-- ───── COMMUNITY ───── -->
+<section style="background:linear-gradient(160deg,#881337 0%,#be185d 100%);padding:5rem 0;color:#fff;" aria-labelledby="community-h2">
+  <div style="max-width:1024px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    <p style="font-size:.75rem;letter-spacing:.3em;color:#fecdd3;text-transform:uppercase;font-weight:700;margin-bottom:1rem;">✦ The Movement ✦</p>
+    <h2 id="community-h2" class="playfair" style="font-size:clamp(2.25rem,5vw,3.75rem);color:#fff;line-height:1.15;font-weight:600;margin:0 0 1.5rem;letter-spacing:-.01em;">
+      Twelve hundred women.<br/>
+      <em style="color:#fecdd3;font-style:italic;">One unshakable room.</em>
+    </h2>
+    <p style="font-size:1.1rem;color:#ffe4e6;line-height:1.75;max-width:42rem;margin:0 auto 2.5rem;font-weight:300;">
+      Beyond the four women above are 1,196 others — past and current Fierce & Free members in our active digital community.
+      They post their lifts. They check in on each other's milestones. They show up to each other's baby showers, hospital appointments, and weddings.
+      The strength is in the room — and the room is bigger than the gym.
+    </p>
+    <p class="playfair" style="font-style:italic;font-size:1.5rem;color:#fff;max-width:36rem;margin:0 auto;line-height:1.5;font-weight:500;">
+      "We don't shrink here. We grow."
+    </p>
+  </div>
+</section>
+
+<!-- ───── CTA ───── -->
+<section style="background:#FDF5F0;padding:5rem 0;" aria-labelledby="cta-h2">
+  <div style="max-width:768px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    <h2 id="cta-h2" class="playfair" style="font-size:clamp(2rem,4.5vw,3.5rem);color:#881337;line-height:1.15;font-weight:600;margin:0 0 1rem;letter-spacing:-.01em;">
+      Your story belongs here.
+    </h2>
+    <p style="font-size:1.1rem;color:#7c2d12;line-height:1.7;margin:0 0 2.5rem;">
+      Free intro session. Forty-five minutes. No assessment of where you are now — just a conversation about where you'd like to go.
+    </p>
+    <a href="/v3-female-empowerment#booking" style="display:inline-block;background:#be185d;color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;padding:1rem 2.5rem;border-radius:999px;">
+      Book My Free Intro ✦
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#881337;padding:2.5rem 1.5rem;text-align:center;color:#fecdd3;">
+  <p class="playfair" style="font-size:1.4rem;color:#fff;font-weight:700;">Fierce &amp; Free</p>
+  <p style="font-size:.8rem;margin-top:.5rem;">© {new Date().getFullYear()} Fierce &amp; Free Fitness · Austin, TX</p>
+  <p style="margin-top:.5rem;font-size:.8rem;"><a href="/v3-female-empowerment" style="color:#fecdd3;text-decoration:none;">← Back to home</a> · <a href="/" style="color:#fecdd3;text-decoration:none;">All Templates</a></p>
+  <p style="font-size:.7rem;margin-top:.75rem;">Built by Donovan Crader · <a href="https://dcrader.dev" style="color:#fecdd3;text-decoration:none;">dcrader.dev</a></p>
+</footer>
+
+</BaseLayout>

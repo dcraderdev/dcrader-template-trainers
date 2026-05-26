@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { coach } from '../data/v2-coach';
+
+const rows = [
+  { topic: 'Programming quality',     online: 'Custom-built by your coach, refined every 1-2 weeks based on data', inperson: 'Often a template; live coaching emphasis over written plan', online_win: true },
+  { topic: 'Coach access',            online: 'Daily messaging, 4-hour response, video review on demand',           inperson: '45–60 min once or twice a week, almost nothing in between',  online_win: true },
+  { topic: 'Cost per month',          online: '$147–$497',                                                            inperson: '$520–$2,400 (1–3x weekly)',                                  online_win: true },
+  { topic: 'Form feedback',           online: 'You upload short videos; coach reviews same-day with timestamped notes', inperson: 'Real-time cues in the room — gold standard for hands-on form fixes', online_win: false },
+  { topic: 'Accountability rhythm',   online: 'Habit tracker + weekly written check-in + scale, sleep, step data',  inperson: 'In-person presence is the accountability — but only on session days', online_win: true },
+  { topic: 'Equipment requirements',  online: 'Any commercial gym, garage gym, or hotel room — we program around what you have', inperson: 'You go to their facility on their schedule',                  online_win: true },
+  { topic: 'Travel + life flexibility', online: 'Train anywhere, anytime, no missed sessions',                       inperson: 'A travel week is a missed week',                              online_win: true },
+  { topic: 'Hands-on rehab / regression', online: 'Limited — we refer out for active rehab',                          inperson: 'A good in-person coach can spot and de-load injuries in real time', online_win: false },
+  { topic: 'Long-term skill mastery', online: 'Built around your weekly self-recorded review loop',                  inperson: 'Built around the coach\'s eye on every set',                  online_win: false },
+];
+
+const wrongFit = [
+  'You are coming back from a current injury and need hands-on assessment before any training load.',
+  'You compete in a complex skill sport (Olympic weightlifting, gymnastics, throws) where every rep needs same-second coaching.',
+  "You have tried structured training online before and consistently fall off without an in-person session on the calendar.",
+  'You don\'t own a smartphone or aren\'t willing to record short form-check videos weekly.',
+];
+
+const rightFit = [
+  'You travel for work, have a young family, or have a schedule that makes 6 AM gym appointments unrealistic.',
+  'You\'ve trained on your own for years and have the basic patterns down — squat, hinge, push, pull — and want a real plan layered on top.',
+  'You want a coach who measures progress in trend data over months, not the dopamine hit of a single session.',
+  'You want world-class programming at a fraction of in-person cost, and you\'re willing to do the daily self-reporting that makes it work.',
+];
+---
+
+<BaseLayout
+  title="Online vs. In-Person Coaching — Chen Performance Coaching"
+  description="Honest breakdown of online coaching vs. traditional in-person personal training. Cost, programming, accountability, and form feedback compared. Who each model is right for."
+  fontUrl="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+  themeColor="#65a30d"
+>
+
+<style is:inline>
+  * { font-family: 'DM Sans', system-ui, sans-serif; }
+  body { background: #fff; color: #111827; }
+</style>
+
+<!-- NAV -->
+<nav aria-label="Main navigation" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,.06);">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="/v2-online-coach" style="font-weight:700;font-size:1.125rem;color:#111827;text-decoration:none;letter-spacing:-.025em;">Chen Performance <span style="color:#65a30d;">Coaching</span></a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <a href="/v2-online-vs-inperson" style="color:#65a30d;font-size:.875rem;text-decoration:none;font-weight:600;">Online vs In-Person</a>
+      <a href="/v2-online-coach#pricing" style="color:#6b7280;font-size:.875rem;text-decoration:none;font-weight:500;">Pricing</a>
+      <a href="/v2-online-coach#coach" style="color:#6b7280;font-size:.875rem;text-decoration:none;font-weight:500;">About Sarah</a>
+      <a href="/v2-online-coach#booking" style="background:#65a30d;color:#fff;font-size:.875rem;font-weight:600;text-decoration:none;padding:.625rem 1.25rem;border-radius:999px;">Start Free Week</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ───── HERO ───── -->
+<section style="background:linear-gradient(180deg, #f9fafb 0%, #fff 100%);padding:5rem 0 4rem;" aria-labelledby="hero-h1">
+  <div style="max-width:1024px;margin:0 auto;padding:0 1.5rem;">
+    <span class="feature-badge" style="display:inline-flex;align-items:center;gap:.375rem;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;font-size:.75rem;font-weight:600;padding:.375rem .75rem;border-radius:999px;margin-bottom:1.5rem;">
+      <span style="width:.5rem;height:.5rem;background:#65a30d;border-radius:999px;"></span>
+      An honest comparison
+    </span>
+    <h1 id="hero-h1" style="font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:700;color:#111827;line-height:1.1;letter-spacing:-.025em;margin:0 0 1.5rem;">
+      Online coaching vs. in-person training — <span style="color:#65a30d;">honestly compared.</span>
+    </h1>
+    <p style="font-size:1.2rem;color:#4b5563;line-height:1.7;max-width:48rem;margin:0 0 2.5rem;">
+      I run an online coaching practice. Of course I think it works — I've coached eight hundred clients across thirty countries this way.
+      But online is not better than in-person at everything, and I'm not going to pretend it is. Below is the most honest comparison I can write, including the
+      places where a good in-person trainer down the street will outperform what I can do remotely.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;border-top:1px solid #e5e7eb;padding-top:2.5rem;margin-top:1rem;">
+      <div>
+        <p style="font-size:2rem;font-weight:700;color:#111827;line-height:1;">800+</p>
+        <p style="font-size:.875rem;color:#6b7280;margin-top:.5rem;">Online clients coached</p>
+      </div>
+      <div>
+        <p style="font-size:2rem;font-weight:700;color:#111827;line-height:1;">30+</p>
+        <p style="font-size:.875rem;color:#6b7280;margin-top:.5rem;">Countries reached remotely</p>
+      </div>
+      <div>
+        <p style="font-size:2rem;font-weight:700;color:#111827;line-height:1;">90%</p>
+        <p style="font-size:.875rem;color:#6b7280;margin-top:.5rem;">Avg program adherence</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMPARISON TABLE ───── -->
+<section id="compare" style="background:#fff;padding:5rem 0;" aria-labelledby="compare-h2">
+  <div style="max-width:1024px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.2em;color:#65a30d;text-transform:uppercase;margin-bottom:.5rem;">// Side by side</p>
+    <h2 id="compare-h2" style="font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#111827;line-height:1.15;letter-spacing:-.02em;margin:0 0 .75rem;">
+      Nine categories. Honest scoring.
+    </h2>
+    <p style="font-size:1.05rem;color:#4b5563;line-height:1.7;max-width:40rem;margin:0 0 3rem;">
+      Green check marks the model that wins each category for the average client. There is no overall "winner" — these are different products serving different needs.
+    </p>
+
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:.75rem;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:1.4fr 2fr 2fr;gap:0;background:#f9fafb;border-bottom:1px solid #e5e7eb;padding:1rem 1.5rem;">
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#6b7280;text-transform:uppercase;">Category</span>
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#15803d;text-transform:uppercase;">Online (Chen Performance)</span>
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#6b7280;text-transform:uppercase;">In-Person (1-on-1 PT)</span>
+      </div>
+      {rows.map((r) => (
+        <div style="display:grid;grid-template-columns:1.4fr 2fr 2fr;gap:0;padding:1.25rem 1.5rem;border-bottom:1px solid #f3f4f6;align-items:start;">
+          <p style="font-size:.95rem;font-weight:600;color:#111827;margin:0;line-height:1.4;">{r.topic}</p>
+          <div style="padding-right:1rem;">
+            <div style="display:flex;align-items:start;gap:.5rem;">
+              {r.online_win && <span style="background:#f0fdf4;color:#15803d;font-size:.7rem;font-weight:700;padding:.125rem .5rem;border-radius:999px;flex-shrink:0;margin-top:.125rem;">WIN</span>}
+              <p style="font-size:.9rem;color:#374151;margin:0;line-height:1.6;">{r.online}</p>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;align-items:start;gap:.5rem;">
+              {!r.online_win && <span style="background:#fef3c7;color:#92400e;font-size:.7rem;font-weight:700;padding:.125rem .5rem;border-radius:999px;flex-shrink:0;margin-top:.125rem;">WIN</span>}
+              <p style="font-size:.9rem;color:#4b5563;margin:0;line-height:1.6;">{r.inperson}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p style="font-size:.85rem;color:#9ca3af;margin-top:1.25rem;line-height:1.6;">
+      "WIN" reflects the model that better serves the average self-motivated adult client. Your situation may flip the result on any single row.
+    </p>
+  </div>
+</section>
+
+<!-- ───── WHEN ONLINE IS NOT THE RIGHT FIT ───── -->
+<section id="not-fit" style="background:#fffbeb;padding:5rem 0;border-top:1px solid #fde68a;border-bottom:1px solid #fde68a;" aria-labelledby="not-h2">
+  <div style="max-width:1024px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.2em;color:#b45309;text-transform:uppercase;margin-bottom:.5rem;">// Be honest with yourself</p>
+    <h2 id="not-h2" style="font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#111827;line-height:1.15;letter-spacing:-.02em;margin:0 0 1rem;">
+      When online is the <em style="color:#b45309;font-style:italic;">wrong</em> choice.
+    </h2>
+    <p style="font-size:1.05rem;color:#78350f;line-height:1.7;max-width:42rem;margin:0 0 2.5rem;">
+      I refer prospective clients to local in-person coaches roughly twice a month. These are the four signals that send me toward that decision. Read them carefully before you sign up.
+    </p>
+
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
+      {wrongFit.map((w, i) => (
+        <li style="background:#fff;border-left:4px solid #f59e0b;padding:1.5rem 1.75rem;display:flex;gap:1rem;border-radius:0 .5rem .5rem 0;">
+          <span style="background:#fbbf24;color:#78350f;font-weight:800;font-size:.85rem;width:1.75rem;height:1.75rem;border-radius:999px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{i+1}</span>
+          <p style="font-size:1rem;color:#1f2937;margin:0;line-height:1.65;">{w}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- ───── WHEN ONLINE IS THE RIGHT FIT ───── -->
+<section id="fit" style="background:#f0fdf4;padding:5rem 0;" aria-labelledby="fit-h2">
+  <div style="max-width:1024px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.2em;color:#15803d;text-transform:uppercase;margin-bottom:.5rem;">// When it works beautifully</p>
+    <h2 id="fit-h2" style="font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#111827;line-height:1.15;letter-spacing:-.02em;margin:0 0 1rem;">
+      When online is the <em style="color:#15803d;font-style:italic;">right</em> choice.
+    </h2>
+    <p style="font-size:1.05rem;color:#166534;line-height:1.7;max-width:42rem;margin:0 0 2.5rem;">
+      The clients who get the best results from my practice tend to share four characteristics. If three or four sound like you, the model will work.
+    </p>
+
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
+      {rightFit.map((w, i) => (
+        <li style="background:#fff;border-left:4px solid #65a30d;padding:1.5rem 1.75rem;display:flex;gap:1rem;border-radius:0 .5rem .5rem 0;">
+          <span style="background:#bbf7d0;color:#15803d;font-weight:800;font-size:.85rem;width:1.75rem;height:1.75rem;border-radius:999px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{i+1}</span>
+          <p style="font-size:1rem;color:#1f2937;margin:0;line-height:1.65;">{w}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- ───── COST MATH ───── -->
+<section id="cost" style="background:#fff;padding:5rem 0;border-top:1px solid #e5e7eb;" aria-labelledby="cost-h2">
+  <div style="max-width:920px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.2em;color:#65a30d;text-transform:uppercase;margin-bottom:.5rem;">// The cost math</p>
+    <h2 id="cost-h2" style="font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#111827;line-height:1.15;letter-spacing:-.02em;margin:0 0 1rem;">
+      What you actually pay.
+    </h2>
+    <p style="font-size:1.05rem;color:#4b5563;line-height:1.7;max-width:42rem;margin:0 0 2.5rem;">
+      A side-by-side cost comparison at the most common service tiers. Numbers based on national averages from the IDEA Health & Fitness Association 2024 personal-training rate survey.
+    </p>
+
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:.75rem;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:1.25rem 1.5rem;background:#fff;border-bottom:1px solid #e5e7eb;">
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#6b7280;text-transform:uppercase;">Coaching Level</span>
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#15803d;text-transform:uppercase;text-align:right;">Chen Performance</span>
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#6b7280;text-transform:uppercase;text-align:right;">In-Person (avg)</span>
+      </div>
+      {[
+        ['Entry / 1x weekly equivalent', '$147/mo', '$520/mo'],
+        ['Standard / 2x weekly equivalent', '$297/mo', '$1,040/mo'],
+        ['VIP / 3x weekly + nutrition',    '$497/mo', '$2,400/mo'],
+      ].map(([label, online, ip]) => (
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:1.25rem 1.5rem;background:#fff;border-bottom:1px solid #f3f4f6;align-items:center;">
+          <span style="font-size:.95rem;color:#111827;font-weight:500;">{label}</span>
+          <span style="font-size:1.1rem;color:#15803d;font-weight:700;text-align:right;">{online}</span>
+          <span style="font-size:1.1rem;color:#374151;font-weight:600;text-align:right;">{ip}</span>
+        </div>
+      ))}
+    </div>
+
+    <p style="font-size:.9rem;color:#6b7280;margin-top:1.25rem;line-height:1.6;">
+      Online coaching averages 70–80% lower cost at every tier. The savings come from no facility overhead and the time efficiency of asynchronous coaching — not from giving you less programming.
+    </p>
+  </div>
+</section>
+
+<!-- ───── CTA ───── -->
+<section style="background:#65a30d;padding:5rem 0;" aria-labelledby="cta-h2">
+  <div style="max-width:768px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    <h2 id="cta-h2" style="font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;line-height:1.15;letter-spacing:-.02em;margin:0 0 1rem;">
+      Try a free week — decide from inside the app.
+    </h2>
+    <p style="font-size:1.1rem;color:#f0fdf4;line-height:1.7;margin:0 0 2.5rem;">
+      Full programming, real check-in, full app access. If online isn't right for you, I'll tell you that and refer you to an in-person coach in your city.
+    </p>
+    <a href="/v2-online-coach#booking" style="display:inline-block;background:#fff;color:#15803d;font-weight:700;font-size:1.1rem;text-decoration:none;padding:1rem 2.5rem;border-radius:999px;">
+      Start My Free Week →
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#111827;padding:2.5rem 1.5rem;text-align:center;color:#9ca3af;">
+  <p style="font-weight:700;font-size:1.125rem;color:#fff;letter-spacing:-.025em;">Chen Performance <span style="color:#84cc16;">Coaching</span></p>
+  <p style="font-size:.8rem;margin-top:.5rem;">© {new Date().getFullYear()} Chen Performance Coaching · Online globally · Based in Los Angeles, CA</p>
+  <p style="margin-top:.5rem;font-size:.8rem;"><a href="/v2-online-coach" style="color:#84cc16;text-decoration:none;">← Back to home</a> · <a href="/" style="color:#9ca3af;text-decoration:none;">All Templates</a></p>
+  <p style="font-size:.75rem;margin-top:.75rem;">Built by Donovan Crader · <a href="https://dcrader.dev" style="color:#9ca3af;text-decoration:none;">dcrader.dev</a></p>
+</footer>
+
+</BaseLayout>

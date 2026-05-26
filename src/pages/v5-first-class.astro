@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { coach } from '../data/v5-coach';
+
+const steps = [
+  {
+    n: '01',
+    when: '5 minutes after you book',
+    title: 'Welcome text from a real human',
+    body:
+      'You\'ll get a text from one of our coaches (not a bot, not a no-reply email) within five minutes of booking. They confirm your session time, ask one question — "any injuries we should know about?" — and send the address of the park or studio for your class.',
+  },
+  {
+    n: '02',
+    when: 'Night before',
+    title: 'Three-line "what to bring" message',
+    body:
+      'You get a single short text the night before with the essentials: water bottle, a small towel, sneakers you don\'t mind getting dusty. That\'s it. We provide everything else — mats, kettlebells, sandbags, sliders, and bands. No equipment to buy, no gear to figure out.',
+  },
+  {
+    n: '03',
+    when: '15 minutes early',
+    title: 'Meet your "anchor"',
+    body:
+      'Every new member is assigned an "anchor" for their first class — a current member, usually within five years of your age and fitness level, who shows up early to walk you in. They show you where to park, where to put your bag, and who else to introduce yourself to. You will not be left to figure it out alone.',
+  },
+  {
+    n: '04',
+    when: 'First 15 minutes of class',
+    title: 'Three-tier movement intake',
+    body:
+      'Before we start the workout proper, your coach runs you through a quick movement screen — squat, hinge, push, pull — and decides which of three scaling tiers you start at. Every movement in the day\'s WOD has three written versions (foundation / standard / advanced). You will never be the only one scaling.',
+  },
+  {
+    n: '05',
+    when: 'During class',
+    title: 'Loud encouragement, zero ego',
+    body:
+      'Yes, we yell. Yes, the music is loud. Yes, everyone celebrates everyone\'s last rep. No, we do not care if you stop, sit, drop weight, or laugh halfway through. The loudest cheer in any Blaze class is always for the person who finishes last.',
+  },
+  {
+    n: '06',
+    when: 'Cool-down + the dog pile',
+    title: 'The post-class circle',
+    body:
+      'Every class ends in a tight circle: high fives, names, and a 30-second shoutout for the new members. Your anchor walks you back to your car (or the coffee shop two blocks down, where most of the 6:30 AM crew goes after). You are now in the directory. We text you Friday to see how the week is feeling.',
+  },
+  {
+    n: '07',
+    when: 'Day 3',
+    title: 'The check-in call',
+    body:
+      'A coach (yes, an actual coach — sometimes Tony himself, usually one of the four staff) calls you on day three to check on soreness, ask what landed, and see if there\'s anything they should know going into your next class. If you decide bootcamp isn\'t for you, we ask why — and refer you to a better-fit local gym if we know one. No hard sell. Ever.',
+  },
+];
+
+const bring = [
+  { icon: '💧', label: 'Water bottle', detail: 'At least 24 oz. Outdoor sessions in Miami summer — bring 32.' },
+  { icon: '👟', label: 'Cross-trainers', detail: 'Avoid running shoes — they roll on lateral movements. Any flat-sole gym shoe works.' },
+  { icon: '🧴', label: 'Sunscreen', detail: 'Outdoor classes May–October. We keep spray at the rack but bring your own if you have a skin condition.' },
+  { icon: '🩹', label: 'Knee + elbow comfort', detail: 'If sleeves help you, wear them. If not, skip. We don\'t require any gear.' },
+  { icon: '🍎', label: 'Light snack 60 min prior', detail: 'A banana or yogurt is plenty. Heavy meal within an hour of class is the #1 reason new members feel ill.' },
+  { icon: '💪', label: 'A 1–10 willingness score', detail: 'You\'ll be asked on arrival. There\'s no wrong answer — your coach scales the day around it.' },
+];
+
+const guarantees = [
+  { v: 'FREE', l: 'First class is on us, always.' },
+  { v: '0', l: 'Equipment to buy.' },
+  { v: '3 TIERS', l: 'Every movement scaled for your level.' },
+  { v: '1:1', l: 'Anchor pairing for new members.' },
+];
+---
+
+<BaseLayout
+  title="Your First Class is Free — Blaze Bootcamp Miami"
+  description="What to expect at your first Blaze Bootcamp class. Seven-step welcome process, scaled workouts, anchor pairing, and zero equipment to buy. First class always free."
+  fontUrl="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+  themeColor="#FF5500"
+>
+
+<style is:inline>
+  body { font-family: 'Inter', sans-serif; background: #0A0A0A; color: #F5F5F5; margin: 0; }
+  .oswald { font-family: 'Oswald', sans-serif; }
+  .cta-btn { display: inline-block; background: #FF5500; color: #000; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 48px; text-decoration: none; border: none; cursor: pointer; transition: all 0.15s; }
+  .cta-btn:hover { background: #FF7700; transform: translateY(-2px); }
+</style>
+
+<!-- NAV -->
+<nav aria-label="Main navigation" style="position:fixed;top:0;left:0;right:0;z-index:100;background:#000;border-bottom:3px solid #FF5500;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="/v5-bootcamp-community" aria-label="Blaze Bootcamp home" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+      <div style="width:36px;height:36px;background:#FF5500;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;color:#000;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 100%,6px 100%);">B</div>
+      <span class="oswald" style="font-size:1.25rem;font-weight:700;letter-spacing:0.08em;color:#fff;text-transform:uppercase;">Blaze Bootcamp</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:32px;">
+      <a href="/v5-bootcamp-community#schedule" class="oswald" style="color:#999;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">Schedule</a>
+      <a href="/v5-bootcamp-community#programs" class="oswald" style="color:#999;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;">Programs</a>
+      <a href="/v5-first-class" class="oswald" style="color:#FF5500;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;">First Class</a>
+      <a href="/v5-bootcamp-community#join" class="cta-btn" style="font-size:0.85rem;padding:10px 28px;">Join Free</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content" style="padding-top:64px;">
+
+<!-- ───── HERO ───── -->
+<section style="background:#0A0A0A;padding:6rem 0 4rem;border-bottom:3px solid #FF5500;" aria-labelledby="hero-h1">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <p class="oswald" style="font-size:0.75rem;letter-spacing:0.4em;color:#FF5500;text-transform:uppercase;font-weight:700;margin:0 0 1.25rem;">
+      First Class · Always Free · Always Scaled
+    </p>
+    <h1 id="hero-h1" class="oswald" style="font-size:clamp(3rem,9vw,7rem);font-weight:700;color:#fff;line-height:.95;letter-spacing:.01em;text-transform:uppercase;margin:0 0 1.5rem;">
+      Your first class<br/>
+      <span style="color:#FF5500;">is on us.</span>
+    </h1>
+    <p style="font-size:1.2rem;color:#D4D4D4;line-height:1.7;max-width:42rem;margin:0 0 2.5rem;">
+      Walking into a bootcamp class for the first time is intimidating. We know — every single one of our 700 active members had a first class once.
+      What follows is the exact seven-step welcome process every new Blaze member moves through, from booking confirmation to the day-three check-in call.
+      Read it, then book the free class. We'll take care of the rest.
+    </p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="/v5-bootcamp-community#join" class="cta-btn" style="font-size:1.05rem;">Reserve My Free Class</a>
+      <a href="#process" class="oswald" style="display:inline-block;border:2px solid #FF5500;color:#FF5500;font-weight:700;font-size:.95rem;letter-spacing:0.12em;text-transform:uppercase;padding:14px 36px;text-decoration:none;">Read the Process ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── GUARANTEES ───── -->
+<section style="background:#FF5500;padding:2.5rem 0;" aria-label="Guarantees">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+    {guarantees.map((g) => (
+      <div style="text-align:center;">
+        <p class="oswald" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#000;line-height:1;margin:0;">{g.v}</p>
+        <p style="font-size:.85rem;color:#000;margin-top:.5rem;font-weight:500;">{g.l}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- ───── PROCESS ───── -->
+<section id="process" style="background:#0A0A0A;padding:5rem 0;" aria-labelledby="process-h2">
+  <div style="max-width:1000px;margin:0 auto;padding:0 24px;">
+    <p class="oswald" style="font-size:0.75rem;letter-spacing:0.4em;color:#FF5500;text-transform:uppercase;font-weight:700;margin:0 0 1rem;">The Welcome</p>
+    <h2 id="process-h2" class="oswald" style="font-size:clamp(2.25rem,5vw,4rem);font-weight:700;color:#fff;line-height:1;text-transform:uppercase;margin:0 0 1.25rem;">
+      Seven steps. Zero awkwardness.
+    </h2>
+    <p style="font-size:1.05rem;color:#A1A1A1;line-height:1.75;max-width:42rem;margin:0 0 3rem;">
+      Every new member experiences the same welcome sequence — refined over 700 first classes since 2017.
+    </p>
+
+    <ol style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
+      {steps.map((s) => (
+        <li style="background:#111;border-left:5px solid #FF5500;padding:2rem 2rem;display:grid;grid-template-columns:90px 1fr;gap:1.5rem;align-items:start;">
+          <p class="oswald" style="font-size:3rem;color:#FF5500;font-weight:700;line-height:1;margin:0;">{s.n}</p>
+          <div>
+            <p class="oswald" style="font-size:0.7rem;letter-spacing:0.25em;color:#A1A1A1;text-transform:uppercase;font-weight:500;margin:0 0 .25rem;">{s.when}</p>
+            <h3 class="oswald" style="font-size:1.5rem;color:#fff;font-weight:700;text-transform:uppercase;line-height:1.2;margin:0 0 .875rem;">{s.title}</h3>
+            <p style="font-size:1rem;color:#D4D4D4;line-height:1.75;margin:0;">{s.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- ───── BRING THIS ───── -->
+<section id="bring" style="background:#111;padding:5rem 0;border-top:1px solid #1f1f1f;" aria-labelledby="bring-h2">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <p class="oswald" style="font-size:0.75rem;letter-spacing:0.4em;color:#FF5500;text-transform:uppercase;font-weight:700;margin:0 0 1rem;">Bring This · Skip That</p>
+    <h2 id="bring-h2" class="oswald" style="font-size:clamp(2.25rem,5vw,4rem);font-weight:700;color:#fff;line-height:1;text-transform:uppercase;margin:0 0 1.25rem;">
+      Six things to bring.
+    </h2>
+    <p style="font-size:1.05rem;color:#A1A1A1;line-height:1.75;max-width:38rem;margin:0 0 3rem;">
+      Nothing on this list costs more than $20. Everything else is on us.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      {bring.map((b) => (
+        <article style="background:#0A0A0A;border:1px solid #2A2A2A;padding:1.5rem;">
+          <p style="font-size:2rem;line-height:1;margin:0 0 1rem;">{b.icon}</p>
+          <h3 class="oswald" style="font-size:1.15rem;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:0 0 .5rem;">{b.label}</h3>
+          <p style="font-size:.9rem;color:#A1A1A1;line-height:1.65;margin:0;">{b.detail}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── FROM THE COACH ───── -->
+<section style="background:#0A0A0A;padding:5rem 0;border-top:3px solid #FF5500;" aria-labelledby="coach-h2">
+  <div style="max-width:820px;margin:0 auto;padding:0 24px;">
+    <p class="oswald" style="font-size:0.75rem;letter-spacing:0.4em;color:#FF5500;text-transform:uppercase;font-weight:700;margin:0 0 1rem;">A Note From Tony</p>
+    <h2 id="coach-h2" class="oswald" style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;color:#fff;line-height:1.1;text-transform:uppercase;margin:0 0 2rem;">
+      The first class is the hardest.<br/>
+      <span style="color:#FF5500;">It will never be that hard again.</span>
+    </h2>
+    <div style="font-size:1.075rem;color:#D4D4D4;line-height:1.85;">
+      <p style="margin:0 0 1.25rem;">
+        I started Blaze in 2017 with twelve people in a parking lot off Bayfront Park. Every single one of them had a first day. So did I.
+        The story I hear back from members years later, almost without exception, is the same: they almost didn't come. They sat in the car. They worried about looking out of shape, or unfit, or like the slowest person on the field.
+      </p>
+      <p style="margin:0 0 1.25rem;">
+        The number of people who, six months in, are glad they sat in that car and came anyway? Every single one. That is not a marketing statistic — that is what 700 members will tell you if you ask them.
+      </p>
+      <p style="margin:0 0 1.25rem;">
+        The seven-step welcome process above exists because I am genuinely allergic to the idea that any new member is left to figure us out on their own.
+        The anchor system, the check-in call, the scaled tiers — all of it is built around one principle: nobody at Blaze ever has to feel like the new kid for longer than thirty seconds.
+      </p>
+      <p style="margin:0 0 1.25rem;">
+        Come once. Free. If we're not a fit, we'll send you home with a list of better local options. If we are — and most people find out we are inside the first class — you're family before you finish the cool-down.
+      </p>
+      <p class="oswald" style="font-size:.85rem;letter-spacing:0.25em;color:#FF5500;text-transform:uppercase;font-weight:700;margin-top:2rem;">— {coach.name}, {coach.title}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CTA ───── -->
+<section style="position:relative;background:#FF5500;padding:6rem 0;text-align:center;" aria-labelledby="cta-h2">
+  <div style="max-width:768px;margin:0 auto;padding:0 24px;">
+    <p class="oswald" style="font-size:0.75rem;letter-spacing:0.4em;color:#000;text-transform:uppercase;font-weight:700;margin:0 0 1.25rem;opacity:.7;">No Excuses · No Cost · No Catch</p>
+    <h2 id="cta-h2" class="oswald" style="font-size:clamp(2.5rem,6vw,5rem);font-weight:700;color:#000;line-height:1;text-transform:uppercase;margin:0 0 1.5rem;">
+      Reserve your<br/>free class.
+    </h2>
+    <p style="font-size:1.1rem;color:#000;line-height:1.7;margin:0 0 2.5rem;opacity:.8;">
+      Pick a session that fits your week. We'll handle everything from there.
+    </p>
+    <a href="/v5-bootcamp-community#join" style="display:inline-block;background:#000;color:#FF5500;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;padding:20px 56px;">
+      Reserve My Spot
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#000;border-top:3px solid #FF5500;padding:2.5rem 24px;text-align:center;color:#999;">
+  <p class="oswald" style="font-size:1.4rem;color:#fff;font-weight:700;letter-spacing:.2em;text-transform:uppercase;">Blaze Bootcamp</p>
+  <p style="font-size:.8rem;margin-top:.5rem;">© {new Date().getFullYear()} Blaze Bootcamp · Miami, FL</p>
+  <p style="margin-top:.5rem;font-size:.8rem;"><a href="/v5-bootcamp-community" style="color:#999;text-decoration:none;">← Back to home</a> · <a href="/" style="color:#999;text-decoration:none;">All Templates</a></p>
+  <p style="font-size:.7rem;margin-top:.75rem;">Built by Donovan Crader · <a href="https://dcrader.dev" style="color:#999;text-decoration:none;">dcrader.dev</a></p>
+</footer>
+
+</BaseLayout>

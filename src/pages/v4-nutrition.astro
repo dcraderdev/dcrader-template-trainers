@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { coach } from '../data/v4-coach';
+
+const pillars = [
+  {
+    n: '01',
+    title: 'Protein Sufficiency',
+    target: '1.2–1.6 g per kg body weight, daily',
+    body:
+      'The single largest dietary lever for sarcopenia prevention after fifty. Most adults in this decade are eating thirty to forty percent below the threshold their muscle-protein synthesis actually requires. We work from current intake (we measure it before we change it) and rebuild meal architecture around a 30–40 g protein anchor at each of three daily meals.',
+  },
+  {
+    n: '02',
+    title: 'Anti-Inflammatory Architecture',
+    target: 'Omega-3 ≥ 2 g/day · Added sugar < 25 g/day',
+    body:
+      'Chronic low-grade inflammation accelerates joint pain, sleep disruption, and recovery time — three of the most common complaints we hear at intake. Our nutrition framework leans Mediterranean: cold-water fish twice weekly, olive oil as the dominant fat, deeply colored vegetables at every meal, and a deliberate ceiling on ultra-processed carbohydrate.',
+  },
+  {
+    n: '03',
+    title: 'Bone-Density Support',
+    target: 'Calcium 1,000–1,200 mg · Vitamin D 1,000–2,000 IU · K2 100 mcg',
+    body:
+      'Resistance training drives the mechanical signal for bone deposition; nutrition supplies the substrate. We pair the strength program with a measurable calcium, D, and K2 protocol because the bone-density gains from training only materialize when the building blocks are present. Annual DEXA tracking is part of the plan.',
+  },
+  {
+    n: '04',
+    title: 'Hydration & Electrolytes',
+    target: '30–35 ml per kg body weight · Sodium 3–5 g · Potassium 4 g',
+    body:
+      'Thirst sensation declines with age. Most clients arrive chronically under-hydrated, which presents as fatigue, dizziness on standing, and poor session quality. We rebuild hydration as a scheduled habit rather than a thirst response — and we restore electrolyte balance, which most "drink more water" advice ignores.',
+  },
+];
+
+const week = [
+  { meal: 'Breakfast', menu: 'Three-egg omelet with spinach, smoked salmon, and avocado · 1 cup mixed berries · black coffee', protein: '38 g', notes: 'Front-loads protein at the meal where most adults under-consume it.' },
+  { meal: 'Mid-morning', menu: 'Greek yogurt (200 g, 5% fat) with walnuts and ground flax', protein: '22 g', notes: 'Calcium + omega-3 anchor. Walnuts contribute K2.' },
+  { meal: 'Lunch', menu: 'Grilled wild salmon (150 g) · roasted root vegetables · arugula with olive oil + lemon', protein: '36 g', notes: 'Anti-inflammatory backbone of the week. Salmon twice weekly minimum.' },
+  { meal: 'Afternoon', menu: 'Cottage cheese (150 g) with a pear', protein: '18 g', notes: 'Pre-training snack on lifting days. Slow-digesting casein.' },
+  { meal: 'Dinner', menu: 'Sirloin steak (180 g) · sautéed kale and garlic · half-cup quinoa · half-glass red wine', protein: '42 g', notes: 'Iron, creatine, and heme-protein density unmatched by alternatives at this life stage.' },
+  { meal: 'Evening', menu: 'Decaf herbal tea · square of dark chocolate (85% cacao) · 5 g creatine in water', protein: '— g', notes: 'Creatine taken with the evening dose for adherence; the time of day does not matter.' },
+];
+
+const myths = [
+  {
+    myth: 'Protein damages older kidneys.',
+    truth:
+      'Not in adults with normal renal function. The "high protein hurts kidneys" claim is extrapolated from chronic kidney disease populations and does not apply to healthy adults. Multiple longitudinal studies show neutral-to-protective effects in the 1.2–1.6 g/kg range we recommend.',
+  },
+  {
+    myth: 'You need to eat less as you age.',
+    truth:
+      'Most adults over fifty are simultaneously over-calorie and under-protein. The fix is reallocation, not restriction. We typically hold total calories steady or increase them slightly while doubling protein intake and cutting ultra-processed carbohydrate. Body composition shifts within ninety days.',
+  },
+  {
+    myth: 'Supplements are a waste of money for older adults.',
+    truth:
+      'Most are. Five aren\'t: creatine, vitamin D3 (with K2), magnesium glycinate, omega-3 (EPA/DHA), and a methylated B-complex if labs warrant it. We screen every client\'s supplement stack at intake and remove far more than we add.',
+  },
+  {
+    myth: 'Carbs are the enemy after 50.',
+    truth:
+      'No. Carbohydrate timing and source matter more than quantity. We program complex carbohydrate (sweet potato, oats, beans, fruit) around training sessions because they fuel performance and recovery. The enemy is ultra-processed snack food consumed mindlessly, not the carbohydrate molecule.',
+  },
+];
+---
+
+<BaseLayout
+  title="Nutrition for the Second Half of Life — Longevity Athletics | Dr. Robert Hayes"
+  description="Evidence-based nutrition framework for adults 50+. Protein sufficiency, anti-inflammatory architecture, bone-density support, and five myths debunked. Dr. Robert Hayes, PhD Kinesiology."
+  fontUrl="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+  themeColor="#4A6741"
+>
+
+<style is:inline>
+  body { font-family: 'Open Sans', sans-serif; background: #F7F5EF; color: #2D3A27; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; }
+  .credential-badge { display: inline-flex; align-items: center; gap: .375rem; background: #EEF2E8; border: 1px solid #C4D4B8; color: #3D5635; font-size: .75rem; font-weight: 600; padding: .375rem .75rem; border-radius: .375rem; }
+</style>
+
+<!-- NAV -->
+<nav aria-label="Main navigation" style="position:sticky;top:0;z-index:50;background:rgba(247,245,239,.97);backdrop-filter:blur(8px);border-bottom:1px solid #D4C9B0;">
+  <div style="max-width:1152px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <a href="/v4-functional-aging" class="serif" style="font-size:1.2rem;font-weight:600;color:#2D3A27;text-decoration:none;">Longevity Athletics</a>
+    <div style="display:flex;align-items:center;gap:1.75rem;font-size:.875rem;">
+      <a href="/v4-functional-aging#science" style="color:#5A6B52;text-decoration:none;">The Science</a>
+      <a href="/v4-functional-aging#programs" style="color:#5A6B52;text-decoration:none;">Programs</a>
+      <a href="/v4-nutrition" style="color:#4A6741;text-decoration:none;font-weight:600;">Nutrition</a>
+      <a href="/v4-functional-aging#coach" style="color:#5A6B52;text-decoration:none;">Dr. Hayes</a>
+      <a href="/v4-functional-aging#booking" style="background:#4A6741;color:#fff;font-weight:600;text-decoration:none;padding:.625rem 1.375rem;border-radius:.5rem;font-size:.875rem;">Free Assessment</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ───── HERO ───── -->
+<section style="background:#fff;padding:5rem 0 4rem;border-bottom:1px solid #D4C9B0;" aria-labelledby="hero-h1">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem;">
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;">
+      <span class="credential-badge">PhD Kinesiology</span>
+      <span class="credential-badge">Precision Nutrition L2</span>
+      <span class="credential-badge">ACE Senior Fitness</span>
+      <span class="credential-badge">20 Years Clinical</span>
+    </div>
+    <h1 id="hero-h1" class="serif" style="font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:600;color:#2D3A27;line-height:1.1;margin:0 0 1.5rem;letter-spacing:-.01em;">
+      Nutrition for the<br/><em style="color:#4A6741;font-style:italic;">second half of life.</em>
+    </h1>
+    <p style="font-size:1.2rem;color:#5A6B52;line-height:1.8;max-width:42rem;margin:0 0 2.5rem;">
+      The dietary guidelines you grew up with were written for a thirty-year-old who has not yet experienced sarcopenia, declining bone density, or the slow inflammatory drift that begins in the fifth decade.
+      What follows is the framework I prescribe to every Longevity Athletics client, rooted in the geriatric exercise physiology research of the last twenty years and the clinical realities of coaching adults aged fifty through eighty-two.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid #D4C9B0;padding-top:2.5rem;">
+      <div>
+        <p class="serif" style="font-size:2.25rem;font-weight:700;color:#4A6741;line-height:1;">1.2–1.6 g/kg</p>
+        <p style="font-size:.85rem;color:#5A6B52;margin-top:.5rem;">Daily protein target</p>
+      </div>
+      <div>
+        <p class="serif" style="font-size:2.25rem;font-weight:700;color:#4A6741;line-height:1;">2 g/day</p>
+        <p style="font-size:.85rem;color:#5A6B52;margin-top:.5rem;">Omega-3 EPA + DHA</p>
+      </div>
+      <div>
+        <p class="serif" style="font-size:2.25rem;font-weight:700;color:#4A6741;line-height:1;">5 g/day</p>
+        <p style="font-size:.85rem;color:#5A6B52;margin-top:.5rem;">Creatine monohydrate</p>
+      </div>
+      <div>
+        <p class="serif" style="font-size:2.25rem;font-weight:700;color:#4A6741;line-height:1;">5 supps</p>
+        <p style="font-size:.85rem;color:#5A6B52;margin-top:.5rem;">Worth taking after 50</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOUR PILLARS ───── -->
+<section id="pillars" style="background:#F7F5EF;padding:5rem 0;" aria-labelledby="pillars-h2">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;letter-spacing:.2em;color:#4A6741;text-transform:uppercase;font-weight:600;margin-bottom:.75rem;">The Framework</p>
+    <h2 id="pillars-h2" class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:600;color:#2D3A27;line-height:1.15;margin:0 0 1rem;letter-spacing:-.01em;">
+      Four pillars. Built in this order.
+    </h2>
+    <p style="font-size:1.05rem;color:#5A6B52;line-height:1.75;max-width:38rem;margin:0 0 3rem;">
+      We never change all four at once. Each pillar is introduced over two to four weeks. Habit formation is the limiting factor — not knowledge.
+    </p>
+
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      {pillars.map((p) => (
+        <article style="background:#fff;border:1px solid #C4D4B8;border-left:5px solid #4A6741;border-radius:.5rem;padding:2rem 2.25rem;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+            <div style="display:flex;align-items:baseline;gap:1rem;">
+              <span class="serif" style="font-size:2.5rem;color:#8AB87A;font-weight:700;line-height:1;">{p.n}</span>
+              <h3 class="serif" style="font-size:1.5rem;color:#2D3A27;font-weight:600;line-height:1.2;margin:0;">{p.title}</h3>
+            </div>
+            <span style="background:#EEF2E8;color:#3D5635;font-size:.85rem;font-weight:600;padding:.5rem .875rem;border-radius:.375rem;border:1px solid #C4D4B8;">{p.target}</span>
+          </div>
+          <p style="font-size:1.0125rem;color:#3D4A35;line-height:1.8;margin:0;">{p.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── SAMPLE DAY ───── -->
+<section id="day" style="background:#fff;padding:5rem 0;border-top:1px solid #D4C9B0;border-bottom:1px solid #D4C9B0;" aria-labelledby="day-h2">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;letter-spacing:.2em;color:#4A6741;text-transform:uppercase;font-weight:600;margin-bottom:.75rem;">Sample Training Day</p>
+    <h2 id="day-h2" class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:600;color:#2D3A27;line-height:1.15;margin:0 0 1rem;letter-spacing:-.01em;">
+      One day, fully written.
+    </h2>
+    <p style="font-size:1.05rem;color:#5A6B52;line-height:1.75;max-width:42rem;margin:0 0 3rem;">
+      Sample meal day for a 68-year-old, 75 kg male client on a lifting day — total protein ≈ 156 g, calories ≈ 2,300, anti-inflammatory architecture intact. This is illustrative; every client receives an individually built plan.
+    </p>
+
+    <div style="background:#F7F5EF;border:1px solid #C4D4B8;border-radius:.75rem;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:130px 1fr 80px;gap:1rem;padding:1rem 1.5rem;background:#EEF2E8;border-bottom:1px solid #C4D4B8;">
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#3D5635;text-transform:uppercase;">Meal</span>
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#3D5635;text-transform:uppercase;">Menu</span>
+        <span style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#3D5635;text-transform:uppercase;text-align:right;">Protein</span>
+      </div>
+      {week.map((m) => (
+        <div style="padding:1.25rem 1.5rem;border-bottom:1px solid #EEF2E8;">
+          <div style="display:grid;grid-template-columns:130px 1fr 80px;gap:1rem;align-items:start;">
+            <p class="serif" style="font-size:1.05rem;color:#4A6741;font-weight:600;margin:0;">{m.meal}</p>
+            <p style="font-size:.95rem;color:#2D3A27;margin:0;line-height:1.6;">{m.menu}</p>
+            <p class="serif" style="font-size:1.1rem;color:#4A6741;font-weight:700;margin:0;text-align:right;">{m.protein}</p>
+          </div>
+          <p style="font-size:.85rem;color:#7A8B74;margin:.5rem 0 0 0;font-style:italic;line-height:1.55;">{m.notes}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── MYTHS ───── -->
+<section id="myths" style="background:#F7F5EF;padding:5rem 0;" aria-labelledby="myths-h2">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;letter-spacing:.2em;color:#4A6741;text-transform:uppercase;font-weight:600;margin-bottom:.75rem;">Clinical Corrections</p>
+    <h2 id="myths-h2" class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:600;color:#2D3A27;line-height:1.15;margin:0 0 1rem;letter-spacing:-.01em;">
+      Four myths I correct weekly.
+    </h2>
+    <p style="font-size:1.05rem;color:#5A6B52;line-height:1.75;max-width:42rem;margin:0 0 3rem;">
+      Most of the bad nutrition advice older adults absorb comes from outdated textbooks, well-meaning relatives, or research extrapolated from sick populations. These are the four I find myself unwinding at intake more than any others.
+    </p>
+
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      {myths.map((m, i) => (
+        <article style="background:#fff;border:1px solid #C4D4B8;border-radius:.5rem;overflow:hidden;">
+          <div style="background:#FEF3C7;padding:1.25rem 1.5rem;border-bottom:1px solid #FDE68A;">
+            <p style="font-size:.7rem;letter-spacing:.2em;color:#92400E;text-transform:uppercase;font-weight:700;margin:0 0 .25rem;">Myth · {String(i+1).padStart(2,'0')}</p>
+            <p class="serif" style="font-size:1.25rem;color:#78350F;font-weight:600;line-height:1.3;margin:0;">"{m.myth}"</p>
+          </div>
+          <div style="padding:1.5rem;">
+            <p style="font-size:.7rem;letter-spacing:.2em;color:#3D5635;text-transform:uppercase;font-weight:700;margin:0 0 .5rem;">What the research shows</p>
+            <p style="font-size:1rem;color:#2D3A27;line-height:1.75;margin:0;">{m.truth}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── CLOSING NOTE ───── -->
+<section style="background:#2D3A27;color:#EEF2E8;padding:5rem 0;" aria-labelledby="closing-h2">
+  <div style="max-width:820px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-size:.75rem;letter-spacing:.2em;color:#8AB87A;text-transform:uppercase;font-weight:600;margin-bottom:.75rem;">A Note from Dr. Hayes</p>
+    <h2 id="closing-h2" class="serif" style="font-size:clamp(2rem,4.5vw,3rem);font-weight:600;color:#fff;line-height:1.2;margin:0 0 2rem;">
+      Nutrition is the substrate. Training is the signal.
+    </h2>
+    <div style="font-size:1.075rem;line-height:1.85;color:#D4DCC8;">
+      <p style="margin:0 0 1.25rem;">
+        Twenty years of clinical practice has taught me that no nutritional protocol substitutes for the mechanical signal of progressive resistance training in the older adult. Equally, no training program achieves its potential when the substrate is missing.
+      </p>
+      <p style="margin:0 0 1.25rem;">
+        We treat the two as inseparable. Every Longevity Athletics client receives a nutritional framework alongside their training prescription, with the protein, micronutrient, and supplement targets above as the non-negotiables. Macros are individualized; the four pillars are not.
+      </p>
+      <p style="margin:0 0 1.25rem;">
+        If you take one thing from this page, take this: protein sufficiency at every meal, three meals a day, every day. Most of the gains your training is capable of producing are downstream of that one habit.
+      </p>
+      <p style="font-size:.85rem;letter-spacing:.2em;color:#8AB87A;text-transform:uppercase;font-weight:700;margin-top:2rem;">— {coach.name}, {coach.title}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CTA ───── -->
+<section style="background:#F7F5EF;padding:5rem 0;" aria-labelledby="cta-h2">
+  <div style="max-width:768px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    <h2 id="cta-h2" class="serif" style="font-size:clamp(2rem,4vw,3rem);font-weight:600;color:#2D3A27;line-height:1.15;margin:0 0 1rem;letter-spacing:-.01em;">
+      Book the free assessment.
+    </h2>
+    <p style="font-size:1.075rem;color:#5A6B52;line-height:1.75;margin:0 0 2.5rem;">
+      Sixty-minute intake. Movement screen, lifestyle audit, and a written nutrition baseline. No assumption about what you eat now — just an honest conversation about what your second-half body needs.
+    </p>
+    <a href="/v4-functional-aging#booking" style="display:inline-block;background:#4A6741;color:#fff;font-weight:600;font-size:1.0625rem;text-decoration:none;padding:1rem 2.5rem;border-radius:.5rem;">
+      Book My Free Assessment
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#2D3A27;padding:2.5rem 1.5rem;text-align:center;color:#9CB88A;">
+  <p class="serif" style="font-size:1.4rem;color:#fff;font-weight:600;">Longevity Athletics</p>
+  <p style="font-size:.8rem;margin-top:.5rem;">© {new Date().getFullYear()} Longevity Athletics · Denver, CO</p>
+  <p style="margin-top:.5rem;font-size:.8rem;"><a href="/v4-functional-aging" style="color:#9CB88A;text-decoration:none;">← Back to home</a> · <a href="/" style="color:#9CB88A;text-decoration:none;">All Templates</a></p>
+  <p style="font-size:.7rem;margin-top:.75rem;">Built by Donovan Crader · <a href="https://dcrader.dev" style="color:#9CB88A;text-decoration:none;">dcrader.dev</a></p>
+</footer>
+
+</BaseLayout>

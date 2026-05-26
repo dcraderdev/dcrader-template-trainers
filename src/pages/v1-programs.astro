@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { coach } from '../data/v1-coach';
+
+// Block-by-block periodization breakdown — what an actual 16-week macrocycle looks like
+const blocks = [
+  {
+    n: '01',
+    name: 'Accumulation',
+    weeks: 'Weeks 1–4',
+    focus: 'Hypertrophy & Work Capacity',
+    intensity: '60–72% 1RM',
+    volume: '18–22 working sets per session',
+    rep: '8–12 reps · 90–120s rest',
+    why: 'Foundation. We push the muscle-building stimulus while letting the nervous system recover from the prior peak. This is where the squat and bench come back in volume after the meet — and where new athletes earn the right to load heavier later.',
+  },
+  {
+    n: '02',
+    name: 'Transmutation',
+    weeks: 'Weeks 5–9',
+    focus: 'Strength & Specificity',
+    intensity: '75–87% 1RM',
+    volume: '12–16 working sets per session',
+    rep: '3–6 reps · 3–5 min rest',
+    why: 'The volume cuts, the bar speed sharpens. We start pulling against bands and chains on the deadlift, the bench press gets paused work, and squat technique tightens up under heavier loads. Bar speed is tracked on every working set with a velocity sensor.',
+  },
+  {
+    n: '03',
+    name: 'Realization',
+    weeks: 'Weeks 10–13',
+    focus: 'Peak Strength',
+    intensity: '88–95% 1RM',
+    volume: '6–10 working sets per session',
+    rep: '1–3 reps · 4–7 min rest',
+    why: 'The intensity phase. Singles, doubles, and the occasional heavy triple. We program two heavy days and two skill days per week. Every rep is recorded on video and reviewed inside 24 hours so cues stay sharp.',
+  },
+  {
+    n: '04',
+    name: 'Deload + Test',
+    weeks: 'Weeks 14–16',
+    focus: 'Recovery & 1RM Test',
+    intensity: '50–100% in waves',
+    volume: 'Cut 40% the first 7 days, then build to test',
+    rep: 'Test singles + meet attempts',
+    why: 'Volume drops by half. Sleep and food go up. We do one heavy opener at 90% on week 15, then a true test or a sanctioned meet on week 16. Athletes who deload properly hit 5–8% PRs at the end of the block, every time.',
+  },
+];
+
+// What a typical week looks like inside the "Realization" peak block
+const week = [
+  { day: 'MON', title: 'Heavy Squat', work: 'Comp squat singles 88-92%, pause squats 3x4, bulgarian split squat 3x8/leg, hamstring curls' },
+  { day: 'TUE', title: 'Bench Press', work: 'Comp bench 4x3 @ 85-90%, close grip 3x5, weighted dips 3x6, lat work 3x12' },
+  { day: 'WED', title: 'Active Recovery', work: 'Cardio Z2 30-40 min, mobility (hips + thoracic), prehab band work' },
+  { day: 'THU', title: 'Heavy Deadlift', work: 'Comp deadlift singles 88-92%, deficit deadlift 3x4, RDL 3x6, ab wheel 4x10' },
+  { day: 'FRI', title: 'Skill Bench + Acc', work: 'Speed bench 8x3 @ 60%, paused incline 3x5, rows 4x8, biceps + triceps work' },
+  { day: 'SAT', title: 'Squat Variation', work: 'SSB squat or front squat 4x4, walking lunges 3x10/leg, GHR 4x8, planks' },
+  { day: 'SUN', title: 'Rest', work: 'Sleep. Food. Walk. We mean it.' },
+];
+
+// Three program tracks
+const tracks = [
+  { tag: 'TRACK A', name: 'Compete', who: 'Sanctioned powerlifters chasing a meet PR within the next 16 weeks.', focus: 'Attempt selection, peaking, openers/seconds/thirds calculation, meet-day handler protocol included.' },
+  { tag: 'TRACK B', name: 'Recompose', who: 'Lifters who want to add 20 lbs to the big three while losing fat.', focus: 'Conjugate-style training paired with macro periodization. Two strength days, two hypertrophy days, two conditioning sessions per week.' },
+  { tag: 'TRACK C', name: 'Rebuild', who: 'Returning lifters or post-injury athletes needing pattern repair before load.', focus: 'Eight-week movement re-pattern with FMS scoring at intake, RPE-capped sets, and a velocity-based progression once the pattern is clean.' },
+];
+---
+
+<BaseLayout
+  title="Programming Breakdown — Steel Athletics | Marcus Steel"
+  description="A look inside the four-block periodization Marcus Steel runs on every Steel Athletics athlete. 16-week macrocycle, sample peak week, and three program tracks (Compete, Recompose, Rebuild)."
+  fontUrl="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;700&display=swap"
+  themeColor="#000000"
+>
+
+<style is:inline>
+  body { background:#000; }
+</style>
+
+<!-- NAV -->
+<nav aria-label="Main navigation" style="position:fixed;top:0;width:100%;z-index:50;background:#000;border-bottom:2px solid #dc2626;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;">
+    <a href="/v1-strength-elite" style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:.2em;color:#fff;text-transform:uppercase;text-decoration:none;">STEEL ATHLETICS</a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <a href="/v1-programs" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.25em;color:#dc2626;text-transform:uppercase;text-decoration:none;">Programming</a>
+      <a href="/v1-strength-elite#pricing" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.25em;color:#9ca3af;text-transform:uppercase;text-decoration:none;">Pricing</a>
+      <a href="/v1-strength-elite#coach" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.25em;color:#9ca3af;text-transform:uppercase;text-decoration:none;">Coach</a>
+      <a href="/v1-strength-elite#booking" style="background:#dc2626;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:.5rem 1.25rem;">BOOK FREE INTAKE</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content" style="padding-top:56px;">
+
+<!-- ───── HERO ───── -->
+<section style="background:#000;padding:6rem 0 5rem;border-bottom:4px solid #dc2626;" aria-labelledby="hero-h1">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.5em;color:#dc2626;text-transform:uppercase;margin-bottom:1.25rem;">
+      Inside the Methodology · 16-Week Macrocycle
+    </p>
+    <h1 id="hero-h1" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,9vw,7.5rem);color:#fff;text-transform:uppercase;line-height:.92;letter-spacing:.01em;margin-bottom:1.5rem;">
+      Programming<br/><span style="color:#dc2626;">that performs.</span>
+    </h1>
+    <p style="font-family:'Barlow',sans-serif;color:#d4d4d8;font-size:1.2rem;line-height:1.7;max-width:48rem;">
+      Most lifters fail because they train hard but don't program. Hard work without a structure is noise — accumulation that never realizes into strength.
+      What follows is the four-block conjugate-influenced macrocycle Marcus Steel has run on every Steel Athletics client for the last decade. The same template that
+      took Jake M. from a body-weight squat to a 600 lb pull. Read it, then ask whether your current program looks anything like this.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;border-top:1px solid #27272a;padding-top:2.5rem;">
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:#dc2626;line-height:1;">16</p>
+        <p style="font-family:'Barlow',sans-serif;font-size:.7rem;color:#9ca3af;letter-spacing:.15em;text-transform:uppercase;margin-top:.5rem;">Week cycle length</p>
+      </div>
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:#dc2626;line-height:1;">4</p>
+        <p style="font-family:'Barlow',sans-serif;font-size:.7rem;color:#9ca3af;letter-spacing:.15em;text-transform:uppercase;margin-top:.5rem;">Training blocks per cycle</p>
+      </div>
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:#dc2626;line-height:1;">5–8%</p>
+        <p style="font-family:'Barlow',sans-serif;font-size:.7rem;color:#9ca3af;letter-spacing:.15em;text-transform:uppercase;margin-top:.5rem;">Avg PR per cycle</p>
+      </div>
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:#dc2626;line-height:1;">40+</p>
+        <p style="font-family:'Barlow',sans-serif;font-size:.7rem;color:#9ca3af;letter-spacing:.15em;text-transform:uppercase;margin-top:.5rem;">Competition champions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOUR BLOCKS ───── -->
+<section id="blocks" style="background:#09090b;padding:6rem 0;" aria-labelledby="blocks-h2">
+  <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Macrocycle Structure</p>
+    <h2 id="blocks-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;text-transform:uppercase;line-height:1;margin-bottom:1rem;">
+      The Four-Block Cycle
+    </h2>
+    <p style="font-family:'Barlow',sans-serif;color:#a1a1aa;font-size:1.1rem;line-height:1.7;margin-bottom:3rem;max-width:48rem;">
+      Borrowed from Verkhoshansky and refined for raw lifters over twelve years on the platform. Each block has a single dominant adaptation. None of them are optional.
+    </p>
+
+    <div style="display:flex;flex-direction:column;gap:2px;background:#dc2626;border:2px solid #dc2626;">
+      {blocks.map((b) => (
+        <article style="background:#000;padding:2.5rem;display:grid;grid-template-columns:80px 2fr 3fr;gap:2rem;align-items:start;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:4rem;color:#dc2626;line-height:1;margin:0;">{b.n}</p>
+          <div>
+            <p style="font-family:'Barlow',sans-serif;font-size:.7rem;letter-spacing:.25em;color:#a1a1aa;text-transform:uppercase;margin-bottom:.5rem;">{b.weeks}</p>
+            <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#fff;text-transform:uppercase;line-height:1;margin-bottom:.75rem;">{b.name}</h3>
+            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:#dc2626;text-transform:uppercase;letter-spacing:.1em;">{b.focus}</p>
+          </div>
+          <div>
+            <dl style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem;">
+              <div>
+                <dt style="font-family:'Barlow',sans-serif;font-size:.65rem;color:#71717a;letter-spacing:.2em;text-transform:uppercase;">Intensity</dt>
+                <dd style="font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#fff;font-size:1.1rem;margin:.25rem 0 0;">{b.intensity}</dd>
+              </div>
+              <div>
+                <dt style="font-family:'Barlow',sans-serif;font-size:.65rem;color:#71717a;letter-spacing:.2em;text-transform:uppercase;">Volume</dt>
+                <dd style="font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#fff;font-size:1.1rem;margin:.25rem 0 0;">{b.volume}</dd>
+              </div>
+              <div>
+                <dt style="font-family:'Barlow',sans-serif;font-size:.65rem;color:#71717a;letter-spacing:.2em;text-transform:uppercase;">Rep Range</dt>
+                <dd style="font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#fff;font-size:1.1rem;margin:.25rem 0 0;">{b.rep}</dd>
+              </div>
+            </dl>
+            <p style="font-family:'Barlow',sans-serif;color:#d4d4d8;font-size:.95rem;line-height:1.7;">{b.why}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── SAMPLE PEAK WEEK ───── -->
+<section id="week" style="background:#000;padding:6rem 0;" aria-labelledby="week-h2">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Sample Microcycle</p>
+    <h2 id="week-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;text-transform:uppercase;line-height:1;margin-bottom:1rem;">
+      Week 11 · The Peak
+    </h2>
+    <p style="font-family:'Barlow',sans-serif;color:#a1a1aa;font-size:1.1rem;line-height:1.7;margin-bottom:3rem;max-width:42rem;">
+      Lifted straight out of the realization phase. Six training days, one true rest day, every working set tracked.
+      This is the week before the test single — not the week of. You earn the deload by surviving this.
+    </p>
+
+    <div style="background:#09090b;border:2px solid #27272a;">
+      {week.map((d) => (
+        <div style="display:grid;grid-template-columns:80px 220px 1fr;gap:1.5rem;padding:1.5rem 2rem;border-bottom:1px solid #27272a;align-items:center;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#dc2626;letter-spacing:.15em;margin:0;">{d.day}</p>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;text-transform:uppercase;margin:0;">{d.title}</p>
+          <p style="font-family:'Barlow',sans-serif;color:#d4d4d8;font-size:.9rem;line-height:1.6;margin:0;">{d.work}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── PROGRAM TRACKS ───── -->
+<section id="tracks" style="background:#09090b;padding:6rem 0;" aria-labelledby="tracks-h2">
+  <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Three Tracks</p>
+    <h2 id="tracks-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;text-transform:uppercase;line-height:1;margin-bottom:1rem;">
+      One Macro. Three Adaptations.
+    </h2>
+    <p style="font-family:'Barlow',sans-serif;color:#a1a1aa;font-size:1.1rem;line-height:1.7;margin-bottom:3rem;max-width:42rem;">
+      The block structure stays. The intent shifts. We pick a track at intake based on your training age, injury history, and what you actually want to be when this cycle ends.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#dc2626;border:2px solid #dc2626;">
+      {tracks.map((t) => (
+        <article style="background:#000;padding:2.5rem;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.3em;color:#dc2626;text-transform:uppercase;margin-bottom:.5rem;">{t.tag}</p>
+          <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#fff;text-transform:uppercase;line-height:1;margin-bottom:1.5rem;">{t.name}</h3>
+          <p style="font-family:'Barlow',sans-serif;font-size:.7rem;letter-spacing:.2em;color:#a1a1aa;text-transform:uppercase;margin-bottom:.5rem;">Built for</p>
+          <p style="font-family:'Barlow',sans-serif;color:#e4e4e7;font-size:1rem;line-height:1.6;margin-bottom:1.5rem;">{t.who}</p>
+          <p style="font-family:'Barlow',sans-serif;font-size:.7rem;letter-spacing:.2em;color:#a1a1aa;text-transform:uppercase;margin-bottom:.5rem;">What changes</p>
+          <p style="font-family:'Barlow',sans-serif;color:#d4d4d8;font-size:.95rem;line-height:1.65;">{t.focus}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ───── COACH NOTE ───── -->
+<section style="background:#000;padding:6rem 0;border-top:4px solid #dc2626;" aria-labelledby="note-h2">
+  <div style="max-width:920px;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.4em;color:#dc2626;text-transform:uppercase;margin-bottom:.75rem;">Coach's Note</p>
+    <h2 id="note-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.25rem,4vw,3.5rem);color:#fff;text-transform:uppercase;line-height:1.05;margin-bottom:2rem;">
+      Why I publish this.
+    </h2>
+    <div style="font-family:'Barlow',sans-serif;color:#d4d4d8;font-size:1.05rem;line-height:1.8;">
+      <p style="margin-bottom:1.25rem;">
+        Most coaches treat their programming like a trade secret. I think that's nonsense. The structure above isn't proprietary — it's drawn from Westside, Verkhoshansky, Sheiko, and Calgary Barbell, then bent over twelve years of trial and error in my own facility. None of it is hidden in a paywall.
+      </p>
+      <p style="margin-bottom:1.25rem;">
+        What you can't read on this page is the coaching. The cue I give you when your hip shoots back early in the squat. The decision to pull a single back from 92% to 88% because your bar speed dropped 0.04 m/s. The conversation about sleep the night you message me at 11pm in a panic about the meet.
+      </p>
+      <p style="margin-bottom:1.25rem;">
+        Programs are a commodity. Coaching is the product. If you can run this template yourself and hit the numbers you want, do it — I'll cheer you on. If you want someone on the other side of the bar with twelve years of getting it wrong and getting it right, that's what Steel Athletics is for.
+      </p>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.25em;color:#dc2626;text-transform:uppercase;margin-top:2.5rem;">
+        — {coach.name}, {coach.title}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CTA ───── -->
+<section style="position:relative;padding:7rem 0;overflow:hidden;border-top:4px solid #dc2626;border-bottom:4px solid #dc2626;" aria-labelledby="cta-h2">
+  <img loading="lazy" decoding="async" src="/images/shared/photo-1526506118085-60ce8714f8c5-1920.webp"
+    alt="Athlete at the top of a heavy lift under chalk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;" />
+  <div style="position:relative;z-index:10;text-align:center;max-width:48rem;margin:0 auto;padding:0 1.5rem;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.75rem;letter-spacing:.5em;color:#dc2626;text-transform:uppercase;margin-bottom:1.5rem;">Read enough?</p>
+    <h2 id="cta-h2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.75rem,7vw,6rem);color:#fff;text-transform:uppercase;line-height:.95;margin-bottom:1.5rem;">
+      Book the<br/><span style="color:#dc2626;">intake.</span>
+    </h2>
+    <p style="font-family:'Barlow',sans-serif;color:#d1d5db;font-size:1.1rem;margin-bottom:2.5rem;">
+      Free, zero commitment. We talk about where you are, where you want to be, and whether this programming is the right tool for the job.
+    </p>
+    <a href="/v1-strength-elite#booking" style="display:inline-block;background:#dc2626;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:1.25rem 3.5rem;">BOOK FREE INTAKE</a>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#000;border-top:2px solid #dc2626;padding:2.5rem 1.5rem;text-align:center;">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:.2em;text-transform:uppercase;">STEEL ATHLETICS</p>
+  <p style="font-family:'Barlow',sans-serif;font-size:.75rem;color:#a1a1aa;margin-top:.5rem;text-transform:uppercase;letter-spacing:.1em;">© {new Date().getFullYear()} Steel Athletics · San Diego, CA</p>
+  <p style="margin-top:.5rem;"><a href="/v1-strength-elite" style="color:#a1a1aa;font-family:'Barlow',sans-serif;font-size:.75rem;text-decoration:none;">← Back to home</a> · <a href="/" style="color:#a1a1aa;font-family:'Barlow',sans-serif;font-size:.75rem;text-decoration:none;">All Templates</a></p>
+  <p style="font-family:'Barlow',sans-serif;font-size:.7rem;color:#a1a1aa;margin-top:.75rem;letter-spacing:.05em;">Built by Donovan Crader · <a href="https://dcrader.dev" style="color:#a1a1aa;text-decoration:none;">dcrader.dev</a></p>
+</footer>
+
+</BaseLayout>
