@@ -168,7 +168,7 @@ const schedule = [
         <h2 class="oswald" style="text-align:center;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:8px;">
           When We <span style="color:#FF5500;">Train</span>
         </h2>
-        <p class="inter" style="text-align:center;color:#666;max-width:500px;margin:0 auto 56px;">
+        <p class="inter" style="text-align:center;color:#999;max-width:500px;margin:0 auto 56px;">
           {coach.stats.classes} sessions per week. Bayfront Park, Miami. Rain or shine.
         </p>
 
@@ -183,7 +183,7 @@ const schedule = [
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:24px;height:24px;border-radius:3px;background:#1A1A1A;"></div>
-            <span class="inter" style="font-size:0.85rem;color:#666;">No Session</span>
+            <span class="inter" style="font-size:0.85rem;color:#999;">No Session</span>
           </div>
         </div>
 
@@ -191,7 +191,7 @@ const schedule = [
           <table class="sched-table" style="width:100%;border-collapse:separate;border-spacing:6px;" aria-label="Weekly class schedule">
             <thead>
               <tr>
-                <th class="oswald" style="font-size:0.75rem;letter-spacing:0.12em;color:#666;text-transform:uppercase;text-align:left;padding:8px 12px;min-width:80px;" scope="col">Time</th>
+                <th class="oswald" style="font-size:0.75rem;letter-spacing:0.12em;color:#999;text-transform:uppercase;text-align:left;padding:8px 12px;min-width:80px;" scope="col">Time</th>
                 {['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((d) => (
                   <th class="oswald" style="font-size:0.8rem;letter-spacing:0.12em;color:#999;text-transform:uppercase;text-align:center;padding:8px 0;width:48px;" scope="col">{d}</th>
                 ))}
@@ -240,11 +240,11 @@ const schedule = [
                 </tr>
               ))}
               <tr>
-                <th class="oswald" style="font-size:0.95rem;font-weight:600;color:#444;padding:4px 12px;text-align:left;" scope="row">SUN</th>
+                <th class="oswald" style="font-size:0.95rem;font-weight:600;color:#999;padding:4px 12px;text-align:left;" scope="row">SUN</th>
                 {[1,2,3,4,5,6].map(() => (
                   <td style="padding:4px;">
                     <div class="sched-cell sched-off" aria-label="Rest day">
-                      <span style="font-size:0.65rem;color:#444;">REST</span>
+                      <span style="font-size:0.65rem;color:#999;">REST</span>
                     </div>
                   </td>
                 ))}
@@ -255,7 +255,7 @@ const schedule = [
 
         <div style="text-align:center;margin-top:48px;">
           <a href="#join" class="cta-btn">Book Your First Free Class</a>
-          <p class="inter" style="font-size:0.8rem;color:#555;margin-top:16px;">No equipment needed · All fitness levels welcome · Show up and we handle the rest</p>
+          <p class="inter" style="font-size:0.8rem;color:#999;margin-top:16px;">No equipment needed · All fitness levels welcome · Show up and we handle the rest</p>
         </div>
       </div>
     </section>
@@ -359,7 +359,7 @@ const schedule = [
                   <div aria-hidden="true" style={`width:56px;height:56px;background:linear-gradient(135deg,${i===0?'#FF5500,#FFB300':i===1?'#FFB300,#FF5500':'#FF5500,#FF7700'});display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.5rem;color:#000;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 100%,8px 100%);flex-shrink:0;`}>{t.name.charAt(0)}</div>
                   <div>
                     <div class="oswald" style="font-size:1rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;">{t.name}</div>
-                    <div class="inter" style="font-size:0.75rem;color:#666;margin-top:2px;">{t.details}</div>
+                    <div class="inter" style="font-size:0.75rem;color:#999;margin-top:2px;">{t.details}</div>
                   </div>
                 </div>
                 <p class="inter" style="font-size:0.875rem;color:#BBB;line-height:1.65;margin:0;font-style:italic;">"{t.text}"</p>
@@ -394,7 +394,7 @@ const schedule = [
               </div>
               <div style="background:#0A0A0A;padding:20px;border-bottom:2px solid #FF5500;">
                 <div class="oswald" style="font-size:1.1rem;font-weight:700;color:#FF5500;text-transform:uppercase;">{t.result}</div>
-                <div class="oswald" style="font-size:0.9rem;color:#666;margin-bottom:8px;text-transform:uppercase;">{t.name}</div>
+                <div class="oswald" style="font-size:0.9rem;color:#999;margin-bottom:8px;text-transform:uppercase;">{t.name}</div>
                 <p class="inter" style="font-size:0.8rem;color:#888;font-style:italic;">"{t.quote}"</p>
               </div>
             </div>
@@ -422,7 +422,7 @@ const schedule = [
               <h3 class="oswald" style="font-size:1.4rem;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:8px;">{p.name}</h3>
               <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:28px;">
                 <span class="oswald" style="font-size:3rem;font-weight:700;color:#FF5500;line-height:1;">${p.price}</span>
-                <span class="inter" style="font-size:0.85rem;color:#555;">/month</span>
+                <span class="inter" style="font-size:0.85rem;color:#999;">/month</span>
               </div>
               <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px;" aria-label={`${p.name} plan features`}>
                 {p.features.map((f) => (
@@ -439,7 +439,7 @@ const schedule = [
           ))}
         </div>
 
-        <p class="inter" style="text-align:center;font-size:0.8rem;color:#444;margin-top:24px;">
+        <p class="inter" style="text-align:center;font-size:0.8rem;color:#999;margin-top:24px;">
           All memberships include first class free. No contracts. Cancel anytime.
         </p>
       </div>
@@ -483,7 +483,7 @@ const schedule = [
                   <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#FF5500;display:inline-block;box-shadow:0 0 8px #FF5500;"></span>
                   <span class="oswald" style="font-size:.75rem;font-weight:700;letter-spacing:.18em;color:#FF5500;text-transform:uppercase;">On the floor today</span>
                 </div>
-                <span class="inter" style="font-size:.7rem;color:#666;letter-spacing:.05em;">Tuesday · 6:00 PM session</span>
+                <span class="inter" style="font-size:.7rem;color:#999;letter-spacing:.05em;">Tuesday · 6:00 PM session</span>
               </div>
               <p class="oswald" style="font-size:1.1rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.04em;margin:0 0 6px;line-height:1.2;">Today's WOD — "BAYFRONT BURNER"</p>
               <p class="inter" style="font-size:.85rem;color:#bbb;margin:0 0 14px;line-height:1.5;">21-15-9 — KB swings · burpee box jumps · wall balls. Cap is 14 minutes. Tony's leading from the front.</p>
@@ -493,7 +493,7 @@ const schedule = [
                 <li class="inter" style="font-size:.78rem;color:#888;"><span style="color:#FF5500;font-weight:700;">11</span> &nbsp;PR attempts on the board</li>
                 <li class="inter" style="font-size:.78rem;color:#888;"><span style="color:#FF5500;font-weight:700;">82°F</span> &nbsp;feels like 88. Bring water.</li>
               </ul>
-              <p class="inter" style="font-size:.7rem;color:#666;font-style:italic;margin:14px 0 0;border-top:1px solid #1a1a1a;padding-top:10px;">Walk-ins welcome — grab any open spot on the rig.</p>
+              <p class="inter" style="font-size:.7rem;color:#999;font-style:italic;margin:14px 0 0;border-top:1px solid #1a1a1a;padding-top:10px;">Walk-ins welcome — grab any open spot on the rig.</p>
             </div>
           </div>
         </div>
@@ -529,7 +529,7 @@ const schedule = [
             </div>
             <div>
               <div class="oswald" style="color:#fff;font-size:1rem;text-transform:uppercase;">{coach.address.street}</div>
-              <div class="inter" style="color:#666;font-size:0.875rem;">{coach.address.city}</div>
+              <div class="inter" style="color:#999;font-size:0.875rem;">{coach.address.city}</div>
             </div>
           </div>
           <div style="display:flex;gap:16px;margin-bottom:24px;">
@@ -538,7 +538,7 @@ const schedule = [
             </div>
             <div>
               <div class="oswald" style="color:#fff;font-size:1rem;text-transform:uppercase;">{coach.phone}</div>
-              <div class="inter" style="color:#666;font-size:0.875rem;">Call or text anytime</div>
+              <div class="inter" style="color:#999;font-size:0.875rem;">Call or text anytime</div>
             </div>
           </div>
           <div style="display:flex;gap:16px;">
@@ -547,7 +547,7 @@ const schedule = [
             </div>
             <div>
               <div class="oswald" style="color:#fff;font-size:1rem;text-transform:uppercase;">{coach.email}</div>
-              <div class="inter" style="color:#666;font-size:0.875rem;">Response within 2 hours</div>
+              <div class="inter" style="color:#999;font-size:0.875rem;">Response within 2 hours</div>
             </div>
           </div>
         </div>
@@ -575,26 +575,26 @@ const schedule = [
         <h2 class="oswald" style="text-align:center;font-size:clamp(2rem,4vw,3rem);font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:8px;">
           Join the <span style="color:#FF5500;">Blaze Family</span>
         </h2>
-        <p class="inter" style="text-align:center;color:#666;margin-bottom:48px;">One form. Zero obligation. We'll reach out with your spot details within the hour.</p>
+        <p class="inter" style="text-align:center;color:#999;margin-bottom:48px;">One form. Zero obligation. We'll reach out with your spot details within the hour.</p>
 
         <form aria-label="Reserve first free class" style="display:flex;flex-direction:column;gap:16px;" onsubmit="handleJoin(event)">
           <div class="form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div>
-              <label class="oswald" for="join-name" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Full Name</label>
+              <label class="oswald" for="join-name" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:8px;">Full Name</label>
               <input id="join-name" name="name" type="text" placeholder="Marcus Rivera" required autocomplete="name" />
             </div>
             <div>
-              <label class="oswald" for="join-email" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Email</label>
+              <label class="oswald" for="join-email" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:8px;">Email</label>
               <input id="join-email" name="email" type="email" placeholder="you@email.com" required autocomplete="email" />
             </div>
           </div>
           <div class="form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div>
-              <label class="oswald" for="join-phone" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Phone</label>
+              <label class="oswald" for="join-phone" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:8px;">Phone</label>
               <input id="join-phone" name="phone" type="tel" placeholder="(305) 555-0100" autocomplete="tel" />
             </div>
             <div>
-              <label class="oswald" for="join-level" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Experience Level</label>
+              <label class="oswald" for="join-level" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:8px;">Experience Level</label>
               <select id="join-level" name="level">
                 <option value="">Select level</option>
                 <option value="beginner">Beginner — First time ever</option>
@@ -605,7 +605,7 @@ const schedule = [
             </div>
           </div>
           <div>
-            <label class="oswald" for="join-session" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">Preferred Session</label>
+            <label class="oswald" for="join-session" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:8px;">Preferred Session</label>
             <select id="join-session" name="session">
               <option value="">Any session works</option>
               <option value="mon-530">Monday 5:30 AM</option>
@@ -617,13 +617,13 @@ const schedule = [
             </select>
           </div>
           <div>
-            <label class="oswald" for="join-goal" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:8px;">What's Your Goal? (Optional)</label>
+            <label class="oswald" for="join-goal" style="display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:8px;">What's Your Goal? (Optional)</label>
             <textarea id="join-goal" name="goal" rows="3" placeholder="Lose weight, get stronger, find a community, compete in an obstacle race..."></textarea>
           </div>
           <button type="submit" class="cta-btn" style="width:100%;font-size:1.1rem;padding:20px;border:none;cursor:pointer;text-align:center;">
             Reserve My Free Class
           </button>
-          <p class="inter" style="text-align:center;font-size:0.75rem;color:#444;">
+          <p class="inter" style="text-align:center;font-size:0.75rem;color:#999;">
             No spam. No pressure. Tony or a coach will text you personally to lock in your time.
           </p>
         </form>
@@ -643,7 +643,7 @@ const schedule = [
           <div style="width:32px;height:32px;background:#FF5500;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;color:#000;clip-path:polygon(0 0,calc(100% - 5px) 0,100% 100%,5px 100%);" aria-hidden="true">B</div>
           <span class="oswald" style="font-size:1rem;font-weight:700;letter-spacing:0.08em;color:#fff;text-transform:uppercase;">Blaze Bootcamp</span>
         </div>
-        <div class="inter" style="font-size:0.8rem;color:#444;">
+        <div class="inter" style="font-size:0.8rem;color:#999;">
           {coach.address.street}, {coach.address.city} &middot; {coach.phone} &middot; {coach.email}
         </div>
         <div class="inter" style="font-size:0.75rem;color:#333;">
@@ -651,7 +651,7 @@ const schedule = [
         </div>
       </div>
       <div class="inter" style="max-width:1100px;margin:16px auto 0;text-align:center;font-size:0.7rem;color:#333;">
-        Built by Donovan Crader &middot; <a href="https://dcrader.dev" style="color:#555;text-decoration:none;">dcrader.dev</a>
+        Built by Donovan Crader &middot; <a href="https://dcrader.dev" style="color:#999;text-decoration:none;">dcrader.dev</a>
       </div>
     </footer>
 
